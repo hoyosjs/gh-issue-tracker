@@ -1,7 +1,9 @@
 ﻿using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using gh_issue_diagnostics.Config;
 using Octokit;
+
 
 ReportCreator report = new(Config.ReportName);
 
@@ -30,7 +32,7 @@ internal class ReportCreator
             MovedOutIssues: lhs.MovedOutIssues + rhs.MovedOutIssues);
     }
 
-    record class IssueReportResult(string Repository, int IssueId, string IssueName, string IssueUrl, IssueType Type);
+    record class IssueReportResult(string Repository, int IssueId, string IssueName, string IssueUrl, IssueType Type, string OriginatorQuery);
 
     enum IssueType
     {
@@ -59,6 +61,10 @@ internal class ReportCreator
 
     public async Task InitializePriorResultsFromJson(string priorReportCachePath)
     {
+        // TODO: Log
+        if (!File.Exists(priorReportCachePath))
+            return;
+
         using FileStream cacheFs = File.OpenRead(priorReportCachePath);
         JsonDocument jd = await JsonDocument.ParseAsync(cacheFs);
 
@@ -125,6 +131,7 @@ internal class ReportCreator
                 if (issue.CreatedAt > priorNewestIssueTime)
                 {
                     type = IssueType.New;
+                    singleQueryStats.NewIssues++;
                 }
                 else if (priorIssueIdList.Contains(issue.Number))
                 {
@@ -134,9 +141,10 @@ internal class ReportCreator
                 else
                 {
                     type = IssueType.MovedIn;
+                    singleQueryStats.MovedInIssues++;
                 }
 
-                classifiedIssues.Add(new(repo, issue.Number, issue.Title, issue.HtmlUrl, type));
+                classifiedIssues.Add(new(repo, issue.Number, issue.Title, issue.HtmlUrl, type, queryId));
             }
 
             foreach (int issueId in priorIssueIdList)
@@ -147,8 +155,21 @@ internal class ReportCreator
                 }
 
                 Issue issue = await _ghClient.Issue.Get(repoOrg, repoName, issueId);
-                IssueType type = issue.State.Value == ItemState.Closed ? IssueType.Closed : IssueType.MovedOut;
-                classifiedIssues.Add(new(repo, issue.Number, issue.Title, issue.HtmlUrl, type));
+                    singleQueryStats.MovedInIssues++;
+
+                IssueType type;
+                if (issue.State.Value == ItemState.Closed)
+                {
+                    type = IssueType.Closed;
+                    singleQueryStats.ClosedIssues++;
+                }
+                else
+                {
+                    type = IssueType.MovedOut;
+                    singleQueryStats.MovedOutIssues++;
+                }
+
+                classifiedIssues.Add(new(repo, issue.Number, issue.Title, issue.HtmlUrl, type, queryId));
             }
 
             _reportResults.Add(queryId, (newestIssueTime, classifiedIssues));
@@ -174,17 +195,32 @@ internal class ReportCreator
     {
         Directory.CreateDirectory(reportPath);
 
-        JsonObject doc = new();
+        JsonObject doc = new()
+        {
+            {
+                "totalStats",
+                JsonSerializer.SerializeToNode(_totalStats)
+            }
+        };
+
         foreach ((string key, (DateTimeOffset newestIssueDate, IReadOnlyList<IssueReportResult> issueResults)) in _reportResults)
         {
             JsonArray issueIdList = new();
+            int activeCount = 0;
 
             foreach (IssueReportResult issue in issueResults)
-                issueIdList.Add(issue.IssueId);
+            {
+                if (issue.Type is IssueType.New or IssueType.MovedIn or IssueType.Old)
+                {
+                    issueIdList.Add(issue.IssueId);
+                    activeCount++;
+                }
+            }
 
             doc.Add(key,
                 new JsonObject {
                     ["lastIssueDate"] = newestIssueDate,
+                    ["issuesInQuery"] = activeCount,
                     ["issueIdList"] = issueIdList
                 });
         }
@@ -263,48 +299,4 @@ readonly struct RepoQueries
             yield return (sb.ToString(), labelSet);
         }
     }
-}
-
-internal static class Config {
-    public static readonly string ReportName = $"dn-diag-issue-tracker-{DateTime.UtcNow:yyyy-mm-dd-hh-mm}";
-    public static readonly string ReportPath = $"E:\\reports";
-    public static readonly IReadOnlyList<RepoQueries> Repos = new List<RepoQueries>() {
-        new RepoQueries (
-            name: "dotnet/diagnostics",
-            exclusions:  new SearchIssuesRequestExclusions {
-                Labels = new List<string> {
-                    "enhancement",
-                    "feature-request"
-                },
-                Milestone = "future"
-            },
-            labels: new List<string[]?> {
-                null
-            },
-            version: 1
-        ),
-        new RepoQueries (
-            name: "dotnet/runtime",
-            exclusions:  new SearchIssuesRequestExclusions {
-                Labels = new List<string> {
-                    "enhancement",
-                    "feature-request",
-                    "linkable-framework",
-                    "os-android",
-                    "os-ios",
-                    "os-tvos",
-                    "arch-wasm"
-                },
-                Milestone = "future"
-            },
-            labels: new List<string[]?>{
-                new[] { "area-Tracing-coreclr" },
-                new[] { "area-System.Diagnostics" },
-                new[] { "area-System.Diagnostics.Metric" },
-                new[] { "area-System.Diagnostics.Tracing" },
-                new[] { "area-Diagnostics-coreclr" }
-            },
-            version: 1
-        )
-    };
 }
