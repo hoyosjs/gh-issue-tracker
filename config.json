@@ -1,0 +1,43 @@
+{
+    "ReportConfig": {
+        "ReportFriendlyName": ".NET Diagnostics Report",
+        "ReportFilePrefix": "dn-diag-issue-tracker",
+        "ReportOutputPath": "E:/code/gh-issue-tracker/reports",
+        "SecretFilePath": "E:/ghpat"
+    },
+    "QueryConfigs": [
+        {
+            "RepoName": "dotnet/diagnostics",
+            "GloballyExcludedLabels": [
+                "dotnet-monitor",
+                "enhancement",
+                "feature-request",
+                "\"User Story\""
+            ],
+            "ExcludedMilestone": "future",
+            "LabelGroups": [ null ],
+            "Version": 1
+        },
+        {
+            "RepoName": "dotnet/runtime",
+            "GloballyExcludedLabels": [
+                "arch-wasm",
+                "enhancement",
+                "feature-request",
+                "linkable-framework",
+                "os-android",
+                "os-ios",
+                "os-tvos"
+            ],
+            "ExcludedMilestone": "future",
+            "LabelGroups": [ 
+                [ "area-Tracing-coreclr" ],
+                [ "area-System.Diagnostics" ],
+                [ "area-System.Diagnostics.Metric" ],
+                [ "area-System.Diagnostics.Tracing" ],
+                [ "area-Diagnostics-coreclr" ]
+            ],
+            "Version": 1
+        }
+    ]
+}
