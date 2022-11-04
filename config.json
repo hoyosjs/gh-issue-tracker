@@ -2,8 +2,7 @@
     "ReportConfig": {
         "ReportFriendlyName": ".NET Diagnostics Report",
         "ReportFilePrefix": "dn-diag-issue-tracker",
-        "ReportOutputPath": "E:/code/gh-issue-tracker/reports",
-        "SecretFilePath": "E:/ghpat"
+        "ReportOutputPath": "reports"
     },
     "QueryConfigs": [
         {

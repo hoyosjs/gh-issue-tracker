@@ -16,10 +16,24 @@ using JsonDocument jdoc = await JsonDocument.ParseAsync(configFs);
 ReportConfig rc = jdoc.RootElement.GetProperty(nameof(ReportConfig)).Deserialize<ReportConfig>();
 List<QueryConfig> qc = jdoc.RootElement.GetProperty("QueryConfigs").Deserialize<List<QueryConfig>>()!;
 
+string? ghPat = null;
+
+if (rc.SecretFilePath is not null)
+{
+    // TODO: consider requiring user requirements
+    using StreamReader cacheFs = File.OpenText(rc.SecretFilePath);
+    ghPat = cacheFs.ReadLine();
+}
+
+if (ghPat is null)
+{
+    Environment.GetEnvironmentVariable("GITHUB_TOKEN");
+}
+
 ReportCreator report = new(
     friendlyName: rc.ReportFriendlyName!,
     clientName: rc.ReportFilePrefix!,
-    secretPath: rc.SecretFilePath);
+    pat: ghPat);
 
 if (args.Length == 2)
     await report.InitializePriorResultsFromJson(args[1]);
