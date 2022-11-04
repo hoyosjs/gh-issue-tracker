@@ -276,7 +276,7 @@ internal class ReportCreator
             if (needsHeader)
                 await sw.WriteLineAsync("date_utc,current_count,new_issues,closed_issues,moved_in,moved_out");
 
-            sw.Write($"{reportTime:MM-dd-yy},{_totalStats.CurrentIssues},{_totalStats.NewIssues},{_totalStats.ClosedIssues},{_totalStats.MovedInIssues},{_totalStats.MovedOutIssues}");
+            sw.WriteLine($"{reportTime:MM-dd-yy},{_totalStats.CurrentIssues},{_totalStats.NewIssues},{_totalStats.ClosedIssues},{_totalStats.MovedInIssues},{_totalStats.MovedOutIssues}");
         }
     }
 }
