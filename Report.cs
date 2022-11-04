@@ -185,6 +185,7 @@ internal class ReportCreator
 
         await GenerateJsonCacheAsync(reportPath, reportFilePrefix, reportTime);
         await GenerateReportAsync(reportPath, reportFilePrefix, reportTime);
+        await UpdateGlobalCSV(reportPath, reportFilePrefix, reportTime);
 
         async Task GenerateReportAsync(string reportPath, string reportFilePrefix, DateTime reportTime)
         {
@@ -268,6 +269,16 @@ internal class ReportCreator
             using FileStream cacheFs = File.Create(Path.Combine(reportPath, $"{reportFilePrefix}-{reportTime:yyyy-MM-dd-hh-mm}.json"));
             await JsonSerializer.SerializeAsync(cacheFs, doc);
         }
+        async Task UpdateGlobalCSV(string reportPath, string reportFilePrefix, DateTime reportTime)
+        {
+            string csvPath = Path.Combine(reportPath, $"{reportFilePrefix}-totals.csv");
+            bool needsHeader = !File.Exists(csvPath);
+            using StreamWriter sw = new (csvPath, append: true);
 
+            if (needsHeader)
+                await sw.WriteLineAsync("date_utc,current_count,new_issues,closed_issues,moved_in,moved_out");
+
+            sw.Write($"{reportTime:MM-dd-yy},{_totalStats.CurrentIssues},{_totalStats.NewIssues},{_totalStats.ClosedIssues},{_totalStats.MovedInIssues},{_totalStats.MovedOutIssues}");
+        }
     }
 }
