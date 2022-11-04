@@ -1,3 +1,4 @@
+#nullable disable warnings
 namespace gh_issue_tracker.Models;
 
 public struct ReportConfig
@@ -5,6 +6,7 @@ public struct ReportConfig
     public string? ReportFriendlyName { get; set; }
     public string? ReportFilePrefix { get; set; }
     public string? ReportOutputPath { get; set; }
+    public string? SecretFilePath { get; set; }
 }
 
 public class QueryConfig

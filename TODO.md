@@ -8,3 +8,4 @@
 - If this fails to scale, consider adding this to a webhood + db as in Issuesof.net
 - blob backed storage
 - query IDs are brittle and incomplete
+- commandline parsing

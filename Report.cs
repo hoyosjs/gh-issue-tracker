@@ -24,13 +24,17 @@ internal class ReportCreator
     private readonly Dictionary<string, (DateTimeOffset, IReadOnlyList<IssueReportResult>)> _reportResults;
     private readonly Dictionary<string, (DateTimeOffset, IReadOnlyList<int>)> _priorResults;
 
-    public ReportCreator(string friendlyName, string clientName)
+    public ReportCreator(string friendlyName, string clientName, string? secretPath = null)
     {
-        _ghClient = new GitHubClient(new ProductHeaderValue(clientName))
+        _ghClient = new GitHubClient(new ProductHeaderValue(clientName));
+
+        if (secretPath is not null)
         {
-            // TODO: Expose this through env var or config
-            // Credentials = new Credentials()
-        };
+            // TODO: consider requiring user requirements
+            using StreamReader cacheFs = File.OpenText(secretPath);
+            _ghClient.Credentials = new Credentials(cacheFs.ReadLine());
+        }
+
         _totalStats = new QueryStats();
         _friendlyReportName = friendlyName;
         _reportResults = new Dictionary<string, (DateTimeOffset, IReadOnlyList<IssueReportResult>)>();

@@ -18,7 +18,8 @@ List<QueryConfig> qc = jdoc.RootElement.GetProperty("QueryConfigs").Deserialize<
 
 ReportCreator report = new(
     friendlyName: rc.ReportFriendlyName!,
-    clientName: rc.ReportFilePrefix!);
+    clientName: rc.ReportFilePrefix!,
+    secretPath: rc.SecretFilePath);
 
 if (args.Length == 2)
     await report.InitializePriorResultsFromJson(args[1]);
