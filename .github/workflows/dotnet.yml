@@ -30,8 +30,12 @@ jobs:
         dotnet-version: 6.0.x
     - name: Build
       run: |
-        [ -z "$GITHUB_TOKEN" ] && echo "empty"
         file=$(find reports -maxdepth 1 -name '*.json' | sort -r | head -1)
-        echo $file
         dotnet run -c release -- config.json $file
-        ls reports
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload Results
+      run: |
+        git add reports
+        git -c user.name="Report Generator" -c user.email="juan@hoyosjs.com" commit -m "Add report for diagnostics $(date +'%Y-%m-%d')"
+        git push
