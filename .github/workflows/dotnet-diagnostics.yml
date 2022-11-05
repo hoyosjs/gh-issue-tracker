@@ -7,7 +7,7 @@ on:
 
 jobs:
   DiagnosticReportWeekly:
-    uses: .github/workflows/generic-report-generator.yml
+    uses: ./.github/workflows/generic-report-generator.yml
     with:
       configName: diagnostics
       reportFolderRelativePath: diagnostics-report
