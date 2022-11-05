@@ -2,7 +2,7 @@
     "ReportConfig": {
         "ReportFriendlyName": ".NET Diagnostics Report",
         "ReportFilePrefix": "dn-diag-issue-tracker",
-        "ReportOutputPath": "reports"
+        "ReportOutputPath": "diagnostics-reports"
     },
     "QueryConfigs": [
         {

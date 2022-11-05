@@ -43,6 +43,7 @@ List<GitHubQuery> queries = qc.SelectMany(
     (queryConfig, labels) => new GitHubQuery(
         queryConfig.RepoName,
         labels,
+        queryConfig.Milestone,
         queryConfig.GloballyExcludedLabels,
         queryConfig.ExcludedMilestone, 
         queryConfig.Version)).ToList();

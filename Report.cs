@@ -84,6 +84,7 @@ internal class ReportCreator
             queryArgs.Exclusions.Labels = query.ExcludedLabels;
             queryArgs.Exclusions.Milestone = query.ExcludedMilestone;
             queryArgs.Labels = query.Labels;
+            queryArgs.Milestone = query.Milestone;
 
             SearchIssuesResult results = await _ghClient.Search.SearchIssues(queryArgs);
             QueryStats singleQueryResults = await ProcessIssuesForQueryAsync(query.RepoName, query.GetQueryId(), results);

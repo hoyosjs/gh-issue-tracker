@@ -1,0 +1,13 @@
+name: Diagnostics .NET Report Weekly
+
+on:
+  schedule:
+  - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  DiagnosticReportWeekly:
+    uses: .github/workflows/generic-report-generator.yml
+    with:
+      configName: diagnostics
+      reportFolderRelativePath: diagnostics-report

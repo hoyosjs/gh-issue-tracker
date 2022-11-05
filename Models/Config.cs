@@ -14,6 +14,7 @@ public class QueryConfig
     public string RepoName { get; set; }
     public string[]? GloballyExcludedLabels { get; set; }
     public string? ExcludedMilestone { get; set; }
+    public string? Milestone { get; set; }
     public List<string[]?> LabelGroups { get; set; }
     public int Version { get; set; }
 }

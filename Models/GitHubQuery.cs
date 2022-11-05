@@ -7,12 +7,14 @@ internal class GitHubQuery
     internal GitHubQuery(
             string repoName,
             string[]? labels,
+            string? milestone,
             string[]? excludedLabels,
             string? excludedMilestone,
             int version)
     {
         RepoName = repoName;
         Labels = labels;
+        Milestone = milestone;
         ExcludedLabels = excludedLabels;
         ExcludedMilestone = excludedMilestone;
         _version = version;
@@ -25,6 +27,7 @@ internal class GitHubQuery
 
     public string RepoName { get; init; }
     public string[]? Labels { get; init; }
+    public string? Milestone { get; init; }
     public string[]? ExcludedLabels { get; init; }
     public string? ExcludedMilestone { get; init; }
 
