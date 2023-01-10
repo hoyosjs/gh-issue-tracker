@@ -60,15 +60,17 @@ jobs:
         git -c user.name="Report Generator" -c user.email="juan@hoyosjs.com" commit -m "Add report for diagnostics $(date +'%Y-%m-%d')"
         git push
     - name: Get new report name
+      id: calculate-name
       if: ${{ inputs.oldConfigName != '' }}
       run: |
         report=$(find ${{ inputs.reportFolderRelativePath }} -maxdepth 1 -name '*.md' | sort -r | head -1)
+        echo "Found report: \"$report\""
         echo "report=$report" >> $GITHUB_OUTPUT
     - name: Upload Results as pipeline artifact
       if: ${{ inputs.oldConfigName != '' }}
       uses: actions/upload-artifact@v3.1.2
       with:
         name: report
-        path: ${{ inputs.reportFolderRelativePath }}/${{ steps.validate-inputs.report.file }}
+        path: ${{ steps.calculate-name.outputs.report }}
         if-no-files-found: error
         retention-days: 5
