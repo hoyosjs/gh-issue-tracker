@@ -10,6 +10,9 @@ on:
         reportFolderRelativePath:
           required: true
           type: string
+        oldConfigName:
+          required: false
+          type: string
 
 permissions:
   issues: read
@@ -24,6 +27,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Validate Inputs
+      id: validate-inputs
+      run: |
+        if [ -n "${{ inputs.oldConfigName }}" ]; then
+          file=${{ format("{0}/{1}", inputs.reportFolderRelativePath, inputs.oldConfigName) }}
+          [ ! -f $file ] && echo "Cached result "$file" not found" && exit 1
+        else
+          file=$(find ${{ inputs.reportFolderRelativePath }} -maxdepth 1 -name '*.json' | sort -r | head -1)
+          [ -z "$file" ] && echo "No cached result found."
+          [ -n "$file" ] && echo "Using cached result: "$file""
+        fi
+        
+        echo "Using config: "Configs/${{ inputs.configName }}.json""
+        echo "Using cached result: "$file""
+        echo "file=$file" >> $GITHUB_OUTPUT
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
@@ -31,15 +49,25 @@ jobs:
         dotnet-version: 6.0.x
     - name: Build
       run: |
-        echo "Using config: "Configs/${{ inputs.configName }}.json""
-        file=$(find ${{ inputs.reportFolderRelativePath }} -maxdepth 1 -name '*.json' | sort -r | head -1)
-        [ -z "$file" ] && echo "No cached result found."
-        [ -n "$file" ] && echo "Using cached result: "$file""
-        dotnet run -c release -- "Configs/${{ inputs.configName }}.json" "$file"
+        dotnet run -c release -- "Configs/${{ inputs.configName }}.json" "${{ steps.validate-inputs.outputs.file }}"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Upload Results
+      if: ${{ inputs.oldConfigName == '' }}
       run: |
         git add *reports
         git -c user.name="Report Generator" -c user.email="juan@hoyosjs.com" commit -m "Add report for diagnostics $(date +'%Y-%m-%d')"
         git push
+    - name: Upload Results as pipeline artifact
+      if: ${{ inputs.oldConfigName != '' }}
+      run: |
+        report=$(find ${{ inputs.reportFolderRelativePath }} -maxdepth 1 -name '*.json' | sort -r | head -1)
+        echo "report=$report" >> $GITHUB_OUTPUT
+    - name: Upload Results as pipeline artifact
+      if: ${{ inputs.oldConfigName != '' }}
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        name: report
+        path: ${{ inputs.reportFolderRelativePath }}/${{ steps.validate-inputs.outputs.file }}
+      error: true
+      retention-days: 5
