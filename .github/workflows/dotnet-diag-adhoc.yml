@@ -1,0 +1,15 @@
+name: Diagnostics .NET Report Ad Hoc
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_json_report:
+        description: 'JSON cache file'
+        required: true
+jobs:
+  DiagnosticReport:
+    uses: ./.github/workflows/generic-report-generator.yml
+    with:
+      configName: diagnostics
+      reportFolderRelativePath: diagnostics-reports
+      oldConfigName: ${{ github.event.inputs.base_json_report }}
