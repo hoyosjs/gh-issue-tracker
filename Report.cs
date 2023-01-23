@@ -301,6 +301,8 @@ internal class ReportCreator
 
             DateTimeOffset slaCapDate = reportTime.AddMonths(-1 * slaHighlightsTimeInMonths.Value);
             await txtWriter.WriteLineAsync($"## Issues Out of Time SLA ({slaHighlightsTimeInMonths} months)");
+            await txtWriter.WriteLineAsync("| **Issue Number** | **Title** |");
+            await txtWriter.WriteLineAsync("| :--------------: | --------- |");
 
             foreach ((_, IList<IssueReportResult> issueResults) in _reportResults.Values)
             {
