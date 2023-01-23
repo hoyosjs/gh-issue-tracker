@@ -17,7 +17,33 @@ record struct QueryStats (int CurrentIssues, int NewIssues, int ClosedIssues, in
         MovedOutIssues: lhs.MovedOutIssues + rhs.MovedOutIssues);
 }
 
-record struct IssueReportResult(string Repository, int IssueId, string IssueName, string IssueUrl, IssueType Type, string OriginatorQuery);
+internal class IssueReportResult
+{
+    internal string Repository { get; }
+    internal int IssueId { get; }
+    internal string IssueName { get; }
+    internal string IssueUrl  { get; }
+    internal IssueType Type { get; set; }
+    internal string OriginatorQuery  { get; }
+    internal DateTimeOffset CreationTime  { get; }
+
+    public IssueReportResult(string repository,
+                             int issueId,
+                             string issueName,
+                             string issueUrl,
+                             IssueType type,
+                             string originatorQuery,
+                             DateTimeOffset creationTime)
+    {
+        Repository = repository;
+        IssueId = issueId;
+        IssueName = issueName;
+        IssueUrl = issueUrl;
+        Type = type;
+        OriginatorQuery = originatorQuery;
+        CreationTime = creationTime;
+    }
+}
 
 enum IssueType
 {

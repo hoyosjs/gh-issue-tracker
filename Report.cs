@@ -21,7 +21,7 @@ internal class ReportCreator
     private QueryStats _totalStats;
     private readonly string _friendlyReportName;
     private readonly GitHubClient _ghClient;
-    private readonly Dictionary<string, (DateTimeOffset, IReadOnlyList<IssueReportResult>)> _reportResults;
+    private readonly Dictionary<string, (DateTimeOffset, IList<IssueReportResult>)> _reportResults;
     private readonly Dictionary<string, (DateTimeOffset, IReadOnlyList<int>)> _priorResults;
 
     public ReportCreator(string friendlyName, string clientName, string? pat = null)
@@ -35,7 +35,7 @@ internal class ReportCreator
 
         _totalStats = new QueryStats();
         _friendlyReportName = friendlyName;
-        _reportResults = new Dictionary<string, (DateTimeOffset, IReadOnlyList<IssueReportResult>)>();
+        _reportResults = new Dictionary<string, (DateTimeOffset, IList<IssueReportResult>)>();
         _priorResults = new Dictionary<string, (DateTimeOffset, IReadOnlyList<int>)>();
     }
 
@@ -91,6 +91,19 @@ internal class ReportCreator
             _totalStats += singleQueryResults;
         }
 
+        // Deduplicate issues that might be moving between queries.
+        List<IssueReportResult> fullResults = _reportResults.SelectMany(x => x.Value.Item2).ToList();
+        fullResults.Sort((lhs, rhs) => lhs.IssueId.CompareTo(rhs.IssueId));
+
+        for (int i = 0; i + 1 < fullResults.Count; i++)
+        {
+            if (fullResults[i].IssueId == fullResults[i + 1].IssueId)
+            {
+                fullResults[i].Type = IssueType.Old;
+                fullResults[i + 1].Type = IssueType.Old;
+            }
+        }
+
         async Task<QueryStats> ProcessIssuesForQueryAsync(string repo, string queryId, SearchIssuesResult results)
         {
             // TODO: Store them split in the model...
@@ -131,7 +144,7 @@ internal class ReportCreator
                 }
 
                 seenIssues.Add(issue.Number);
-                classifiedIssues.Add(new(repo, issue.Number, issue.Title, issue.HtmlUrl, type, queryId));
+                classifiedIssues.Add(new(repo, issue.Number, issue.Title, issue.HtmlUrl, type, queryId, issue.CreatedAt));
             }
 
             foreach (int issueId in priorIssueIdList)
@@ -155,7 +168,7 @@ internal class ReportCreator
                     singleQueryStats.MovedOutIssues++;
                 }
 
-                classifiedIssues.Add(new(repo, issue.Number, issue.Title, issue.HtmlUrl, type, queryId));
+                classifiedIssues.Add(new(repo, issue.Number, issue.Title, issue.HtmlUrl, type, queryId, issue.CreatedAt));
             }
 
             _reportResults.Add(queryId, (newestIssueTime, classifiedIssues));
@@ -177,16 +190,16 @@ internal class ReportCreator
     }
 
     // TODO: this could easily be better
-    public async Task WriteAsync(string reportPath, string reportFilePrefix)
+    public async Task WriteAsync(string reportPath, string reportFilePrefix, int? slaHighlightsTimeInMonths)
     {
         Directory.CreateDirectory(reportPath);
         DateTime reportTime = DateTime.UtcNow;
 
         await GenerateJsonCacheAsync(reportPath, reportFilePrefix, reportTime);
-        await GenerateReportAsync(reportPath, reportFilePrefix, reportTime);
+        await GenerateReportAsync(reportPath, reportFilePrefix, reportTime, slaHighlightsTimeInMonths);
         await UpdateGlobalCSV(reportPath, reportFilePrefix, reportTime);
 
-        async Task GenerateReportAsync(string reportPath, string reportFilePrefix, DateTime reportTime)
+        async Task GenerateReportAsync(string reportPath, string reportFilePrefix, DateTime reportTime, int? slaHighlightsTimeInMonths)
         {
             using StreamWriter txtWriter = File.CreateText(Path.Combine(reportPath, $"{reportFilePrefix}-{reportTime:yyyy-MM-dd-hh-mm}.md"));
 
@@ -199,8 +212,9 @@ internal class ReportCreator
 
             await WriteReportSection(txtWriter, "New Issues", IssueType.New);
             await WriteReportSection(txtWriter, "Closed Issues", IssueType.Closed);
-            await WriteReportSection(txtWriter, "Moved Issues", IssueType.MovedIn);
+            await WriteReportSection(txtWriter, "Moved In Issues", IssueType.MovedIn);
             await WriteReportSection(txtWriter, "Removed Issues", IssueType.MovedOut);
+            await WriteSLASection(txtWriter, reportTime, slaHighlightsTimeInMonths);
         }
 
         async Task WriteReportSection(StreamWriter txtWriter, string sectionName, IssueType issueTypeToPrint)
@@ -211,7 +225,7 @@ internal class ReportCreator
             await txtWriter.WriteLineAsync("| **Issue Number** | **Title** |");
             await txtWriter.WriteLineAsync("| :--------------: | --------- |");
 
-            foreach ((_, IReadOnlyList<IssueReportResult> issueResults) in _reportResults.Values)
+            foreach ((_, IList<IssueReportResult> issueResults) in _reportResults.Values)
             {
                 foreach (IssueReportResult issue in issueResults.Where(x => x.Type == issueTypeToPrint))
                 {
@@ -242,7 +256,7 @@ internal class ReportCreator
                 }
             };
 
-            foreach ((string key, (DateTimeOffset newestIssueDate, IReadOnlyList<IssueReportResult> issueResults)) in _reportResults)
+            foreach ((string key, (DateTimeOffset newestIssueDate, IList<IssueReportResult> issueResults)) in _reportResults)
             {
                 JsonArray issueIdList = new();
                 int activeCount = 0;
@@ -279,5 +293,23 @@ internal class ReportCreator
 
             sw.WriteLine($"{reportTime:MM-dd-yy},{_totalStats.CurrentIssues},{_totalStats.NewIssues},{_totalStats.ClosedIssues},{_totalStats.MovedInIssues},{_totalStats.MovedOutIssues}");
         }
+
+        async Task WriteSLASection(StreamWriter txtWriter, DateTime reportTime, int? slaHighlightsTimeInMonths)
+        {
+            if (!slaHighlightsTimeInMonths.HasValue)
+                return;
+
+            DateTimeOffset slaCapDate = reportTime.AddMonths(-1 * slaHighlightsTimeInMonths.Value);
+            await txtWriter.WriteLineAsync($"## Issues Out of Time SLA ({slaHighlightsTimeInMonths} months)");
+
+            foreach ((_, IList<IssueReportResult> issueResults) in _reportResults.Values)
+            {
+                foreach (IssueReportResult issue in issueResults.Where(x => x.CreationTime < slaCapDate))
+                {
+                    await txtWriter.WriteLineAsync($"| [{issue.Repository}#{issue.IssueId}]({issue.IssueUrl}) | {issue.IssueName} |");
+                }
+            }
+        }
     }
+
 }

@@ -7,6 +7,7 @@ public struct ReportConfig
     public string? ReportFilePrefix { get; set; }
     public string? ReportOutputPath { get; set; }
     public string? SecretFilePath { get; set; }
+    public int? SlaHighlightsTimeInMonths { get; set; }
 }
 
 public class QueryConfig
