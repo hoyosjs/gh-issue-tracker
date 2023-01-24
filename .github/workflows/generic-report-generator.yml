@@ -12,7 +12,7 @@ on:
           description: 'Folder to look for latest cached result in.'
           required: true
           type: string
-        oldConfigName:
+        oldConfigDate:
           description: 'Optional. Name of the report in reportFolderRelativePath to use as the base cache report. If passed, results are only available as a pipeline artifact.'
           required: false
           type: string
@@ -35,10 +35,11 @@ jobs:
       id: validate-inputs
       run: |
         if [ -n "${{ inputs.oldConfigName }}" ]; then
-          file=${{ format('{0}/{1}', inputs.reportFolderRelativePath, inputs.oldConfigName) }}
+          file="${{ inputs.oldConfigName }}"
           [ ! -f $file ] && echo "Cached result \"$file\" not found" && exit 1
         else
-          file=$(find ${{ inputs.reportFolderRelativePath }} -maxdepth 1 -name '*.json' | sort -r | head -1)
+          file=$(find ${{ inputs.reportFolderRelativePath }} -maxdepth 1 -type d | sort -r | head -1)
+          file=$(find $file -maxdepth 1 -name *-cache.json | sort -r | head -1)
           [ -z "$file" ] && echo "No cached result found."
         fi
         [ -n "$file" ] && echo "Using cached result: \"$file\""
@@ -50,22 +51,25 @@ jobs:
         dotnet-version: 6.0.x
     - name: Build
       run: |
-        dotnet run -c release -- "Configs/${{ inputs.configName }}.json" "${{ steps.validate-inputs.outputs.file }}"
+        dotnet run -c release -- generate-all-reports "Configs/${{ inputs.configName }}.json" "${{ steps.validate-inputs.outputs.file }}"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Get new report name
+      id: calculate-name
+      run: |
+        report=$(find ${{ inputs.reportFolderRelativePath }} -maxdepth 1 -type d | sort -r | head -1)
+        echo "Found report folder: \"$report\""
+        echo "report=$report" >> $GITHUB_OUTPUT
+    - name: Copy New Full Report
+      if: ${{ inputs.oldConfigName == '' }}
+      run: |
+        mv ${{ steps.calculate-name.outputs.report }}/*-full.md ${{ inputs.reportFolderRelativePath }}
     - name: Upload Results
       if: ${{ inputs.oldConfigName == '' }}
       run: |
         git add *reports
         git -c user.name="Report Generator" -c user.email="juan@hoyosjs.com" commit -m "Add report for diagnostics $(date +'%Y-%m-%d')"
         git push
-    - name: Get new report name
-      id: calculate-name
-      if: ${{ inputs.oldConfigName != '' }}
-      run: |
-        report=$(find ${{ inputs.reportFolderRelativePath }} -maxdepth 1 -name '*.md' | sort -r | head -1)
-        echo "Found report: \"$report\""
-        echo "report=$report" >> $GITHUB_OUTPUT
     - name: Upload Results as pipeline artifact
       if: ${{ inputs.oldConfigName != '' }}
       uses: actions/upload-artifact@v3.1.2

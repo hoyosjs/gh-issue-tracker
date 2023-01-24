@@ -18,6 +18,14 @@ internal class ReportCreator
         public const string IssueIdList = "issueIdList";
     }
 
+    public enum ReportGenerationType
+    {
+        Comparative,
+        Full,
+        All,
+        Invalid
+    }
+
     private QueryStats _totalStats;
     private readonly string _friendlyReportName;
     private readonly GitHubClient _ghClient;
@@ -190,34 +198,56 @@ internal class ReportCreator
     }
 
     // TODO: this could easily be better
-    public async Task WriteAsync(string reportPath, string reportFilePrefix, int? slaHighlightsTimeInMonths)
+    public async Task WriteAsync(string reportPath, string reportFilePrefix, int? slaHighlightsTimeInMonths, ReportGenerationType reportType)
     {
-        Directory.CreateDirectory(reportPath);
         DateTime reportTime = DateTime.UtcNow;
+        string fileTimeString = reportTime.ToString("yyyy-MM-dd-hh-mm");
+        bool shouldIncludeSla = slaHighlightsTimeInMonths.HasValue;
+        DateTimeOffset slaCapDate = shouldIncludeSla ? reportTime.AddMonths(-1 * slaHighlightsTimeInMonths!.Value) : default;
 
-        await GenerateJsonCacheAsync(reportPath, reportFilePrefix, reportTime);
-        await GenerateReportAsync(reportPath, reportFilePrefix, reportTime, slaHighlightsTimeInMonths);
-        await UpdateGlobalCSV(reportPath, reportFilePrefix, reportTime);
+        string subReportPath = Path.Join(reportPath, fileTimeString);
+        Directory.CreateDirectory(subReportPath);
 
-        async Task GenerateReportAsync(string reportPath, string reportFilePrefix, DateTime reportTime, int? slaHighlightsTimeInMonths)
+        if (reportType is ReportGenerationType.Comparative or ReportGenerationType.All)
         {
-            using StreamWriter txtWriter = File.CreateText(Path.Combine(reportPath, $"{reportFilePrefix}-{reportTime:yyyy-MM-dd-hh-mm}.md"));
+            await UpdateGlobalCSV(reportPath, reportFilePrefix, reportTime);
+            await GenerateJsonCacheAsync(subReportPath, reportFilePrefix, reportTime);
+            await GenerateCompReportAsync(subReportPath,
+                                    reportFilePrefix,
+                                    reportTime);
+        }
 
-            await txtWriter.WriteLineAsync($"# {_friendlyReportName} - {reportTime}");
+        if (reportType is ReportGenerationType.Full or ReportGenerationType.All)
+        {
+            await WriteFullReport(subReportPath);
+        }
+
+        async Task GenerateCompReportAsync(string reportPath,
+                                       string reportFilePrefix,
+                                       DateTime reportTime)
+        {
+            using StreamWriter txtWriter = File.CreateText(Path.Combine(reportPath, $"{reportFilePrefix}-comp.md"));
+
+            await txtWriter.WriteLineAsync($"# {_friendlyReportName} Comparative Report - {reportTime}");
             await txtWriter.WriteLineAsync();
             await txtWriter.WriteLineAsync("## Overall Stats");
             await txtWriter.WriteLineAsync();
             await txtWriter.WriteLineAsync(_totalStats.ToString());
             await txtWriter.WriteLineAsync();
 
-            await WriteReportSection(txtWriter, "New Issues", IssueType.New);
-            await WriteReportSection(txtWriter, "Closed Issues", IssueType.Closed);
-            await WriteReportSection(txtWriter, "Moved In Issues", IssueType.MovedIn);
-            await WriteReportSection(txtWriter, "Removed Issues", IssueType.MovedOut);
-            await WriteSLASection(txtWriter, reportTime, slaHighlightsTimeInMonths);
+            await WriteCompReportSection(txtWriter, "New Issues", x => x.Type == IssueType.New);
+            await WriteCompReportSection(txtWriter, "Closed Issues", x => x.Type == IssueType.Closed);
+            await WriteCompReportSection(txtWriter, "Moved In Issues", x => x.Type == IssueType.MovedIn);
+            await WriteCompReportSection(txtWriter, "Removed Issues", x => x.Type == IssueType.MovedOut);
+            if (shouldIncludeSla)
+            {
+                await WriteCompReportSection(txtWriter,
+                                            $"Issues Out of Time SLA ({slaHighlightsTimeInMonths} months)",
+                                            x => x.CreationTime < slaCapDate && x.Type is not IssueType.Closed and not IssueType.MovedOut);
+            }
         }
 
-        async Task WriteReportSection(StreamWriter txtWriter, string sectionName, IssueType issueTypeToPrint)
+        async Task WriteCompReportSection(StreamWriter txtWriter, string sectionName, Func<IssueReportResult, bool> filterResultLambda)
         {
             await txtWriter.WriteLineAsync($"## {sectionName}");
             await txtWriter.WriteLineAsync();
@@ -227,13 +257,54 @@ internal class ReportCreator
 
             foreach ((_, IList<IssueReportResult> issueResults) in _reportResults.Values)
             {
-                foreach (IssueReportResult issue in issueResults.Where(x => x.Type == issueTypeToPrint))
+                foreach (IssueReportResult issue in issueResults.Where(filterResultLambda))
                 {
                     await txtWriter.WriteLineAsync($"| [{issue.Repository}#{issue.IssueId}]({issue.IssueUrl}) | {issue.IssueName} |");
                 }
             }
 
             await txtWriter.WriteLineAsync();
+        }
+
+        async Task WriteFullReport(string reportPath)
+        {
+            using StreamWriter txtWriter = File.CreateText(Path.Combine(reportPath, $"{reportFilePrefix}-full.md"));
+
+            await txtWriter.WriteLineAsync($"# {_friendlyReportName} Full Report - {reportTime}");
+            await txtWriter.WriteLineAsync();
+            await txtWriter.WriteLineAsync($"Total issues: {_totalStats.CurrentIssues}");
+            await txtWriter.WriteLineAsync();
+
+            foreach ((string query, (_, IList<IssueReportResult> issueResults)) in _reportResults)
+            {
+                await txtWriter.WriteLineAsync($"## {query}");
+                await txtWriter.WriteLineAsync();
+
+                var curIssues = issueResults
+                                    .Where(x => x.Type is not IssueType.Closed and not IssueType.MovedOut)
+                                    .ToList();
+
+                await txtWriter.WriteLineAsync($"Issues in query: {curIssues.Count}");
+                await txtWriter.WriteLineAsync();
+
+                if (curIssues.Count == 0)
+                {
+                    continue;
+                }
+
+                await txtWriter.WriteLineAsync("| **Issue Number** | **Title** |");
+                await txtWriter.WriteLineAsync("| :--------------: | --------- |");
+
+                foreach (IssueReportResult issue in curIssues)
+                {
+                    string name = shouldIncludeSla && slaCapDate > issue.CreationTime ?
+                        $"**\<OUT OF SLA\>** {issue.IssueName}" :
+                        $"{issue.IssueName}";
+                    await txtWriter.WriteLineAsync($"| [{issue.Repository}#{issue.IssueId}]({issue.IssueUrl}) | {name} |");
+                }
+
+                await txtWriter.WriteLineAsync();
+            }
         }
 
         async Task GenerateJsonCacheAsync(string reportPath, string reportFilePrefix, DateTime reportTime)
@@ -279,7 +350,7 @@ internal class ReportCreator
                     });
             }
 
-            using FileStream cacheFs = File.Create(Path.Combine(reportPath, $"{reportFilePrefix}-{reportTime:yyyy-MM-dd-hh-mm}.json"));
+            using FileStream cacheFs = File.Create(Path.Combine(reportPath, $"{reportFilePrefix}-cache.json"));
             await JsonSerializer.SerializeAsync(cacheFs, doc);
         }
         async Task UpdateGlobalCSV(string reportPath, string reportFilePrefix, DateTime reportTime)
@@ -292,25 +363,6 @@ internal class ReportCreator
                 await sw.WriteLineAsync("date_utc,current_count,new_issues,closed_issues,moved_in,moved_out");
 
             sw.WriteLine($"{reportTime:MM-dd-yy},{_totalStats.CurrentIssues},{_totalStats.NewIssues},{_totalStats.ClosedIssues},{_totalStats.MovedInIssues},{_totalStats.MovedOutIssues}");
-        }
-
-        async Task WriteSLASection(StreamWriter txtWriter, DateTime reportTime, int? slaHighlightsTimeInMonths)
-        {
-            if (!slaHighlightsTimeInMonths.HasValue)
-                return;
-
-            DateTimeOffset slaCapDate = reportTime.AddMonths(-1 * slaHighlightsTimeInMonths.Value);
-            await txtWriter.WriteLineAsync($"## Issues Out of Time SLA ({slaHighlightsTimeInMonths} months)");
-            await txtWriter.WriteLineAsync("| **Issue Number** | **Title** |");
-            await txtWriter.WriteLineAsync("| :--------------: | --------- |");
-
-            foreach ((_, IList<IssueReportResult> issueResults) in _reportResults.Values)
-            {
-                foreach (IssueReportResult issue in issueResults.Where(x => x.CreationTime < slaCapDate))
-                {
-                    await txtWriter.WriteLineAsync($"| [{issue.Repository}#{issue.IssueId}]({issue.IssueUrl}) | {issue.IssueName} |");
-                }
-            }
         }
     }
 

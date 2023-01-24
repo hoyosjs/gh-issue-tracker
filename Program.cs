@@ -2,15 +2,29 @@
 using gh_issue_tracker.Models;
 using gh_issue_tracker.Report;
 
-if (args.Length > 2
+if (args.Length > 3 || args.Length < 2
     || (args[0] == "-h" || args[0] == "--help")
     || (args[1] == "-h" || args[1] == "--help"))
 {
-    Console.WriteLine("Usage: <path to config> <path to prior query json>");
+    Console.WriteLine("Usage: gh-issue-tracker <verb> <path to config> <path to prior query json>");
     return 1;
 }
 
-using var configFs = File.OpenRead(args[0]);
+ReportCreator.ReportGenerationType mode =  args[0] switch 
+{
+    "generate-full-report" => ReportCreator.ReportGenerationType.Full,
+    "generate-comparison-report" => ReportCreator.ReportGenerationType.Comparative,
+    "generate-all-reports" => ReportCreator.ReportGenerationType.All,
+    _ => ReportCreator.ReportGenerationType.Invalid
+};
+
+if (mode == ReportCreator.ReportGenerationType.Invalid)
+{
+    Console.WriteLine("verb must be 'generate-full-report', 'generate-all-reports',  or 'generate-comparison-report'");
+    return 1;
+}
+
+using var configFs = File.OpenRead(args[1]);
 using JsonDocument jdoc = await JsonDocument.ParseAsync(configFs);
 
 ReportConfig rc = jdoc.RootElement.GetProperty(nameof(ReportConfig)).Deserialize<ReportConfig>();
@@ -27,7 +41,7 @@ if (rc.SecretFilePath is not null)
 
 if (ghPat is null)
 {
-    Environment.GetEnvironmentVariable("GITHUB_TOKEN");
+    ghPat = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
 }
 
 ReportCreator report = new(
@@ -35,8 +49,11 @@ ReportCreator report = new(
     clientName: rc.ReportFilePrefix!,
     pat: ghPat);
 
-if (args.Length == 2)
-    await report.InitializePriorResultsFromJson(args[1]);
+if (args.Length == 3
+    && (mode == ReportCreator.ReportGenerationType.All || mode == ReportCreator.ReportGenerationType.Comparative))
+{
+    await report.InitializePriorResultsFromJson(args[2]);
+}
 
 List<GitHubQuery> queries = qc.SelectMany(
     queryConfig => queryConfig.LabelGroups,
@@ -51,5 +68,8 @@ List<GitHubQuery> queries = qc.SelectMany(
 await report.QueryIssuesAsync(queries);
 
 
-await report.WriteAsync(rc.ReportOutputPath!, rc.ReportFilePrefix!, rc.SlaHighlightsTimeInMonths);
+await report.WriteAsync(rc.ReportOutputPath!,
+                        rc.ReportFilePrefix!,
+                        rc.SlaHighlightsTimeInMonths,
+                        mode);
 return 0;
