@@ -3,8 +3,8 @@ name: Diagnostics .NET Report Ad Hoc
 on:
   workflow_dispatch:
     inputs:
-      base_json_report:
-        description: 'JSON cache file'
+      base_json_date:
+        description: 'JSON cache date'
         required: true
 jobs:
   DiagnosticReport:
@@ -12,4 +12,4 @@ jobs:
     with:
       configName: diagnostics
       reportFolderRelativePath: diagnostics-reports
-      oldConfigName: ${{ github.event.inputs.base_json_report }}
+      oldConfigDate: ${{ github.event.inputs.base_json_date }}
