@@ -35,8 +35,8 @@ jobs:
       id: validate-inputs
       run: |
         if [ -n "${{ inputs.oldConfigName }}" ]; then
-          file="${{ inputs.oldConfigName }}"
-          [ ! -f $file ] && echo "Cached result \"$file\" not found" && exit 1
+          file=$(find ${{ inputs.reportFolderRelativePath }}/${{ inputs.oldConfigDate }} -maxdepth 1 -type f -name *-cache.json | sort -r | head -1)
+          [ ! -f $file ] && echo "Cached result not found at ${{ inputs.reportFolderRelativePath }}/${{ inputs.oldConfigDate }}." && exit 1
         else
           file=$(find ${{ inputs.reportFolderRelativePath }} -maxdepth 1 -type d | sort -r | head -1)
           file=$(find $file -maxdepth 1 -name *-cache.json | sort -r | head -1)
