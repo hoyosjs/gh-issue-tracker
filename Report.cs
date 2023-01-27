@@ -298,7 +298,7 @@ internal class ReportCreator
                 foreach (IssueReportResult issue in curIssues)
                 {
                     string name = shouldIncludeSla && slaCapDate > issue.CreationTime ?
-                        $"**\<OUT OF SLA\>** {issue.IssueName}" :
+                        @$"**\<OUT OF SLA\>** {issue.IssueName}" :
                         $"{issue.IssueName}";
                     await txtWriter.WriteLineAsync($"| [{issue.Repository}#{issue.IssueId}]({issue.IssueUrl}) | {name} |");
                 }
