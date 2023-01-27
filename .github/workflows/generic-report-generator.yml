@@ -34,7 +34,7 @@ jobs:
     - name: Validate Inputs
       id: validate-inputs
       run: |
-        if [ -n "${{ inputs.oldConfigName }}" ]; then
+        if [ -n "${{ inputs.oldConfigDate }}" ]; then
           file=$(find ${{ inputs.reportFolderRelativePath }}/${{ inputs.oldConfigDate }} -maxdepth 1 -type f -name *-cache.json | sort -r | head -1)
           [ ! -f $file ] && echo "Cached result not found at ${{ inputs.reportFolderRelativePath }}/${{ inputs.oldConfigDate }}." && exit 1
         else
@@ -60,18 +60,15 @@ jobs:
         report=$(find ${{ inputs.reportFolderRelativePath }} -maxdepth 1 -type d | sort -r | head -1)
         echo "Found report folder: \"$report\""
         echo "report=$report" >> $GITHUB_OUTPUT
-    - name: Copy New Full Report
-      if: ${{ inputs.oldConfigName == '' }}
+    - name: Upload Results
+      if: ${{ inputs.oldConfigDate == '' }}
       run: |
         mv ${{ steps.calculate-name.outputs.report }}/*-full.md ${{ inputs.reportFolderRelativePath }}
-    - name: Upload Results
-      if: ${{ inputs.oldConfigName == '' }}
-      run: |
         git add *reports
         git -c user.name="Report Generator" -c user.email="juan@hoyosjs.com" commit -m "Add report for diagnostics $(date +'%Y-%m-%d')"
         git push
     - name: Upload Results as pipeline artifact
-      if: ${{ inputs.oldConfigName != '' }}
+      if: ${{ inputs.oldConfigDate != '' }}
       uses: actions/upload-artifact@v3.1.2
       with:
         name: report
