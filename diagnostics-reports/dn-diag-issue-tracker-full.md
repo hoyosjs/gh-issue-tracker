@@ -1,14 +1,13 @@
-# .NET Diagnostics Report Full Report - 01/31/2023 21:07:21
+# .NET Diagnostics Report Full Report - 02/06/2023 18:42:51
 
-Total issues: 53
+Total issues: 52
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 23
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#3622](https://github.com/dotnet/diagnostics/issues/3622) | `dotnet counters list` defaults to out of support `--runtime-version 3.1` |
 | [dotnet/diagnostics#3581](https://github.com/dotnet/diagnostics/issues/3581) | eeversion prints wrong mode |
 | [dotnet/diagnostics#3566](https://github.com/dotnet/diagnostics/issues/3566) | `listnearobj` can't confirm heap consistency with .NET 7 |
 | [dotnet/diagnostics#3516](https://github.com/dotnet/diagnostics/issues/3516) | DumpMT disabled in SOS.OtherCommands for .NET 7.0+ |
@@ -30,7 +29,7 @@ Issues in query: 23
 | [dotnet/diagnostics#2911](https://github.com/dotnet/diagnostics/issues/2911) | Guidance on using PerfView/other perf visualization tools. |
 | [dotnet/diagnostics#2905](https://github.com/dotnet/diagnostics/issues/2905) | Diagnosing managed memory leaks with dotnet-gcdump. |
 | [dotnet/diagnostics#2903](https://github.com/dotnet/diagnostics/issues/2903) | E2E guide how to collect a dump and debug it with VS or LLDB |
-| [dotnet/diagnostics#2841](https://github.com/dotnet/diagnostics/issues/2841) | dotnet-gcdump collect: System.Exception: Read past end of stream |
+| [dotnet/diagnostics#2841](https://github.com/dotnet/diagnostics/issues/2841) | **\<OUT OF SLA\>** dotnet-gcdump collect: System.Exception: Read past end of stream |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
@@ -55,7 +54,12 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 0
+Issues in query: 2
+
+| **Issue Number** | **Title** |
+| :--------------: | --------- |
+| [dotnet/runtime#81574](https://github.com/dotnet/runtime/issues/81574) | Dotnet-counter and other tools for specifying meter and ActivitySource names should support namespace wildcards  |
+| [dotnet/runtime#81534](https://github.com/dotnet/runtime/issues/81534) | Advancing Metrics in .NET |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
@@ -68,14 +72,12 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 22
+Issues in query: 20
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#81324](https://github.com/dotnet/runtime/issues/81324) | Test failure profiler/multiple/multiple/multiple.sh |
-| [dotnet/runtime#81165](https://github.com/dotnet/runtime/issues/81165) | Enabling a CPU profiler on Windows automatically enables ETW tracing and slows the app down by over 100x |
 | [dotnet/runtime#81148](https://github.com/dotnet/runtime/issues/81148) | ExecutionEngineException while debugging unit test |
-| [dotnet/runtime#80550](https://github.com/dotnet/runtime/issues/80550) | NET7 macOS: Missing dSYM files for libcoreclr (and others) |
 | [dotnet/runtime#80280](https://github.com/dotnet/runtime/issues/80280) | Build breaks in profiling samples |
 | [dotnet/runtime#79919](https://github.com/dotnet/runtime/issues/79919) | Unable to unwind exception on Xunit |
 | [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
@@ -92,6 +94,6 @@ Issues in query: 22
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
 | [dotnet/runtime#69380](https://github.com/dotnet/runtime/issues/69380) | createdump on AKS + Linux doesn't work correctly unless running in a shell |
 | [dotnet/runtime#68018](https://github.com/dotnet/runtime/issues/68018) | Application crash while stepping into if 'justMyCode' is disabled |
-| [dotnet/runtime#64765](https://github.com/dotnet/runtime/issues/64765) | profiler.multiple failing on MacOS 12.0 |
+| [dotnet/runtime#64765](https://github.com/dotnet/runtime/issues/64765) | **\<OUT OF SLA\>** profiler.multiple failing on MacOS 12.0 |
 | [dotnet/runtime#75581](https://github.com/dotnet/runtime/issues/75581) | Diagnostic port suspension message doesn't report expected port name |
 
