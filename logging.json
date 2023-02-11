@@ -1,0 +1,21 @@
+{
+    "Logging": {
+        "LogLevel": {
+            "Default": "None",
+            "gh_": "Information"
+        },
+        "Console": {
+            "LogToStandardErrorThreshold": "Warning",
+            "FormatterName": "simple",
+            "FormatterOptions": {
+                "SingleLine": false,
+                "IncludeScopes": true,
+                "TimestampFormat": "[HH:mm:ss] ",
+                "UseUtcTimestamp": true,
+                "JsonWriterOptions": {
+                    "Indented": true
+                }
+            }
+        }
+    }
+}

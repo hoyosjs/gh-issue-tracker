@@ -1,6 +1,8 @@
 ﻿using System.Text.Json;
 using gh_issue_tracker.Models;
 using gh_issue_tracker.Report;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 if (args.Length > 3 || args.Length < 2
     || (args[0] == "-h" || args[0] == "--help")
@@ -39,15 +41,26 @@ if (rc.SecretFilePath is not null)
     ghPat = cacheFs.ReadLine();
 }
 
-if (ghPat is null)
-{
-    ghPat = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
-}
+ghPat ??= Environment.GetEnvironmentVariable("GITHUB_TOKEN");
+
+var loggingConfiguration = new ConfigurationBuilder()
+                .AddJsonFile("logging.json", optional: false, reloadOnChange: false)
+                .Build();
+
+using var factory = LoggerFactory.Create(
+    (builder) =>
+    {
+        builder
+            .AddConfiguration(loggingConfiguration.GetSection("Logging"))
+            .AddConsole();
+    }
+);
 
 ReportCreator report = new(
     friendlyName: rc.ReportFriendlyName!,
     clientName: rc.ReportFilePrefix!,
-    pat: ghPat);
+    pat: ghPat,
+    logger: factory.CreateLogger<ReportCreator>());
 
 if (args.Length == 3
     && (mode == ReportCreator.ReportGenerationType.All || mode == ReportCreator.ReportGenerationType.Comparative))
