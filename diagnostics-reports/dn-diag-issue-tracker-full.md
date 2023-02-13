@@ -1,10 +1,10 @@
-# .NET Diagnostics Report Full Report - 02/06/2023 18:42:51
+# .NET Diagnostics Report Full Report - 02/13/2023 21:35:29
 
-Total issues: 52
+Total issues: 49
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 22
+Issues in query: 20
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -25,18 +25,17 @@ Issues in query: 22
 | [dotnet/diagnostics#3111](https://github.com/dotnet/diagnostics/issues/3111) | Reenable TestDbgEng tests in M.D.DebugServices.UnitTests |
 | [dotnet/diagnostics#3078](https://github.com/dotnet/diagnostics/issues/3078) | Update docs: make required version of LLDB clear |
 | [dotnet/diagnostics#2973](https://github.com/dotnet/diagnostics/issues/2973) | Dotnet-dump analyze shows "unknown" function name for my application symbols - public symbols resolve  |
-| [dotnet/diagnostics#2947](https://github.com/dotnet/diagnostics/issues/2947) | sos commands `eestack` & `dumpstack` crashed with .net 7.0 |
 | [dotnet/diagnostics#2911](https://github.com/dotnet/diagnostics/issues/2911) | Guidance on using PerfView/other perf visualization tools. |
 | [dotnet/diagnostics#2905](https://github.com/dotnet/diagnostics/issues/2905) | Diagnosing managed memory leaks with dotnet-gcdump. |
 | [dotnet/diagnostics#2903](https://github.com/dotnet/diagnostics/issues/2903) | E2E guide how to collect a dump and debug it with VS or LLDB |
-| [dotnet/diagnostics#2841](https://github.com/dotnet/diagnostics/issues/2841) | **\<OUT OF SLA\>** dotnet-gcdump collect: System.Exception: Read past end of stream |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 5
+Issues in query: 6
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#82021](https://github.com/dotnet/runtime/issues/82021) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#81323](https://github.com/dotnet/runtime/issues/81323) | Test failure tracing/eventpipe/rundownvalidation/rundownvalidation/rundownvalidation.sh |
 | [dotnet/runtime#80767](https://github.com/dotnet/runtime/issues/80767) | Test failure tracing/runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.sh |
 | [dotnet/runtime#78006](https://github.com/dotnet/runtime/issues/78006) | NRE in System.Diagnostics.Tracing.EventPipePayloadDecoder if Threading event keywords are enabled. |
@@ -54,12 +53,7 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 2
-
-| **Issue Number** | **Title** |
-| :--------------: | --------- |
-| [dotnet/runtime#81574](https://github.com/dotnet/runtime/issues/81574) | Dotnet-counter and other tools for specifying meter and ActivitySource names should support namespace wildcards  |
-| [dotnet/runtime#81534](https://github.com/dotnet/runtime/issues/81534) | Advancing Metrics in .NET |
+Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
@@ -76,6 +70,7 @@ Issues in query: 20
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#81921](https://github.com/dotnet/runtime/issues/81921) | Remotely debugging .NET 7 apps in linux-arm environments causes segmentation fault |
 | [dotnet/runtime#81324](https://github.com/dotnet/runtime/issues/81324) | Test failure profiler/multiple/multiple/multiple.sh |
 | [dotnet/runtime#81148](https://github.com/dotnet/runtime/issues/81148) | ExecutionEngineException while debugging unit test |
 | [dotnet/runtime#80280](https://github.com/dotnet/runtime/issues/80280) | Build breaks in profiling samples |
@@ -92,7 +87,6 @@ Issues in query: 20
 | [dotnet/runtime#71786](https://github.com/dotnet/runtime/issues/71786) | Linux perf support regressed on W^X enabled runs |
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
-| [dotnet/runtime#69380](https://github.com/dotnet/runtime/issues/69380) | createdump on AKS + Linux doesn't work correctly unless running in a shell |
 | [dotnet/runtime#68018](https://github.com/dotnet/runtime/issues/68018) | Application crash while stepping into if 'justMyCode' is disabled |
 | [dotnet/runtime#64765](https://github.com/dotnet/runtime/issues/64765) | **\<OUT OF SLA\>** profiler.multiple failing on MacOS 12.0 |
 | [dotnet/runtime#75581](https://github.com/dotnet/runtime/issues/75581) | Diagnostic port suspension message doesn't report expected port name |
