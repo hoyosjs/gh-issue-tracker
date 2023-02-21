@@ -30,12 +30,12 @@ internal class ReportCreator
         Invalid
     }
 
-    const long SecLimitPerReq = 61;
+    const long SecLimitPerReq = 90;
+    const long DefaultRetrySecs = 60;
     const long TotalMaxRetryWaitInSec = 60 * 50;
 
     private QueryStats _totalStats;
     private readonly AsyncRetryPolicy _ghRetryPolicy;
-    private long _totalSecsLeftForRetry;
     private readonly string _friendlyReportName;
     private readonly GitHubClient _ghClient;
     private readonly Dictionary<string, (DateTimeOffset, IList<IssueReportResult>)> _reportResults;
@@ -68,8 +68,6 @@ internal class ReportCreator
                             .WaitAndRetryAsync(retryCount: 1,
                                 sleepDurationProvider: GetBackoffForPolicy,
                                 onRetryAsync: LogRetry);
-
-        _totalSecsLeftForRetry = TotalMaxRetryWaitInSec;
     }
 
     public async Task InitializePriorResultsFromJson(string priorReportCachePath)
@@ -156,7 +154,20 @@ internal class ReportCreator
             string repoOrg = repoSplit[0];
             string repoName = repoSplit[1];
 
-            SearchIssuesResult results = await _ghRetryPolicy.ExecuteAsync(async () => await _ghClient.Search.SearchIssues(queryArgs));
+            Dictionary<string, object> context = new (){
+                { "TotalMaxRetryWaitInSec", TotalMaxRetryWaitInSec },
+                { "Client", _ghClient },
+                { "QueryArgs", queryArgs },
+                { "Logger", _logger }
+            };
+
+            SearchIssuesResult results = await _ghRetryPolicy.ExecuteAsync(
+                    static async (ctx) => {
+                        var ghClient = (GitHubClient)ctx["Client"];
+                        var args = (SearchIssuesRequest)ctx["QueryArgs"];
+                        return await ghClient.Search.SearchIssues(args);
+                    },
+                    context);
 
             QueryStats singleQueryStats = new()
             {
@@ -210,7 +221,12 @@ internal class ReportCreator
                 }
 
                 queryArgs.Page++;
-                results = await _ghRetryPolicy.ExecuteAsync(async () => await _ghClient.Search.SearchIssues(queryArgs));
+                results = await _ghRetryPolicy.ExecuteAsync(
+                    static async (ctx) => {
+                        var ghClient = (GitHubClient)ctx["Client"];
+                        var args = (SearchIssuesRequest)ctx["QueryArgs"];
+                        return await ghClient.Search.SearchIssues(args);
+                    }, context);
             }
 
             foreach (int issueId in priorIssueIdList)
@@ -220,7 +236,12 @@ internal class ReportCreator
                     continue;
                 }
 
-                Issue issue = await _ghRetryPolicy.ExecuteAsync(async () => await _ghClient.Issue.Get(repoOrg, repoName, issueId));
+                Issue issue = await _ghRetryPolicy.ExecuteAsync(
+                    async (ctx) => {
+                        var ghClient = (GitHubClient)ctx["Client"];
+                        var args = (SearchIssuesRequest)ctx["QueryArgs"];
+                        return await ghClient.Issue.Get(repoOrg, repoName, issueId);
+                    }, context);
 
                 IssueType type;
                 if (issue.State.Value == ItemState.Closed)
@@ -441,55 +462,60 @@ internal class ReportCreator
         }
     }
 
-    private TimeSpan GetBackoffForPolicy(int retry, Exception ex, Context ctx)
+    private static TimeSpan GetBackoffForPolicy(int retry, Exception ex, Context ctx)
     {
+        long totalSecsLeftForRetry = (long) ctx["TotalMaxRetryWaitInSec"];
+        var logger = (ILogger) ctx["Logger"];
+
         var apiEx =  (ApiException)ex;
 
-        var header = apiEx.HttpResponse
-                        .Headers
-                        .FirstOrDefault(h => string.Equals(h.Key, "Retry-After", StringComparison.OrdinalIgnoreCase));
+        long retryTimeInSec = -1;
 
-        long retryTimeInSec = 0;
-        if (header.Equals(default(KeyValuePair<string, string>)))
+        if (apiEx.HttpResponse.Headers.TryGetValue("Retry-After", out string? retryValue))
         {
-            header = apiEx.HttpResponse
-                        .Headers
-                        .FirstOrDefault(h => string.Equals(h.Key, "x-ratelimit-reset", StringComparison.OrdinalIgnoreCase));
-
-            if (header.Equals(default(KeyValuePair<string, string>)) 
-                || !long.TryParse(header.Value, out retryTimeInSec))
+            if (!long.TryParse(retryValue, out retryTimeInSec))
             {
-                throw new ApplicationException("Unable to determine rate limit cool off.");
+                throw new ApplicationException("Unable to determine rate limit cool off from Retry-After header.");
             }
-
-            retryTimeInSec -= DateTimeOffset.Now.ToUnixTimeSeconds();
+            logger.LogWarning("Retry header Retry-After: {RetrySecs}", retryTimeInSec);
         }
-        else
+
+        if (apiEx.HttpResponse.Headers.TryGetValue("x-ratelimit-reset", out retryValue))
         {
-            if (header.Equals(default(KeyValuePair<string, string>)) 
-                || !long.TryParse(header.Value, out retryTimeInSec))
+            if (!long.TryParse(retryValue, out retryTimeInSec))
             {
-                throw new ApplicationException("Unable to determine rate limit cool off.");
+                throw new ApplicationException("Unable to determine rate limit cool off from x-ratelimit-reset header.");
             }
+            logger.LogWarning("Retry header x-ratelimit-reset: {RetrySecs}", retryTimeInSec);
+            retryTimeInSec -= DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         }
 
         if (retryTimeInSec > SecLimitPerReq)
         {
             throw new ApplicationException($"Requested {retryTimeInSec} secs exceeds maximum of {SecLimitPerReq}.", apiEx);
         }
-        if (retryTimeInSec > _totalSecsLeftForRetry)
+
+        if (retryTimeInSec < 0)
+        {
+            logger.LogWarning("Setting timeout to default: {RetrySecs}", DefaultRetrySecs);
+            retryTimeInSec = DefaultRetrySecs;
+        }
+
+        if (retryTimeInSec > totalSecsLeftForRetry)
         {
             throw new ApplicationException($"Maximum retry allocation for report exceeded", apiEx);
         }
 
-        _totalSecsLeftForRetry -= retryTimeInSec;
+        totalSecsLeftForRetry -= retryTimeInSec;
+        ctx["TotalMaxRetryWaitInSec"] = totalSecsLeftForRetry;
 
         return TimeSpan.FromSeconds(retryTimeInSec);
     }
 
-    private Task LogRetry(Exception ex, TimeSpan wait, int retry, Context ctx)
+    private static Task LogRetry(Exception ex, TimeSpan wait, int retry, Context ctx)
     {
-        _logger.LogWarning("[{retry}] Received rate limitting exception, waiting {wait} secs.", retry, wait.Seconds);
+        var logger = (ILogger) ctx["Logger"];
+        logger.LogWarning("[{retry}] Received rate limitting exception, waiting {wait} secs.", retry, wait.TotalSeconds);
         return Task.CompletedTask;
     }
 }
