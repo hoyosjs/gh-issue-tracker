@@ -1,13 +1,16 @@
-# .NET Diagnostics Report Full Report - 02/13/2023 21:37:48
+# .NET Diagnostics Report Full Report - 02/21/2023 09:21:54
 
-Total issues: 49
+Total issues: 55
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 20
+Issues in query: 23
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#3667](https://github.com/dotnet/diagnostics/issues/3667) | dotnet-trace EventSource no events |
+| [dotnet/diagnostics#3665](https://github.com/dotnet/diagnostics/issues/3665) | dotnet-counters formatting broken in 8.0 |
+| [dotnet/diagnostics#3663](https://github.com/dotnet/diagnostics/issues/3663) | WriteEvent(Int32, Byte[]) not supported by EventPipe? |
 | [dotnet/diagnostics#3581](https://github.com/dotnet/diagnostics/issues/3581) | eeversion prints wrong mode |
 | [dotnet/diagnostics#3566](https://github.com/dotnet/diagnostics/issues/3566) | `listnearobj` can't confirm heap consistency with .NET 7 |
 | [dotnet/diagnostics#3516](https://github.com/dotnet/diagnostics/issues/3516) | DumpMT disabled in SOS.OtherCommands for .NET 7.0+ |
@@ -31,11 +34,12 @@ Issues in query: 20
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 6
+Issues in query: 7
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#82021](https://github.com/dotnet/runtime/issues/82021) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
+| [dotnet/runtime#82306](https://github.com/dotnet/runtime/issues/82306) | Missing symbols for only dotnet code |
+| [dotnet/runtime#82251](https://github.com/dotnet/runtime/issues/82251) | Test failure tracing/eventpipe/bigevent/bigevent/bigevent.sh |
 | [dotnet/runtime#81323](https://github.com/dotnet/runtime/issues/81323) | Test failure tracing/eventpipe/rundownvalidation/rundownvalidation/rundownvalidation.sh |
 | [dotnet/runtime#80767](https://github.com/dotnet/runtime/issues/80767) | Test failure tracing/runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.sh |
 | [dotnet/runtime#78006](https://github.com/dotnet/runtime/issues/78006) | NRE in System.Diagnostics.Tracing.EventPipePayloadDecoder if Threading event keywords are enabled. |
@@ -66,10 +70,11 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 20
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#82137](https://github.com/dotnet/runtime/issues/82137) | Look into DBI/DAC EnumerateModules performance under windbg's ClrComposition extension |
 | [dotnet/runtime#81921](https://github.com/dotnet/runtime/issues/81921) | Remotely debugging .NET 7 apps in linux-arm environments causes segmentation fault |
 | [dotnet/runtime#81324](https://github.com/dotnet/runtime/issues/81324) | Test failure profiler/multiple/multiple/multiple.sh |
 | [dotnet/runtime#81148](https://github.com/dotnet/runtime/issues/81148) | ExecutionEngineException while debugging unit test |
@@ -89,5 +94,6 @@ Issues in query: 20
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
 | [dotnet/runtime#68018](https://github.com/dotnet/runtime/issues/68018) | Application crash while stepping into if 'justMyCode' is disabled |
 | [dotnet/runtime#64765](https://github.com/dotnet/runtime/issues/64765) | **\<OUT OF SLA\>** profiler.multiple failing on MacOS 12.0 |
+| [dotnet/runtime#40958](https://github.com/dotnet/runtime/issues/40958) | **\<OUT OF SLA\>** Add NT_SIGINFO NOTE for each thread to createdump dumps |
 | [dotnet/runtime#75581](https://github.com/dotnet/runtime/issues/75581) | Diagnostic port suspension message doesn't report expected port name |
 
