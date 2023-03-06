@@ -236,10 +236,11 @@ internal class ReportCreator
                     continue;
                 }
                 
+                Issue issue = null;
                 try
                 {
                     _logger.LogInformation("Querying old issue {repo}#{issueId}.", repo, issueId);
-                    Issue issue = await _ghRetryPolicy.ExecuteAsync(
+                    issue = await _ghRetryPolicy.ExecuteAsync(
                         async (ctx) => {
                             var ghClient = (GitHubClient)ctx["Client"];
                             var args = (SearchIssuesRequest)ctx["QueryArgs"];
