@@ -248,8 +248,8 @@ internal class ReportCreator
                 }
                 catch (NotFoundException)
                 {
-                    classifiedIssues.Add(new(repo, issue.Number, string.Empty, string.Empty, IssueType.Closed, queryId, DateTimeOffset.UtcNow));
-                    _logger.LogWarning("Old issue {repo}#{number} not found.", repo, issue.Number, type);
+                    classifiedIssues.Add(new(repo, issueId, string.Empty, string.Empty, IssueType.Closed, queryId, DateTimeOffset.UtcNow));
+                    _logger.LogWarning("Old issue {repo}#{number} not found.", repo, issueId);
                     continue;
                 }
 
