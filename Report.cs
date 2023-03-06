@@ -235,13 +235,23 @@ internal class ReportCreator
                 {
                     continue;
                 }
-
-                Issue issue = await _ghRetryPolicy.ExecuteAsync(
-                    async (ctx) => {
-                        var ghClient = (GitHubClient)ctx["Client"];
-                        var args = (SearchIssuesRequest)ctx["QueryArgs"];
-                        return await ghClient.Issue.Get(repoOrg, repoName, issueId);
-                    }, context);
+                
+                try
+                {
+                    _logger.LogInformation("Querying old issue {repo}#{issueId}.", repo, issueId);
+                    Issue issue = await _ghRetryPolicy.ExecuteAsync(
+                        async (ctx) => {
+                            var ghClient = (GitHubClient)ctx["Client"];
+                            var args = (SearchIssuesRequest)ctx["QueryArgs"];
+                            return await ghClient.Issue.Get(repoOrg, repoName, issueId);
+                        }, context);
+                }
+                catch (NotFoundException)
+                {
+                    classifiedIssues.Add(new(repo, issue.Number, string.Empty, string.Empty, IssueType.Closed, queryId, DateTimeOffset.UtcNow));
+                    _logger.LogWarning("Old issue {repo}#{number} not found.", repo, issue.Number, type);
+                    continue;
+                }
 
                 IssueType type;
                 if (issue.State.Value == ItemState.Closed)
