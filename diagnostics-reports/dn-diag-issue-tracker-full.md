@@ -1,15 +1,15 @@
-# .NET Diagnostics Report Full Report - 03/06/2023 23:07:15
+# .NET Diagnostics Report Full Report - 03/13/2023 06:14:46
 
-Total issues: 50
+Total issues: 49
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 22
+Issues in query: 20
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#3714](https://github.com/dotnet/diagnostics/issues/3714) | dotnet-trace report Missing Symbol for .Net 6 application in container even when pdb files are available |
-| [dotnet/diagnostics#3699](https://github.com/dotnet/diagnostics/issues/3699) | DiagnosticsClient.GetPublishedProcesses returns dead processes PIDs on Linux and macOS |
+| [dotnet/diagnostics#3730](https://github.com/dotnet/diagnostics/issues/3730) | Dotnet-Counters reports higher Gen 2 Size, than GC Heap Size |
+| [dotnet/diagnostics#3726](https://github.com/dotnet/diagnostics/issues/3726) | dotnet dump analyze's `gcroot -all <address>` crashes on arm64 |
 | [dotnet/diagnostics#3682](https://github.com/dotnet/diagnostics/issues/3682) | dotnet tools do not work on mac when running dll directly |
 | [dotnet/diagnostics#3665](https://github.com/dotnet/diagnostics/issues/3665) | dotnet-counters formatting broken in 8.0 |
 | [dotnet/diagnostics#3581](https://github.com/dotnet/diagnostics/issues/3581) | eeversion prints wrong mode |
@@ -27,16 +27,15 @@ Issues in query: 22
 | [dotnet/diagnostics#3131](https://github.com/dotnet/diagnostics/issues/3131) | dotnet-gcdump doesnt work with kubectl debug |
 | [dotnet/diagnostics#3111](https://github.com/dotnet/diagnostics/issues/3111) | Reenable TestDbgEng tests in M.D.DebugServices.UnitTests |
 | [dotnet/diagnostics#2911](https://github.com/dotnet/diagnostics/issues/2911) | **\<OUT OF SLA\>** Guidance on using PerfView/other perf visualization tools. |
-| [dotnet/diagnostics#2905](https://github.com/dotnet/diagnostics/issues/2905) | **\<OUT OF SLA\>** Diagnosing managed memory leaks with dotnet-gcdump. |
-| [dotnet/diagnostics#2903](https://github.com/dotnet/diagnostics/issues/2903) | **\<OUT OF SLA\>** E2E guide how to collect a dump and debug it with VS or LLDB |
 | [dotnet/diagnostics#82423]() |  |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 6
+Issues in query: 7
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#83127](https://github.com/dotnet/runtime/issues/83127) | NativeRuntimeEventSource generates a large manifest that is never used |
 | [dotnet/runtime#82423](https://github.com/dotnet/runtime/issues/82423) | WriteEvent(Int32, Byte[]) not supported by EventPipe? |
 | [dotnet/runtime#81323](https://github.com/dotnet/runtime/issues/81323) | Test failure tracing/eventpipe/rundownvalidation/rundownvalidation/rundownvalidation.sh |
 | [dotnet/runtime#80767](https://github.com/dotnet/runtime/issues/80767) | Test failure tracing/runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.sh |
@@ -46,11 +45,10 @@ Issues in query: 6
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
-Issues in query: 3
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#82871](https://github.com/dotnet/runtime/issues/82871) | [API Proposal]: Add an overload of the StackTrace constructor to take in an array of frames |
 | [dotnet/runtime#77945](https://github.com/dotnet/runtime/issues/77945) | Stopwatch.GetTimestamp() doesn't take into account sleep time on Unix |
 | [dotnet/runtime#66734](https://github.com/dotnet/runtime/issues/66734) | Stopwatch is inconsistent when guarding against negative Elapsed durations |
 
@@ -70,10 +68,12 @@ Issues in query: 3
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 18
+Issues in query: 19
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#83232](https://github.com/dotnet/runtime/issues/83232) | vsdbg-ui stepping over interpolated string line in async Task method throws a null reference exception |
+| [dotnet/runtime#83056](https://github.com/dotnet/runtime/issues/83056) | Feature: Add a diagnostics IPC command to dynamically emit perfmap files |
 | [dotnet/runtime#82989](https://github.com/dotnet/runtime/issues/82989) | Concurrent exceptions might cause createdump to fail |
 | [dotnet/runtime#82690](https://github.com/dotnet/runtime/issues/82690) | Test failure profiler\\multiple\\multiple\\multiple.cmd |
 | [dotnet/runtime#82422](https://github.com/dotnet/runtime/issues/82422) | [Linux, amd64] ICorDebugEval::Abort are broken. |
@@ -90,6 +90,5 @@ Issues in query: 18
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
 | [dotnet/runtime#68018](https://github.com/dotnet/runtime/issues/68018) | Application crash while stepping into if 'justMyCode' is disabled |
-| [dotnet/runtime#40958](https://github.com/dotnet/runtime/issues/40958) | **\<OUT OF SLA\>** Add NT_SIGINFO NOTE for each thread to createdump dumps |
 | [dotnet/runtime#75581](https://github.com/dotnet/runtime/issues/75581) | Diagnostic port suspension message doesn't report expected port name |
 
