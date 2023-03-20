@@ -11,6 +11,7 @@
             "GloballyExcludedLabels": [
                 "dotnet-monitor",
                 "enhancement",
+                "Epic",
                 "feature-request",
                 "\"User Story\""
             ],
@@ -23,6 +24,7 @@
             "GloballyExcludedLabels": [
                 "arch-wasm",
                 "enhancement",
+                "Epic",
                 "feature-request",
                 "linkable-framework",
                 "os-android",
