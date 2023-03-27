@@ -1,20 +1,16 @@
-# .NET Diagnostics Report Full Report - 03/20/2023 06:16:10
+# .NET Diagnostics Report Full Report - 03/27/2023 06:15:00
 
 Total issues: 53
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 23
+Issues in query: 19
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#3757](https://github.com/dotnet/diagnostics/issues/3757) | lldb dumpmt crashes against source-built .NET 7 on Fedora 37 |
-| [dotnet/diagnostics#3756](https://github.com/dotnet/diagnostics/issues/3756) | Epic: .NET Developers have a great observability & diagnostics experience for cloud-native applications |
-| [dotnet/diagnostics#3751](https://github.com/dotnet/diagnostics/issues/3751) | dotnet-counters should display counters as absolute values and not count per second |
-| [dotnet/diagnostics#3743](https://github.com/dotnet/diagnostics/issues/3743) | dotnet-counters doesn't display a counter until the app records a measurement |
+| [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | Re-enable !gcroot source tests |
 | [dotnet/diagnostics#3742](https://github.com/dotnet/diagnostics/issues/3742) | dotnet-counter doesn't display UpDownCounter |
 | [dotnet/diagnostics#3726](https://github.com/dotnet/diagnostics/issues/3726) | dotnet dump analyze's `gcroot -all <address>` crashes on arm64 |
-| [dotnet/diagnostics#3682](https://github.com/dotnet/diagnostics/issues/3682) | dotnet tools do not work on mac when running dll directly |
 | [dotnet/diagnostics#3665](https://github.com/dotnet/diagnostics/issues/3665) | dotnet-counters formatting broken in 8.0 |
 | [dotnet/diagnostics#3581](https://github.com/dotnet/diagnostics/issues/3581) | eeversion prints wrong mode |
 | [dotnet/diagnostics#3516](https://github.com/dotnet/diagnostics/issues/3516) | DumpMT disabled in SOS.OtherCommands for .NET 7.0+ |
@@ -27,17 +23,20 @@ Issues in query: 23
 | [dotnet/diagnostics#3248](https://github.com/dotnet/diagnostics/issues/3248) | dotnet diagnostic tools benchmark tests need investigation |
 | [dotnet/diagnostics#3155](https://github.com/dotnet/diagnostics/issues/3155) | Reenable eeversion tests in StackAndOtherTests/StackTests scripts when 7.0 dumps have version string |
 | [dotnet/diagnostics#3137](https://github.com/dotnet/diagnostics/issues/3137) | dumpasync --methodtable result in error when parameter are not prefix with the 0x (hex) sign  |
-| [dotnet/diagnostics#3131](https://github.com/dotnet/diagnostics/issues/3131) | dotnet-gcdump doesnt work with kubectl debug |
 | [dotnet/diagnostics#3111](https://github.com/dotnet/diagnostics/issues/3111) | Reenable TestDbgEng tests in M.D.DebugServices.UnitTests |
 | [dotnet/diagnostics#2911](https://github.com/dotnet/diagnostics/issues/2911) | **\<OUT OF SLA\>** Guidance on using PerfView/other perf visualization tools. |
+| [dotnet/diagnostics#83699](https://github.com/dotnet/runtime/issues/83699) | lldb dumpmt crashes against source-built .NET 7 on Fedora 37 |
 | [dotnet/diagnostics#82423]() |  |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 8
+Issues in query: 11
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#83754](https://github.com/dotnet/runtime/issues/83754) | CoreCLR sample profiling seems expensive |
+| [dotnet/runtime#83575](https://github.com/dotnet/runtime/issues/83575) | Test failure JIT\\Directed\\debugging\\debuginfo\\tester\\tester.cmd |
+| [dotnet/runtime#83401](https://github.com/dotnet/runtime/issues/83401) | Test failure: Assertion failed `m_Initialized == Initialized` in tracing/runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.sh |
 | [dotnet/runtime#83359](https://github.com/dotnet/runtime/issues/83359) | Test Failure tracing\\eventpipe\\enabledisable\\enabledisable\\enabledisable.cmd |
 | [dotnet/runtime#83127](https://github.com/dotnet/runtime/issues/83127) | NativeRuntimeEventSource generates a large manifest that is never used |
 | [dotnet/runtime#82423](https://github.com/dotnet/runtime/issues/82423) | WriteEvent(Int32, Byte[]) not supported by EventPipe? |
@@ -58,7 +57,11 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 0
+Issues in query: 1
+
+| **Issue Number** | **Title** |
+| :--------------: | --------- |
+| [dotnet/runtime#83822](https://github.com/dotnet/runtime/issues/83822) | [API Proposal]: Allow to delete an instrument inside a Meter instance |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
@@ -72,11 +75,12 @@ Issues in query: 3
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 19
+Issues in query: 21
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#83575](https://github.com/dotnet/runtime/issues/83575) | Test failure JIT\\Directed\\debugging\\debuginfo\\tester\\tester.cmd |
+| [dotnet/runtime#83613](https://github.com/dotnet/runtime/issues/83613) | createdump is added to Mac app bundles |
+| [dotnet/runtime#83699](https://github.com/dotnet/runtime/issues/83699) | lldb dumpmt crashes against source-built .NET 7 on Fedora 37 |
 | [dotnet/runtime#83419](https://github.com/dotnet/runtime/issues/83419) | exe file name gets truncated in .NET core mini dump name |
 | [dotnet/runtime#82989](https://github.com/dotnet/runtime/issues/82989) | Concurrent exceptions might cause createdump to fail |
 | [dotnet/runtime#82690](https://github.com/dotnet/runtime/issues/82690) | Test failure profiler\\multiple\\multiple\\multiple.cmd |
@@ -94,5 +98,6 @@ Issues in query: 19
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
 | [dotnet/runtime#68018](https://github.com/dotnet/runtime/issues/68018) | Application crash while stepping into if 'justMyCode' is disabled |
+| [dotnet/runtime#83575](https://github.com/dotnet/runtime/issues/83575) | Test failure JIT\\Directed\\debugging\\debuginfo\\tester\\tester.cmd |
 | [dotnet/runtime#75581](https://github.com/dotnet/runtime/issues/75581) | Diagnostic port suspension message doesn't report expected port name |
 
