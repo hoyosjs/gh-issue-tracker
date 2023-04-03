@@ -1,13 +1,15 @@
-# .NET Diagnostics Report Full Report - 03/27/2023 06:15:00
+# .NET Diagnostics Report Full Report - 04/03/2023 22:31:41
 
-Total issues: 53
+Total issues: 55
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 19
+Issues in query: 20
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#3797](https://github.com/dotnet/diagnostics/issues/3797) | Counters tool doc - specify counter |
+| [dotnet/diagnostics#3796](https://github.com/dotnet/diagnostics/issues/3796) | FRC - how to monitor metrics created by the default MetricFactory? |
 | [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | Re-enable !gcroot source tests |
 | [dotnet/diagnostics#3742](https://github.com/dotnet/diagnostics/issues/3742) | dotnet-counter doesn't display UpDownCounter |
 | [dotnet/diagnostics#3726](https://github.com/dotnet/diagnostics/issues/3726) | dotnet dump analyze's `gcroot -all <address>` crashes on arm64 |
@@ -17,7 +19,6 @@ Issues in query: 19
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#3482](https://github.com/dotnet/diagnostics/issues/3482) | !eeheap is reporting slightly inaccurate committed bytes. |
 | [dotnet/diagnostics#3479](https://github.com/dotnet/diagnostics/issues/3479) | Timed out when dotnet-trace connects to a dotnet app |
-| [dotnet/diagnostics#3341](https://github.com/dotnet/diagnostics/issues/3341) | TFM trimming, and elimination of net4* targeting in Linux source-build |
 | [dotnet/diagnostics#3331](https://github.com/dotnet/diagnostics/issues/3331) | Source-build behavior control update |
 | [dotnet/diagnostics#3326](https://github.com/dotnet/diagnostics/issues/3326) | Specify all source-built dependencies and ensure they are regularly updated |
 | [dotnet/diagnostics#3248](https://github.com/dotnet/diagnostics/issues/3248) | dotnet diagnostic tools benchmark tests need investigation |
@@ -25,16 +26,15 @@ Issues in query: 19
 | [dotnet/diagnostics#3137](https://github.com/dotnet/diagnostics/issues/3137) | dumpasync --methodtable result in error when parameter are not prefix with the 0x (hex) sign  |
 | [dotnet/diagnostics#3111](https://github.com/dotnet/diagnostics/issues/3111) | Reenable TestDbgEng tests in M.D.DebugServices.UnitTests |
 | [dotnet/diagnostics#2911](https://github.com/dotnet/diagnostics/issues/2911) | **\<OUT OF SLA\>** Guidance on using PerfView/other perf visualization tools. |
-| [dotnet/diagnostics#83699](https://github.com/dotnet/runtime/issues/83699) | lldb dumpmt crashes against source-built .NET 7 on Fedora 37 |
+| [dotnet/diagnostics#83699]() |  |
 | [dotnet/diagnostics#82423]() |  |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 11
+Issues in query: 10
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#83754](https://github.com/dotnet/runtime/issues/83754) | CoreCLR sample profiling seems expensive |
 | [dotnet/runtime#83575](https://github.com/dotnet/runtime/issues/83575) | Test failure JIT\\Directed\\debugging\\debuginfo\\tester\\tester.cmd |
 | [dotnet/runtime#83401](https://github.com/dotnet/runtime/issues/83401) | Test failure: Assertion failed `m_Initialized == Initialized` in tracing/runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.sh |
 | [dotnet/runtime#83359](https://github.com/dotnet/runtime/issues/83359) | Test Failure tracing\\eventpipe\\enabledisable\\enabledisable\\enabledisable.cmd |
@@ -57,28 +57,27 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 1
-
-| **Issue Number** | **Title** |
-| :--------------: | --------- |
-| [dotnet/runtime#83822](https://github.com/dotnet/runtime/issues/83822) | [API Proposal]: Allow to delete an instrument inside a Meter instance |
+Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 3
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#84091](https://github.com/dotnet/runtime/issues/84091) | Process crash on simultaneous call of EventListener.DisposeOnShutdown() and EventListener.EnableEvents() |
 | [dotnet/runtime#83015](https://github.com/dotnet/runtime/issues/83015) | Test failure BasicEventSourceTests.TestsWriteEvent.Test_WriteEvent_ByteArray_SelfDescribing_ETW |
 | [dotnet/runtime#80666](https://github.com/dotnet/runtime/issues/80666) | tracing/eventpipe/eventsourceerror/eventsourceerror/eventsourceerror failure |
 | [dotnet/runtime#80064](https://github.com/dotnet/runtime/issues/80064) | PublishSingleFile=true + EventListener causes EventPipeEventDispatcher.DispatchEventsToEventListeners() to fully occupy a CPU core |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 21
+Issues in query: 23
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#83985](https://github.com/dotnet/runtime/issues/83985) | Windbg Can't Unwind Stacks for Single-File Dumps Captured with procdump |
+| [dotnet/runtime#83967](https://github.com/dotnet/runtime/issues/83967) | [CoreCLR Linux arm32] `ICorDebugStackWalk` works wrong in case top frame is native. |
 | [dotnet/runtime#83613](https://github.com/dotnet/runtime/issues/83613) | createdump is added to Mac app bundles |
 | [dotnet/runtime#83699](https://github.com/dotnet/runtime/issues/83699) | lldb dumpmt crashes against source-built .NET 7 on Fedora 37 |
 | [dotnet/runtime#83419](https://github.com/dotnet/runtime/issues/83419) | exe file name gets truncated in .NET core mini dump name |
