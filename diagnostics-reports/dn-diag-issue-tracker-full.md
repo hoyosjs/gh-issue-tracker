@@ -1,15 +1,16 @@
-# .NET Diagnostics Report Full Report - 04/03/2023 22:31:41
+# .NET Diagnostics Report Full Report - 04/10/2023 22:06:59
 
-Total issues: 55
+Total issues: 56
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 20
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#3809](https://github.com/dotnet/diagnostics/issues/3809) | DiagnosticPort docs incorrectly claim support of multiple listen ports |
+| [dotnet/diagnostics#3801](https://github.com/dotnet/diagnostics/issues/3801) | Add migration documentation mapping .NET Framework performance counters to .NET Core metrics |
 | [dotnet/diagnostics#3797](https://github.com/dotnet/diagnostics/issues/3797) | Counters tool doc - specify counter |
-| [dotnet/diagnostics#3796](https://github.com/dotnet/diagnostics/issues/3796) | FRC - how to monitor metrics created by the default MetricFactory? |
 | [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | Re-enable !gcroot source tests |
 | [dotnet/diagnostics#3742](https://github.com/dotnet/diagnostics/issues/3742) | dotnet-counter doesn't display UpDownCounter |
 | [dotnet/diagnostics#3726](https://github.com/dotnet/diagnostics/issues/3726) | dotnet dump analyze's `gcroot -all <address>` crashes on arm64 |
@@ -26,25 +27,24 @@ Issues in query: 20
 | [dotnet/diagnostics#3137](https://github.com/dotnet/diagnostics/issues/3137) | dumpasync --methodtable result in error when parameter are not prefix with the 0x (hex) sign  |
 | [dotnet/diagnostics#3111](https://github.com/dotnet/diagnostics/issues/3111) | Reenable TestDbgEng tests in M.D.DebugServices.UnitTests |
 | [dotnet/diagnostics#2911](https://github.com/dotnet/diagnostics/issues/2911) | **\<OUT OF SLA\>** Guidance on using PerfView/other perf visualization tools. |
+| [dotnet/diagnostics#2208](https://github.com/dotnet/diagnostics/issues/2208) | **\<OUT OF SLA\>** should_check_bgc_mark and fgc_should_consider_object need to be updated for regions |
 | [dotnet/diagnostics#83699]() |  |
 | [dotnet/diagnostics#82423]() |  |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 10
+Issues in query: 8
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#84586](https://github.com/dotnet/runtime/issues/84586) | [Breaking change] Changing EventSource OnEventCommand to be consistent |
+| [dotnet/runtime#84555](https://github.com/dotnet/runtime/issues/84555) | Test failure tracing\\eventpipe\\bigevent\\bigevent\\bigevent.cmd |
 | [dotnet/runtime#83575](https://github.com/dotnet/runtime/issues/83575) | Test failure JIT\\Directed\\debugging\\debuginfo\\tester\\tester.cmd |
-| [dotnet/runtime#83401](https://github.com/dotnet/runtime/issues/83401) | Test failure: Assertion failed `m_Initialized == Initialized` in tracing/runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.sh |
-| [dotnet/runtime#83359](https://github.com/dotnet/runtime/issues/83359) | Test Failure tracing\\eventpipe\\enabledisable\\enabledisable\\enabledisable.cmd |
 | [dotnet/runtime#83127](https://github.com/dotnet/runtime/issues/83127) | NativeRuntimeEventSource generates a large manifest that is never used |
 | [dotnet/runtime#82423](https://github.com/dotnet/runtime/issues/82423) | WriteEvent(Int32, Byte[]) not supported by EventPipe? |
-| [dotnet/runtime#81323](https://github.com/dotnet/runtime/issues/81323) | Test failure tracing/eventpipe/rundownvalidation/rundownvalidation/rundownvalidation.sh |
 | [dotnet/runtime#80767](https://github.com/dotnet/runtime/issues/80767) | Test failure tracing/runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.sh |
 | [dotnet/runtime#78006](https://github.com/dotnet/runtime/issues/78006) | NRE in System.Diagnostics.Tracing.EventPipePayloadDecoder if Threading event keywords are enabled. |
 | [dotnet/runtime#75581](https://github.com/dotnet/runtime/issues/75581) | Diagnostic port suspension message doesn't report expected port name |
-| [dotnet/runtime#61353](https://github.com/dotnet/runtime/issues/61353) | **\<OUT OF SLA\>** EventCounters unexpectedly stop reporting data when first of two listeners disconnects |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
@@ -57,7 +57,11 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 0
+Issues in query: 1
+
+| **Issue Number** | **Title** |
+| :--------------: | --------- |
+| [dotnet/runtime#84321](https://github.com/dotnet/runtime/issues/84321) | Support for adding default tags to specific meter and/or instruments |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
@@ -76,6 +80,8 @@ Issues in query: 23
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#84514](https://github.com/dotnet/runtime/issues/84514) | Fixed array in structures shows incorrect values in VS debugger |
+| [dotnet/runtime#84466](https://github.com/dotnet/runtime/issues/84466) | [NETSDKE2E] With .NET 8.0 Preview4, debugging does not work normally on Mac X64 |
 | [dotnet/runtime#83985](https://github.com/dotnet/runtime/issues/83985) | Windbg Can't Unwind Stacks for Single-File Dumps Captured with procdump |
 | [dotnet/runtime#83967](https://github.com/dotnet/runtime/issues/83967) | [CoreCLR Linux arm32] `ICorDebugStackWalk` works wrong in case top frame is native. |
 | [dotnet/runtime#83613](https://github.com/dotnet/runtime/issues/83613) | createdump is added to Mac app bundles |
@@ -85,13 +91,11 @@ Issues in query: 23
 | [dotnet/runtime#82690](https://github.com/dotnet/runtime/issues/82690) | Test failure profiler\\multiple\\multiple\\multiple.cmd |
 | [dotnet/runtime#82422](https://github.com/dotnet/runtime/issues/82422) | [Linux, amd64] ICorDebugEval::Abort are broken. |
 | [dotnet/runtime#81921](https://github.com/dotnet/runtime/issues/81921) | Remotely debugging .NET 7 apps in linux-arm environments causes segmentation fault |
-| [dotnet/runtime#81324](https://github.com/dotnet/runtime/issues/81324) | Test failure profiler/multiple/multiple/multiple.sh |
 | [dotnet/runtime#79919](https://github.com/dotnet/runtime/issues/79919) | Unable to unwind exception on Xunit |
 | [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
 | [dotnet/runtime#78991](https://github.com/dotnet/runtime/issues/78991) | NullReferenceException when you use the short format of string.format $"{sample}" |
 | [dotnet/runtime#78940](https://github.com/dotnet/runtime/issues/78940) | Debugging execution code in vs is slow, but the program is compiled and runs fine |
 | [dotnet/runtime#77574](https://github.com/dotnet/runtime/issues/77574) | .NET Debugging services don't issue thread create callbacks for single file apps |
-| [dotnet/runtime#75821](https://github.com/dotnet/runtime/issues/75821) | Test failure profiler\\gc\\gcbasic\\gcbasic.cmd |
 | [dotnet/runtime#72603](https://github.com/dotnet/runtime/issues/72603) | Debugger fails to attach to a specific application with CORDBG_E_MISSING_DEBUGGER_EXPORTS on macOS. |
 | [dotnet/runtime#71786](https://github.com/dotnet/runtime/issues/71786) | Linux perf support regressed on W^X enabled runs |
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | dotnet-dump makes process to double its used memory and fails |
