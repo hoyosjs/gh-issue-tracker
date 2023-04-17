@@ -65,7 +65,7 @@ internal class ReportCreator
         _ghRetryPolicy = Policy
                             .Handle<RateLimitExceededException>()
                             .Or<SecondaryRateLimitExceededException>()
-                            .WaitAndRetryAsync(retryCount: 1,
+                            .WaitAndRetryAsync(retryCount: 3,
                                 sleepDurationProvider: GetBackoffForPolicy,
                                 onRetryAsync: LogRetry);
     }
