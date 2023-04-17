@@ -1,15 +1,15 @@
-# .NET Diagnostics Report Full Report - 04/10/2023 22:06:59
+# .NET Diagnostics Report Full Report - 04/17/2023 21:54:57
 
 Total issues: 56
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 22
+Issues in query: 21
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#3828](https://github.com/dotnet/diagnostics/issues/3828) | Failed to profile .NET iOS app (`dotnet trace`: Unable to read beyond the end of the stream) |
 | [dotnet/diagnostics#3809](https://github.com/dotnet/diagnostics/issues/3809) | DiagnosticPort docs incorrectly claim support of multiple listen ports |
-| [dotnet/diagnostics#3801](https://github.com/dotnet/diagnostics/issues/3801) | Add migration documentation mapping .NET Framework performance counters to .NET Core metrics |
 | [dotnet/diagnostics#3797](https://github.com/dotnet/diagnostics/issues/3797) | Counters tool doc - specify counter |
 | [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | Re-enable !gcroot source tests |
 | [dotnet/diagnostics#3742](https://github.com/dotnet/diagnostics/issues/3742) | dotnet-counter doesn't display UpDownCounter |
@@ -18,7 +18,6 @@ Issues in query: 22
 | [dotnet/diagnostics#3581](https://github.com/dotnet/diagnostics/issues/3581) | eeversion prints wrong mode |
 | [dotnet/diagnostics#3516](https://github.com/dotnet/diagnostics/issues/3516) | DumpMT disabled in SOS.OtherCommands for .NET 7.0+ |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | How to debug stack overflow errors on Windows |
-| [dotnet/diagnostics#3482](https://github.com/dotnet/diagnostics/issues/3482) | !eeheap is reporting slightly inaccurate committed bytes. |
 | [dotnet/diagnostics#3479](https://github.com/dotnet/diagnostics/issues/3479) | Timed out when dotnet-trace connects to a dotnet app |
 | [dotnet/diagnostics#3331](https://github.com/dotnet/diagnostics/issues/3331) | Source-build behavior control update |
 | [dotnet/diagnostics#3326](https://github.com/dotnet/diagnostics/issues/3326) | Specify all source-built dependencies and ensure they are regularly updated |
@@ -33,10 +32,11 @@ Issues in query: 22
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 8
+Issues in query: 9
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#84813](https://github.com/dotnet/runtime/issues/84813) | Test failure Loader\\binding\\tracing\\BinderTracingTest.ResolutionFlow\\BinderTracingTest.ResolutionFlow.cmd |
 | [dotnet/runtime#84586](https://github.com/dotnet/runtime/issues/84586) | [Breaking change] Changing EventSource OnEventCommand to be consistent |
 | [dotnet/runtime#84555](https://github.com/dotnet/runtime/issues/84555) | Test failure tracing\\eventpipe\\bigevent\\bigevent\\bigevent.cmd |
 | [dotnet/runtime#83575](https://github.com/dotnet/runtime/issues/83575) | Test failure JIT\\Directed\\debugging\\debuginfo\\tester\\tester.cmd |
@@ -57,11 +57,12 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 1
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#84321](https://github.com/dotnet/runtime/issues/84321) | Support for adding default tags to specific meter and/or instruments |
+| [dotnet/runtime#84903](https://github.com/dotnet/runtime/issues/84903) | Metrics Enrichment support |
+| [dotnet/runtime#84713](https://github.com/dotnet/runtime/issues/84713) | Degraded performance in metering when creating a lot of instruments |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
@@ -76,12 +77,11 @@ Issues in query: 4
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 23
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#84514](https://github.com/dotnet/runtime/issues/84514) | Fixed array in structures shows incorrect values in VS debugger |
-| [dotnet/runtime#84466](https://github.com/dotnet/runtime/issues/84466) | [NETSDKE2E] With .NET 8.0 Preview4, debugging does not work normally on Mac X64 |
+| [dotnet/runtime#84665](https://github.com/dotnet/runtime/issues/84665) | crashinfounix.cpp: unknown type name 'off64_t' on Alpine Linux |
 | [dotnet/runtime#83985](https://github.com/dotnet/runtime/issues/83985) | Windbg Can't Unwind Stacks for Single-File Dumps Captured with procdump |
 | [dotnet/runtime#83967](https://github.com/dotnet/runtime/issues/83967) | [CoreCLR Linux arm32] `ICorDebugStackWalk` works wrong in case top frame is native. |
 | [dotnet/runtime#83613](https://github.com/dotnet/runtime/issues/83613) | createdump is added to Mac app bundles |
@@ -100,7 +100,7 @@ Issues in query: 23
 | [dotnet/runtime#71786](https://github.com/dotnet/runtime/issues/71786) | Linux perf support regressed on W^X enabled runs |
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
-| [dotnet/runtime#68018](https://github.com/dotnet/runtime/issues/68018) | Application crash while stepping into if 'justMyCode' is disabled |
+| [dotnet/runtime#68018](https://github.com/dotnet/runtime/issues/68018) | **\<OUT OF SLA\>** Application crash while stepping into if 'justMyCode' is disabled |
 | [dotnet/runtime#83575](https://github.com/dotnet/runtime/issues/83575) | Test failure JIT\\Directed\\debugging\\debuginfo\\tester\\tester.cmd |
 | [dotnet/runtime#75581](https://github.com/dotnet/runtime/issues/75581) | Diagnostic port suspension message doesn't report expected port name |
 
