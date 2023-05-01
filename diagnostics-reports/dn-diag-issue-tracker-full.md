@@ -1,22 +1,20 @@
-# .NET Diagnostics Report Full Report - 04/24/2023 06:14:44
+# .NET Diagnostics Report Full Report - 05/01/2023 06:16:06
 
-Total issues: 53
+Total issues: 50
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 21
+Issues in query: 19
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/diagnostics#3842](https://github.com/dotnet/diagnostics/issues/3842) | `dumpgen gen0` makes analyze exit with an exit code of 139 on Linux |
-| [dotnet/diagnostics#3841](https://github.com/dotnet/diagnostics/issues/3841) | dump class and obj unable to display fields |
 | [dotnet/diagnostics#3828](https://github.com/dotnet/diagnostics/issues/3828) | Failed to profile .NET iOS app (`dotnet trace`: Unable to read beyond the end of the stream) |
 | [dotnet/diagnostics#3809](https://github.com/dotnet/diagnostics/issues/3809) | DiagnosticPort docs incorrectly claim support of multiple listen ports |
 | [dotnet/diagnostics#3797](https://github.com/dotnet/diagnostics/issues/3797) | Counters tool doc - specify counter |
 | [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | Re-enable !gcroot source tests |
 | [dotnet/diagnostics#3742](https://github.com/dotnet/diagnostics/issues/3742) | dotnet-counter doesn't display UpDownCounter |
 | [dotnet/diagnostics#3726](https://github.com/dotnet/diagnostics/issues/3726) | dotnet dump analyze's `gcroot -all <address>` crashes on arm64 |
-| [dotnet/diagnostics#3581](https://github.com/dotnet/diagnostics/issues/3581) | eeversion prints wrong mode |
 | [dotnet/diagnostics#3516](https://github.com/dotnet/diagnostics/issues/3516) | DumpMT disabled in SOS.OtherCommands for .NET 7.0+ |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#3479](https://github.com/dotnet/diagnostics/issues/3479) | Timed out when dotnet-trace connects to a dotnet app |
@@ -32,18 +30,17 @@ Issues in query: 21
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 10
+Issues in query: 9
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#85261](https://github.com/dotnet/runtime/issues/85261) | jitstress: BinderTracingTest.ResolutionFlow.cmd failing |
 | [dotnet/runtime#85213](https://github.com/dotnet/runtime/issues/85213) | Test failure tracing\\eventpipe\\bigevent\\bigevent\\bigevent.cmd |
 | [dotnet/runtime#84813](https://github.com/dotnet/runtime/issues/84813) | Test failure Loader\\binding\\tracing\\BinderTracingTest.ResolutionFlow\\BinderTracingTest.ResolutionFlow.cmd |
 | [dotnet/runtime#84586](https://github.com/dotnet/runtime/issues/84586) | [Breaking change] Changing EventSource OnEventCommand to be consistent |
-| [dotnet/runtime#84555](https://github.com/dotnet/runtime/issues/84555) | Test failure tracing\\eventpipe\\bigevent\\bigevent\\bigevent.cmd |
 | [dotnet/runtime#83575](https://github.com/dotnet/runtime/issues/83575) | Test failure JIT\\Directed\\debugging\\debuginfo\\tester\\tester.cmd |
 | [dotnet/runtime#83127](https://github.com/dotnet/runtime/issues/83127) | NativeRuntimeEventSource generates a large manifest that is never used |
 | [dotnet/runtime#82423](https://github.com/dotnet/runtime/issues/82423) | WriteEvent(Int32, Byte[]) not supported by EventPipe? |
-| [dotnet/runtime#80767](https://github.com/dotnet/runtime/issues/80767) | Test failure tracing/runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.sh |
 | [dotnet/runtime#78006](https://github.com/dotnet/runtime/issues/78006) | NRE in System.Diagnostics.Tracing.EventPipePayloadDecoder if Threading event keywords are enabled. |
 | [dotnet/runtime#75581](https://github.com/dotnet/runtime/issues/75581) | Diagnostic port suspension message doesn't report expected port name |
 
@@ -58,18 +55,21 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 0
-
-## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
-
-Issues in query: 4
+Issues in query: 1
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#85290](https://github.com/dotnet/runtime/issues/85290) | [TestFailure] System.Diagnostics.Metrics.Tests.MetricEventSourceTests.EventSourcePublishesAllDataTypes |
+
+## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
+
+Issues in query: 3
+
+| **Issue Number** | **Title** |
+| :--------------: | --------- |
+| [dotnet/runtime#85274](https://github.com/dotnet/runtime/issues/85274) | [Documentation] Request update on the documentation of IL2026 |
 | [dotnet/runtime#84091](https://github.com/dotnet/runtime/issues/84091) | Process crash on simultaneous call of EventListener.DisposeOnShutdown() and EventListener.EnableEvents() |
-| [dotnet/runtime#83015](https://github.com/dotnet/runtime/issues/83015) | Test failure BasicEventSourceTests.TestsWriteEvent.Test_WriteEvent_ByteArray_SelfDescribing_ETW |
 | [dotnet/runtime#80666](https://github.com/dotnet/runtime/issues/80666) | tracing/eventpipe/eventsourceerror/eventsourceerror/eventsourceerror failure |
-| [dotnet/runtime#80064](https://github.com/dotnet/runtime/issues/80064) | PublishSingleFile=true + EventListener causes EventPipeEventDispatcher.DispatchEventsToEventListeners() to fully occupy a CPU core |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
@@ -77,10 +77,10 @@ Issues in query: 20
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#85339](https://github.com/dotnet/runtime/issues/85339) | Native->Managed (.net core) step-in not working in Visual Studio |
 | [dotnet/runtime#84665](https://github.com/dotnet/runtime/issues/84665) | crashinfounix.cpp: unknown type name 'off64_t' on Alpine Linux |
 | [dotnet/runtime#83985](https://github.com/dotnet/runtime/issues/83985) | Windbg Can't Unwind Stacks for Single-File Dumps Captured with procdump |
 | [dotnet/runtime#83967](https://github.com/dotnet/runtime/issues/83967) | [CoreCLR Linux arm32] `ICorDebugStackWalk` works wrong in case top frame is native. |
-| [dotnet/runtime#83613](https://github.com/dotnet/runtime/issues/83613) | createdump is added to Mac app bundles |
 | [dotnet/runtime#83699](https://github.com/dotnet/runtime/issues/83699) | lldb dumpmt crashes against source-built .NET 7 on Fedora 37 |
 | [dotnet/runtime#83419](https://github.com/dotnet/runtime/issues/83419) | exe file name gets truncated in .NET core mini dump name |
 | [dotnet/runtime#82989](https://github.com/dotnet/runtime/issues/82989) | Concurrent exceptions might cause createdump to fail |
