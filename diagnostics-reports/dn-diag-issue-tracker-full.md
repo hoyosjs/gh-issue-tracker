@@ -1,10 +1,10 @@
-# .NET Diagnostics Report Full Report - 05/01/2023 06:16:06
+# .NET Diagnostics Report Full Report - 05/08/2023 06:16:29
 
-Total issues: 50
+Total issues: 51
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 19
+Issues in query: 18
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -13,7 +13,6 @@ Issues in query: 19
 | [dotnet/diagnostics#3809](https://github.com/dotnet/diagnostics/issues/3809) | DiagnosticPort docs incorrectly claim support of multiple listen ports |
 | [dotnet/diagnostics#3797](https://github.com/dotnet/diagnostics/issues/3797) | Counters tool doc - specify counter |
 | [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | Re-enable !gcroot source tests |
-| [dotnet/diagnostics#3742](https://github.com/dotnet/diagnostics/issues/3742) | dotnet-counter doesn't display UpDownCounter |
 | [dotnet/diagnostics#3726](https://github.com/dotnet/diagnostics/issues/3726) | dotnet dump analyze's `gcroot -all <address>` crashes on arm64 |
 | [dotnet/diagnostics#3516](https://github.com/dotnet/diagnostics/issues/3516) | DumpMT disabled in SOS.OtherCommands for .NET 7.0+ |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | How to debug stack overflow errors on Windows |
@@ -55,10 +54,11 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 1
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#85684](https://github.com/dotnet/runtime/issues/85684) | [Feature]: Meter Configuration and Pipeline |
 | [dotnet/runtime#85290](https://github.com/dotnet/runtime/issues/85290) | [TestFailure] System.Diagnostics.Metrics.Tests.MetricEventSourceTests.EventSourcePublishesAllDataTypes |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
@@ -73,10 +73,12 @@ Issues in query: 3
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 20
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#85777](https://github.com/dotnet/runtime/issues/85777) | Segfault in CMiniMdTemplate<CMiniMdRW>::getSignatureOfMemberRef |
+| [dotnet/runtime#85680](https://github.com/dotnet/runtime/issues/85680) | Failed to load libcoreclr.so on Raspberry Pi Zero 2W when running C# program using .NET Core Debugger (vsdbg) |
 | [dotnet/runtime#85339](https://github.com/dotnet/runtime/issues/85339) | Native->Managed (.net core) step-in not working in Visual Studio |
 | [dotnet/runtime#84665](https://github.com/dotnet/runtime/issues/84665) | crashinfounix.cpp: unknown type name 'off64_t' on Alpine Linux |
 | [dotnet/runtime#83985](https://github.com/dotnet/runtime/issues/83985) | Windbg Can't Unwind Stacks for Single-File Dumps Captured with procdump |
