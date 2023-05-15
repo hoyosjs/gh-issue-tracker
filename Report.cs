@@ -133,14 +133,17 @@ internal class ReportCreator
 
         // This is kinda nasty - it depends on mutability of the class IssueReportResult.
         List<IssueReportResult> fullResults = _reportResults.SelectMany(x => x.Value.Item2).ToList();
-        fullResults.Sort((lhs, rhs) => lhs.IssueId.CompareTo(rhs.IssueId));
+        fullResults.Sort(static (lhs, rhs) => lhs.InternalId.CompareTo(rhs.InternalId));
 
         for (int i = 0; i + 1 < fullResults.Count; i++)
         {
-            if (fullResults[i].IssueId == fullResults[i + 1].IssueId)
+            if (fullResults[i].InternalId == fullResults[i + 1].InternalId)
             {
-                fullResults[i].Type = IssueType.Old;
-                fullResults[i + 1].Type = IssueType.Old;
+                fullResults[i].MarkInternallyMoved();
+                if (fullResults[i].Type == IssueType.New) { fullResults[i].Type = IssueType.Old; }
+                fullResults[i + 1].MarkInternallyMoved();
+                if (fullResults[i + 1].Type == IssueType.New) { fullResults[i + 1].Type = IssueType.Old; }
+                // todo: query stats probably need touchup in these move scenarios.
             }
         }
 
@@ -210,9 +213,15 @@ internal class ReportCreator
                     }
 
                     seenIssues.Add(issue.Number);
-                    classifiedIssues.Add(new(repo, issue.Number, issue.Title, issue.HtmlUrl, type, queryId, issue.CreatedAt));
+                    classifiedIssues.Add(new(repo,
+                        issue.Id,
+                        issue.Number,
+                        issue.Title,
+                        issue.HtmlUrl,
+                        type,
+                        queryId,
+                        issue.CreatedAt));
                     _logger.LogTrace("Issue {repo}#{number} classified {type}.", repo, issue.Number, type);
-
                 }
 
                 if (classifiedIssues.Count >= expectedTotal)
@@ -235,8 +244,8 @@ internal class ReportCreator
                 {
                     continue;
                 }
-                
-                Issue issue = null;
+
+                Issue issue;
                 try
                 {
                     _logger.LogInformation("Querying old issue {repo}#{issueId}.", repo, issueId);
@@ -249,12 +258,18 @@ internal class ReportCreator
                 }
                 catch (NotFoundException)
                 {
-                    classifiedIssues.Add(new(repo, issueId, string.Empty, string.Empty, IssueType.Closed, queryId, DateTimeOffset.UtcNow));
                     _logger.LogWarning("Old issue {repo}#{number} not found.", repo, issueId);
                     continue;
                 }
 
+
                 IssueType type;
+                if (issue.Number != issueId)
+                {
+                    _logger.LogInformation("Issue {repo}#{number} removed from repo.", repo, issueId);
+                    type = IssueType.MovedOut;
+                    singleQueryStats.MovedOutIssues++;
+                }
                 if (issue.State.Value == ItemState.Closed)
                 {
                     type = IssueType.Closed;
@@ -266,7 +281,14 @@ internal class ReportCreator
                     singleQueryStats.MovedOutIssues++;
                 }
 
-                classifiedIssues.Add(new(repo, issue.Number, issue.Title, issue.HtmlUrl, type, queryId, issue.CreatedAt));
+                classifiedIssues.Add(new(repo,
+                    issue.Id,
+                    issue.Number,
+                    issue.Title,
+                    issue.HtmlUrl,
+                    type,
+                    queryId,
+                    issue.CreatedAt));
                 _logger.LogTrace("Old issue {repo}#{number} classified {type}.", repo, issue.Number, type);
             }
 
