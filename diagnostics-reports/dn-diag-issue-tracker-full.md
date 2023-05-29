@@ -1,15 +1,17 @@
-# .NET Diagnostics Report Full Report - 05/22/2023 06:13:26
+# .NET Diagnostics Report Full Report - 05/29/2023 06:13:34
 
-Total issues: 44
+Total issues: 48
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 18
+Issues in query: 21
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#3917](https://github.com/dotnet/diagnostics/issues/3917) | finalizequeue can exit with exit code 139 |
+| [dotnet/diagnostics#3913](https://github.com/dotnet/diagnostics/issues/3913) | gctonative requires IMemoryRegionService |
+| [dotnet/diagnostics#3905](https://github.com/dotnet/diagnostics/issues/3905) | `timestamp` for `dotnet counters` in JSON Formatted Incorrectly |
 | [dotnet/diagnostics#3885](https://github.com/dotnet/diagnostics/issues/3885) | [Question] How to analyze deadlock of well-known SynchronizationContext via 'dotnet-dump analyze' command |
-| [dotnet/diagnostics#3884](https://github.com/dotnet/diagnostics/issues/3884) | Diagnostics Repo Engineering Summary |
 | [dotnet/diagnostics#3882](https://github.com/dotnet/diagnostics/issues/3882) | Add newer Ubuntu images to testing workflows. |
 | [dotnet/diagnostics#3842](https://github.com/dotnet/diagnostics/issues/3842) | `dumpgen gen0` makes analyze exit with an exit code of 139 on Linux |
 | [dotnet/diagnostics#3828](https://github.com/dotnet/diagnostics/issues/3828) | Failed to profile .NET iOS app (`dotnet trace`: Unable to read beyond the end of the stream) |
@@ -17,6 +19,7 @@ Issues in query: 18
 | [dotnet/diagnostics#3797](https://github.com/dotnet/diagnostics/issues/3797) | Counters tool doc - specify counter |
 | [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | Re-enable !gcroot source tests |
 | [dotnet/diagnostics#3726](https://github.com/dotnet/diagnostics/issues/3726) | dotnet dump analyze's `gcroot -all <address>` crashes on arm64 |
+| [dotnet/diagnostics#3900](https://github.com/dotnet/diagnostics/issues/3900) | Missing symbols for only dotnet code |
 | [dotnet/diagnostics#3516](https://github.com/dotnet/diagnostics/issues/3516) | DumpMT disabled in SOS.OtherCommands for .NET 7.0+ |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#3479](https://github.com/dotnet/diagnostics/issues/3479) | Timed out when dotnet-trace connects to a dotnet app |
@@ -29,10 +32,11 @@ Issues in query: 18
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 2
+Issues in query: 3
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#86838](https://github.com/dotnet/runtime/issues/86838) | Deadlock on EventSource.EventListenersLock between EventPipeEventDispatcher.StopDispatchTask() and EventSource.Initialize() |
 | [dotnet/runtime#86086](https://github.com/dotnet/runtime/issues/86086) | EventPipe/ETW/PerfMap rundown can report wrong optimization tier |
 | [dotnet/runtime#83127](https://github.com/dotnet/runtime/issues/83127) | NativeRuntimeEventSource generates a large manifest that is never used |
 
@@ -42,7 +46,11 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 0
+Issues in query: 1
+
+| **Issue Number** | **Title** |
+| :--------------: | --------- |
+| [dotnet/runtime#86783](https://github.com/dotnet/runtime/issues/86783) | [API Proposal]: InstrumentRecorder - notification of new measurements |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
@@ -56,11 +64,10 @@ Issues in query: 3
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 21
+Issues in query: 20
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#86259](https://github.com/dotnet/runtime/issues/86259) | .net7 HRESULT: 0x8007000E on linux with read-only fs |
 | [dotnet/runtime#86178](https://github.com/dotnet/runtime/issues/86178) | ICorProfilerCallback.AssemblyUnloadStarted is never called |
 | [dotnet/runtime#85777](https://github.com/dotnet/runtime/issues/85777) | Segfault in CMiniMdTemplate<CMiniMdRW>::getSignatureOfMemberRef |
 | [dotnet/runtime#85339](https://github.com/dotnet/runtime/issues/85339) | Native->Managed (.net core) step-in not working in Visual Studio |
