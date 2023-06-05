@@ -1,13 +1,15 @@
-# .NET Diagnostics Report Full Report - 05/29/2023 06:13:34
+# .NET Diagnostics Report Full Report - 06/05/2023 06:13:31
 
-Total issues: 48
+Total issues: 51
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 21
+Issues in query: 23
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | `dotnet-trace collect` hangs without completing collection on Linux |
+| [dotnet/diagnostics#3926](https://github.com/dotnet/diagnostics/issues/3926) | `dumpheap -stat` can make dotnet dump exit with exit code 139 |
 | [dotnet/diagnostics#3917](https://github.com/dotnet/diagnostics/issues/3917) | finalizequeue can exit with exit code 139 |
 | [dotnet/diagnostics#3913](https://github.com/dotnet/diagnostics/issues/3913) | gctonative requires IMemoryRegionService |
 | [dotnet/diagnostics#3905](https://github.com/dotnet/diagnostics/issues/3905) | `timestamp` for `dotnet counters` in JSON Formatted Incorrectly |
@@ -32,11 +34,10 @@ Issues in query: 21
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 3
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#86838](https://github.com/dotnet/runtime/issues/86838) | Deadlock on EventSource.EventListenersLock between EventPipeEventDispatcher.StopDispatchTask() and EventSource.Initialize() |
 | [dotnet/runtime#86086](https://github.com/dotnet/runtime/issues/86086) | EventPipe/ETW/PerfMap rundown can report wrong optimization tier |
 | [dotnet/runtime#83127](https://github.com/dotnet/runtime/issues/83127) | NativeRuntimeEventSource generates a large manifest that is never used |
 
@@ -46,21 +47,23 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 1
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#86783](https://github.com/dotnet/runtime/issues/86783) | [API Proposal]: InstrumentRecorder - notification of new measurements |
+| [dotnet/runtime#87022](https://github.com/dotnet/runtime/issues/87022) | TagList.GetEnumerator() allocates |
+| [dotnet/runtime#86885](https://github.com/dotnet/runtime/issues/86885) | Fix AddMetrics extension method namespace |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 3
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#87064](https://github.com/dotnet/runtime/issues/87064) | Consider preserving some types for DiagnosticSource to work with dotnet-monitor in NativeAOT |
+| [dotnet/runtime#86838](https://github.com/dotnet/runtime/issues/86838) | Deadlock on EventSource.EventListenersLock between EventPipeEventDispatcher.StopDispatchTask() and EventSource.Initialize() |
 | [dotnet/runtime#85274](https://github.com/dotnet/runtime/issues/85274) | [Documentation] Request update on the documentation of IL2026 |
 | [dotnet/runtime#84091](https://github.com/dotnet/runtime/issues/84091) | Process crash on simultaneous call of EventListener.DisposeOnShutdown() and EventListener.EnableEvents() |
-| [dotnet/runtime#80666](https://github.com/dotnet/runtime/issues/80666) | tracing/eventpipe/eventsourceerror/eventsourceerror/eventsourceerror failure |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
