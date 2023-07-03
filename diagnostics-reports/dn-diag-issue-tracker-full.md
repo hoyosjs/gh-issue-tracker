@@ -1,16 +1,13 @@
-# .NET Diagnostics Report Full Report - 06/26/2023 06:16:22
+# .NET Diagnostics Report Full Report - 07/03/2023 06:15:04
 
-Total issues: 57
+Total issues: 54
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 23
+Issues in query: 19
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#4015](https://github.com/dotnet/diagnostics/issues/4015) | Setting breakpoint in managed function using lldb |
-| [dotnet/diagnostics#4006](https://github.com/dotnet/diagnostics/issues/4006) | Q: How to use / install dotnet-dump where the dotnet runtime is not installed globally |
-| [dotnet/diagnostics#4003](https://github.com/dotnet/diagnostics/issues/4003) | dotnet-dump threadpool and threadpoolqueue clarification |
 | [dotnet/diagnostics#4002](https://github.com/dotnet/diagnostics/issues/4002) | Update docs: Linux dump analysis in a Windows environment |
 | [dotnet/diagnostics#3974](https://github.com/dotnet/diagnostics/issues/3974) | Q: what does it mean when `verifyheap` reports heap errors? |
 | [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | `dotnet-trace collect` hangs without completing collection on Linux |
@@ -18,7 +15,6 @@ Issues in query: 23
 | [dotnet/diagnostics#3913](https://github.com/dotnet/diagnostics/issues/3913) | gctonative requires IMemoryRegionService |
 | [dotnet/diagnostics#3905](https://github.com/dotnet/diagnostics/issues/3905) | `timestamp` for `dotnet counters` in JSON Formatted Incorrectly |
 | [dotnet/diagnostics#3882](https://github.com/dotnet/diagnostics/issues/3882) | Add newer Ubuntu images to testing workflows. |
-| [dotnet/diagnostics#3842](https://github.com/dotnet/diagnostics/issues/3842) | `dumpgen gen0` makes analyze exit with an exit code of 139 on Linux |
 | [dotnet/diagnostics#3809](https://github.com/dotnet/diagnostics/issues/3809) | DiagnosticPort docs incorrectly claim support of multiple listen ports |
 | [dotnet/diagnostics#3797](https://github.com/dotnet/diagnostics/issues/3797) | Counters tool doc - specify counter |
 | [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | Re-enable !gcroot source tests |
@@ -29,7 +25,7 @@ Issues in query: 23
 | [dotnet/diagnostics#3479](https://github.com/dotnet/diagnostics/issues/3479) | Timed out when dotnet-trace connects to a dotnet app |
 | [dotnet/diagnostics#3331](https://github.com/dotnet/diagnostics/issues/3331) | Source-build behavior control update |
 | [dotnet/diagnostics#3248](https://github.com/dotnet/diagnostics/issues/3248) | dotnet diagnostic tools benchmark tests need investigation |
-| [dotnet/diagnostics#3155](https://github.com/dotnet/diagnostics/issues/3155) | Reenable eeversion tests in StackAndOtherTests/StackTests scripts when 7.0 dumps have version string |
+| [dotnet/diagnostics#3155](https://github.com/dotnet/diagnostics/issues/3155) | **\<OUT OF SLA\>** Reenable eeversion tests in StackAndOtherTests/StackTests scripts when 7.0 dumps have version string |
 | [dotnet/diagnostics#2911](https://github.com/dotnet/diagnostics/issues/2911) | **\<OUT OF SLA\>** Guidance on using PerfView/other perf visualization tools. |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
@@ -54,10 +50,11 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 3
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#88305](https://github.com/dotnet/runtime/issues/88305) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
 | [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#86838](https://github.com/dotnet/runtime/issues/86838) | Deadlock on EventSource.EventListenersLock between EventPipeEventDispatcher.StopDispatchTask() and EventSource.Initialize() |
 | [dotnet/runtime#84091](https://github.com/dotnet/runtime/issues/84091) | Process crash on simultaneous call of EventListener.DisposeOnShutdown() and EventListener.EnableEvents() |
@@ -68,10 +65,10 @@ Issues in query: 26
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#87834](https://github.com/dotnet/runtime/issues/87834) | [ProfilerAPI] Different reserved region sizes reported for frozen segment |
+| [dotnet/runtime#88286](https://github.com/dotnet/runtime/issues/88286) | Distribute macOS symbols as dSYM, not .dwarf |
+| [dotnet/runtime#88225](https://github.com/dotnet/runtime/issues/88225) | Test failure tracing/eventpipe/processinfo3/processinfo3/processinfo3.sh |
 | [dotnet/runtime#87574](https://github.com/dotnet/runtime/issues/87574) | [EnC] CoreCLR assertion in System.Reflection.Metadata.ApplyUpdateTest.TestGenericAddStaticField |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
-| [dotnet/runtime#87334](https://github.com/dotnet/runtime/issues/87334) | Symbols are not correctly indexed for 6.0.16 Sytem.Collections.dll |
 | [dotnet/runtime#87300](https://github.com/dotnet/runtime/issues/87300) | Rejit test failures in outerloop - unexpected counts |
 | [dotnet/runtime#87239](https://github.com/dotnet/runtime/issues/87239) | ICorDebugGCReferenceEnum.Next fails to return stack references in .NET 8 preview 4 |
 | [dotnet/runtime#86178](https://github.com/dotnet/runtime/issues/86178) | ICorProfilerCallback.AssemblyUnloadStarted is never called |
@@ -91,7 +88,7 @@ Issues in query: 26
 | [dotnet/runtime#78940](https://github.com/dotnet/runtime/issues/78940) | Debugging execution code in vs is slow, but the program is compiled and runs fine |
 | [dotnet/runtime#76702](https://github.com/dotnet/runtime/issues/76702) | [EnC] FieldInfo.GetValue on a newly-added ValueType field crashes CoreCLR |
 | [dotnet/runtime#72603](https://github.com/dotnet/runtime/issues/72603) | Debugger fails to attach to a specific application with CORDBG_E_MISSING_DEBUGGER_EXPORTS on macOS. |
-| [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | dotnet-dump makes process to double its used memory and fails |
+| [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | **\<OUT OF SLA\>** dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | **\<OUT OF SLA\>** Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
 | [dotnet/runtime#68018](https://github.com/dotnet/runtime/issues/68018) | **\<OUT OF SLA\>** Application crash while stepping into if 'justMyCode' is disabled |
 
