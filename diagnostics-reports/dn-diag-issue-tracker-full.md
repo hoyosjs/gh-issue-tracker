@@ -1,13 +1,14 @@
-# .NET Diagnostics Report Full Report - 07/03/2023 06:15:04
+# .NET Diagnostics Report Full Report - 07/10/2023 06:15:53
 
-Total issues: 54
+Total issues: 57
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 19
+Issues in query: 20
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4058](https://github.com/dotnet/diagnostics/issues/4058) | dotnet-dsrouter not connecting on iOS - "Failed connecting 9191 over usbmux, wait 500 ms before retrying." |
 | [dotnet/diagnostics#4002](https://github.com/dotnet/diagnostics/issues/4002) | Update docs: Linux dump analysis in a Windows environment |
 | [dotnet/diagnostics#3974](https://github.com/dotnet/diagnostics/issues/3974) | Q: what does it mean when `verifyheap` reports heap errors? |
 | [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | `dotnet-trace collect` hangs without completing collection on Linux |
@@ -30,7 +31,7 @@ Issues in query: 19
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 5
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -38,7 +39,6 @@ Issues in query: 5
 | [dotnet/runtime#87983](https://github.com/dotnet/runtime/issues/87983) | NativeRuntimeEventSource behaves inconsistently for LogAlways |
 | [dotnet/runtime#87769](https://github.com/dotnet/runtime/issues/87769) | .net8 preview4 AOT windows service process, log component always writes to ETW |
 | [dotnet/runtime#86086](https://github.com/dotnet/runtime/issues/86086) | EventPipe/ETW/PerfMap rundown can report wrong optimization tier |
-| [dotnet/runtime#83127](https://github.com/dotnet/runtime/issues/83127) | NativeRuntimeEventSource generates a large manifest that is never used |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
@@ -46,7 +46,12 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 0
+Issues in query: 2
+
+| **Issue Number** | **Title** |
+| :--------------: | --------- |
+| [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
+| [dotnet/runtime#88515](https://github.com/dotnet/runtime/issues/88515) | [Design] .NET metrics naming standard |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
@@ -61,11 +66,12 @@ Issues in query: 4
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 26
+Issues in query: 27
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#88286](https://github.com/dotnet/runtime/issues/88286) | Distribute macOS symbols as dSYM, not .dwarf |
+| [dotnet/runtime#88556](https://github.com/dotnet/runtime/issues/88556) | Inspecting private members of RegistryKey in debugger causes it to be disposed |
+| [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
 | [dotnet/runtime#88225](https://github.com/dotnet/runtime/issues/88225) | Test failure tracing/eventpipe/processinfo3/processinfo3/processinfo3.sh |
 | [dotnet/runtime#87574](https://github.com/dotnet/runtime/issues/87574) | [EnC] CoreCLR assertion in System.Reflection.Metadata.ApplyUpdateTest.TestGenericAddStaticField |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
