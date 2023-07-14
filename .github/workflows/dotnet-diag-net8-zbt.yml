@@ -1,0 +1,13 @@
+name: Diagnostics .NET 8 ZBT Report Weekly
+
+on:
+  schedule:
+  - cron: "0 8 * * 1"
+  workflow_dispatch:
+
+jobs:
+  DiagnosticReportWeekly:
+    uses: ./.github/workflows/generic-report-generator.yml
+    with:
+      configName: diagnostics-runtime-zbt8
+      reportFolderRelativePath: diagnostics-reports

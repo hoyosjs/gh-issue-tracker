@@ -1,0 +1,15 @@
+name: Diagnostics .NET 8 ZBT Ad-Hoc
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_json_date:
+        description: 'JSON cache date'
+        required: true
+
+jobs:
+  DiagnosticReportWeekly:
+    uses: ./.github/workflows/generic-report-generator.yml
+    with:
+      configName: diagnostics-runtime-zbt8
+      reportFolderRelativePath: diagnostics-reports
