@@ -1,0 +1,31 @@
+{
+    "ReportConfig": {
+        "ReportFriendlyName": ".NET Diagnostics Report",
+        "ReportFilePrefix": "dn-diag-net8-zbt",
+        "ReportOutputPath": "diagnostics-net8-zbt",
+        "SlaHighlightsTimeInMonths": 36
+    },
+    "QueryConfigs": [
+        {
+            "RepoName": "dotnet/runtime",
+            "GloballyExcludedLabels": [
+                "arch-wasm",
+                "Epic",
+                "feature-request",
+                "linkable-framework",
+                "os-android",
+                "os-ios",
+                "os-tvos"
+            ],
+            "Milestone": "8.0.0",
+            "LabelGroups": [ 
+                [ "area-Tracing-coreclr" ],
+                [ "area-System.Diagnostics" ],
+                [ "area-System.Diagnostics.Metric" ],
+                [ "area-System.Diagnostics.Tracing" ],
+                [ "area-Diagnostics-coreclr" ]
+            ],
+            "Version": 1
+        }
+    ]
+}
