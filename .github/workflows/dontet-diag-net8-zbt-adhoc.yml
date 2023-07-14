@@ -12,4 +12,5 @@ jobs:
     uses: ./.github/workflows/generic-report-generator.yml
     with:
       configName: diagnostics-runtime-zbt8
-      reportFolderRelativePath: diagnostics-reports
+      reportFolderRelativePath: diagnostics-net8-zbt
+      oldConfigDate: ${{ github.event.inputs.base_json_date }}
