@@ -1,4 +1,4 @@
-# .NET Diagnostics Report Full Report - 07/14/2023 03:35:45
+# .NET Diagnostics Report Full Report - 07/17/2023 08:12:22
 
 Total issues: 46
 
@@ -25,7 +25,7 @@ Issues in query: 3
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 8
+Issues in query: 7
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -33,7 +33,6 @@ Issues in query: 8
 | [dotnet/runtime#88515](https://github.com/dotnet/runtime/issues/88515) | [Design] .NET metrics naming standard |
 | [dotnet/runtime#87150](https://github.com/dotnet/runtime/issues/87150) | Support Meter and Instrument Tags in MetricsEventSource |
 | [dotnet/runtime#85684](https://github.com/dotnet/runtime/issues/85684) | [Feature]: Meter Configuration and Pipeline |
-| [dotnet/runtime#84412](https://github.com/dotnet/runtime/issues/84412) | Feature Request: Support handling more histograms in MetricsEventSource |
 | [dotnet/runtime#81574](https://github.com/dotnet/runtime/issues/81574) | Dotnet-counter and other tools for specifying meter and ActivitySource names should support namespace wildcards  |
 | [dotnet/runtime#81534](https://github.com/dotnet/runtime/issues/81534) | Advancing Metrics in .NET |
 | [dotnet/runtime#79372](https://github.com/dotnet/runtime/issues/79372) | How do I discover what counters are available for dotnet-counters? |
@@ -54,10 +53,12 @@ Issues in query: 7
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 24
+Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#88924](https://github.com/dotnet/runtime/issues/88924) | `RequestReJITWithInliners` can cause an access violation and crash the application |
+| [dotnet/runtime#88904](https://github.com/dotnet/runtime/issues/88904) | Ensure createdump works with NativeAOT applications |
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
 | [dotnet/runtime#87574](https://github.com/dotnet/runtime/issues/87574) | [EnC] CoreCLR assertion in System.Reflection.Metadata.ApplyUpdateTest.TestGenericAddStaticField |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
@@ -80,6 +81,5 @@ Issues in query: 24
 | [dotnet/runtime#73826](https://github.com/dotnet/runtime/issues/73826) | Add an ICorProfiler callback for when an exception goes unhandled |
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
-| [dotnet/runtime#69324](https://github.com/dotnet/runtime/issues/69324) | should expose the accumulative GC pause duration as a counter |
 | [dotnet/runtime#38736](https://github.com/dotnet/runtime/issues/38736) | **\<OUT OF SLA\>** Debugger.NotifyOfCrossThreadDependency can be slow when a debugger is attached |
 
