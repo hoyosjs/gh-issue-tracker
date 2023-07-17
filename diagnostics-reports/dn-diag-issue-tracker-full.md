@@ -1,13 +1,14 @@
-# .NET Diagnostics Report Full Report - 07/10/2023 06:15:53
+# .NET Diagnostics Report Full Report - 07/17/2023 06:15:49
 
-Total issues: 57
+Total issues: 55
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 20
+Issues in query: 21
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4070](https://github.com/dotnet/diagnostics/issues/4070) | SOS sets the invalid parameter handler in the CRT on Windows in an unsafe way |
 | [dotnet/diagnostics#4058](https://github.com/dotnet/diagnostics/issues/4058) | dotnet-dsrouter not connecting on iOS - "Failed connecting 9191 over usbmux, wait 500 ms before retrying." |
 | [dotnet/diagnostics#4002](https://github.com/dotnet/diagnostics/issues/4002) | Update docs: Linux dump analysis in a Windows environment |
 | [dotnet/diagnostics#3974](https://github.com/dotnet/diagnostics/issues/3974) | Q: what does it mean when `verifyheap` reports heap errors? |
@@ -46,12 +47,11 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 2
+Issues in query: 1
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
-| [dotnet/runtime#88515](https://github.com/dotnet/runtime/issues/88515) | [Design] .NET metrics naming standard |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
@@ -66,22 +66,19 @@ Issues in query: 4
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 27
+Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#88556](https://github.com/dotnet/runtime/issues/88556) | Inspecting private members of RegistryKey in debugger causes it to be disposed |
+| [dotnet/runtime#88924](https://github.com/dotnet/runtime/issues/88924) | `RequestReJITWithInliners` can cause an access violation and crash the application |
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
-| [dotnet/runtime#88225](https://github.com/dotnet/runtime/issues/88225) | Test failure tracing/eventpipe/processinfo3/processinfo3/processinfo3.sh |
 | [dotnet/runtime#87574](https://github.com/dotnet/runtime/issues/87574) | [EnC] CoreCLR assertion in System.Reflection.Metadata.ApplyUpdateTest.TestGenericAddStaticField |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
 | [dotnet/runtime#87300](https://github.com/dotnet/runtime/issues/87300) | Rejit test failures in outerloop - unexpected counts |
 | [dotnet/runtime#87239](https://github.com/dotnet/runtime/issues/87239) | ICorDebugGCReferenceEnum.Next fails to return stack references in .NET 8 preview 4 |
 | [dotnet/runtime#86178](https://github.com/dotnet/runtime/issues/86178) | ICorProfilerCallback.AssemblyUnloadStarted is never called |
 | [dotnet/runtime#85777](https://github.com/dotnet/runtime/issues/85777) | Segfault in CMiniMdTemplate<CMiniMdRW>::getSignatureOfMemberRef |
-| [dotnet/runtime#85339](https://github.com/dotnet/runtime/issues/85339) | Native->Managed (.net core) step-in not working in Visual Studio |
 | [dotnet/runtime#84665](https://github.com/dotnet/runtime/issues/84665) | crashinfounix.cpp: unknown type name 'off64_t' on Alpine Linux |
-| [dotnet/runtime#83985](https://github.com/dotnet/runtime/issues/83985) | Windbg Can't Unwind Stacks for Single-File Dumps Captured with procdump |
 | [dotnet/runtime#83967](https://github.com/dotnet/runtime/issues/83967) | [CoreCLR Linux arm32] `ICorDebugStackWalk` works wrong in case top frame is native. |
 | [dotnet/runtime#83699](https://github.com/dotnet/runtime/issues/83699) | lldb dumpmt crashes against source-built .NET 7 on Fedora 37 |
 | [dotnet/runtime#83419](https://github.com/dotnet/runtime/issues/83419) | exe file name gets truncated in .NET core mini dump name |
@@ -97,4 +94,5 @@ Issues in query: 27
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | **\<OUT OF SLA\>** dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | **\<OUT OF SLA\>** Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
 | [dotnet/runtime#68018](https://github.com/dotnet/runtime/issues/68018) | **\<OUT OF SLA\>** Application crash while stepping into if 'justMyCode' is disabled |
+| [dotnet/runtime#57962](https://github.com/dotnet/runtime/issues/57962) | **\<OUT OF SLA\>** Unwind info not published in growable function tables |
 
