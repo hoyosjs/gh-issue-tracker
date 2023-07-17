@@ -1,4 +1,4 @@
-name: Diagnostics .NET 8 ZBT Report Weekly
+name: Diagnostics .NET 8 ZBB Report Weekly
 
 on:
   schedule:
@@ -9,5 +9,5 @@ jobs:
   DiagnosticReportWeekly:
     uses: ./.github/workflows/generic-report-generator.yml
     with:
-      configName: diagnostics-runtime-zbt8
-      reportFolderRelativePath: diagnostics-net8-zbt
+      configName: diagnostics-runtime-zbb8
+      reportFolderRelativePath: diagnostics-net8-zbb

@@ -1,8 +1,8 @@
 {
     "ReportConfig": {
         "ReportFriendlyName": ".NET Diagnostics Report",
-        "ReportFilePrefix": "dn-diag-net8-zbt",
-        "ReportOutputPath": "diagnostics-net8-zbt",
+        "ReportFilePrefix": "dn-diag-net8-zbb",
+        "ReportOutputPath": "diagnostics-net8-zbb",
         "SlaHighlightsTimeInMonths": 36
     },
     "QueryConfigs": [

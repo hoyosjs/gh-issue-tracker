@@ -1,4 +1,4 @@
-name: Diagnostics .NET 8 ZBT Ad-Hoc
+name: Diagnostics .NET 8 ZBB Ad-Hoc
 
 on:
   workflow_dispatch:
@@ -11,6 +11,6 @@ jobs:
   DiagnosticReportWeekly:
     uses: ./.github/workflows/generic-report-generator.yml
     with:
-      configName: diagnostics-runtime-zbt8
-      reportFolderRelativePath: diagnostics-net8-zbt
+      configName: diagnostics-runtime-zbb8
+      reportFolderRelativePath: diagnostics-net8-zbb
       oldConfigDate: ${{ github.event.inputs.base_json_date }}
