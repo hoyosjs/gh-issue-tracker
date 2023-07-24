@@ -1,30 +1,26 @@
-# .NET Diagnostics Report Full Report - 07/17/2023 23:13:44
+# .NET Diagnostics Report Full Report - 07/24/2023 08:23:41
 
-Total issues: 37
+Total issues: 31
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 4
+Issues in query: 5
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 | [dotnet/runtime#87983](https://github.com/dotnet/runtime/issues/87983) | NativeRuntimeEventSource behaves inconsistently for LogAlways |
+| [dotnet/runtime#87769](https://github.com/dotnet/runtime/issues/87769) | .net8 preview4 AOT windows service process, log component always writes to ETW |
 | [dotnet/runtime#74217](https://github.com/dotnet/runtime/issues/74217) | Add a counter for gen0 budget |
 | [dotnet/runtime#43390](https://github.com/dotnet/runtime/issues/43390) | Developers can employ EventSource APIs when publishing for AOT targets to be able to use .NET tracing capabilities |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
-Issues in query: 2
-
-| **Issue Number** | **Title** |
-| :--------------: | --------- |
-| [dotnet/runtime#79371](https://github.com/dotnet/runtime/issues/79371) | Implement/Convert existing EventCounters to Metrics |
-| [dotnet/runtime#78125](https://github.com/dotnet/runtime/issues/78125) | [API Proposal]: DiagnosticListener support for testing |
+Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 6
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -32,8 +28,6 @@ Issues in query: 6
 | [dotnet/runtime#88515](https://github.com/dotnet/runtime/issues/88515) | [Design] .NET metrics naming standard |
 | [dotnet/runtime#87150](https://github.com/dotnet/runtime/issues/87150) | Support Meter and Instrument Tags in MetricsEventSource |
 | [dotnet/runtime#85684](https://github.com/dotnet/runtime/issues/85684) | [Feature]: Meter Configuration and Pipeline |
-| [dotnet/runtime#81534](https://github.com/dotnet/runtime/issues/81534) | Advancing Metrics in .NET |
-| [dotnet/runtime#71563](https://github.com/dotnet/runtime/issues/71563) | [Feature Request] Faster histogram aggregation for the MetricsEventSource |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
@@ -51,17 +45,14 @@ Issues in query: 7
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 18
+Issues in query: 15
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#88904](https://github.com/dotnet/runtime/issues/88904) | Ensure createdump works with NativeAOT applications |
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
-| [dotnet/runtime#87574](https://github.com/dotnet/runtime/issues/87574) | [EnC] CoreCLR assertion in System.Reflection.Metadata.ApplyUpdateTest.TestGenericAddStaticField |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
-| [dotnet/runtime#87300](https://github.com/dotnet/runtime/issues/87300) | Rejit test failures in outerloop - unexpected counts |
 | [dotnet/runtime#87239](https://github.com/dotnet/runtime/issues/87239) | ICorDebugGCReferenceEnum.Next fails to return stack references in .NET 8 preview 4 |
-| [dotnet/runtime#86178](https://github.com/dotnet/runtime/issues/86178) | ICorProfilerCallback.AssemblyUnloadStarted is never called |
 | [dotnet/runtime#82989](https://github.com/dotnet/runtime/issues/82989) | Concurrent exceptions might cause createdump to fail |
 | [dotnet/runtime#82422](https://github.com/dotnet/runtime/issues/82422) | [Linux, amd64] ICorDebugEval::Abort are broken. |
 | [dotnet/runtime#81921](https://github.com/dotnet/runtime/issues/81921) | Remotely debugging .NET 7 apps in linux-arm environments causes segmentation fault |
