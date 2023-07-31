@@ -1,17 +1,14 @@
-# .NET Diagnostics Report Full Report - 07/24/2023 22:40:18
+# .NET Diagnostics Report Full Report - 07/31/2023 08:23:32
 
 Total issues: 24
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 4
+Issues in query: 1
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | NativeRuntimeEventSource behaving poorly in conjunction with other providers |
-| [dotnet/runtime#87983](https://github.com/dotnet/runtime/issues/87983) | NativeRuntimeEventSource behaves inconsistently for LogAlways |
-| [dotnet/runtime#87769](https://github.com/dotnet/runtime/issues/87769) | .net8 preview4 AOT windows service process, log component always writes to ETW |
-| [dotnet/runtime#74217](https://github.com/dotnet/runtime/issues/74217) | Add a counter for gen0 budget |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
@@ -26,26 +23,29 @@ Issues in query: 4
 | [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
 | [dotnet/runtime#88515](https://github.com/dotnet/runtime/issues/88515) | [Design] .NET metrics naming standard |
 | [dotnet/runtime#87150](https://github.com/dotnet/runtime/issues/87150) | Support Meter and Instrument Tags in MetricsEventSource |
-| [dotnet/runtime#85684](https://github.com/dotnet/runtime/issues/85684) | [Feature]: Meter Configuration and Pipeline |
+| [dotnet/runtime#85684](https://github.com/dotnet/runtime/issues/85684) | [API Proposal]: Meter Configuration and Pipeline |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 5
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#88305](https://github.com/dotnet/runtime/issues/88305) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
 | [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
-| [dotnet/runtime#87064](https://github.com/dotnet/runtime/issues/87064) | Consider preserving some types for DiagnosticSource to work with dotnet-monitor in NativeAOT |
 | [dotnet/runtime#86838](https://github.com/dotnet/runtime/issues/86838) | Deadlock on EventSource.EventListenersLock between EventPipeEventDispatcher.StopDispatchTask() and EventSource.Initialize() |
 | [dotnet/runtime#84091](https://github.com/dotnet/runtime/issues/84091) | Process crash on simultaneous call of EventListener.DisposeOnShutdown() and EventListener.EnableEvents() |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 11
+Issues in query: 15
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#89617](https://github.com/dotnet/runtime/issues/89617) | ICorProfiler ELT hooks need tested with UnmanagedCallersOnly methods |
+| [dotnet/runtime#89592](https://github.com/dotnet/runtime/issues/89592) | Debugger assert during register mapping |
+| [dotnet/runtime#89475](https://github.com/dotnet/runtime/issues/89475) | HasNativeCodeReJitAware |
+| [dotnet/runtime#89474](https://github.com/dotnet/runtime/issues/89474) | Have AreOptimizationsDisabled to go through DAC |
 | [dotnet/runtime#88904](https://github.com/dotnet/runtime/issues/88904) | Ensure createdump works with NativeAOT applications |
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
