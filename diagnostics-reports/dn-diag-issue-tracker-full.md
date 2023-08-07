@@ -1,13 +1,14 @@
-# .NET Diagnostics Report Full Report - 07/31/2023 06:13:24
+# .NET Diagnostics Report Full Report - 08/07/2023 06:13:09
 
 Total issues: 56
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 23
+Issues in query: 24
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4129](https://github.com/dotnet/diagnostics/issues/4129) | dumpheap command unrecognized in dotnet-sos |
 | [dotnet/diagnostics#4108](https://github.com/dotnet/diagnostics/issues/4108) | ClrMd v2 cannot find emitted type |
 | [dotnet/diagnostics#4086](https://github.com/dotnet/diagnostics/issues/4086) | LLDB sos commands don't write output to SBCommandReturnObject |
 | [dotnet/diagnostics#4070](https://github.com/dotnet/diagnostics/issues/4070) | SOS sets the invalid parameter handler in the CRT on Windows in an unsafe way |
@@ -27,8 +28,8 @@ Issues in query: 23
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#3479](https://github.com/dotnet/diagnostics/issues/3479) | Timed out when dotnet-trace connects to a dotnet app |
 | [dotnet/diagnostics#3331](https://github.com/dotnet/diagnostics/issues/3331) | Source-build behavior control update |
-| [dotnet/diagnostics#4099](https://github.com/dotnet/diagnostics/issues/4099) | NativeAOT crash dumps bucket all user exceptions as APPLICATION_FAULT |
-| [dotnet/diagnostics#3248](https://github.com/dotnet/diagnostics/issues/3248) | dotnet diagnostic tools benchmark tests need investigation |
+| [dotnet/diagnostics#4099](https://github.com/dotnet/diagnostics/issues/4099) | **\<OUT OF SLA\>** NativeAOT crash dumps bucket all user exceptions as APPLICATION_FAULT |
+| [dotnet/diagnostics#3248](https://github.com/dotnet/diagnostics/issues/3248) | **\<OUT OF SLA\>** dotnet diagnostic tools benchmark tests need investigation |
 | [dotnet/diagnostics#3155](https://github.com/dotnet/diagnostics/issues/3155) | **\<OUT OF SLA\>** Reenable eeversion tests in StackAndOtherTests/StackTests scripts when 7.0 dumps have version string |
 | [dotnet/diagnostics#2911](https://github.com/dotnet/diagnostics/issues/2911) | **\<OUT OF SLA\>** Guidance on using PerfView/other perf visualization tools. |
 
@@ -38,7 +39,7 @@ Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#89621](https://github.com/dotnet/runtime/issues/89621) | EventPipe shutdown race condition in .net7/.net6 |
+| [dotnet/runtime#90052](https://github.com/dotnet/runtime/issues/90052) | Adding a new listener to EventPipeEventDispatcher temporarily stops emitting events for existing sessions |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
@@ -66,14 +67,13 @@ Issues in query: 4
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 26
+Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#89617](https://github.com/dotnet/runtime/issues/89617) | ICorProfiler ELT hooks need tested with UnmanagedCallersOnly methods |
+| [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | Deadlock between debugger and class loading in PGO |
 | [dotnet/runtime#89592](https://github.com/dotnet/runtime/issues/89592) | Debugger assert during register mapping |
 | [dotnet/runtime#89475](https://github.com/dotnet/runtime/issues/89475) | HasNativeCodeReJitAware |
-| [dotnet/runtime#89474](https://github.com/dotnet/runtime/issues/89474) | Have AreOptimizationsDisabled to go through DAC |
 | [dotnet/runtime#89292](https://github.com/dotnet/runtime/issues/89292) | Unable to break on callback from unmanaged thread |
 | [dotnet/runtime#88924](https://github.com/dotnet/runtime/issues/88924) | `RequestReJITWithInliners` can cause an access violation and crash the application |
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
