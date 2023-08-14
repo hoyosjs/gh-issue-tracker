@@ -1,14 +1,16 @@
-# .NET Diagnostics Report Full Report - 08/07/2023 06:13:09
+# .NET Diagnostics Report Full Report - 08/14/2023 06:12:52
 
-Total issues: 56
+Total issues: 63
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 24
+Issues in query: 26
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#4129](https://github.com/dotnet/diagnostics/issues/4129) | dumpheap command unrecognized in dotnet-sos |
+| [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | Document how to use createdump on native AOT apps |
+| [dotnet/diagnostics#4140](https://github.com/dotnet/diagnostics/issues/4140) | How can I install dotnet tools on runtime only pod? |
+| [dotnet/diagnostics#4139](https://github.com/dotnet/diagnostics/issues/4139) | How to debug memory leak that is not clear on dotnet-dump? |
 | [dotnet/diagnostics#4108](https://github.com/dotnet/diagnostics/issues/4108) | ClrMd v2 cannot find emitted type |
 | [dotnet/diagnostics#4086](https://github.com/dotnet/diagnostics/issues/4086) | LLDB sos commands don't write output to SBCommandReturnObject |
 | [dotnet/diagnostics#4070](https://github.com/dotnet/diagnostics/issues/4070) | SOS sets the invalid parameter handler in the CRT on Windows in an unsafe way |
@@ -56,10 +58,12 @@ Issues in query: 1
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 4
+Issues in query: 6
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#90472](https://github.com/dotnet/runtime/issues/90472) | EventPipe shutdown and EventPipeEventDispatcher aren't coordinated properly |
+| [dotnet/runtime#90433](https://github.com/dotnet/runtime/issues/90433) | Clean up ifdefs in EventSource |
 | [dotnet/runtime#88305](https://github.com/dotnet/runtime/issues/88305) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
 | [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#86838](https://github.com/dotnet/runtime/issues/86838) | Deadlock on EventSource.EventListenersLock between EventPipeEventDispatcher.StopDispatchTask() and EventSource.Initialize() |
@@ -67,14 +71,17 @@ Issues in query: 4
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 25
+Issues in query: 28
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#90500](https://github.com/dotnet/runtime/issues/90500) | ARM64 unwinder missing support for pac_sign_lr |
+| [dotnet/runtime#90359](https://github.com/dotnet/runtime/issues/90359) | [External] Libunwind has suppressed warnings  |
 | [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | Deadlock between debugger and class loading in PGO |
 | [dotnet/runtime#89592](https://github.com/dotnet/runtime/issues/89592) | Debugger assert during register mapping |
 | [dotnet/runtime#89475](https://github.com/dotnet/runtime/issues/89475) | HasNativeCodeReJitAware |
 | [dotnet/runtime#89292](https://github.com/dotnet/runtime/issues/89292) | Unable to break on callback from unmanaged thread |
+| [dotnet/runtime#90187](https://github.com/dotnet/runtime/issues/90187) | ResolvePackageFileConflicts Prohibits using DbgShim from NuGet package |
 | [dotnet/runtime#88924](https://github.com/dotnet/runtime/issues/88924) | `RequestReJITWithInliners` can cause an access violation and crash the application |
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
@@ -84,7 +91,6 @@ Issues in query: 25
 | [dotnet/runtime#83967](https://github.com/dotnet/runtime/issues/83967) | [CoreCLR Linux arm32] `ICorDebugStackWalk` works wrong in case top frame is native. |
 | [dotnet/runtime#83699](https://github.com/dotnet/runtime/issues/83699) | lldb dumpmt crashes against source-built .NET 7 on Fedora 37 |
 | [dotnet/runtime#83419](https://github.com/dotnet/runtime/issues/83419) | exe file name gets truncated in .NET core mini dump name |
-| [dotnet/runtime#82989](https://github.com/dotnet/runtime/issues/82989) | Concurrent exceptions might cause createdump to fail |
 | [dotnet/runtime#82422](https://github.com/dotnet/runtime/issues/82422) | [Linux, amd64] ICorDebugEval::Abort are broken. |
 | [dotnet/runtime#81921](https://github.com/dotnet/runtime/issues/81921) | Remotely debugging .NET 7 apps in linux-arm environments causes segmentation fault |
 | [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
@@ -96,4 +102,5 @@ Issues in query: 25
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | **\<OUT OF SLA\>** Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
 | [dotnet/runtime#68018](https://github.com/dotnet/runtime/issues/68018) | **\<OUT OF SLA\>** Application crash while stepping into if 'justMyCode' is disabled |
 | [dotnet/runtime#57962](https://github.com/dotnet/runtime/issues/57962) | **\<OUT OF SLA\>** Unwind info not published in growable function tables |
+| [dotnet/runtime#11466](https://github.com/dotnet/runtime/issues/11466) | **\<OUT OF SLA\>** Poorly performing hash used in the DBI |
 
