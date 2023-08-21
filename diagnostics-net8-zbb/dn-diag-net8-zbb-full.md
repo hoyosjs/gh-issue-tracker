@@ -1,10 +1,14 @@
-# .NET Diagnostics Report Full Report - 08/14/2023 08:22:15
+# .NET Diagnostics Report Full Report - 08/21/2023 08:22:32
 
-Total issues: 5
+Total issues: 7
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 0
+Issues in query: 1
+
+| **Issue Number** | **Title** |
+| :--------------: | --------- |
+| [dotnet/runtime#90575](https://github.com/dotnet/runtime/issues/90575) | EventPipe logs unintended events during rundown |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
@@ -12,27 +16,25 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 1
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#89880](https://github.com/dotnet/runtime/issues/89880) | [Xamarin.Android] Performance regression between net7 and net8 |
 | [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 2
-
-| **Issue Number** | **Title** |
-| :--------------: | --------- |
-| [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
-| [dotnet/runtime#86838](https://github.com/dotnet/runtime/issues/86838) | Deadlock on EventSource.EventListenersLock between EventPipeEventDispatcher.StopDispatchTask() and EventSource.Initialize() |
+Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 2
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#89475](https://github.com/dotnet/runtime/issues/89475) | HasNativeCodeReJitAware |
+| [dotnet/runtime#90830](https://github.com/dotnet/runtime/issues/90830) | ProfilingAPI: `ICorProfilerInfo14::GetNonGCHeapBounds` deadlock on .NET 8.0-preview7 |
+| [dotnet/runtime#90691](https://github.com/dotnet/runtime/issues/90691) | BDN randomly crashes on Linux? |
+| [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
 | [dotnet/runtime#87239](https://github.com/dotnet/runtime/issues/87239) | ICorDebugGCReferenceEnum.Next fails to return stack references in .NET 8 preview 4 |
 
