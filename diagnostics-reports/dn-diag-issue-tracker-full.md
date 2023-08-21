@@ -1,10 +1,10 @@
-# .NET Diagnostics Report Full Report - 08/14/2023 06:12:52
+# .NET Diagnostics Report Full Report - 08/21/2023 06:12:48
 
-Total issues: 63
+Total issues: 70
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 26
+Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -24,7 +24,6 @@ Issues in query: 26
 | [dotnet/diagnostics#3809](https://github.com/dotnet/diagnostics/issues/3809) | DiagnosticPort docs incorrectly claim support of multiple listen ports |
 | [dotnet/diagnostics#3797](https://github.com/dotnet/diagnostics/issues/3797) | Counters tool doc - specify counter |
 | [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | Re-enable !gcroot source tests |
-| [dotnet/diagnostics#3726](https://github.com/dotnet/diagnostics/issues/3726) | dotnet dump analyze's `gcroot -all <address>` crashes on arm64 |
 | [dotnet/diagnostics#3900](https://github.com/dotnet/diagnostics/issues/3900) | Missing symbols for only dotnet code |
 | [dotnet/diagnostics#3516](https://github.com/dotnet/diagnostics/issues/3516) | DumpMT disabled in SOS.OtherCommands for .NET 7.0+ |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | How to debug stack overflow errors on Windows |
@@ -37,53 +36,65 @@ Issues in query: 26
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 2
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#90831](https://github.com/dotnet/runtime/issues/90831) | Equals on EventId from Microsoft.Extensions.Logging check only ID |
+| [dotnet/runtime#90575](https://github.com/dotnet/runtime/issues/90575) | EventPipe logs unintended events during rundown |
 | [dotnet/runtime#90052](https://github.com/dotnet/runtime/issues/90052) | Adding a new listener to EventPipeEventDispatcher temporarily stops emitting events for existing sessions |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
-Issues in query: 0
-
-## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
-
-Issues in query: 1
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#90788](https://github.com/dotnet/runtime/issues/90788) | System.Diagnostics.Stopwatch When measuring small time periods |
+| [dotnet/runtime#80783](https://github.com/dotnet/runtime/issues/80783) | Would for some tests system wide profiling be a good thing?  |
+
+## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
+
+Issues in query: 3
+
+| **Issue Number** | **Title** |
+| :--------------: | --------- |
+| [dotnet/runtime#90779](https://github.com/dotnet/runtime/issues/90779) | AddMetrics can initialize MetricsSubscriptionManager multiple times |
+| [dotnet/runtime#89880](https://github.com/dotnet/runtime/issues/89880) | [Xamarin.Android] Performance regression between net7 and net8 |
 | [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 6
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#90472](https://github.com/dotnet/runtime/issues/90472) | EventPipe shutdown and EventPipeEventDispatcher aren't coordinated properly |
 | [dotnet/runtime#90433](https://github.com/dotnet/runtime/issues/90433) | Clean up ifdefs in EventSource |
 | [dotnet/runtime#88305](https://github.com/dotnet/runtime/issues/88305) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
 | [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
-| [dotnet/runtime#86838](https://github.com/dotnet/runtime/issues/86838) | Deadlock on EventSource.EventListenersLock between EventPipeEventDispatcher.StopDispatchTask() and EventSource.Initialize() |
 | [dotnet/runtime#84091](https://github.com/dotnet/runtime/issues/84091) | Process crash on simultaneous call of EventListener.DisposeOnShutdown() and EventListener.EnableEvents() |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 28
+Issues in query: 32
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#90830](https://github.com/dotnet/runtime/issues/90830) | ProfilingAPI: `ICorProfilerInfo14::GetNonGCHeapBounds` deadlock on .NET 8.0-preview7 |
+| [dotnet/runtime#90791](https://github.com/dotnet/runtime/issues/90791) | Incomplete type errors in lldb/gdb when when using clang-13 or newer |
+| [dotnet/runtime#90691](https://github.com/dotnet/runtime/issues/90691) | BDN randomly crashes on Linux? |
+| [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
+| [dotnet/runtime#90547](https://github.com/dotnet/runtime/issues/90547) | Createdump will incorrectly try to classify memfd entries as files |
 | [dotnet/runtime#90500](https://github.com/dotnet/runtime/issues/90500) | ARM64 unwinder missing support for pac_sign_lr |
 | [dotnet/runtime#90359](https://github.com/dotnet/runtime/issues/90359) | [External] Libunwind has suppressed warnings  |
 | [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | Deadlock between debugger and class loading in PGO |
 | [dotnet/runtime#89592](https://github.com/dotnet/runtime/issues/89592) | Debugger assert during register mapping |
-| [dotnet/runtime#89475](https://github.com/dotnet/runtime/issues/89475) | HasNativeCodeReJitAware |
 | [dotnet/runtime#89292](https://github.com/dotnet/runtime/issues/89292) | Unable to break on callback from unmanaged thread |
 | [dotnet/runtime#90187](https://github.com/dotnet/runtime/issues/90187) | ResolvePackageFileConflicts Prohibits using DbgShim from NuGet package |
 | [dotnet/runtime#88924](https://github.com/dotnet/runtime/issues/88924) | `RequestReJITWithInliners` can cause an access violation and crash the application |
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
+| [dotnet/runtime#90564](https://github.com/dotnet/runtime/issues/90564) | [regression/8.0.0-preview.6.8686] Windows won't start debugging with EpubSharp dependency |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
 | [dotnet/runtime#87239](https://github.com/dotnet/runtime/issues/87239) | ICorDebugGCReferenceEnum.Next fails to return stack references in .NET 8 preview 4 |
 | [dotnet/runtime#85777](https://github.com/dotnet/runtime/issues/85777) | Segfault in CMiniMdTemplate<CMiniMdRW>::getSignatureOfMemberRef |
@@ -96,7 +107,6 @@ Issues in query: 28
 | [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
 | [dotnet/runtime#79546](https://github.com/dotnet/runtime/issues/79546) | Last PInvoke error in LibraryImport may not be preserved after runtime internal calls |
 | [dotnet/runtime#78991](https://github.com/dotnet/runtime/issues/78991) | NullReferenceException when you use the short format of string.format $"{sample}" when debugging .NET 7 on x64 macOS |
-| [dotnet/runtime#76702](https://github.com/dotnet/runtime/issues/76702) | [EnC] FieldInfo.GetValue on a newly-added ValueType field crashes CoreCLR |
 | [dotnet/runtime#72603](https://github.com/dotnet/runtime/issues/72603) | **\<OUT OF SLA\>** Debugger fails to attach to a specific application with CORDBG_E_MISSING_DEBUGGER_EXPORTS on macOS. |
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | **\<OUT OF SLA\>** dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | **\<OUT OF SLA\>** Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
