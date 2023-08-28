@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 08/21/2023 08:22:32
+# .NET Diagnostics Report Full Report - 08/28/2023 08:22:54
 
-Total issues: 7
+Total issues: 5
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
@@ -29,12 +29,10 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 4
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#90830](https://github.com/dotnet/runtime/issues/90830) | ProfilingAPI: `ICorProfilerInfo14::GetNonGCHeapBounds` deadlock on .NET 8.0-preview7 |
-| [dotnet/runtime#90691](https://github.com/dotnet/runtime/issues/90691) | BDN randomly crashes on Linux? |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
 | [dotnet/runtime#87239](https://github.com/dotnet/runtime/issues/87239) | ICorDebugGCReferenceEnum.Next fails to return stack references in .NET 8 preview 4 |
 
