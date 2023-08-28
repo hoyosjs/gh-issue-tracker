@@ -1,17 +1,19 @@
-# .NET Diagnostics Report Full Report - 08/21/2023 06:12:48
+# .NET Diagnostics Report Full Report - 08/28/2023 06:13:08
 
-Total issues: 70
+Total issues: 65
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 25
+Issues in query: 27
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4191](https://github.com/dotnet/diagnostics/issues/4191) | Fix Microsoft.Diagnostics.NETCore.Client.PerMapTests.GenerateAllTest and GeneratePerfMapTest for 8.0 |
+| [dotnet/diagnostics#4187](https://github.com/dotnet/diagnostics/issues/4187) | !analyzeoom fails in an OOM dump |
+| [dotnet/diagnostics#4171](https://github.com/dotnet/diagnostics/issues/4171) | Please document CorGCReferenceType::CorHandleWeakWinRT |
 | [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | Document how to use createdump on native AOT apps |
 | [dotnet/diagnostics#4140](https://github.com/dotnet/diagnostics/issues/4140) | How can I install dotnet tools on runtime only pod? |
 | [dotnet/diagnostics#4139](https://github.com/dotnet/diagnostics/issues/4139) | How to debug memory leak that is not clear on dotnet-dump? |
-| [dotnet/diagnostics#4108](https://github.com/dotnet/diagnostics/issues/4108) | ClrMd v2 cannot find emitted type |
 | [dotnet/diagnostics#4086](https://github.com/dotnet/diagnostics/issues/4086) | LLDB sos commands don't write output to SBCommandReturnObject |
 | [dotnet/diagnostics#4070](https://github.com/dotnet/diagnostics/issues/4070) | SOS sets the invalid parameter handler in the CRT on Windows in an unsafe way |
 | [dotnet/diagnostics#4058](https://github.com/dotnet/diagnostics/issues/4058) | dotnet-dsrouter not connecting on iOS - "Failed connecting 9191 over usbmux, wait 500 ms before retrying." |
@@ -36,31 +38,28 @@ Issues in query: 25
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 4
+Issues in query: 3
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#90831](https://github.com/dotnet/runtime/issues/90831) | Equals on EventId from Microsoft.Extensions.Logging check only ID |
 | [dotnet/runtime#90575](https://github.com/dotnet/runtime/issues/90575) | EventPipe logs unintended events during rundown |
 | [dotnet/runtime#90052](https://github.com/dotnet/runtime/issues/90052) | Adding a new listener to EventPipeEventDispatcher temporarily stops emitting events for existing sessions |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
-Issues in query: 2
+Issues in query: 1
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#90788](https://github.com/dotnet/runtime/issues/90788) | System.Diagnostics.Stopwatch When measuring small time periods |
 | [dotnet/runtime#80783](https://github.com/dotnet/runtime/issues/80783) | Would for some tests system wide profiling be a good thing?  |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 3
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#90779](https://github.com/dotnet/runtime/issues/90779) | AddMetrics can initialize MetricsSubscriptionManager multiple times |
 | [dotnet/runtime#89880](https://github.com/dotnet/runtime/issues/89880) | [Xamarin.Android] Performance regression between net7 and net8 |
 | [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
 
@@ -77,13 +76,11 @@ Issues in query: 4
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 32
+Issues in query: 28
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#90830](https://github.com/dotnet/runtime/issues/90830) | ProfilingAPI: `ICorProfilerInfo14::GetNonGCHeapBounds` deadlock on .NET 8.0-preview7 |
-| [dotnet/runtime#90791](https://github.com/dotnet/runtime/issues/90791) | Incomplete type errors in lldb/gdb when when using clang-13 or newer |
-| [dotnet/runtime#90691](https://github.com/dotnet/runtime/issues/90691) | BDN randomly crashes on Linux? |
+| [dotnet/runtime#90938](https://github.com/dotnet/runtime/issues/90938) | dotnet dump  no longer working on OSX  |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
 | [dotnet/runtime#90547](https://github.com/dotnet/runtime/issues/90547) | Createdump will incorrectly try to classify memfd entries as files |
 | [dotnet/runtime#90500](https://github.com/dotnet/runtime/issues/90500) | ARM64 unwinder missing support for pac_sign_lr |
@@ -91,10 +88,8 @@ Issues in query: 32
 | [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | Deadlock between debugger and class loading in PGO |
 | [dotnet/runtime#89592](https://github.com/dotnet/runtime/issues/89592) | Debugger assert during register mapping |
 | [dotnet/runtime#89292](https://github.com/dotnet/runtime/issues/89292) | Unable to break on callback from unmanaged thread |
-| [dotnet/runtime#90187](https://github.com/dotnet/runtime/issues/90187) | ResolvePackageFileConflicts Prohibits using DbgShim from NuGet package |
 | [dotnet/runtime#88924](https://github.com/dotnet/runtime/issues/88924) | `RequestReJITWithInliners` can cause an access violation and crash the application |
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
-| [dotnet/runtime#90564](https://github.com/dotnet/runtime/issues/90564) | [regression/8.0.0-preview.6.8686] Windows won't start debugging with EpubSharp dependency |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
 | [dotnet/runtime#87239](https://github.com/dotnet/runtime/issues/87239) | ICorDebugGCReferenceEnum.Next fails to return stack references in .NET 8 preview 4 |
 | [dotnet/runtime#85777](https://github.com/dotnet/runtime/issues/85777) | Segfault in CMiniMdTemplate<CMiniMdRW>::getSignatureOfMemberRef |
