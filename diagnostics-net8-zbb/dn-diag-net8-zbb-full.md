@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 08/28/2023 08:22:54
+# .NET Diagnostics Report Full Report - 09/04/2023 08:22:46
 
-Total issues: 5
+Total issues: 6
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
@@ -25,7 +25,11 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 0
+Issues in query: 1
+
+| **Issue Number** | **Title** |
+| :--------------: | --------- |
+| [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
