@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 08/28/2023 06:13:08
+# .NET Diagnostics Report Full Report - 09/04/2023 06:13:29
 
-Total issues: 65
+Total issues: 67
 
 ## v1,1-dotnet/diagnostics
 
@@ -8,8 +8,8 @@ Issues in query: 27
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4209](https://github.com/dotnet/diagnostics/issues/4209) | ClrThread.EnumerateStackTrace sometimes runs forever [regression] |
 | [dotnet/diagnostics#4191](https://github.com/dotnet/diagnostics/issues/4191) | Fix Microsoft.Diagnostics.NETCore.Client.PerMapTests.GenerateAllTest and GeneratePerfMapTest for 8.0 |
-| [dotnet/diagnostics#4187](https://github.com/dotnet/diagnostics/issues/4187) | !analyzeoom fails in an OOM dump |
 | [dotnet/diagnostics#4171](https://github.com/dotnet/diagnostics/issues/4171) | Please document CorGCReferenceType::CorHandleWeakWinRT |
 | [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | Document how to use createdump on native AOT apps |
 | [dotnet/diagnostics#4140](https://github.com/dotnet/diagnostics/issues/4140) | How can I install dotnet tools on runtime only pod? |
@@ -30,7 +30,7 @@ Issues in query: 27
 | [dotnet/diagnostics#3516](https://github.com/dotnet/diagnostics/issues/3516) | DumpMT disabled in SOS.OtherCommands for .NET 7.0+ |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#3479](https://github.com/dotnet/diagnostics/issues/3479) | Timed out when dotnet-trace connects to a dotnet app |
-| [dotnet/diagnostics#3331](https://github.com/dotnet/diagnostics/issues/3331) | Source-build behavior control update |
+| [dotnet/diagnostics#3331](https://github.com/dotnet/diagnostics/issues/3331) | **\<OUT OF SLA\>** Source-build behavior control update |
 | [dotnet/diagnostics#4099](https://github.com/dotnet/diagnostics/issues/4099) | **\<OUT OF SLA\>** NativeAOT crash dumps bucket all user exceptions as APPLICATION_FAULT |
 | [dotnet/diagnostics#3248](https://github.com/dotnet/diagnostics/issues/3248) | **\<OUT OF SLA\>** dotnet diagnostic tools benchmark tests need investigation |
 | [dotnet/diagnostics#3155](https://github.com/dotnet/diagnostics/issues/3155) | **\<OUT OF SLA\>** Reenable eeversion tests in StackAndOtherTests/StackTests scripts when 7.0 dumps have version string |
@@ -48,10 +48,11 @@ Issues in query: 3
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
-Issues in query: 1
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#91191](https://github.com/dotnet/runtime/issues/91191) | [API Proposal]: An attribute to indicate boxed value type is not expected for certain API |
 | [dotnet/runtime#80783](https://github.com/dotnet/runtime/issues/80783) | Would for some tests system wide profiling be a good thing?  |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
@@ -65,10 +66,11 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 4
+Issues in query: 5
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#90433](https://github.com/dotnet/runtime/issues/90433) | Clean up ifdefs in EventSource |
 | [dotnet/runtime#88305](https://github.com/dotnet/runtime/issues/88305) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
 | [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
