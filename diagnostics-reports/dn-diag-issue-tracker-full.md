@@ -1,14 +1,15 @@
-# .NET Diagnostics Report Full Report - 09/11/2023 06:13:26
+# .NET Diagnostics Report Full Report - 09/18/2023 06:13:29
 
-Total issues: 72
+Total issues: 73
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 29
+Issues in query: 30
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#4220](https://github.com/dotnet/diagnostics/issues/4220) | sos command fails with The ClrRuntime service is required by the Runtime property with .NET 8 on RHEL8 arm64 |
+| [dotnet/diagnostics#4240](https://github.com/dotnet/diagnostics/issues/4240) | lldb Dotnet 6 Core breakpoint with assembly code instead of C# Code |
+| [dotnet/diagnostics#4239](https://github.com/dotnet/diagnostics/issues/4239) | LLDB Dotnet Core 7 breakpoint caused Segmentation fault (core dumped) |
 | [dotnet/diagnostics#4217](https://github.com/dotnet/diagnostics/issues/4217) | Unable to use dotnet-trace from sidecar on Azure Container Instances. |
 | [dotnet/diagnostics#4209](https://github.com/dotnet/diagnostics/issues/4209) | ClrThread.EnumerateStackTrace sometimes runs forever [regression] |
 | [dotnet/diagnostics#4191](https://github.com/dotnet/diagnostics/issues/4191) | Fix Microsoft.Diagnostics.NETCore.Client.PerMapTests.GenerateAllTest and GeneratePerfMapTest for 8.0 |
@@ -44,8 +45,8 @@ Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#92098](https://github.com/dotnet/runtime/issues/92098) | Test failure Loader/binding/tracing/BinderTracingTest.ResolutionFlow/BinderTracingTest.ResolutionFlow.sh |
 | [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
-| [dotnet/runtime#90575](https://github.com/dotnet/runtime/issues/90575) | EventPipe logs unintended events during rundown |
 | [dotnet/runtime#90052](https://github.com/dotnet/runtime/issues/90052) | Adding a new listener to EventPipeEventDispatcher temporarily stops emitting events for existing sessions |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
@@ -60,12 +61,11 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 3
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#91591](https://github.com/dotnet/runtime/issues/91591) | System.Diagnostics.Metrics.LastValue looks like it could experience torn reads |
-| [dotnet/runtime#89880](https://github.com/dotnet/runtime/issues/89880) | [Xamarin.Android] Performance regression between net7 and net8 |
 | [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
@@ -83,10 +83,11 @@ Issues in query: 6
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 28
+Issues in query: 29
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#91963](https://github.com/dotnet/runtime/issues/91963) | `RequestReJITWithInliners` silently fails for debug modules if `COMPLUS_ForceEnc` is enabled |
 | [dotnet/runtime#91631](https://github.com/dotnet/runtime/issues/91631) | No compatiable code running on the thread |
 | [dotnet/runtime#90938](https://github.com/dotnet/runtime/issues/90938) | dotnet dump  no longer working on OSX  |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
@@ -105,7 +106,7 @@ Issues in query: 28
 | [dotnet/runtime#83967](https://github.com/dotnet/runtime/issues/83967) | [CoreCLR Linux arm32] `ICorDebugStackWalk` works wrong in case top frame is native. |
 | [dotnet/runtime#83699](https://github.com/dotnet/runtime/issues/83699) | lldb dumpmt crashes against source-built .NET 7 on Fedora 37 |
 | [dotnet/runtime#83419](https://github.com/dotnet/runtime/issues/83419) | exe file name gets truncated in .NET core mini dump name |
-| [dotnet/runtime#81921](https://github.com/dotnet/runtime/issues/81921) | Remotely debugging .NET 7 apps in linux-arm environments causes segmentation fault |
+| [dotnet/runtime#82422](https://github.com/dotnet/runtime/issues/82422) | [Linux, amd64] ICorDebugEval::Abort are broken. |
 | [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
 | [dotnet/runtime#79546](https://github.com/dotnet/runtime/issues/79546) | Last PInvoke error in LibraryImport may not be preserved after runtime internal calls |
 | [dotnet/runtime#78991](https://github.com/dotnet/runtime/issues/78991) | NullReferenceException when you use the short format of string.format $"{sample}" when debugging .NET 7 on x64 macOS |
