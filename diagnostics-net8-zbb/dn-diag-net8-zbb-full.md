@@ -1,14 +1,10 @@
-# .NET Diagnostics Report Full Report - 09/11/2023 08:23:25
+# .NET Diagnostics Report Full Report - 09/18/2023 08:23:17
 
-Total issues: 6
+Total issues: 3
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 1
-
-| **Issue Number** | **Title** |
-| :--------------: | --------- |
-| [dotnet/runtime#90575](https://github.com/dotnet/runtime/issues/90575) | EventPipe logs unintended events during rundown |
+Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
@@ -16,20 +12,15 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 2
-
-| **Issue Number** | **Title** |
-| :--------------: | --------- |
-| [dotnet/runtime#89880](https://github.com/dotnet/runtime/issues/89880) | [Xamarin.Android] Performance regression between net7 and net8 |
-| [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
-
-## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
-
 Issues in query: 1
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
+| [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
+
+## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
+
+Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
