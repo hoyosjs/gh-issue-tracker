@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 09/18/2023 08:23:17
+# .NET Diagnostics Report Full Report - 09/25/2023 08:23:43
 
-Total issues: 3
+Total issues: 2
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
@@ -24,10 +24,9 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 2
+Issues in query: 1
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
-| [dotnet/runtime#87239](https://github.com/dotnet/runtime/issues/87239) | ICorDebugGCReferenceEnum.Next fails to return stack references in .NET 8 preview 4 |
 
