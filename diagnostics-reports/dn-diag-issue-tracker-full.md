@@ -1,17 +1,14 @@
-# .NET Diagnostics Report Full Report - 09/18/2023 06:13:29
+# .NET Diagnostics Report Full Report - 09/25/2023 06:13:48
 
-Total issues: 73
+Total issues: 71
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 30
+Issues in query: 27
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#4240](https://github.com/dotnet/diagnostics/issues/4240) | lldb Dotnet 6 Core breakpoint with assembly code instead of C# Code |
-| [dotnet/diagnostics#4239](https://github.com/dotnet/diagnostics/issues/4239) | LLDB Dotnet Core 7 breakpoint caused Segmentation fault (core dumped) |
 | [dotnet/diagnostics#4217](https://github.com/dotnet/diagnostics/issues/4217) | Unable to use dotnet-trace from sidecar on Azure Container Instances. |
-| [dotnet/diagnostics#4209](https://github.com/dotnet/diagnostics/issues/4209) | ClrThread.EnumerateStackTrace sometimes runs forever [regression] |
 | [dotnet/diagnostics#4191](https://github.com/dotnet/diagnostics/issues/4191) | Fix Microsoft.Diagnostics.NETCore.Client.PerMapTests.GenerateAllTest and GeneratePerfMapTest for 8.0 |
 | [dotnet/diagnostics#4171](https://github.com/dotnet/diagnostics/issues/4171) | Please document CorGCReferenceType::CorHandleWeakWinRT |
 | [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | Document how to use createdump on native AOT apps |
@@ -45,7 +42,7 @@ Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#92098](https://github.com/dotnet/runtime/issues/92098) | Test failure Loader/binding/tracing/BinderTracingTest.ResolutionFlow/BinderTracingTest.ResolutionFlow.sh |
+| [dotnet/runtime#92236](https://github.com/dotnet/runtime/issues/92236) | Test failure: Loader\\binding\\tracing\\BinderTracingTest.ResolutionFlow\\BinderTracingTest.ResolutionFlow.cmd |
 | [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
 | [dotnet/runtime#90052](https://github.com/dotnet/runtime/issues/90052) | Adding a new listener to EventPipeEventDispatcher temporarily stops emitting events for existing sessions |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | NativeRuntimeEventSource behaving poorly in conjunction with other providers |
@@ -61,19 +58,21 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 2
+Issues in query: 3
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#92442](https://github.com/dotnet/runtime/issues/92442) | [API Proposal]: Low Read High Write Counter |
 | [dotnet/runtime#91591](https://github.com/dotnet/runtime/issues/91591) | System.Diagnostics.Metrics.LastValue looks like it could experience torn reads |
 | [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 6
+Issues in query: 7
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#92519](https://github.com/dotnet/runtime/issues/92519) | Sometimes `testhost/CoreRun` crashes with `System.Diagnostics.Tracing`-related assertion failure |
 | [dotnet/runtime#91769](https://github.com/dotnet/runtime/issues/91769) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
 | [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#90433](https://github.com/dotnet/runtime/issues/90433) | Clean up ifdefs in EventSource |
@@ -83,13 +82,13 @@ Issues in query: 6
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 29
+Issues in query: 28
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#92416](https://github.com/dotnet/runtime/issues/92416) | libsosplugin cannot be loaded into lldb (macos arm64) |
 | [dotnet/runtime#91963](https://github.com/dotnet/runtime/issues/91963) | `RequestReJITWithInliners` silently fails for debug modules if `COMPLUS_ForceEnc` is enabled |
 | [dotnet/runtime#91631](https://github.com/dotnet/runtime/issues/91631) | No compatiable code running on the thread |
-| [dotnet/runtime#90938](https://github.com/dotnet/runtime/issues/90938) | dotnet dump  no longer working on OSX  |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
 | [dotnet/runtime#90547](https://github.com/dotnet/runtime/issues/90547) | Createdump will incorrectly try to classify memfd entries as files |
 | [dotnet/runtime#90500](https://github.com/dotnet/runtime/issues/90500) | ARM64 unwinder missing support for pac_sign_lr |
@@ -100,7 +99,6 @@ Issues in query: 29
 | [dotnet/runtime#88924](https://github.com/dotnet/runtime/issues/88924) | `RequestReJITWithInliners` can cause an access violation and crash the application |
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
-| [dotnet/runtime#87239](https://github.com/dotnet/runtime/issues/87239) | ICorDebugGCReferenceEnum.Next fails to return stack references in .NET 8 preview 4 |
 | [dotnet/runtime#85777](https://github.com/dotnet/runtime/issues/85777) | Segfault in CMiniMdTemplate<CMiniMdRW>::getSignatureOfMemberRef |
 | [dotnet/runtime#84665](https://github.com/dotnet/runtime/issues/84665) | crashinfounix.cpp: unknown type name 'off64_t' on Alpine Linux |
 | [dotnet/runtime#83967](https://github.com/dotnet/runtime/issues/83967) | [CoreCLR Linux arm32] `ICorDebugStackWalk` works wrong in case top frame is native. |
