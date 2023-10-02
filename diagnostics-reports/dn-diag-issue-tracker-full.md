@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 09/25/2023 06:13:48
+# .NET Diagnostics Report Full Report - 10/02/2023 06:14:30
 
-Total issues: 71
+Total issues: 73
 
 ## v1,1-dotnet/diagnostics
 
@@ -8,7 +8,7 @@ Issues in query: 27
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#4217](https://github.com/dotnet/diagnostics/issues/4217) | Unable to use dotnet-trace from sidecar on Azure Container Instances. |
+| [dotnet/diagnostics#4259](https://github.com/dotnet/diagnostics/issues/4259) | libsosplugin cannot be loaded into lldb (macos arm64) |
 | [dotnet/diagnostics#4191](https://github.com/dotnet/diagnostics/issues/4191) | Fix Microsoft.Diagnostics.NETCore.Client.PerMapTests.GenerateAllTest and GeneratePerfMapTest for 8.0 |
 | [dotnet/diagnostics#4171](https://github.com/dotnet/diagnostics/issues/4171) | Please document CorGCReferenceType::CorHandleWeakWinRT |
 | [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | Document how to use createdump on native AOT apps |
@@ -38,10 +38,11 @@ Issues in query: 27
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 4
+Issues in query: 5
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#92734](https://github.com/dotnet/runtime/issues/92734) | SampleProfiler EventPipe provider support for .net 8 Native AOT  |
 | [dotnet/runtime#92236](https://github.com/dotnet/runtime/issues/92236) | Test failure: Loader\\binding\\tracing\\BinderTracingTest.ResolutionFlow\\BinderTracingTest.ResolutionFlow.cmd |
 | [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
 | [dotnet/runtime#90052](https://github.com/dotnet/runtime/issues/90052) | Adding a new listener to EventPipeEventDispatcher temporarily stops emitting events for existing sessions |
@@ -58,20 +59,20 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 3
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#92442](https://github.com/dotnet/runtime/issues/92442) | [API Proposal]: Low Read High Write Counter |
 | [dotnet/runtime#91591](https://github.com/dotnet/runtime/issues/91591) | System.Diagnostics.Metrics.LastValue looks like it could experience torn reads |
 | [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 7
+Issues in query: 8
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#92790](https://github.com/dotnet/runtime/issues/92790) | [API Proposal]: EventKeywords Enum Is Missing 0x80 To Enable Activity ID's |
 | [dotnet/runtime#92519](https://github.com/dotnet/runtime/issues/92519) | Sometimes `testhost/CoreRun` crashes with `System.Diagnostics.Tracing`-related assertion failure |
 | [dotnet/runtime#91769](https://github.com/dotnet/runtime/issues/91769) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
 | [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
@@ -82,11 +83,12 @@ Issues in query: 7
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 28
+Issues in query: 29
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#92416](https://github.com/dotnet/runtime/issues/92416) | libsosplugin cannot be loaded into lldb (macos arm64) |
+| [dotnet/runtime#92856](https://github.com/dotnet/runtime/issues/92856) | ResolveField is very slow when debugging |
+| [dotnet/runtime#92615](https://github.com/dotnet/runtime/issues/92615) | EE skips static field initialization when scope references collection literals |
 | [dotnet/runtime#91963](https://github.com/dotnet/runtime/issues/91963) | `RequestReJITWithInliners` silently fails for debug modules if `COMPLUS_ForceEnc` is enabled |
 | [dotnet/runtime#91631](https://github.com/dotnet/runtime/issues/91631) | No compatiable code running on the thread |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
