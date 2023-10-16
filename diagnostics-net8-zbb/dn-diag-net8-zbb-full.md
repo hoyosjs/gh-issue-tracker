@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 10/09/2023 08:24:30
+# .NET Diagnostics Report Full Report - 10/16/2023 08:24:14
 
-Total issues: 2
+Total issues: 1
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
@@ -12,11 +12,7 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 1
-
-| **Issue Number** | **Title** |
-| :--------------: | --------- |
-| [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
+Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
