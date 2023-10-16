@@ -1,40 +1,35 @@
-# .NET Diagnostics Report Full Report - 10/09/2023 06:14:03
+# .NET Diagnostics Report Full Report - 10/16/2023 06:14:29
 
-Total issues: 72
+Total issues: 66
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 27
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4315](https://github.com/dotnet/diagnostics/issues/4315) | When initializing SOS, `coreclr_initialize` sometimes fails with HR `0x80131022`, leading to "Unrecognized command" error for managed commands |
+| [dotnet/diagnostics#4314](https://github.com/dotnet/diagnostics/issues/4314) | !clrstack reports incorrect method names when <> is encountered |
 | [dotnet/diagnostics#4259](https://github.com/dotnet/diagnostics/issues/4259) | libsosplugin cannot be loaded into lldb (macos arm64) |
 | [dotnet/diagnostics#4191](https://github.com/dotnet/diagnostics/issues/4191) | Fix Microsoft.Diagnostics.NETCore.Client.PerMapTests.GenerateAllTest and GeneratePerfMapTest for 8.0 |
 | [dotnet/diagnostics#4171](https://github.com/dotnet/diagnostics/issues/4171) | Please document CorGCReferenceType::CorHandleWeakWinRT |
 | [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | Document how to use createdump on native AOT apps |
-| [dotnet/diagnostics#4140](https://github.com/dotnet/diagnostics/issues/4140) | How can I install dotnet tools on runtime only pod? |
 | [dotnet/diagnostics#4139](https://github.com/dotnet/diagnostics/issues/4139) | How to debug memory leak that is not clear on dotnet-dump? |
 | [dotnet/diagnostics#4086](https://github.com/dotnet/diagnostics/issues/4086) | LLDB sos commands don't write output to SBCommandReturnObject |
-| [dotnet/diagnostics#4070](https://github.com/dotnet/diagnostics/issues/4070) | SOS sets the invalid parameter handler in the CRT on Windows in an unsafe way |
 | [dotnet/diagnostics#4058](https://github.com/dotnet/diagnostics/issues/4058) | dotnet-dsrouter not connecting on iOS - "Failed connecting 9191 over usbmux, wait 500 ms before retrying." |
 | [dotnet/diagnostics#4002](https://github.com/dotnet/diagnostics/issues/4002) | Update docs: Linux dump analysis in a Windows environment |
 | [dotnet/diagnostics#3974](https://github.com/dotnet/diagnostics/issues/3974) | Q: what does it mean when `verifyheap` reports heap errors? |
 | [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | `dotnet-trace collect` hangs without completing collection on Linux |
-| [dotnet/diagnostics#3913](https://github.com/dotnet/diagnostics/issues/3913) | gctonative requires IMemoryRegionService |
 | [dotnet/diagnostics#3905](https://github.com/dotnet/diagnostics/issues/3905) | `timestamp` for `dotnet counters` in JSON Formatted Incorrectly |
 | [dotnet/diagnostics#3882](https://github.com/dotnet/diagnostics/issues/3882) | Add newer Ubuntu images to testing workflows. |
 | [dotnet/diagnostics#3809](https://github.com/dotnet/diagnostics/issues/3809) | DiagnosticPort docs incorrectly claim support of multiple listen ports |
 | [dotnet/diagnostics#3797](https://github.com/dotnet/diagnostics/issues/3797) | Counters tool doc - specify counter |
 | [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | Re-enable !gcroot source tests |
 | [dotnet/diagnostics#3900](https://github.com/dotnet/diagnostics/issues/3900) | Missing symbols for only dotnet code |
-| [dotnet/diagnostics#3516](https://github.com/dotnet/diagnostics/issues/3516) | DumpMT disabled in SOS.OtherCommands for .NET 7.0+ |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#3479](https://github.com/dotnet/diagnostics/issues/3479) | Timed out when dotnet-trace connects to a dotnet app |
 | [dotnet/diagnostics#3331](https://github.com/dotnet/diagnostics/issues/3331) | **\<OUT OF SLA\>** Source-build behavior control update |
 | [dotnet/diagnostics#4099](https://github.com/dotnet/diagnostics/issues/4099) | **\<OUT OF SLA\>** NativeAOT crash dumps bucket all user exceptions as APPLICATION_FAULT |
-| [dotnet/diagnostics#3248](https://github.com/dotnet/diagnostics/issues/3248) | **\<OUT OF SLA\>** dotnet diagnostic tools benchmark tests need investigation |
-| [dotnet/diagnostics#3155](https://github.com/dotnet/diagnostics/issues/3155) | **\<OUT OF SLA\>** Reenable eeversion tests in StackAndOtherTests/StackTests scripts when 7.0 dumps have version string |
-| [dotnet/diagnostics#2911](https://github.com/dotnet/diagnostics/issues/2911) | **\<OUT OF SLA\>** Guidance on using PerfView/other perf visualization tools. |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
@@ -68,10 +63,11 @@ Issues in query: 3
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 7
+Issues in query: 8
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#93019](https://github.com/dotnet/runtime/issues/93019) | `.NET 9.0` Native Trace Instrumentation Support for HttpClient as per OTel specification |
 | [dotnet/runtime#92519](https://github.com/dotnet/runtime/issues/92519) | Sometimes `testhost/CoreRun` crashes with `System.Diagnostics.Tracing`-related assertion failure |
 | [dotnet/runtime#91769](https://github.com/dotnet/runtime/issues/91769) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
 | [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
@@ -82,11 +78,10 @@ Issues in query: 7
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 29
+Issues in query: 27
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#93122](https://github.com/dotnet/runtime/issues/93122) | Profiling is not working on Alpine on 8.0.100-rc.1.23455.8 |
 | [dotnet/runtime#92615](https://github.com/dotnet/runtime/issues/92615) | EE skips static field initialization when scope references collection literals |
 | [dotnet/runtime#91963](https://github.com/dotnet/runtime/issues/91963) | `RequestReJITWithInliners` silently fails for debug modules if `COMPLUS_ForceEnc` is enabled |
 | [dotnet/runtime#91631](https://github.com/dotnet/runtime/issues/91631) | No compatiable code running on the thread |
@@ -109,7 +104,6 @@ Issues in query: 29
 | [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
 | [dotnet/runtime#79546](https://github.com/dotnet/runtime/issues/79546) | Last PInvoke error in LibraryImport may not be preserved after runtime internal calls |
 | [dotnet/runtime#78991](https://github.com/dotnet/runtime/issues/78991) | NullReferenceException when you use the short format of string.format $"{sample}" when debugging .NET 7 on x64 macOS |
-| [dotnet/runtime#72603](https://github.com/dotnet/runtime/issues/72603) | **\<OUT OF SLA\>** Debugger fails to attach to a specific application with CORDBG_E_MISSING_DEBUGGER_EXPORTS on macOS. |
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | **\<OUT OF SLA\>** dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | **\<OUT OF SLA\>** Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
 | [dotnet/runtime#68018](https://github.com/dotnet/runtime/issues/68018) | **\<OUT OF SLA\>** Application crash while stepping into if 'justMyCode' is disabled |
