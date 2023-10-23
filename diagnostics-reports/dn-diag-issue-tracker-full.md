@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 10/16/2023 06:14:29
+# .NET Diagnostics Report Full Report - 10/23/2023 06:13:52
 
-Total issues: 66
+Total issues: 68
 
 ## v1,1-dotnet/diagnostics
 
@@ -8,6 +8,7 @@ Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4348](https://github.com/dotnet/diagnostics/issues/4348) | Error using `dotnet-gcdump` on Android device |
 | [dotnet/diagnostics#4315](https://github.com/dotnet/diagnostics/issues/4315) | When initializing SOS, `coreclr_initialize` sometimes fails with HR `0x80131022`, leading to "Unrecognized command" error for managed commands |
 | [dotnet/diagnostics#4314](https://github.com/dotnet/diagnostics/issues/4314) | !clrstack reports incorrect method names when <> is encountered |
 | [dotnet/diagnostics#4259](https://github.com/dotnet/diagnostics/issues/4259) | libsosplugin cannot be loaded into lldb (macos arm64) |
@@ -25,9 +26,8 @@ Issues in query: 22
 | [dotnet/diagnostics#3809](https://github.com/dotnet/diagnostics/issues/3809) | DiagnosticPort docs incorrectly claim support of multiple listen ports |
 | [dotnet/diagnostics#3797](https://github.com/dotnet/diagnostics/issues/3797) | Counters tool doc - specify counter |
 | [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | Re-enable !gcroot source tests |
-| [dotnet/diagnostics#3900](https://github.com/dotnet/diagnostics/issues/3900) | Missing symbols for only dotnet code |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | How to debug stack overflow errors on Windows |
-| [dotnet/diagnostics#3479](https://github.com/dotnet/diagnostics/issues/3479) | Timed out when dotnet-trace connects to a dotnet app |
+| [dotnet/diagnostics#3479](https://github.com/dotnet/diagnostics/issues/3479) | **\<OUT OF SLA\>** Timed out when dotnet-trace connects to a dotnet app |
 | [dotnet/diagnostics#3331](https://github.com/dotnet/diagnostics/issues/3331) | **\<OUT OF SLA\>** Source-build behavior control update |
 | [dotnet/diagnostics#4099](https://github.com/dotnet/diagnostics/issues/4099) | **\<OUT OF SLA\>** NativeAOT crash dumps bucket all user exceptions as APPLICATION_FAULT |
 
@@ -53,21 +53,22 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 3
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#93767](https://github.com/dotnet/runtime/issues/93767) | MetricEventSource value published events don't unambiguously resolve which Meter and Instrument tags they are refering to |
 | [dotnet/runtime#93097](https://github.com/dotnet/runtime/issues/93097) | MetricEventSource value published events don't resolve which scope they are refering to |
 | [dotnet/runtime#91591](https://github.com/dotnet/runtime/issues/91591) | System.Diagnostics.Metrics.LastValue looks like it could experience torn reads |
 | [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 8
+Issues in query: 9
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#93019](https://github.com/dotnet/runtime/issues/93019) | `.NET 9.0` Native Trace Instrumentation Support for HttpClient as per OTel specification |
+| [dotnet/runtime#93569](https://github.com/dotnet/runtime/issues/93569) | Outerloop test System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.Stress_WriteConcurrently_DoesntCrash crashing often |
 | [dotnet/runtime#92519](https://github.com/dotnet/runtime/issues/92519) | Sometimes `testhost/CoreRun` crashes with `System.Diagnostics.Tracing`-related assertion failure |
 | [dotnet/runtime#91769](https://github.com/dotnet/runtime/issues/91769) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
 | [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
@@ -75,6 +76,7 @@ Issues in query: 8
 | [dotnet/runtime#88305](https://github.com/dotnet/runtime/issues/88305) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
 | [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#84091](https://github.com/dotnet/runtime/issues/84091) | Process crash on simultaneous call of EventListener.DisposeOnShutdown() and EventListener.EnableEvents() |
+| [dotnet/runtime#48798](https://github.com/dotnet/runtime/issues/48798) | **\<OUT OF SLA\>** Test_EventSource_EtwManifestGeneration* tests failing in CI |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
