@@ -1,14 +1,16 @@
-# .NET Diagnostics Report Full Report - 10/23/2023 06:13:52
+# .NET Diagnostics Report Full Report - 10/30/2023 06:13:30
 
-Total issues: 68
+Total issues: 64
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 22
+Issues in query: 23
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#4348](https://github.com/dotnet/diagnostics/issues/4348) | Error using `dotnet-gcdump` on Android device |
+| [dotnet/diagnostics#4370](https://github.com/dotnet/diagnostics/issues/4370) | Linux arm32 lldb dump debugging commands not working |
+| [dotnet/diagnostics#4369](https://github.com/dotnet/diagnostics/issues/4369) | Seg Fault with dotnet-dump on specific arm32 Linux device |
+| [dotnet/diagnostics#4368](https://github.com/dotnet/diagnostics/issues/4368) | dumpstackobjects causes TargetInvocationException |
 | [dotnet/diagnostics#4315](https://github.com/dotnet/diagnostics/issues/4315) | When initializing SOS, `coreclr_initialize` sometimes fails with HR `0x80131022`, leading to "Unrecognized command" error for managed commands |
 | [dotnet/diagnostics#4314](https://github.com/dotnet/diagnostics/issues/4314) | !clrstack reports incorrect method names when <> is encountered |
 | [dotnet/diagnostics#4259](https://github.com/dotnet/diagnostics/issues/4259) | libsosplugin cannot be loaded into lldb (macos arm64) |
@@ -27,7 +29,6 @@ Issues in query: 22
 | [dotnet/diagnostics#3797](https://github.com/dotnet/diagnostics/issues/3797) | Counters tool doc - specify counter |
 | [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | Re-enable !gcroot source tests |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | How to debug stack overflow errors on Windows |
-| [dotnet/diagnostics#3479](https://github.com/dotnet/diagnostics/issues/3479) | **\<OUT OF SLA\>** Timed out when dotnet-trace connects to a dotnet app |
 | [dotnet/diagnostics#3331](https://github.com/dotnet/diagnostics/issues/3331) | **\<OUT OF SLA\>** Source-build behavior control update |
 | [dotnet/diagnostics#4099](https://github.com/dotnet/diagnostics/issues/4099) | **\<OUT OF SLA\>** NativeAOT crash dumps bucket all user exceptions as APPLICATION_FAULT |
 
@@ -53,26 +54,24 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 4
+Issues in query: 3
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#93767](https://github.com/dotnet/runtime/issues/93767) | MetricEventSource value published events don't unambiguously resolve which Meter and Instrument tags they are refering to |
 | [dotnet/runtime#93097](https://github.com/dotnet/runtime/issues/93097) | MetricEventSource value published events don't resolve which scope they are refering to |
 | [dotnet/runtime#91591](https://github.com/dotnet/runtime/issues/91591) | System.Diagnostics.Metrics.LastValue looks like it could experience torn reads |
-| [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 9
+Issues in query: 8
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#93569](https://github.com/dotnet/runtime/issues/93569) | Outerloop test System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.Stress_WriteConcurrently_DoesntCrash crashing often |
-| [dotnet/runtime#92519](https://github.com/dotnet/runtime/issues/92519) | Sometimes `testhost/CoreRun` crashes with `System.Diagnostics.Tracing`-related assertion failure |
 | [dotnet/runtime#91769](https://github.com/dotnet/runtime/issues/91769) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
 | [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#90433](https://github.com/dotnet/runtime/issues/90433) | Clean up ifdefs in EventSource |
+| [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
 | [dotnet/runtime#88305](https://github.com/dotnet/runtime/issues/88305) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
 | [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#84091](https://github.com/dotnet/runtime/issues/84091) | Process crash on simultaneous call of EventListener.DisposeOnShutdown() and EventListener.EnableEvents() |
@@ -80,12 +79,11 @@ Issues in query: 9
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 27
+Issues in query: 24
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#92615](https://github.com/dotnet/runtime/issues/92615) | EE skips static field initialization when scope references collection literals |
-| [dotnet/runtime#91963](https://github.com/dotnet/runtime/issues/91963) | `RequestReJITWithInliners` silently fails for debug modules if `COMPLUS_ForceEnc` is enabled |
 | [dotnet/runtime#91631](https://github.com/dotnet/runtime/issues/91631) | No compatiable code running on the thread |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
 | [dotnet/runtime#90547](https://github.com/dotnet/runtime/issues/90547) | Createdump will incorrectly try to classify memfd entries as files |
@@ -109,6 +107,4 @@ Issues in query: 27
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | **\<OUT OF SLA\>** dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | **\<OUT OF SLA\>** Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
 | [dotnet/runtime#68018](https://github.com/dotnet/runtime/issues/68018) | **\<OUT OF SLA\>** Application crash while stepping into if 'justMyCode' is disabled |
-| [dotnet/runtime#57962](https://github.com/dotnet/runtime/issues/57962) | **\<OUT OF SLA\>** Unwind info not published in growable function tables |
-| [dotnet/runtime#11466](https://github.com/dotnet/runtime/issues/11466) | **\<OUT OF SLA\>** Poorly performing hash used in the DBI |
 
