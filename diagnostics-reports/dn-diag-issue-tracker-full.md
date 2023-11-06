@@ -1,13 +1,14 @@
-# .NET Diagnostics Report Full Report - 10/30/2023 06:13:30
+# .NET Diagnostics Report Full Report - 11/06/2023 06:14:05
 
-Total issues: 64
+Total issues: 60
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 23
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | dotnet-dump not working when process run as user |
 | [dotnet/diagnostics#4370](https://github.com/dotnet/diagnostics/issues/4370) | Linux arm32 lldb dump debugging commands not working |
 | [dotnet/diagnostics#4369](https://github.com/dotnet/diagnostics/issues/4369) | Seg Fault with dotnet-dump on specific arm32 Linux device |
 | [dotnet/diagnostics#4368](https://github.com/dotnet/diagnostics/issues/4368) | dumpstackobjects causes TargetInvocationException |
@@ -25,8 +26,6 @@ Issues in query: 23
 | [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | `dotnet-trace collect` hangs without completing collection on Linux |
 | [dotnet/diagnostics#3905](https://github.com/dotnet/diagnostics/issues/3905) | `timestamp` for `dotnet counters` in JSON Formatted Incorrectly |
 | [dotnet/diagnostics#3882](https://github.com/dotnet/diagnostics/issues/3882) | Add newer Ubuntu images to testing workflows. |
-| [dotnet/diagnostics#3809](https://github.com/dotnet/diagnostics/issues/3809) | DiagnosticPort docs incorrectly claim support of multiple listen ports |
-| [dotnet/diagnostics#3797](https://github.com/dotnet/diagnostics/issues/3797) | Counters tool doc - specify counter |
 | [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | Re-enable !gcroot source tests |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#3331](https://github.com/dotnet/diagnostics/issues/3331) | **\<OUT OF SLA\>** Source-build behavior control update |
@@ -64,16 +63,13 @@ Issues in query: 3
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 8
+Issues in query: 5
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#91769](https://github.com/dotnet/runtime/issues/91769) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
-| [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#90433](https://github.com/dotnet/runtime/issues/90433) | Clean up ifdefs in EventSource |
 | [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
 | [dotnet/runtime#88305](https://github.com/dotnet/runtime/issues/88305) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
-| [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#84091](https://github.com/dotnet/runtime/issues/84091) | Process crash on simultaneous call of EventListener.DisposeOnShutdown() and EventListener.EnableEvents() |
 | [dotnet/runtime#48798](https://github.com/dotnet/runtime/issues/48798) | **\<OUT OF SLA\>** Test_EventSource_EtwManifestGeneration* tests failing in CI |
 
