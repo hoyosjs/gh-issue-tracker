@@ -35,7 +35,6 @@
             "LabelGroups": [ 
                 [ "area-Tracing-coreclr" ],
                 [ "area-System.Diagnostics" ],
-                [ "area-System.Diagnostics.Metric" ],
                 [ "area-System.Diagnostics.Tracing" ],
                 [ "area-Diagnostics-coreclr" ]
             ],
