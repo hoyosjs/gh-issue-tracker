@@ -1,9 +1,10 @@
 name: Diagnostics .NET 8 ZBB Report Weekly
 
 on:
-  schedule:
-  - cron: "0 8 * * 1"
   workflow_dispatch:
+#   schedule:
+#   - cron: "0 8 * * 1"
+#   workflow_dispatch:
 
 jobs:
   DiagnosticReportWeekly:
