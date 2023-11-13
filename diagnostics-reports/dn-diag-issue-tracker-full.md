@@ -1,13 +1,15 @@
-# .NET Diagnostics Report Full Report - 11/06/2023 06:14:05
+# .NET Diagnostics Report Full Report - 11/13/2023 06:13:49
 
-Total issues: 60
+Total issues: 62
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 22
+Issues in query: 24
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4390](https://github.com/dotnet/diagnostics/issues/4390) | gcdump/dump: Process not running compatible .NET runtime |
+| [dotnet/diagnostics#4388](https://github.com/dotnet/diagnostics/issues/4388) | dotnet dump analyze's `gcroot <address>` crashes on arm64 |
 | [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | dotnet-dump not working when process run as user |
 | [dotnet/diagnostics#4370](https://github.com/dotnet/diagnostics/issues/4370) | Linux arm32 lldb dump debugging commands not working |
 | [dotnet/diagnostics#4369](https://github.com/dotnet/diagnostics/issues/4369) | Seg Fault with dotnet-dump on specific arm32 Linux device |
@@ -53,10 +55,11 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
-Issues in query: 3
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#94434](https://github.com/dotnet/runtime/issues/94434) | [Microsoft.Extensions.Diagnostics] MetricsSubscriptionManager.Dispose not called |
 | [dotnet/runtime#93767](https://github.com/dotnet/runtime/issues/93767) | MetricEventSource value published events don't unambiguously resolve which Meter and Instrument tags they are refering to |
 | [dotnet/runtime#93097](https://github.com/dotnet/runtime/issues/93097) | MetricEventSource value published events don't resolve which scope they are refering to |
 | [dotnet/runtime#91591](https://github.com/dotnet/runtime/issues/91591) | System.Diagnostics.Metrics.LastValue looks like it could experience torn reads |
@@ -75,11 +78,10 @@ Issues in query: 5
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 24
+Issues in query: 23
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#92615](https://github.com/dotnet/runtime/issues/92615) | EE skips static field initialization when scope references collection literals |
 | [dotnet/runtime#91631](https://github.com/dotnet/runtime/issues/91631) | No compatiable code running on the thread |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
 | [dotnet/runtime#90547](https://github.com/dotnet/runtime/issues/90547) | Createdump will incorrectly try to classify memfd entries as files |
