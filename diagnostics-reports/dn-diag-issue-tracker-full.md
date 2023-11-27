@@ -1,17 +1,16 @@
-# .NET Diagnostics Report Full Report - 11/20/2023 06:14:19
+# .NET Diagnostics Report Full Report - 11/27/2023 06:14:10
 
-Total issues: 59
+Total issues: 61
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 25
+Issues in query: 24
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/diagnostics#4401](https://github.com/dotnet/diagnostics/issues/4401) | List built-in Metrics with `dotnet-counters list`  |
 | [dotnet/diagnostics#4395](https://github.com/dotnet/diagnostics/issues/4395) | dotnet-counters does not produce metrics when GC was running? |
 | [dotnet/diagnostics#4390](https://github.com/dotnet/diagnostics/issues/4390) | gcdump/dump: Process not running compatible .NET runtime |
-| [dotnet/diagnostics#4388](https://github.com/dotnet/diagnostics/issues/4388) | dotnet dump analyze's `gcroot <address>` crashes on arm64 |
 | [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | dotnet-dump not working when process run as user |
 | [dotnet/diagnostics#4370](https://github.com/dotnet/diagnostics/issues/4370) | Linux arm32 lldb dump debugging commands not working |
 | [dotnet/diagnostics#4369](https://github.com/dotnet/diagnostics/issues/4369) | Seg Fault with dotnet-dump on specific arm32 Linux device |
@@ -54,7 +53,7 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 7
+Issues in query: 8
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -63,15 +62,18 @@ Issues in query: 7
 | [dotnet/runtime#90433](https://github.com/dotnet/runtime/issues/90433) | Clean up ifdefs in EventSource |
 | [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
 | [dotnet/runtime#88305](https://github.com/dotnet/runtime/issues/88305) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
+| [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#84091](https://github.com/dotnet/runtime/issues/84091) | Process crash on simultaneous call of EventListener.DisposeOnShutdown() and EventListener.EnableEvents() |
 | [dotnet/runtime#48798](https://github.com/dotnet/runtime/issues/48798) | **\<OUT OF SLA\>** Test_EventSource_EtwManifestGeneration* tests failing in CI |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 23
+Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#95189](https://github.com/dotnet/runtime/issues/95189) | vsdbg quits when resuming from a breakpoint if stepping over a line that throws an exception  |
+| [dotnet/runtime#95167](https://github.com/dotnet/runtime/issues/95167) | Crash in DoStackSnapshot. |
 | [dotnet/runtime#91631](https://github.com/dotnet/runtime/issues/91631) | No compatiable code running on the thread |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
 | [dotnet/runtime#90547](https://github.com/dotnet/runtime/issues/90547) | Createdump will incorrectly try to classify memfd entries as files |
