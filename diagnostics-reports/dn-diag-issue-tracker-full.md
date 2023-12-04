@@ -1,13 +1,14 @@
-# .NET Diagnostics Report Full Report - 11/27/2023 06:14:10
+# .NET Diagnostics Report Full Report - 12/04/2023 06:14:41
 
-Total issues: 61
+Total issues: 62
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 24
+Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4415](https://github.com/dotnet/diagnostics/issues/4415) | dotnet-counters long value rendered format |
 | [dotnet/diagnostics#4401](https://github.com/dotnet/diagnostics/issues/4401) | List built-in Metrics with `dotnet-counters list`  |
 | [dotnet/diagnostics#4395](https://github.com/dotnet/diagnostics/issues/4395) | dotnet-counters does not produce metrics when GC was running? |
 | [dotnet/diagnostics#4390](https://github.com/dotnet/diagnostics/issues/4390) | gcdump/dump: Process not running compatible .NET runtime |
@@ -53,7 +54,7 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 8
+Issues in query: 7
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -63,15 +64,15 @@ Issues in query: 8
 | [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
 | [dotnet/runtime#88305](https://github.com/dotnet/runtime/issues/88305) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
 | [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
-| [dotnet/runtime#84091](https://github.com/dotnet/runtime/issues/84091) | Process crash on simultaneous call of EventListener.DisposeOnShutdown() and EventListener.EnableEvents() |
 | [dotnet/runtime#48798](https://github.com/dotnet/runtime/issues/48798) | **\<OUT OF SLA\>** Test_EventSource_EtwManifestGeneration* tests failing in CI |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 25
+Issues in query: 26
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | ExecutionEngineException on using step into while debugging |
 | [dotnet/runtime#95189](https://github.com/dotnet/runtime/issues/95189) | vsdbg quits when resuming from a breakpoint if stepping over a line that throws an exception  |
 | [dotnet/runtime#95167](https://github.com/dotnet/runtime/issues/95167) | Crash in DoStackSnapshot. |
 | [dotnet/runtime#91631](https://github.com/dotnet/runtime/issues/91631) | No compatiable code running on the thread |
@@ -93,7 +94,7 @@ Issues in query: 25
 | [dotnet/runtime#82422](https://github.com/dotnet/runtime/issues/82422) | [Linux, amd64] ICorDebugEval::Abort are broken. |
 | [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
 | [dotnet/runtime#79546](https://github.com/dotnet/runtime/issues/79546) | Last PInvoke error in LibraryImport may not be preserved after runtime internal calls |
-| [dotnet/runtime#78991](https://github.com/dotnet/runtime/issues/78991) | NullReferenceException when you use the short format of string.format $"{sample}" when debugging .NET 7 on x64 macOS |
+| [dotnet/runtime#78991](https://github.com/dotnet/runtime/issues/78991) | **\<OUT OF SLA\>** NullReferenceException when you use the short format of string.format $"{sample}" when debugging .NET 7 on x64 macOS |
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | **\<OUT OF SLA\>** dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | **\<OUT OF SLA\>** Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
 | [dotnet/runtime#68018](https://github.com/dotnet/runtime/issues/68018) | **\<OUT OF SLA\>** Application crash while stepping into if 'justMyCode' is disabled |
