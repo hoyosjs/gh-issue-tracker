@@ -1,15 +1,16 @@
-# .NET Diagnostics Report Full Report - 12/04/2023 06:14:41
+# .NET Diagnostics Report Full Report - 12/11/2023 06:14:32
 
-Total issues: 62
+Total issues: 63
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 25
+Issues in query: 26
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4424](https://github.com/dotnet/diagnostics/issues/4424) | Diagnostics v8.0.452401 Unable to insert breakpoint 1 at 00007ff9e3121930, Win32 error 0n998 |
+| [dotnet/diagnostics#4421](https://github.com/dotnet/diagnostics/issues/4421) | Upgrade to .NET 9 SDK |
 | [dotnet/diagnostics#4415](https://github.com/dotnet/diagnostics/issues/4415) | dotnet-counters long value rendered format |
-| [dotnet/diagnostics#4401](https://github.com/dotnet/diagnostics/issues/4401) | List built-in Metrics with `dotnet-counters list`  |
 | [dotnet/diagnostics#4395](https://github.com/dotnet/diagnostics/issues/4395) | dotnet-counters does not produce metrics when GC was running? |
 | [dotnet/diagnostics#4390](https://github.com/dotnet/diagnostics/issues/4390) | gcdump/dump: Process not running compatible .NET runtime |
 | [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | dotnet-dump not working when process run as user |
