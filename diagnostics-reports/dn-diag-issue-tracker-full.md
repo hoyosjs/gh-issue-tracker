@@ -1,17 +1,16 @@
-# .NET Diagnostics Report Full Report - 12/11/2023 06:14:32
+# .NET Diagnostics Report Full Report - 12/18/2023 06:14:48
 
 Total issues: 63
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 26
+Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#4424](https://github.com/dotnet/diagnostics/issues/4424) | Diagnostics v8.0.452401 Unable to insert breakpoint 1 at 00007ff9e3121930, Win32 error 0n998 |
+| [dotnet/diagnostics#4430](https://github.com/dotnet/diagnostics/issues/4430) | Can't analyze dump of arm64ec process |
 | [dotnet/diagnostics#4421](https://github.com/dotnet/diagnostics/issues/4421) | Upgrade to .NET 9 SDK |
 | [dotnet/diagnostics#4415](https://github.com/dotnet/diagnostics/issues/4415) | dotnet-counters long value rendered format |
-| [dotnet/diagnostics#4395](https://github.com/dotnet/diagnostics/issues/4395) | dotnet-counters does not produce metrics when GC was running? |
 | [dotnet/diagnostics#4390](https://github.com/dotnet/diagnostics/issues/4390) | gcdump/dump: Process not running compatible .NET runtime |
 | [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | dotnet-dump not working when process run as user |
 | [dotnet/diagnostics#4370](https://github.com/dotnet/diagnostics/issues/4370) | Linux arm32 lldb dump debugging commands not working |
@@ -55,10 +54,11 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 7
+Issues in query: 8
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#96092](https://github.com/dotnet/runtime/issues/96092) | `TraceUtils.CopyStringDictionary()` is broken |
 | [dotnet/runtime#94964](https://github.com/dotnet/runtime/issues/94964) | How to debug code that is being compiled in layers? I have the following problem |
 | [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#90433](https://github.com/dotnet/runtime/issues/90433) | Clean up ifdefs in EventSource |
@@ -94,7 +94,7 @@ Issues in query: 26
 | [dotnet/runtime#83419](https://github.com/dotnet/runtime/issues/83419) | exe file name gets truncated in .NET core mini dump name |
 | [dotnet/runtime#82422](https://github.com/dotnet/runtime/issues/82422) | [Linux, amd64] ICorDebugEval::Abort are broken. |
 | [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
-| [dotnet/runtime#79546](https://github.com/dotnet/runtime/issues/79546) | Last PInvoke error in LibraryImport may not be preserved after runtime internal calls |
+| [dotnet/runtime#79546](https://github.com/dotnet/runtime/issues/79546) | **\<OUT OF SLA\>** Last PInvoke error in LibraryImport may not be preserved after runtime internal calls |
 | [dotnet/runtime#78991](https://github.com/dotnet/runtime/issues/78991) | **\<OUT OF SLA\>** NullReferenceException when you use the short format of string.format $"{sample}" when debugging .NET 7 on x64 macOS |
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | **\<OUT OF SLA\>** dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | **\<OUT OF SLA\>** Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
