@@ -1,13 +1,14 @@
-# .NET Diagnostics Report Full Report - 12/18/2023 06:14:48
+# .NET Diagnostics Report Full Report - 12/25/2023 06:14:18
 
-Total issues: 63
+Total issues: 64
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 25
+Issues in query: 26
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4438](https://github.com/dotnet/diagnostics/issues/4438) | .net core 8 can not find System.Private.Xml.ni.pdb in windbg, and VS2022 load  System.Private.Xml.pdb not  System.Private.Xml.ni.pdb |
 | [dotnet/diagnostics#4430](https://github.com/dotnet/diagnostics/issues/4430) | Can't analyze dump of arm64ec process |
 | [dotnet/diagnostics#4421](https://github.com/dotnet/diagnostics/issues/4421) | Upgrade to .NET 9 SDK |
 | [dotnet/diagnostics#4415](https://github.com/dotnet/diagnostics/issues/4415) | dotnet-counters long value rendered format |
@@ -58,7 +59,7 @@ Issues in query: 8
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#96092](https://github.com/dotnet/runtime/issues/96092) | `TraceUtils.CopyStringDictionary()` is broken |
+| [dotnet/runtime#96219](https://github.com/dotnet/runtime/issues/96219) | Potential Deadlock When Disposing EventListeners Concurrently |
 | [dotnet/runtime#94964](https://github.com/dotnet/runtime/issues/94964) | How to debug code that is being compiled in layers? I have the following problem |
 | [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#90433](https://github.com/dotnet/runtime/issues/90433) | Clean up ifdefs in EventSource |
@@ -93,7 +94,7 @@ Issues in query: 26
 | [dotnet/runtime#83699](https://github.com/dotnet/runtime/issues/83699) | lldb dumpmt crashes against source-built .NET 7 on Fedora 37 |
 | [dotnet/runtime#83419](https://github.com/dotnet/runtime/issues/83419) | exe file name gets truncated in .NET core mini dump name |
 | [dotnet/runtime#82422](https://github.com/dotnet/runtime/issues/82422) | [Linux, amd64] ICorDebugEval::Abort are broken. |
-| [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
+| [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | **\<OUT OF SLA\>** [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
 | [dotnet/runtime#79546](https://github.com/dotnet/runtime/issues/79546) | **\<OUT OF SLA\>** Last PInvoke error in LibraryImport may not be preserved after runtime internal calls |
 | [dotnet/runtime#78991](https://github.com/dotnet/runtime/issues/78991) | **\<OUT OF SLA\>** NullReferenceException when you use the short format of string.format $"{sample}" when debugging .NET 7 on x64 macOS |
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | **\<OUT OF SLA\>** dotnet-dump makes process to double its used memory and fails |
