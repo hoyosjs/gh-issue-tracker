@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 01/01/2024 06:14:40
+# .NET Diagnostics Report Full Report - 01/08/2024 06:14:39
 
-Total issues: 66
+Total issues: 63
 
 ## v1,1-dotnet/diagnostics
 
@@ -8,9 +8,9 @@ Issues in query: 26
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4446](https://github.com/dotnet/diagnostics/issues/4446) | Crashing attempting to call `dumplog` |
 | [dotnet/diagnostics#4438](https://github.com/dotnet/diagnostics/issues/4438) | .net core 8 can not find System.Private.Xml.ni.pdb in windbg, and VS2022 load  System.Private.Xml.pdb not  System.Private.Xml.ni.pdb |
 | [dotnet/diagnostics#4430](https://github.com/dotnet/diagnostics/issues/4430) | Can't analyze dump of arm64ec process |
-| [dotnet/diagnostics#4421](https://github.com/dotnet/diagnostics/issues/4421) | Upgrade to .NET 9 SDK |
 | [dotnet/diagnostics#4415](https://github.com/dotnet/diagnostics/issues/4415) | dotnet-counters long value rendered format |
 | [dotnet/diagnostics#4390](https://github.com/dotnet/diagnostics/issues/4390) | gcdump/dump: Process not running compatible .NET runtime |
 | [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | dotnet-dump not working when process run as user |
@@ -37,11 +37,10 @@ Issues in query: 26
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 3
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#96365](https://github.com/dotnet/runtime/issues/96365) | Incomplete rundown event metadata |
 | [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
@@ -56,7 +55,7 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 8
+Issues in query: 7
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -67,27 +66,25 @@ Issues in query: 8
 | [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
 | [dotnet/runtime#88305](https://github.com/dotnet/runtime/issues/88305) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
 | [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
-| [dotnet/runtime#48798](https://github.com/dotnet/runtime/issues/48798) | **\<OUT OF SLA\>** Test_EventSource_EtwManifestGeneration* tests failing in CI |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 27
+Issues in query: 26
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#96322](https://github.com/dotnet/runtime/issues/96322) | Access Violation starting with .NET 8.0.0 when debugging console application with Visual Studio on Windows x64 |
+| [dotnet/runtime#96568](https://github.com/dotnet/runtime/issues/96568) | DAC fails to enumerate heap objects on .NET 7+ due to GC Regions  |
+| [dotnet/runtime#96485](https://github.com/dotnet/runtime/issues/96485) | Is there a way to Request the "Profiler" if one is attached to the CLR to request a "Flush" or harvest from Managed code? |
 | [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | ExecutionEngineException on using step into while debugging |
 | [dotnet/runtime#95189](https://github.com/dotnet/runtime/issues/95189) | vsdbg quits when resuming from a breakpoint if stepping over a line that throws an exception  |
 | [dotnet/runtime#95167](https://github.com/dotnet/runtime/issues/95167) | Crash in DoStackSnapshot. |
 | [dotnet/runtime#91631](https://github.com/dotnet/runtime/issues/91631) | No compatiable code running on the thread |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
 | [dotnet/runtime#90547](https://github.com/dotnet/runtime/issues/90547) | Createdump will incorrectly try to classify memfd entries as files |
-| [dotnet/runtime#90500](https://github.com/dotnet/runtime/issues/90500) | ARM64 unwinder missing support for pac_sign_lr |
 | [dotnet/runtime#90359](https://github.com/dotnet/runtime/issues/90359) | [External] Libunwind has suppressed warnings  |
 | [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | Deadlock between debugger and class loading in PGO |
 | [dotnet/runtime#89592](https://github.com/dotnet/runtime/issues/89592) | Debugger assert during register mapping |
 | [dotnet/runtime#89292](https://github.com/dotnet/runtime/issues/89292) | Unable to break on callback from unmanaged thread |
-| [dotnet/runtime#88924](https://github.com/dotnet/runtime/issues/88924) | `RequestReJITWithInliners` can cause an access violation and crash the application |
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
 | [dotnet/runtime#85777](https://github.com/dotnet/runtime/issues/85777) | Segfault in CMiniMdTemplate<CMiniMdRW>::getSignatureOfMemberRef |
