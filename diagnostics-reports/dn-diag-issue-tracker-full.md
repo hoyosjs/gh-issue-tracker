@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 01/15/2024 06:14:54
+# .NET Diagnostics Report Full Report - 01/22/2024 06:15:12
 
-Total issues: 61
+Total issues: 60
 
 ## v1,1-dotnet/diagnostics
 
@@ -8,11 +8,11 @@ Issues in query: 23
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4464](https://github.com/dotnet/diagnostics/issues/4464) | Access Denied (5) |
 | [dotnet/diagnostics#4446](https://github.com/dotnet/diagnostics/issues/4446) | Crashing attempting to call `dumplog` |
 | [dotnet/diagnostics#4438](https://github.com/dotnet/diagnostics/issues/4438) | .net core 8 can not find System.Private.Xml.ni.pdb in windbg, and VS2022 load  System.Private.Xml.pdb not  System.Private.Xml.ni.pdb |
 | [dotnet/diagnostics#4430](https://github.com/dotnet/diagnostics/issues/4430) | Can't analyze dump of arm64ec process |
 | [dotnet/diagnostics#4415](https://github.com/dotnet/diagnostics/issues/4415) | dotnet-counters long value rendered format |
-| [dotnet/diagnostics#4390](https://github.com/dotnet/diagnostics/issues/4390) | gcdump/dump: Process not running compatible .NET runtime |
 | [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | dotnet-dump not working when process run as user |
 | [dotnet/diagnostics#4370](https://github.com/dotnet/diagnostics/issues/4370) | Linux arm32 lldb dump debugging commands not working |
 | [dotnet/diagnostics#4369](https://github.com/dotnet/diagnostics/issues/4369) | Seg Fault with dotnet-dump on specific arm32 Linux device |
@@ -48,16 +48,15 @@ Issues in query: 2
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#91191](https://github.com/dotnet/runtime/issues/91191) | [API Proposal]: An attribute to indicate boxed value type is not expected for certain API |
-| [dotnet/runtime#80783](https://github.com/dotnet/runtime/issues/80783) | Would for some tests system wide profiling be a good thing?  |
+| [dotnet/runtime#80783](https://github.com/dotnet/runtime/issues/80783) | **\<OUT OF SLA\>** Would for some tests system wide profiling be a good thing?  |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 9
+Issues in query: 8
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#96968](https://github.com/dotnet/runtime/issues/96968) | Test failure BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds_WithEtwListener |
-| [dotnet/runtime#96904](https://github.com/dotnet/runtime/issues/96904) | BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGeneration intermittent test failures |
 | [dotnet/runtime#96324](https://github.com/dotnet/runtime/issues/96324) | Debug.Assert exception I encountered when using Debug version System.Private.CoreLib.dll with mono runtime |
 | [dotnet/runtime#96219](https://github.com/dotnet/runtime/issues/96219) | Potential Deadlock When Disposing EventListeners Concurrently |
 | [dotnet/runtime#94964](https://github.com/dotnet/runtime/issues/94964) | How to debug code that is being compiled in layers? I have the following problem |
@@ -72,8 +71,9 @@ Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#97229](https://github.com/dotnet/runtime/issues/97229) | Add missing GC and Threads performance counters in Net-6 |
+| [dotnet/runtime#97175](https://github.com/dotnet/runtime/issues/97175) | C# program stops at wrong line after IndexOutOfRangeException |
 | [dotnet/runtime#96818](https://github.com/dotnet/runtime/issues/96818) | XUnitLogChecker: Unable to find dumps in Linux |
-| [dotnet/runtime#96747](https://github.com/dotnet/runtime/issues/96747) | [NETSDKE2E][Regression] With VSCode on Linux, debugging a .NET 9 project is failed with Unknown Error 0x80131c3c Unable to attach to CoreCLR. |
 | [dotnet/runtime#96485](https://github.com/dotnet/runtime/issues/96485) | Is there a way to Request the "Profiler" if one is attached to the CLR to request a "Flush" or harvest from Managed code? |
 | [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | ExecutionEngineException on using step into while debugging |
 | [dotnet/runtime#95189](https://github.com/dotnet/runtime/issues/95189) | vsdbg quits when resuming from a breakpoint if stepping over a line that throws an exception  |
@@ -87,7 +87,6 @@ Issues in query: 25
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
 | [dotnet/runtime#85777](https://github.com/dotnet/runtime/issues/85777) | Segfault in CMiniMdTemplate<CMiniMdRW>::getSignatureOfMemberRef |
-| [dotnet/runtime#84665](https://github.com/dotnet/runtime/issues/84665) | crashinfounix.cpp: unknown type name 'off64_t' on Alpine Linux |
 | [dotnet/runtime#83967](https://github.com/dotnet/runtime/issues/83967) | [CoreCLR Linux arm32] `ICorDebugStackWalk` works wrong in case top frame is native. |
 | [dotnet/runtime#83699](https://github.com/dotnet/runtime/issues/83699) | lldb dumpmt crashes against source-built .NET 7 on Fedora 37 |
 | [dotnet/runtime#83419](https://github.com/dotnet/runtime/issues/83419) | exe file name gets truncated in .NET core mini dump name |
