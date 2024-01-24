@@ -5,7 +5,7 @@ on:
     inputs:
       base_json_date:
         description: 'JSON cache date'
-        required: true
+        required: false
 jobs:
   DiagnosticReport:
     uses: ./.github/workflows/generic-report-generator.yml
