@@ -1,0 +1,17 @@
+{
+    "ReportConfig": {
+        "ReportFriendlyName": ".NET GC Report",
+        "ReportFilePrefix": "dn-gc-issue-tracker",
+        "ReportOutputPath": "gc-reports",
+        "SlaHighlightsTimeInMonths": 12
+    },
+    "QueryConfigs": [
+        {
+            "RepoName": "dotnet/runtime",
+            "LabelGroups": [ 
+                [ "area-GC-coreclr" ]
+            ],
+            "Version": 1
+        }
+    ]
+}

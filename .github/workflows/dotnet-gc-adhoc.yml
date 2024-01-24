@@ -1,0 +1,15 @@
+name: GC .NET Report Ad Hoc
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_json_date:
+        description: 'JSON cache date'
+        required: true
+jobs:
+  DiagnosticReport:
+    uses: ./.github/workflows/generic-report-generator.yml
+    with:
+      configName: gc
+      reportFolderRelativePath: gc-reports
+      oldConfigDate: ${{ github.event.inputs.base_json_date }}
