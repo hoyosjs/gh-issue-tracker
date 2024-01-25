@@ -1,15 +1,14 @@
-# .NET GC Report Full Report - 01/24/2024 23:01:06
+# .NET GC Report Full Report - 01/25/2024 22:14:30
 
-Total issues: 146
+Total issues: 144
 
 ## v1,1-dotnet/runtime|area-GC-coreclr
 
-Issues in query: 146
+Issues in query: 144
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#97467](https://github.com/dotnet/runtime/issues/97467) | Segmentation fault on .NET 6 - Linux Ubuntu 18.04 |
-| [dotnet/runtime#97437](https://github.com/dotnet/runtime/issues/97437) | GC/API/Refresh/Refresh failing in outer loop runs |
 | [dotnet/runtime#97434](https://github.com/dotnet/runtime/issues/97434) | [API Proposal]: GC level ObjectPooling APIs and more |
 | [dotnet/runtime#97334](https://github.com/dotnet/runtime/issues/97334) | Test failure: HandleRefTest.Validate_NoGC() |
 | [dotnet/runtime#97186](https://github.com/dotnet/runtime/issues/97186) | Runtime crashes on OSX running compiler unit tests |
@@ -22,7 +21,6 @@ Issues in query: 146
 | [dotnet/runtime#95922](https://github.com/dotnet/runtime/issues/95922) | Large unmanaged memory growth (leak?) when upgrading from .NET 6 to 8 |
 | [dotnet/runtime#95191](https://github.com/dotnet/runtime/issues/95191) | .Net 7 + 8 Garbage Collection Regression Issue |
 | [dotnet/runtime#95257](https://github.com/dotnet/runtime/issues/95257) | .net8 AOT compiled library targeting arm64 crashes when invoked using DllImport from .net8 code |
-| [dotnet/runtime#94846](https://github.com/dotnet/runtime/issues/94846) | GcMemoryInfo returns incorrect values in .NET 8 on macOS 14 Sonoma |
 | [dotnet/runtime#94565](https://github.com/dotnet/runtime/issues/94565) | GCMemoryInfo.MemoryLoadBytes does not reflect whats inside MEMORYSTATUS  |
 | [dotnet/runtime#94476](https://github.com/dotnet/runtime/issues/94476) | [Perf] Linux/x64: 2 Regressions on 11/4/2023 4:52:33 AM |
 | [dotnet/runtime#94175](https://github.com/dotnet/runtime/issues/94175) | Unexpected OOM with GCHeapLimit |
