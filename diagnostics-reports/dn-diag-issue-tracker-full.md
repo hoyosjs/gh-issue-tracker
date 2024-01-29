@@ -1,16 +1,17 @@
-# .NET Diagnostics Report Full Report - 01/22/2024 06:15:12
+# .NET Diagnostics Report Full Report - 01/29/2024 06:13:24
 
 Total issues: 60
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 23
+Issues in query: 24
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4477](https://github.com/dotnet/diagnostics/issues/4477) | [gcdump] objects are sometimes missing from Android dumps |
+| [dotnet/diagnostics#4473](https://github.com/dotnet/diagnostics/issues/4473) | Cannot Build |
 | [dotnet/diagnostics#4464](https://github.com/dotnet/diagnostics/issues/4464) | Access Denied (5) |
 | [dotnet/diagnostics#4446](https://github.com/dotnet/diagnostics/issues/4446) | Crashing attempting to call `dumplog` |
-| [dotnet/diagnostics#4438](https://github.com/dotnet/diagnostics/issues/4438) | .net core 8 can not find System.Private.Xml.ni.pdb in windbg, and VS2022 load  System.Private.Xml.pdb not  System.Private.Xml.ni.pdb |
 | [dotnet/diagnostics#4430](https://github.com/dotnet/diagnostics/issues/4430) | Can't analyze dump of arm64ec process |
 | [dotnet/diagnostics#4415](https://github.com/dotnet/diagnostics/issues/4415) | dotnet-counters long value rendered format |
 | [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | dotnet-dump not working when process run as user |
@@ -67,11 +68,11 @@ Issues in query: 8
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 25
+Issues in query: 24
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#97229](https://github.com/dotnet/runtime/issues/97229) | Add missing GC and Threads performance counters in Net-6 |
+| [dotnet/runtime#97343](https://github.com/dotnet/runtime/issues/97343) | Update of libunwind to 1.8.0 has broken remote unwind  |
 | [dotnet/runtime#97175](https://github.com/dotnet/runtime/issues/97175) | C# program stops at wrong line after IndexOutOfRangeException |
 | [dotnet/runtime#96818](https://github.com/dotnet/runtime/issues/96818) | XUnitLogChecker: Unable to find dumps in Linux |
 | [dotnet/runtime#96485](https://github.com/dotnet/runtime/issues/96485) | Is there a way to Request the "Profiler" if one is attached to the CLR to request a "Flush" or harvest from Managed code? |
@@ -80,7 +81,6 @@ Issues in query: 25
 | [dotnet/runtime#95167](https://github.com/dotnet/runtime/issues/95167) | Crash in DoStackSnapshot. |
 | [dotnet/runtime#91631](https://github.com/dotnet/runtime/issues/91631) | No compatiable code running on the thread |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
-| [dotnet/runtime#90547](https://github.com/dotnet/runtime/issues/90547) | Createdump will incorrectly try to classify memfd entries as files |
 | [dotnet/runtime#90359](https://github.com/dotnet/runtime/issues/90359) | [External] Libunwind has suppressed warnings  |
 | [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | Deadlock between debugger and class loading in PGO |
 | [dotnet/runtime#89592](https://github.com/dotnet/runtime/issues/89592) | Debugger assert during register mapping |
