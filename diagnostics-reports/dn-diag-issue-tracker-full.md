@@ -1,15 +1,20 @@
-# .NET Diagnostics Report Full Report - 01/29/2024 06:13:24
+# .NET Diagnostics Report Full Report - 02/05/2024 06:13:23
 
-Total issues: 60
+Total issues: 66
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 24
+Issues in query: 29
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4495](https://github.com/dotnet/diagnostics/issues/4495) | `System.OutOfMemoryException` during installation `dotnet-sos`, `dotnet-symbol`, `dotnet-dump` for `linux-riscv64` |
+| [dotnet/diagnostics#4494](https://github.com/dotnet/diagnostics/issues/4494) | Where can I find `dotnet-sos` or `libsos.so` for `linux-s390x` and `linux-ppc64le`? |
+| [dotnet/diagnostics#4491](https://github.com/dotnet/diagnostics/issues/4491) | Better document the difference between `DumpType.Normal` and `DumpType.Triage` |
+| [dotnet/diagnostics#4490](https://github.com/dotnet/diagnostics/issues/4490) | `dotnet-trace` speedscope report: the call of one method is divided into different pieces  |
+| [dotnet/diagnostics#4484](https://github.com/dotnet/diagnostics/issues/4484) | CLRMD floods logs with `EnumerateStackRoots found an entry with Object == 0, addr:73664ff040 srcType:0` while enumerating root paths for core dump created under linux |
+| [dotnet/diagnostics#4481](https://github.com/dotnet/diagnostics/issues/4481) | dotnet-symbol can't download symbols for dotnet 7.0.15  |
 | [dotnet/diagnostics#4477](https://github.com/dotnet/diagnostics/issues/4477) | [gcdump] objects are sometimes missing from Android dumps |
-| [dotnet/diagnostics#4473](https://github.com/dotnet/diagnostics/issues/4473) | Cannot Build |
 | [dotnet/diagnostics#4464](https://github.com/dotnet/diagnostics/issues/4464) | Access Denied (5) |
 | [dotnet/diagnostics#4446](https://github.com/dotnet/diagnostics/issues/4446) | Crashing attempting to call `dumplog` |
 | [dotnet/diagnostics#4430](https://github.com/dotnet/diagnostics/issues/4430) | Can't analyze dump of arm64ec process |
@@ -68,11 +73,12 @@ Issues in query: 8
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 24
+Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#97343](https://github.com/dotnet/runtime/issues/97343) | Update of libunwind to 1.8.0 has broken remote unwind  |
+| [dotnet/runtime#97771](https://github.com/dotnet/runtime/issues/97771) | Calling RequestReJIT in the profiler API can cause a deadlock |
+| [dotnet/runtime#97765](https://github.com/dotnet/runtime/issues/97765) | WriteXorExecute is not working in combination with PerfMaps |
 | [dotnet/runtime#97175](https://github.com/dotnet/runtime/issues/97175) | C# program stops at wrong line after IndexOutOfRangeException |
 | [dotnet/runtime#96818](https://github.com/dotnet/runtime/issues/96818) | XUnitLogChecker: Unable to find dumps in Linux |
 | [dotnet/runtime#96485](https://github.com/dotnet/runtime/issues/96485) | Is there a way to Request the "Profiler" if one is attached to the CLR to request a "Flush" or harvest from Managed code? |
