@@ -1,17 +1,15 @@
-# .NET Diagnostics Report Full Report - 02/12/2024 06:13:24
+# .NET Diagnostics Report Full Report - 02/19/2024 06:14:19
 
-Total issues: 58
+Total issues: 57
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 24
+Issues in query: 21
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/diagnostics#4491](https://github.com/dotnet/diagnostics/issues/4491) | Better document the difference between `DumpType.Normal` and `DumpType.Triage` |
-| [dotnet/diagnostics#4490](https://github.com/dotnet/diagnostics/issues/4490) | `dotnet-trace` speedscope report: the call of one method is divided into different pieces  |
 | [dotnet/diagnostics#4484](https://github.com/dotnet/diagnostics/issues/4484) | CLRMD floods logs with `EnumerateStackRoots found an entry with Object == 0, addr:73664ff040 srcType:0` while enumerating root paths for core dump created under linux |
-| [dotnet/diagnostics#4481](https://github.com/dotnet/diagnostics/issues/4481) | dotnet-symbol can't download symbols for dotnet 7.0.15  |
 | [dotnet/diagnostics#4464](https://github.com/dotnet/diagnostics/issues/4464) | Access Denied (5) |
 | [dotnet/diagnostics#4446](https://github.com/dotnet/diagnostics/issues/4446) | Crashing attempting to call `dumplog` |
 | [dotnet/diagnostics#4430](https://github.com/dotnet/diagnostics/issues/4430) | Can't analyze dump of arm64ec process |
@@ -25,7 +23,6 @@ Issues in query: 24
 | [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | Document how to use createdump on native AOT apps |
 | [dotnet/diagnostics#4139](https://github.com/dotnet/diagnostics/issues/4139) | How to debug memory leak that is not clear on dotnet-dump? |
 | [dotnet/diagnostics#4086](https://github.com/dotnet/diagnostics/issues/4086) | LLDB sos commands don't write output to SBCommandReturnObject |
-| [dotnet/diagnostics#4058](https://github.com/dotnet/diagnostics/issues/4058) | dotnet-dsrouter not connecting on iOS - "Failed connecting 9191 over usbmux, wait 500 ms before retrying." |
 | [dotnet/diagnostics#4002](https://github.com/dotnet/diagnostics/issues/4002) | Update docs: Linux dump analysis in a Windows environment |
 | [dotnet/diagnostics#3974](https://github.com/dotnet/diagnostics/issues/3974) | Q: what does it mean when `verifyheap` reports heap errors? |
 | [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | `dotnet-trace collect` hangs without completing collection on Linux |
@@ -49,8 +46,8 @@ Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#98499](https://github.com/dotnet/runtime/issues/98499) | `DiagnosticSource` Filtering Behaviour |
 | [dotnet/runtime#91191](https://github.com/dotnet/runtime/issues/91191) | [API Proposal]: An attribute to indicate boxed value type is not expected for certain API |
-| [dotnet/runtime#80783](https://github.com/dotnet/runtime/issues/80783) | **\<OUT OF SLA\>** Would for some tests system wide profiling be a good thing?  |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
@@ -69,11 +66,13 @@ Issues in query: 8
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 21
+Issues in query: 23
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#97771](https://github.com/dotnet/runtime/issues/97771) | Calling RequestReJIT in the profiler API can cause a deadlock |
+| [dotnet/runtime#98506](https://github.com/dotnet/runtime/issues/98506) | Excessive exceptions generated in StackTraceSymbols when using Portable PDB |
+| [dotnet/runtime#98500](https://github.com/dotnet/runtime/issues/98500) | Unhandled exception. System.Exception: Profilee returned exit code 139 instead of expected exit code 100 |
+| [dotnet/runtime#98359](https://github.com/dotnet/runtime/issues/98359) | Debugging With Primary Constructor |
 | [dotnet/runtime#97765](https://github.com/dotnet/runtime/issues/97765) | WriteXorExecute is not working in combination with PerfMaps |
 | [dotnet/runtime#97175](https://github.com/dotnet/runtime/issues/97175) | C# program stops at wrong line after IndexOutOfRangeException |
 | [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | ExecutionEngineException on using step into while debugging |
