@@ -22,21 +22,21 @@
         {
             "RepoName": "dotnet/runtime",
             "GloballyExcludedLabels": [
-                "arch-wasm",
                 "enhancement",
                 "Epic",
                 "feature-request",
-                "linkable-framework",
-                "os-android",
-                "os-ios",
-                "os-tvos"
+                "linkable-framework"
             ],
             "ExcludedMilestone": "future",
             "LabelGroups": [ 
                 [ "area-Tracing-coreclr" ],
                 [ "area-System.Diagnostics" ],
                 [ "area-System.Diagnostics.Tracing" ],
-                [ "area-Diagnostics-coreclr" ]
+                [ "area-Diagnostics-coreclr" ],
+                [ "area-Debugger-mono" ],
+                [ "area-Diagnostics-mono" ],
+                [ "area-System.Diagnostics-mono" ],
+                [ "area-Tracing-mono" ]
             ],
             "Version": 1
         }
