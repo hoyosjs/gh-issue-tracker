@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 02/26/2024 06:14:18
+# .NET Diagnostics Report Full Report - 03/04/2024 06:58:07
 
-Total issues: 127
+Total issues: 123
 
 ## v1,1-dotnet/diagnostics
 
@@ -34,11 +34,10 @@ Issues in query: 23
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 3
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#98270](https://github.com/dotnet/runtime/issues/98270) | dotnet command hangs on two out of three Linux systems (possible deadlock in LTTNG) |
 | [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
@@ -68,12 +67,10 @@ Issues in query: 8
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 23
+Issues in query: 21
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#98817](https://github.com/dotnet/runtime/issues/98817) | profiler\\multiple\\multiple\\multiple.cmd failing on windows arm64 |
-| [dotnet/runtime#98787](https://github.com/dotnet/runtime/issues/98787) | Test failure: profiler\\multiple\\multiple\\multiple.cmd |
 | [dotnet/runtime#98506](https://github.com/dotnet/runtime/issues/98506) | Excessive exceptions generated in StackTraceSymbols when using Portable PDB |
 | [dotnet/runtime#97765](https://github.com/dotnet/runtime/issues/97765) | WriteXorExecute is not working in combination with PerfMaps |
 | [dotnet/runtime#97175](https://github.com/dotnet/runtime/issues/97175) | C# program stops at wrong line after IndexOutOfRangeException |
@@ -98,16 +95,16 @@ Issues in query: 23
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 52
+Issues in query: 51
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#98872](https://github.com/dotnet/runtime/issues/98872) | .NET 8 - Blazor Web App - Sample solution doesn't work on Safari  |
+| [dotnet/runtime#99007](https://github.com/dotnet/runtime/issues/99007) | [.NET 8] [android] case where Mono debugger doesn't "break" correctly on unhandled exceptions |
+| [dotnet/runtime#98932](https://github.com/dotnet/runtime/issues/98932) | Stopping blazor debug session takes too long because of Script Document Node on Solution Explorer |
 | [dotnet/runtime#98771](https://github.com/dotnet/runtime/issues/98771) | [browser][MT] Debugger timeout with deputy thread |
 | [dotnet/runtime#98215](https://github.com/dotnet/runtime/issues/98215) | [wasm][debugger] Chrome test failure `DebuggerTests.SteppingTests.SteppingIntoLibrarySymbolsLoadedFromSymbolServerRemoveSymbolServerAndStepAgain` |
 | [dotnet/runtime#98208](https://github.com/dotnet/runtime/issues/98208) | Blazor WASM "Debug Adapter" fail to handle breakpoints when a Web Worker is present |
 | [dotnet/runtime#98086](https://github.com/dotnet/runtime/issues/98086) | [browser][debugger] Firefox EvaluateOnCallFrame2Tests |
-| [dotnet/runtime#97987](https://github.com/dotnet/runtime/issues/97987) | Blazor webassembly project Program.cs cannot be debugged |
 | [dotnet/runtime#97652](https://github.com/dotnet/runtime/issues/97652) | [wasm][mt] Debugger test is using blocking calls in JS interop thread |
 | [dotnet/runtime#97198](https://github.com/dotnet/runtime/issues/97198) | [blazor][debugger] Unable to debug in lazy loaded assemblies with remote authentication failed |
 | [dotnet/runtime#96734](https://github.com/dotnet/runtime/issues/96734) | [browser][debugger] Cannot set breakpoint in partial class defined in separate files |
@@ -152,7 +149,6 @@ Issues in query: 52
 | [dotnet/runtime#69543](https://github.com/dotnet/runtime/issues/69543) | **\<OUT OF SLA\>** [wasm][debugger] Fix class returned on evaluation of expression with "?" |
 | [dotnet/runtime#69300](https://github.com/dotnet/runtime/issues/69300) | **\<OUT OF SLA\>** [wasm][debugger] Fix exception reason on evaluation of method that throws |
 | [dotnet/runtime#65864](https://github.com/dotnet/runtime/issues/65864) | **\<OUT OF SLA\>** [wasm][debugger] Todo in expression evaluation |
-| [dotnet/runtime#96032](https://github.com/dotnet/runtime/issues/96032) | **\<OUT OF SLA\>** Calling ASP.NET Core Blazor WebAssembly app lifecycle event in MainLayout or App - can't get a break point to stick |
 | [dotnet/runtime#95968](https://github.com/dotnet/runtime/issues/95968) | **\<OUT OF SLA\>** Blazor debugging is not possible in iframe |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
