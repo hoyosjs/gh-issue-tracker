@@ -1,13 +1,14 @@
-# .NET Diagnostics Report Full Report - 03/04/2024 06:58:07
+# .NET Diagnostics Report Full Report - 03/11/2024 06:13:33
 
-Total issues: 123
+Total issues: 110
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 23
+Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4542](https://github.com/dotnet/diagnostics/issues/4542) | dotnet trace not working for MAUI application using EF Core |
 | [dotnet/diagnostics#4524](https://github.com/dotnet/diagnostics/issues/4524) | dotnet-dsrouter and dotnet-gcdump doc needed when default port is occupied |
 | [dotnet/diagnostics#4522](https://github.com/dotnet/diagnostics/issues/4522) | Unexpected error in .NET Core 3.1 when running "Collect metrics" sample from MS documentation |
 | [dotnet/diagnostics#4491](https://github.com/dotnet/diagnostics/issues/4491) | Better document the difference between `DumpType.Normal` and `DumpType.Triage` |
@@ -31,13 +32,17 @@ Issues in query: 23
 | [dotnet/diagnostics#3882](https://github.com/dotnet/diagnostics/issues/3882) | Add newer Ubuntu images to testing workflows. |
 | [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | Re-enable !gcroot source tests |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | **\<OUT OF SLA\>** How to debug stack overflow errors on Windows |
+| [dotnet/diagnostics#2921](https://github.com/dotnet/diagnostics/issues/2921) | **\<OUT OF SLA\>** SDL signoff requirements - please enable additional C/C++ compiler warnings |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 2
+Issues in query: 5
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#99497](https://github.com/dotnet/runtime/issues/99497) | Assert in CounterGroup.OnEventSourceCommand after trying to run BDN x86 |
+| [dotnet/runtime#99484](https://github.com/dotnet/runtime/issues/99484) | Q: Is building the CoreCLR runtime on Unix supported with FEATURE_EVENT_TRACE disabled? |
+| [dotnet/runtime#94390](https://github.com/dotnet/runtime/issues/94390) | Test failure Loader/binding/tracing/BinderTracingTest.ResolutionFlow/BinderTracingTest.ResolutionFlow.cmd |
 | [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
@@ -56,24 +61,27 @@ Issues in query: 8
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
 | [dotnet/runtime#96968](https://github.com/dotnet/runtime/issues/96968) | Test failure BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds_WithEtwListener |
 | [dotnet/runtime#96324](https://github.com/dotnet/runtime/issues/96324) | Debug.Assert exception I encountered when using Debug version System.Private.CoreLib.dll with mono runtime |
 | [dotnet/runtime#96219](https://github.com/dotnet/runtime/issues/96219) | Potential Deadlock When Disposing EventListeners Concurrently |
 | [dotnet/runtime#94964](https://github.com/dotnet/runtime/issues/94964) | How to debug code that is being compiled in layers? I have the following problem |
 | [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
-| [dotnet/runtime#88305](https://github.com/dotnet/runtime/issues/88305) | Test failure BasicEventSourceTests.TestsWrite.Test_Write_T_ETW |
 | [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 21
+Issues in query: 24
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#99471](https://github.com/dotnet/runtime/issues/99471) | SDL signoff requirements - enable MSVC warning C4242 (libunwind) |
+| [dotnet/runtime#99302](https://github.com/dotnet/runtime/issues/99302) | [cdac] Implement `!PrintException` |
+| [dotnet/runtime#99301](https://github.com/dotnet/runtime/issues/99301) | [cdac] Enable the DAC to delegate operations to the cDAC |
+| [dotnet/runtime#99300](https://github.com/dotnet/runtime/issues/99300) | [cdac] Implement basic data stream reader and writer in C |
+| [dotnet/runtime#99299](https://github.com/dotnet/runtime/issues/99299) | [cdac] Publish data stream spec |
 | [dotnet/runtime#98506](https://github.com/dotnet/runtime/issues/98506) | Excessive exceptions generated in StackTraceSymbols when using Portable PDB |
-| [dotnet/runtime#97765](https://github.com/dotnet/runtime/issues/97765) | WriteXorExecute is not working in combination with PerfMaps |
-| [dotnet/runtime#97175](https://github.com/dotnet/runtime/issues/97175) | C# program stops at wrong line after IndexOutOfRangeException |
 | [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | ExecutionEngineException on using step into while debugging |
 | [dotnet/runtime#95189](https://github.com/dotnet/runtime/issues/95189) | vsdbg quits when resuming from a breakpoint if stepping over a line that throws an exception  |
 | [dotnet/runtime#95167](https://github.com/dotnet/runtime/issues/95167) | Crash in DoStackSnapshot. |
@@ -95,12 +103,11 @@ Issues in query: 21
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 51
+Issues in query: 31
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#99007](https://github.com/dotnet/runtime/issues/99007) | [.NET 8] [android] case where Mono debugger doesn't "break" correctly on unhandled exceptions |
-| [dotnet/runtime#98932](https://github.com/dotnet/runtime/issues/98932) | Stopping blazor debug session takes too long because of Script Document Node on Solution Explorer |
 | [dotnet/runtime#98771](https://github.com/dotnet/runtime/issues/98771) | [browser][MT] Debugger timeout with deputy thread |
 | [dotnet/runtime#98215](https://github.com/dotnet/runtime/issues/98215) | [wasm][debugger] Chrome test failure `DebuggerTests.SteppingTests.SteppingIntoLibrarySymbolsLoadedFromSymbolServerRemoveSymbolServerAndStepAgain` |
 | [dotnet/runtime#98208](https://github.com/dotnet/runtime/issues/98208) | Blazor WASM "Debug Adapter" fail to handle breakpoints when a Web Worker is present |
@@ -110,17 +117,14 @@ Issues in query: 51
 | [dotnet/runtime#96734](https://github.com/dotnet/runtime/issues/96734) | [browser][debugger] Cannot set breakpoint in partial class defined in separate files |
 | [dotnet/runtime#96137](https://github.com/dotnet/runtime/issues/96137) | Debugging With InteractiveAuto When Changes To Webassembly |
 | [dotnet/runtime#95943](https://github.com/dotnet/runtime/issues/95943) | [wasm] `DebuggerTests.ExceptionTests.ExceptionTestAllWithReload` failing with `Expected to only pause because of an exception.` |
-| [dotnet/runtime#95488](https://github.com/dotnet/runtime/issues/95488) | [wasm][debugger] Tests: Spawn MonoProxy in a separate process to avoid excessive memory usage for tests |
 | [dotnet/runtime#95401](https://github.com/dotnet/runtime/issues/95401) | [browser][nodejs] Start app with debugging for console template  |
 | [dotnet/runtime#95209](https://github.com/dotnet/runtime/issues/95209) | Debugging Blazor application freezes Chrome (and Edge) |
-| [dotnet/runtime#95019](https://github.com/dotnet/runtime/issues/95019) | [wasm] MonoProxy throws System.InvalidOperationException: Collection was modified; enumeration operation may not execute. |
 | [dotnet/runtime#93973](https://github.com/dotnet/runtime/issues/93973) | [debugger][mono][codespaces] Debug Blazor app from Codespaces |
 | [dotnet/runtime#93971](https://github.com/dotnet/runtime/issues/93971) | [wasm][debugger] Show correct datatypes for int, long, double |
 | [dotnet/runtime#93615](https://github.com/dotnet/runtime/issues/93615) | [Mono] [Debug] VS Code debugger for Mono does not attach  |
 | [dotnet/runtime#93057](https://github.com/dotnet/runtime/issues/93057) | [wasm][debugger] Evaluate methods with short arguments |
 | [dotnet/runtime#91773](https://github.com/dotnet/runtime/issues/91773) | [wasm][debugger] Timeout waiting for CheckInspectLocalsAtBreakpointSite  |
 | [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
-| [dotnet/runtime#90587](https://github.com/dotnet/runtime/issues/90587) | [debugger][mono] Tracking issue for debugger new features and improvements |
 | [dotnet/runtime#89909](https://github.com/dotnet/runtime/issues/89909) | [wasm] `DebuggerTests.MiscTests.DebuggerTests.MiscTests.TestDebugUsingMultiThreadedRuntime` failing |
 | [dotnet/runtime#89700](https://github.com/dotnet/runtime/issues/89700) | [wasm][debugger] NRE seen in proxy when loading symbols from symbol server |
 | [dotnet/runtime#89409](https://github.com/dotnet/runtime/issues/89409) | [wasm][debugger] Debugger tests getting randomly aborted on CI |
@@ -128,37 +132,20 @@ Issues in query: 51
 | [dotnet/runtime#84086](https://github.com/dotnet/runtime/issues/84086) | Blazor WASM project will not debug if index.html file  includes some scripts with crossorigin |
 | [dotnet/runtime#81646](https://github.com/dotnet/runtime/issues/81646) | **\<OUT OF SLA\>** [wasm][debugger] Breakpoint test failing with multithreaded build - `CreateGoodBreakpointAndHitGoToWasmPageWithoutAssetsComeBackAndHitAgain` |
 | [dotnet/runtime#81282](https://github.com/dotnet/runtime/issues/81282) | **\<OUT OF SLA\>** [wasm] Support debugging multi-threaded apps |
-| [dotnet/runtime#81028](https://github.com/dotnet/runtime/issues/81028) | **\<OUT OF SLA\>** [wasm][debugger] Move Shift-Alt-D functionality from aspnetcore repo to runtime repo |
 | [dotnet/runtime#80727](https://github.com/dotnet/runtime/issues/80727) | **\<OUT OF SLA\>** Debugged macOS app crashes when requesting access to photo library  |
-| [dotnet/runtime#80049](https://github.com/dotnet/runtime/issues/80049) | **\<OUT OF SLA\>** [wasm][debugger] Invoke static getter in valuetype not working |
 | [dotnet/runtime#78475](https://github.com/dotnet/runtime/issues/78475) | **\<OUT OF SLA\>** Blazor C# Debugger doesn't hit C# breakpoint after calling async Javascript function |
-| [dotnet/runtime#77965](https://github.com/dotnet/runtime/issues/77965) | **\<OUT OF SLA\>** [wasm][debugger] `DebuggerRootHidden` elements cannot have identical names |
-| [dotnet/runtime#77768](https://github.com/dotnet/runtime/issues/77768) | **\<OUT OF SLA\>** [wasm][debugger] Expand support of `DebuggerTypeProxy` |
-| [dotnet/runtime#77536](https://github.com/dotnet/runtime/issues/77536) | **\<OUT OF SLA\>** [wasm][debugger] Support indexing by `object` schema |
-| [dotnet/runtime#77315](https://github.com/dotnet/runtime/issues/77315) | **\<OUT OF SLA\>** [wasm[debugger] Support `DebuggerTypeProxyAttribute(string)` |
-| [dotnet/runtime#76876](https://github.com/dotnet/runtime/issues/76876) | **\<OUT OF SLA\>** [wasm][debugger] RootHidden is not working correctly in DebuggerTypeProxy |
 | [dotnet/runtime#76721](https://github.com/dotnet/runtime/issues/76721) | **\<OUT OF SLA\>** [wasm] Improve experience of debugging library tests |
-| [dotnet/runtime#76015](https://github.com/dotnet/runtime/issues/76015) | **\<OUT OF SLA\>** [wasm][debugger] Support indexing by non-mathematical expression |
-| [dotnet/runtime#75773](https://github.com/dotnet/runtime/issues/75773) | **\<OUT OF SLA\>** [wasm][debugger] Support format specifiers  |
 | [dotnet/runtime#75013](https://github.com/dotnet/runtime/issues/75013) | **\<OUT OF SLA\>** WASM CI failure in `DebuggerTests.EvaluateOnCallFrameTests.InheritedAndPrivateMembersInAClass` |
-| [dotnet/runtime#73867](https://github.com/dotnet/runtime/issues/73867) | **\<OUT OF SLA\>** [wasm][debugger]Fix behavior about setting breakpoints on hidden lines |
-| [dotnet/runtime#73298](https://github.com/dotnet/runtime/issues/73298) | **\<OUT OF SLA\>** [wasm][debugger] Detect when overriding field is overridden on `GetProperties` |
 | [dotnet/runtime#72009](https://github.com/dotnet/runtime/issues/72009) | **\<OUT OF SLA\>** [wasm][debugger] Fix previous frame evaluation in Firefox |
-| [dotnet/runtime#70337](https://github.com/dotnet/runtime/issues/70337) | **\<OUT OF SLA\>** [wasm][debugger] Evaluate methods on primitives with null-condition operator. |
-| [dotnet/runtime#69640](https://github.com/dotnet/runtime/issues/69640) | **\<OUT OF SLA\>** [wasm][debugger] Support complex expressions with null-condition |
-| [dotnet/runtime#69543](https://github.com/dotnet/runtime/issues/69543) | **\<OUT OF SLA\>** [wasm][debugger] Fix class returned on evaluation of expression with "?" |
-| [dotnet/runtime#69300](https://github.com/dotnet/runtime/issues/69300) | **\<OUT OF SLA\>** [wasm][debugger] Fix exception reason on evaluation of method that throws |
-| [dotnet/runtime#65864](https://github.com/dotnet/runtime/issues/65864) | **\<OUT OF SLA\>** [wasm][debugger] Todo in expression evaluation |
 | [dotnet/runtime#95968](https://github.com/dotnet/runtime/issues/95968) | **\<OUT OF SLA\>** Blazor debugging is not possible in iframe |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
 
-Issues in query: 11
+Issues in query: 10
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#98654](https://github.com/dotnet/runtime/issues/98654) | System.IO.IOException: ' Received an unexpected EOF or 0 bytes from the transport stream.' |
-| [dotnet/runtime#97565](https://github.com/dotnet/runtime/issues/97565) | mono_os_mutex_destroy: pthread_mutex_destroy failed |
 | [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
 | [dotnet/runtime#97097](https://github.com/dotnet/runtime/issues/97097) | [.NET8 + WebAssembly] Debugging experience still is far from being 'OK' |
 | [dotnet/runtime#94114](https://github.com/dotnet/runtime/issues/94114) | EventPipe Doesn't Work On OSX With Sandbox Enabled |
