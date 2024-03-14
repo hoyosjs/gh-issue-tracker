@@ -1,16 +1,19 @@
-# .NET GC Report Full Report - 01/25/2024 22:14:30
+# .NET GC Report Full Report - 03/14/2024 22:25:03
 
-Total issues: 144
+Total issues: 143
 
 ## v1,1-dotnet/runtime|area-GC-coreclr
 
-Issues in query: 144
+Issues in query: 143
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#99487](https://github.com/dotnet/runtime/issues/99487) | CLR_GCHEAPCOLLECT_KEYWORD triggers a GC twice |
+| [dotnet/runtime#99304](https://github.com/dotnet/runtime/issues/99304) | Possible memory leak in .Net 8.0.2 |
+| [dotnet/runtime#99164](https://github.com/dotnet/runtime/issues/99164) | [API Proposal]: Add Garbage collector metrics |
+| [dotnet/runtime#97600](https://github.com/dotnet/runtime/issues/97600) | NoGCRegion decommits memory in an inconsistent way |
 | [dotnet/runtime#97467](https://github.com/dotnet/runtime/issues/97467) | Segmentation fault on .NET 6 - Linux Ubuntu 18.04 |
 | [dotnet/runtime#97434](https://github.com/dotnet/runtime/issues/97434) | [API Proposal]: GC level ObjectPooling APIs and more |
-| [dotnet/runtime#97334](https://github.com/dotnet/runtime/issues/97334) | Test failure: HandleRefTest.Validate_NoGC() |
 | [dotnet/runtime#97186](https://github.com/dotnet/runtime/issues/97186) | Runtime crashes on OSX running compiler unit tests |
 | [dotnet/runtime#96592](https://github.com/dotnet/runtime/issues/96592) | AOT built binary for aarch64 android fails to run on Nvidia Shield TV |
 | [dotnet/runtime#97126](https://github.com/dotnet/runtime/issues/97126) | High Memory Usage on AMD EPYC 7282 Compared to Intel Xeon E5-2630 v4 with .NET 8.0 |
@@ -39,9 +42,7 @@ Issues in query: 144
 | [dotnet/runtime#90672](https://github.com/dotnet/runtime/issues/90672) | Avoid wasted commit in NoGCRegions |
 | [dotnet/runtime#90640](https://github.com/dotnet/runtime/issues/90640) | GC runs but working set remains the same? |
 | [dotnet/runtime#90555](https://github.com/dotnet/runtime/issues/90555) | Workstation GC Performance |
-| [dotnet/runtime#90481](https://github.com/dotnet/runtime/issues/90481) | something like initial JVM heap size need for GC heap size in dotnet |
 | [dotnet/runtime#90442](https://github.com/dotnet/runtime/issues/90442) | Assert failure: g_heaps[h]->committed_by_oh_per_heap[oh] == g_heaps[h]->committed_by_oh_per_heap_refresh[oh] |
-| [dotnet/runtime#90163](https://github.com/dotnet/runtime/issues/90163) | .NET 6 Blazor App high memory usage under Linux |
 | [dotnet/runtime#89272](https://github.com/dotnet/runtime/issues/89272) | GC deadlock on spawning new process on OSX under Rosetta |
 | [dotnet/runtime#87826](https://github.com/dotnet/runtime/issues/87826) | Regressions in System.Threading.Tests.Perf_Timer |
 | [dotnet/runtime#87626](https://github.com/dotnet/runtime/issues/87626) | [Perf] Windows/arm64: 4 Regressions on 6/12/2023 7:14:25 PM |
@@ -53,8 +54,8 @@ Issues in query: 144
 | [dotnet/runtime#84393](https://github.com/dotnet/runtime/issues/84393) | [6.0, 7.0] Assert failed in coreclr linux arm: GCHeapUtilities::GetGCHeap()->IsInFrozenSegment(obj) |
 | [dotnet/runtime#84035](https://github.com/dotnet/runtime/issues/84035) | Process memory and the memory snapshot are not equal |
 | [dotnet/runtime#83964](https://github.com/dotnet/runtime/issues/83964) | [GC] GetLogicalProcessorCacheSizeFromOS should fallback per cache level |
-| [dotnet/runtime#81425](https://github.com/dotnet/runtime/issues/81425) | Memory Leak in Complex Software with Net 7 |
-| [dotnet/runtime#81383](https://github.com/dotnet/runtime/issues/81383) | [6.0] GC test failures: Handle collector count overflows or underflows |
+| [dotnet/runtime#81425](https://github.com/dotnet/runtime/issues/81425) | **\<OUT OF SLA\>** Memory Leak in Complex Software with Net 7 |
+| [dotnet/runtime#81383](https://github.com/dotnet/runtime/issues/81383) | **\<OUT OF SLA\>** [6.0] GC test failures: Handle collector count overflows or underflows |
 | [dotnet/runtime#81056](https://github.com/dotnet/runtime/issues/81056) | **\<OUT OF SLA\>** In .NET 7 large number of concurrent requests will memory leak |
 | [dotnet/runtime#80351](https://github.com/dotnet/runtime/issues/80351) | **\<OUT OF SLA\>** Memory not being collected back |
 | [dotnet/runtime#79308](https://github.com/dotnet/runtime/issues/79308) | **\<OUT OF SLA\>** Assert ((size_t)g_gc_lowest_address - ps) >= OS_PAGE_SIZE |
@@ -131,8 +132,6 @@ Issues in query: 144
 | [dotnet/runtime#10547](https://github.com/dotnet/runtime/issues/10547) | **\<OUT OF SLA\>** GC.GetAllocatedBytesForCurrentThread always returns 0 when processor affinity is set to single proc |
 | [dotnet/runtime#10529](https://github.com/dotnet/runtime/issues/10529) | **\<OUT OF SLA\>** Add an aggressively-clear GC mode |
 | [dotnet/runtime#10480](https://github.com/dotnet/runtime/issues/10480) | **\<OUT OF SLA\>** GC Heap Compaction should clear the source data |
-| [dotnet/runtime#10235](https://github.com/dotnet/runtime/issues/10235) | **\<OUT OF SLA\>** [local gc] enable use of NumaNodeInfo for local gc and PAL |
-| [dotnet/runtime#10099](https://github.com/dotnet/runtime/issues/10099) | **\<OUT OF SLA\>** Freeing up memory from ArrayPools |
 | [dotnet/runtime#9022](https://github.com/dotnet/runtime/issues/9022) | **\<OUT OF SLA\>** Improve Density of GC heap by String Interning  (de-duping)  on Gen2 GC  |
 | [dotnet/runtime#8718](https://github.com/dotnet/runtime/issues/8718) | **\<OUT OF SLA\>** Reduce CoreCLR memory footprint |
 | [dotnet/runtime#8666](https://github.com/dotnet/runtime/issues/8666) | **\<OUT OF SLA\>** NoGC region improvements |
