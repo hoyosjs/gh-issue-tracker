@@ -1,13 +1,15 @@
-# .NET Diagnostics Report Full Report - 03/11/2024 06:13:33
+# .NET Diagnostics Report Full Report - 03/18/2024 06:14:15
 
-Total issues: 110
+Total issues: 98
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 25
+Issues in query: 27
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4555](https://github.com/dotnet/diagnostics/issues/4555) | "No CLR runtime found" analyzing Linux .NET 6.0.26 crash dump |
+| [dotnet/diagnostics#4551](https://github.com/dotnet/diagnostics/issues/4551) | libsosplugin.dylib: CoreCLR host crash on macOS Sonoma 14.4 on arm64 |
 | [dotnet/diagnostics#4542](https://github.com/dotnet/diagnostics/issues/4542) | dotnet trace not working for MAUI application using EF Core |
 | [dotnet/diagnostics#4524](https://github.com/dotnet/diagnostics/issues/4524) | dotnet-dsrouter and dotnet-gcdump doc needed when default port is occupied |
 | [dotnet/diagnostics#4522](https://github.com/dotnet/diagnostics/issues/4522) | Unexpected error in .NET Core 3.1 when running "Collect metrics" sample from MS documentation |
@@ -36,31 +38,30 @@ Issues in query: 25
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 5
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#99497](https://github.com/dotnet/runtime/issues/99497) | Assert in CounterGroup.OnEventSourceCommand after trying to run BDN x86 |
-| [dotnet/runtime#99484](https://github.com/dotnet/runtime/issues/99484) | Q: Is building the CoreCLR runtime on Unix supported with FEATURE_EVENT_TRACE disabled? |
 | [dotnet/runtime#94390](https://github.com/dotnet/runtime/issues/94390) | Test failure Loader/binding/tracing/BinderTracingTest.ResolutionFlow/BinderTracingTest.ResolutionFlow.cmd |
 | [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
-Issues in query: 2
+Issues in query: 1
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#91191](https://github.com/dotnet/runtime/issues/91191) | [API Proposal]: An attribute to indicate boxed value type is not expected for certain API |
-| [dotnet/runtime#51399](https://github.com/dotnet/runtime/issues/51399) | **\<OUT OF SLA\>** System.Diagnostics.StackTrace.Tests Fails on iOS, tvOS |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 8
+Issues in query: 9
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#99816](https://github.com/dotnet/runtime/issues/99816) | Higher Memory Usage for the EventSource Class |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
 | [dotnet/runtime#96968](https://github.com/dotnet/runtime/issues/96968) | Test failure BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds_WithEtwListener |
 | [dotnet/runtime#96324](https://github.com/dotnet/runtime/issues/96324) | Debug.Assert exception I encountered when using Debug version System.Private.CoreLib.dll with mono runtime |
@@ -72,15 +73,13 @@ Issues in query: 8
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 24
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#99471](https://github.com/dotnet/runtime/issues/99471) | SDL signoff requirements - enable MSVC warning C4242 (libunwind) |
-| [dotnet/runtime#99302](https://github.com/dotnet/runtime/issues/99302) | [cdac] Implement `!PrintException` |
-| [dotnet/runtime#99301](https://github.com/dotnet/runtime/issues/99301) | [cdac] Enable the DAC to delegate operations to the cDAC |
-| [dotnet/runtime#99300](https://github.com/dotnet/runtime/issues/99300) | [cdac] Implement basic data stream reader and writer in C |
-| [dotnet/runtime#99299](https://github.com/dotnet/runtime/issues/99299) | [cdac] Publish data stream spec |
+| [dotnet/runtime#99487](https://github.com/dotnet/runtime/issues/99487) | CLR_GCHEAPCOLLECT_KEYWORD triggers a GC twice |
+| [dotnet/runtime#99471](https://github.com/dotnet/runtime/issues/99471) | SDL signoff requirements - enable MSVC warnings C4242 and C4244 (libunwind) |
+| [dotnet/runtime#98654](https://github.com/dotnet/runtime/issues/98654) | System.IO.IOException: ' Received an unexpected EOF or 0 bytes from the transport stream.' |
 | [dotnet/runtime#98506](https://github.com/dotnet/runtime/issues/98506) | Excessive exceptions generated in StackTraceSymbols when using Portable PDB |
 | [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | ExecutionEngineException on using step into while debugging |
 | [dotnet/runtime#95189](https://github.com/dotnet/runtime/issues/95189) | vsdbg quits when resuming from a breakpoint if stepping over a line that throws an exception  |
@@ -103,10 +102,11 @@ Issues in query: 24
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 31
+Issues in query: 24
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#99686](https://github.com/dotnet/runtime/issues/99686) | [wasm] CreateGoodBreakpointAndHit failure |
 | [dotnet/runtime#99007](https://github.com/dotnet/runtime/issues/99007) | [.NET 8] [android] case where Mono debugger doesn't "break" correctly on unhandled exceptions |
 | [dotnet/runtime#98771](https://github.com/dotnet/runtime/issues/98771) | [browser][MT] Debugger timeout with deputy thread |
 | [dotnet/runtime#98215](https://github.com/dotnet/runtime/issues/98215) | [wasm][debugger] Chrome test failure `DebuggerTests.SteppingTests.SteppingIntoLibrarySymbolsLoadedFromSymbolServerRemoveSymbolServerAndStepAgain` |
@@ -122,7 +122,6 @@ Issues in query: 31
 | [dotnet/runtime#93973](https://github.com/dotnet/runtime/issues/93973) | [debugger][mono][codespaces] Debug Blazor app from Codespaces |
 | [dotnet/runtime#93971](https://github.com/dotnet/runtime/issues/93971) | [wasm][debugger] Show correct datatypes for int, long, double |
 | [dotnet/runtime#93615](https://github.com/dotnet/runtime/issues/93615) | [Mono] [Debug] VS Code debugger for Mono does not attach  |
-| [dotnet/runtime#93057](https://github.com/dotnet/runtime/issues/93057) | [wasm][debugger] Evaluate methods with short arguments |
 | [dotnet/runtime#91773](https://github.com/dotnet/runtime/issues/91773) | [wasm][debugger] Timeout waiting for CheckInspectLocalsAtBreakpointSite  |
 | [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
 | [dotnet/runtime#89909](https://github.com/dotnet/runtime/issues/89909) | [wasm] `DebuggerTests.MiscTests.DebuggerTests.MiscTests.TestDebugUsingMultiThreadedRuntime` failing |
@@ -130,22 +129,15 @@ Issues in query: 31
 | [dotnet/runtime#89409](https://github.com/dotnet/runtime/issues/89409) | [wasm][debugger] Debugger tests getting randomly aborted on CI |
 | [dotnet/runtime#86496](https://github.com/dotnet/runtime/issues/86496) | [debugger][mono] Multithreading debugger failures |
 | [dotnet/runtime#84086](https://github.com/dotnet/runtime/issues/84086) | Blazor WASM project will not debug if index.html file  includes some scripts with crossorigin |
-| [dotnet/runtime#81646](https://github.com/dotnet/runtime/issues/81646) | **\<OUT OF SLA\>** [wasm][debugger] Breakpoint test failing with multithreaded build - `CreateGoodBreakpointAndHitGoToWasmPageWithoutAssetsComeBackAndHitAgain` |
-| [dotnet/runtime#81282](https://github.com/dotnet/runtime/issues/81282) | **\<OUT OF SLA\>** [wasm] Support debugging multi-threaded apps |
-| [dotnet/runtime#80727](https://github.com/dotnet/runtime/issues/80727) | **\<OUT OF SLA\>** Debugged macOS app crashes when requesting access to photo library  |
-| [dotnet/runtime#78475](https://github.com/dotnet/runtime/issues/78475) | **\<OUT OF SLA\>** Blazor C# Debugger doesn't hit C# breakpoint after calling async Javascript function |
-| [dotnet/runtime#76721](https://github.com/dotnet/runtime/issues/76721) | **\<OUT OF SLA\>** [wasm] Improve experience of debugging library tests |
 | [dotnet/runtime#75013](https://github.com/dotnet/runtime/issues/75013) | **\<OUT OF SLA\>** WASM CI failure in `DebuggerTests.EvaluateOnCallFrameTests.InheritedAndPrivateMembersInAClass` |
-| [dotnet/runtime#72009](https://github.com/dotnet/runtime/issues/72009) | **\<OUT OF SLA\>** [wasm][debugger] Fix previous frame evaluation in Firefox |
-| [dotnet/runtime#95968](https://github.com/dotnet/runtime/issues/95968) | **\<OUT OF SLA\>** Blazor debugging is not possible in iframe |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
 
-Issues in query: 10
+Issues in query: 9
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#98654](https://github.com/dotnet/runtime/issues/98654) | System.IO.IOException: ' Received an unexpected EOF or 0 bytes from the transport stream.' |
+| [dotnet/runtime#99609](https://github.com/dotnet/runtime/issues/99609) | mono_os_mutex_destroy: pthread_mutex_destroy failed with "Device or resource busy" |
 | [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
 | [dotnet/runtime#97097](https://github.com/dotnet/runtime/issues/97097) | [.NET8 + WebAssembly] Debugging experience still is far from being 'OK' |
 | [dotnet/runtime#94114](https://github.com/dotnet/runtime/issues/94114) | EventPipe Doesn't Work On OSX With Sandbox Enabled |
@@ -154,7 +146,6 @@ Issues in query: 10
 | [dotnet/runtime#85960](https://github.com/dotnet/runtime/issues/85960) | Intermittend failures in ThreadPoolTests on Mono Linux ARM64 |
 | [dotnet/runtime#82492](https://github.com/dotnet/runtime/issues/82492) | **\<OUT OF SLA\>** Stop using select in the Mono profiler |
 | [dotnet/runtime#48849](https://github.com/dotnet/runtime/issues/48849) | **\<OUT OF SLA\>** Investigate why StackFrameHelperTest Trimming test fails on mono |
-| [dotnet/runtime#76316](https://github.com/dotnet/runtime/issues/76316) | **\<OUT OF SLA\>** Performance profiling for WebAssembly |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics-mono
 
@@ -162,13 +153,10 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-Tracing-mono
 
-Issues in query: 5
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#89621](https://github.com/dotnet/runtime/issues/89621) | EventPipe shutdown race condition in .net7/.net6 |
 | [dotnet/runtime#82396](https://github.com/dotnet/runtime/issues/82396) | **\<OUT OF SLA\>** Run low level EventPipe and container type native tests on CI. |
-| [dotnet/runtime#72481](https://github.com/dotnet/runtime/issues/72481) | **\<OUT OF SLA\>** [wasm-ep] End-to-end workflow for profiled AOT using EventPIpe |
-| [dotnet/runtime#69568](https://github.com/dotnet/runtime/issues/69568) | **\<OUT OF SLA\>** [wasm-ep] Can't have both runtime and EventSource event providers in the same session |
-| [dotnet/runtime#69268](https://github.com/dotnet/runtime/issues/69268) | **\<OUT OF SLA\>** [wasm-ep] Tracking |
 
