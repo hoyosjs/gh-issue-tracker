@@ -1,13 +1,16 @@
-# .NET Diagnostics Report Full Report - 03/18/2024 06:14:15
+# .NET Diagnostics Report Full Report - 03/25/2024 06:14:23
 
-Total issues: 98
+Total issues: 100
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 27
+Issues in query: 30
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4564](https://github.com/dotnet/diagnostics/issues/4564) | dotnet-counters does not report values from multiple Metrics Meters with distinct tags |
+| [dotnet/diagnostics#4563](https://github.com/dotnet/diagnostics/issues/4563) | Error: No CLR runtime found (dump collected with 8.0.0) |
+| [dotnet/diagnostics#4557](https://github.com/dotnet/diagnostics/issues/4557) | Timeout while executing StartEventPipeSession |
 | [dotnet/diagnostics#4555](https://github.com/dotnet/diagnostics/issues/4555) | "No CLR runtime found" analyzing Linux .NET 6.0.26 crash dump |
 | [dotnet/diagnostics#4551](https://github.com/dotnet/diagnostics/issues/4551) | libsosplugin.dylib: CoreCLR host crash on macOS Sonoma 14.4 on arm64 |
 | [dotnet/diagnostics#4542](https://github.com/dotnet/diagnostics/issues/4542) | dotnet trace not working for MAUI application using EF Core |
@@ -32,7 +35,7 @@ Issues in query: 27
 | [dotnet/diagnostics#3974](https://github.com/dotnet/diagnostics/issues/3974) | Q: what does it mean when `verifyheap` reports heap errors? |
 | [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | `dotnet-trace collect` hangs without completing collection on Linux |
 | [dotnet/diagnostics#3882](https://github.com/dotnet/diagnostics/issues/3882) | Add newer Ubuntu images to testing workflows. |
-| [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | Re-enable !gcroot source tests |
+| [dotnet/diagnostics#3774](https://github.com/dotnet/diagnostics/issues/3774) | **\<OUT OF SLA\>** Re-enable !gcroot source tests |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | **\<OUT OF SLA\>** How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#2921](https://github.com/dotnet/diagnostics/issues/2921) | **\<OUT OF SLA\>** SDL signoff requirements - please enable additional C/C++ compiler warnings |
 
@@ -73,10 +76,13 @@ Issues in query: 9
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 22
+Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#100207](https://github.com/dotnet/runtime/issues/100207) | C4242 error when compiling CoreCLR on Windows with -msbuild |
+| [dotnet/runtime#100162](https://github.com/dotnet/runtime/issues/100162) | [cdac] data contract spec follow up items and open questions |
+| [dotnet/runtime#100098](https://github.com/dotnet/runtime/issues/100098) | Assertion on rsthread.cpp:5902 taAmbient != NULL |
 | [dotnet/runtime#99487](https://github.com/dotnet/runtime/issues/99487) | CLR_GCHEAPCOLLECT_KEYWORD triggers a GC twice |
 | [dotnet/runtime#99471](https://github.com/dotnet/runtime/issues/99471) | SDL signoff requirements - enable MSVC warnings C4242 and C4244 (libunwind) |
 | [dotnet/runtime#98654](https://github.com/dotnet/runtime/issues/98654) | System.IO.IOException: ' Received an unexpected EOF or 0 bytes from the transport stream.' |
@@ -102,11 +108,10 @@ Issues in query: 22
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 24
+Issues in query: 21
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#99686](https://github.com/dotnet/runtime/issues/99686) | [wasm] CreateGoodBreakpointAndHit failure |
 | [dotnet/runtime#99007](https://github.com/dotnet/runtime/issues/99007) | [.NET 8] [android] case where Mono debugger doesn't "break" correctly on unhandled exceptions |
 | [dotnet/runtime#98771](https://github.com/dotnet/runtime/issues/98771) | [browser][MT] Debugger timeout with deputy thread |
 | [dotnet/runtime#98215](https://github.com/dotnet/runtime/issues/98215) | [wasm][debugger] Chrome test failure `DebuggerTests.SteppingTests.SteppingIntoLibrarySymbolsLoadedFromSymbolServerRemoveSymbolServerAndStepAgain` |
@@ -120,9 +125,7 @@ Issues in query: 24
 | [dotnet/runtime#95401](https://github.com/dotnet/runtime/issues/95401) | [browser][nodejs] Start app with debugging for console template  |
 | [dotnet/runtime#95209](https://github.com/dotnet/runtime/issues/95209) | Debugging Blazor application freezes Chrome (and Edge) |
 | [dotnet/runtime#93973](https://github.com/dotnet/runtime/issues/93973) | [debugger][mono][codespaces] Debug Blazor app from Codespaces |
-| [dotnet/runtime#93971](https://github.com/dotnet/runtime/issues/93971) | [wasm][debugger] Show correct datatypes for int, long, double |
 | [dotnet/runtime#93615](https://github.com/dotnet/runtime/issues/93615) | [Mono] [Debug] VS Code debugger for Mono does not attach  |
-| [dotnet/runtime#91773](https://github.com/dotnet/runtime/issues/91773) | [wasm][debugger] Timeout waiting for CheckInspectLocalsAtBreakpointSite  |
 | [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
 | [dotnet/runtime#89909](https://github.com/dotnet/runtime/issues/89909) | [wasm] `DebuggerTests.MiscTests.DebuggerTests.MiscTests.TestDebugUsingMultiThreadedRuntime` failing |
 | [dotnet/runtime#89700](https://github.com/dotnet/runtime/issues/89700) | [wasm][debugger] NRE seen in proxy when loading symbols from symbol server |
@@ -133,13 +136,12 @@ Issues in query: 24
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
 
-Issues in query: 9
+Issues in query: 8
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#99609](https://github.com/dotnet/runtime/issues/99609) | mono_os_mutex_destroy: pthread_mutex_destroy failed with "Device or resource busy" |
 | [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
-| [dotnet/runtime#97097](https://github.com/dotnet/runtime/issues/97097) | [.NET8 + WebAssembly] Debugging experience still is far from being 'OK' |
 | [dotnet/runtime#94114](https://github.com/dotnet/runtime/issues/94114) | EventPipe Doesn't Work On OSX With Sandbox Enabled |
 | [dotnet/runtime#93551](https://github.com/dotnet/runtime/issues/93551) | [wasm] run browser-bench sample with https connection |
 | [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
