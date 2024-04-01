@@ -1,17 +1,16 @@
-# .NET Diagnostics Report Full Report - 03/25/2024 06:14:23
+# .NET Diagnostics Report Full Report - 04/01/2024 06:14:05
 
-Total issues: 100
+Total issues: 97
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 30
+Issues in query: 29
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/diagnostics#4564](https://github.com/dotnet/diagnostics/issues/4564) | dotnet-counters does not report values from multiple Metrics Meters with distinct tags |
 | [dotnet/diagnostics#4563](https://github.com/dotnet/diagnostics/issues/4563) | Error: No CLR runtime found (dump collected with 8.0.0) |
 | [dotnet/diagnostics#4557](https://github.com/dotnet/diagnostics/issues/4557) | Timeout while executing StartEventPipeSession |
-| [dotnet/diagnostics#4555](https://github.com/dotnet/diagnostics/issues/4555) | "No CLR runtime found" analyzing Linux .NET 6.0.26 crash dump |
 | [dotnet/diagnostics#4551](https://github.com/dotnet/diagnostics/issues/4551) | libsosplugin.dylib: CoreCLR host crash on macOS Sonoma 14.4 on arm64 |
 | [dotnet/diagnostics#4542](https://github.com/dotnet/diagnostics/issues/4542) | dotnet trace not working for MAUI application using EF Core |
 | [dotnet/diagnostics#4524](https://github.com/dotnet/diagnostics/issues/4524) | dotnet-dsrouter and dotnet-gcdump doc needed when default port is occupied |
@@ -76,15 +75,12 @@ Issues in query: 9
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 25
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#100207](https://github.com/dotnet/runtime/issues/100207) | C4242 error when compiling CoreCLR on Windows with -msbuild |
-| [dotnet/runtime#100162](https://github.com/dotnet/runtime/issues/100162) | [cdac] data contract spec follow up items and open questions |
 | [dotnet/runtime#100098](https://github.com/dotnet/runtime/issues/100098) | Assertion on rsthread.cpp:5902 taAmbient != NULL |
 | [dotnet/runtime#99487](https://github.com/dotnet/runtime/issues/99487) | CLR_GCHEAPCOLLECT_KEYWORD triggers a GC twice |
-| [dotnet/runtime#99471](https://github.com/dotnet/runtime/issues/99471) | SDL signoff requirements - enable MSVC warnings C4242 and C4244 (libunwind) |
 | [dotnet/runtime#98654](https://github.com/dotnet/runtime/issues/98654) | System.IO.IOException: ' Received an unexpected EOF or 0 bytes from the transport stream.' |
 | [dotnet/runtime#98506](https://github.com/dotnet/runtime/issues/98506) | Excessive exceptions generated in StackTraceSymbols when using Portable PDB |
 | [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | ExecutionEngineException on using step into while debugging |
@@ -98,7 +94,7 @@ Issues in query: 25
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
 | [dotnet/runtime#85777](https://github.com/dotnet/runtime/issues/85777) | Segfault in CMiniMdTemplate<CMiniMdRW>::getSignatureOfMemberRef |
-| [dotnet/runtime#83967](https://github.com/dotnet/runtime/issues/83967) | [CoreCLR Linux arm32] `ICorDebugStackWalk` works wrong in case top frame is native. |
+| [dotnet/runtime#83967](https://github.com/dotnet/runtime/issues/83967) | **\<OUT OF SLA\>** [CoreCLR Linux arm32] `ICorDebugStackWalk` works wrong in case top frame is native. |
 | [dotnet/runtime#82422](https://github.com/dotnet/runtime/issues/82422) | **\<OUT OF SLA\>** [Linux, amd64] ICorDebugEval::Abort are broken. |
 | [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | **\<OUT OF SLA\>** [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
 | [dotnet/runtime#78991](https://github.com/dotnet/runtime/issues/78991) | **\<OUT OF SLA\>** NullReferenceException when you use the short format of string.format $"{sample}" when debugging .NET 7 on x64 macOS |
@@ -108,10 +104,11 @@ Issues in query: 25
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 21
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#100243](https://github.com/dotnet/runtime/issues/100243) | iOS: Breakpoint not hit in classes containing static fields that are initialized inline |
 | [dotnet/runtime#99007](https://github.com/dotnet/runtime/issues/99007) | [.NET 8] [android] case where Mono debugger doesn't "break" correctly on unhandled exceptions |
 | [dotnet/runtime#98771](https://github.com/dotnet/runtime/issues/98771) | [browser][MT] Debugger timeout with deputy thread |
 | [dotnet/runtime#98215](https://github.com/dotnet/runtime/issues/98215) | [wasm][debugger] Chrome test failure `DebuggerTests.SteppingTests.SteppingIntoLibrarySymbolsLoadedFromSymbolServerRemoveSymbolServerAndStepAgain` |
@@ -131,7 +128,7 @@ Issues in query: 21
 | [dotnet/runtime#89700](https://github.com/dotnet/runtime/issues/89700) | [wasm][debugger] NRE seen in proxy when loading symbols from symbol server |
 | [dotnet/runtime#89409](https://github.com/dotnet/runtime/issues/89409) | [wasm][debugger] Debugger tests getting randomly aborted on CI |
 | [dotnet/runtime#86496](https://github.com/dotnet/runtime/issues/86496) | [debugger][mono] Multithreading debugger failures |
-| [dotnet/runtime#84086](https://github.com/dotnet/runtime/issues/84086) | Blazor WASM project will not debug if index.html file  includes some scripts with crossorigin |
+| [dotnet/runtime#84086](https://github.com/dotnet/runtime/issues/84086) | **\<OUT OF SLA\>** Blazor WASM project will not debug if index.html file  includes some scripts with crossorigin |
 | [dotnet/runtime#75013](https://github.com/dotnet/runtime/issues/75013) | **\<OUT OF SLA\>** WASM CI failure in `DebuggerTests.EvaluateOnCallFrameTests.InheritedAndPrivateMembersInAClass` |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
