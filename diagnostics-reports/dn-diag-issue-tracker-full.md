@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 04/01/2024 06:14:05
+# .NET Diagnostics Report Full Report - 04/08/2024 06:14:10
 
-Total issues: 97
+Total issues: 96
 
 ## v1,1-dotnet/diagnostics
 
@@ -40,7 +40,7 @@ Issues in query: 29
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 4
+Issues in query: 5
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -48,6 +48,7 @@ Issues in query: 4
 | [dotnet/runtime#94390](https://github.com/dotnet/runtime/issues/94390) | Test failure Loader/binding/tracing/BinderTracingTest.ResolutionFlow/BinderTracingTest.ResolutionFlow.cmd |
 | [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | NativeRuntimeEventSource behaving poorly in conjunction with other providers |
+| [dotnet/runtime#100499](https://github.com/dotnet/runtime/issues/100499) | **\<OUT OF SLA\>** Warning origins for warnings originating from event accessors are very confusing |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
@@ -59,14 +60,13 @@ Issues in query: 1
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 9
+Issues in query: 8
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#99816](https://github.com/dotnet/runtime/issues/99816) | Higher Memory Usage for the EventSource Class |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
 | [dotnet/runtime#96968](https://github.com/dotnet/runtime/issues/96968) | Test failure BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds_WithEtwListener |
-| [dotnet/runtime#96324](https://github.com/dotnet/runtime/issues/96324) | Debug.Assert exception I encountered when using Debug version System.Private.CoreLib.dll with mono runtime |
 | [dotnet/runtime#96219](https://github.com/dotnet/runtime/issues/96219) | Potential Deadlock When Disposing EventListeners Concurrently |
 | [dotnet/runtime#94964](https://github.com/dotnet/runtime/issues/94964) | How to debug code that is being compiled in layers? I have the following problem |
 | [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
@@ -104,7 +104,7 @@ Issues in query: 22
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 22
+Issues in query: 21
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -118,7 +118,6 @@ Issues in query: 22
 | [dotnet/runtime#97198](https://github.com/dotnet/runtime/issues/97198) | [blazor][debugger] Unable to debug in lazy loaded assemblies with remote authentication failed |
 | [dotnet/runtime#96734](https://github.com/dotnet/runtime/issues/96734) | [browser][debugger] Cannot set breakpoint in partial class defined in separate files |
 | [dotnet/runtime#96137](https://github.com/dotnet/runtime/issues/96137) | Debugging With InteractiveAuto When Changes To Webassembly |
-| [dotnet/runtime#95943](https://github.com/dotnet/runtime/issues/95943) | [wasm] `DebuggerTests.ExceptionTests.ExceptionTestAllWithReload` failing with `Expected to only pause because of an exception.` |
 | [dotnet/runtime#95401](https://github.com/dotnet/runtime/issues/95401) | [browser][nodejs] Start app with debugging for console template  |
 | [dotnet/runtime#95209](https://github.com/dotnet/runtime/issues/95209) | Debugging Blazor application freezes Chrome (and Edge) |
 | [dotnet/runtime#93973](https://github.com/dotnet/runtime/issues/93973) | [debugger][mono][codespaces] Debug Blazor app from Codespaces |
