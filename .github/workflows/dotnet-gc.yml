@@ -1,0 +1,13 @@
+name: GC .NET Report Weekly 
+
+on:
+  schedule:
+  - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  DiagnosticReport:
+    uses: ./.github/workflows/generic-report-generator.yml
+    with:
+      configName: gc
+      reportFolderRelativePath: gc-reports
