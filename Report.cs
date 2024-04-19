@@ -220,7 +220,9 @@ internal class ReportCreator
                         issue.HtmlUrl,
                         type,
                         queryId,
-                        issue.CreatedAt));
+                        issue.CreatedAt,
+                        issue.UpdatedAt,
+                        issue.Milestone?.Title ?? "N/A"));
                     _logger.LogTrace("Issue {repo}#{number} classified {type}.", repo, issue.Number, type);
                 }
 
@@ -288,7 +290,9 @@ internal class ReportCreator
                     issue.HtmlUrl,
                     type,
                     queryId,
-                    issue.CreatedAt));
+                    issue.CreatedAt,
+                    issue.UpdatedAt,
+                    issue.Milestone?.Title ?? "No MilestoneTitle Specified"));
                 _logger.LogTrace("Old issue {repo}#{number} classified {type}.", repo, issue.Number, type);
             }
 
@@ -372,14 +376,14 @@ internal class ReportCreator
             await txtWriter.WriteLineAsync($"## {sectionName}");
             await txtWriter.WriteLineAsync();
 
-            await txtWriter.WriteLineAsync("| **Issue Number** | **Title** |");
-            await txtWriter.WriteLineAsync("| :--------------: | --------- |");
+            await txtWriter.WriteLineAsync("| **Issue Number** | **Title** | **Last Updated Time** | **Milestone** |");
+            await txtWriter.WriteLineAsync("| :--------------: | --------- | --------------------- | ------------- |");
 
             foreach ((_, IList<IssueReportResult> issueResults) in _reportResults.Values)
             {
-                foreach (IssueReportResult issue in issueResults.Where(filterResultLambda))
+                foreach (IssueReportResult issue in issueResults.Where(filterResultLambda).OrderByDescending(f => f.LastUpdatedTime))
                 {
-                    await txtWriter.WriteLineAsync($"| [{issue.Repository}#{issue.IssueId}]({issue.IssueUrl}) | {issue.IssueName} |");
+                    await txtWriter.WriteLineAsync($"| [{issue.Repository}#{issue.IssueId}]({issue.IssueUrl}) | {issue.IssueName} | {issue.LastUpdatedTime} | {issue.MilestoneTitle} |");
                 }
             }
 
