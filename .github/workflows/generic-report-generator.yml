@@ -65,7 +65,7 @@ jobs:
       run: |
         mv ${{ steps.calculate-name.outputs.report }}/*-full.md ${{ inputs.reportFolderRelativePath }}
         git add ${{ inputs.reportFolderRelativePath }}
-        git -c user.name="Report Generator" -c user.email="juan@hoyosjs.com" commit -m "Add report for diagnostics $(date +'%Y-%m-%d')"
+        git -c user.name="Report Generator" -c user.email="musharm@microsoft.com" commit -m "Add report for gc $(date +'%Y-%m-%d')"
         git push
     - name: Upload Results as pipeline artifact
       if: ${{ inputs.oldConfigDate != '' }}
