@@ -27,7 +27,9 @@ internal class IssueReportResult
     internal IssueType Type { get; set; }
     internal string OriginatorQuery  { get; }
     internal DateTimeOffset CreationTime  { get; }
+    internal DateTimeOffset? LastUpdatedTime { get; }
     public bool WasInternallyMoved { get; private set; }
+    public string MilestoneTitle { get; }
 
     public IssueReportResult(string repository,
                              long internalId,
@@ -36,7 +38,9 @@ internal class IssueReportResult
                              string issueUrl,
                              IssueType type,
                              string originatorQuery,
-                             DateTimeOffset creationTime)
+                             DateTimeOffset creationTime,
+                             DateTimeOffset? lastUpdatedTime,
+                             string milestoneTitle)
     {
         Repository = repository;
         IssueId = issueId;
@@ -46,6 +50,8 @@ internal class IssueReportResult
         Type = type;
         OriginatorQuery = originatorQuery;
         CreationTime = creationTime;
+        LastUpdatedTime = lastUpdatedTime;
+        MilestoneTitle = milestoneTitle;
     }
 
     internal void MarkInternallyMoved()
