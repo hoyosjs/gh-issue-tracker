@@ -376,14 +376,14 @@ internal class ReportCreator
             await txtWriter.WriteLineAsync($"## {sectionName}");
             await txtWriter.WriteLineAsync();
 
-            await txtWriter.WriteLineAsync("| **Issue Number** | **Title** | **Last Updated Time** | **Milestone** |");
+            await txtWriter.WriteLineAsync("| **Issue Number** | **Title** | **Last Updated Time (UTC)** | **Milestone** |");
             await txtWriter.WriteLineAsync("| :--------------: | --------- | --------------------- | ------------- |");
 
             foreach ((_, IList<IssueReportResult> issueResults) in _reportResults.Values)
             {
                 foreach (IssueReportResult issue in issueResults.Where(filterResultLambda).OrderByDescending(f => f.LastUpdatedTime))
                 {
-                    await txtWriter.WriteLineAsync($"| [{issue.Repository}#{issue.IssueId}]({issue.IssueUrl}) | {issue.IssueName} | {issue.LastUpdatedTime} | {issue.MilestoneTitle} |");
+                    await txtWriter.WriteLineAsync($"| [{issue.Repository}#{issue.IssueId}]({issue.IssueId}) | {issue.IssueName} | {issue.LastUpdatedTime.GetValueOrDefault().DateTime.ToUniversalTime()} | {issue.MilestoneTitle} |");
                 }
             }
 
