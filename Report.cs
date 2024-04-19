@@ -383,7 +383,7 @@ internal class ReportCreator
             {
                 foreach (IssueReportResult issue in issueResults.Where(filterResultLambda).OrderByDescending(f => f.LastUpdatedTime))
                 {
-                    await txtWriter.WriteLineAsync($"| [{issue.Repository}#{issue.IssueId}]({issue.IssueId}) | {issue.IssueName} | {issue.LastUpdatedTime.GetValueOrDefault().DateTime.ToUniversalTime()} | {issue.MilestoneTitle} |");
+                    await txtWriter.WriteLineAsync($"| [{issue.IssueId}]({issue.IssueUrl}) | {issue.IssueName} | {issue.LastUpdatedTime.GetValueOrDefault().DateTime.ToUniversalTime()} | {issue.MilestoneTitle} |");
                 }
             }
 
