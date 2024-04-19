@@ -1,14 +1,26 @@
-# .NET GC Report Full Report - 03/14/2024 22:25:03
+# .NET GC Report Full Report - 04/19/2024 22:10:44
 
-Total issues: 143
+Total issues: 154
 
 ## v1,1-dotnet/runtime|area-GC-coreclr
 
-Issues in query: 143
+Issues in query: 154
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#99487](https://github.com/dotnet/runtime/issues/99487) | CLR_GCHEAPCOLLECT_KEYWORD triggers a GC twice |
+| [dotnet/runtime#101183](https://github.com/dotnet/runtime/issues/101183) | Behaviour of GC HeapHardLimit |
+| [dotnet/runtime#101080](https://github.com/dotnet/runtime/issues/101080) | Support loading standalone GC from an absolute path using a new config named `DOTNET_GCPath` |
+| [dotnet/runtime#101013](https://github.com/dotnet/runtime/issues/101013) | Linux huge memory consumption in .NET 8 |
+| [dotnet/runtime#101006](https://github.com/dotnet/runtime/issues/101006) | DATAS is slower than Workstation GC on binary tree benchmarks |
+| [dotnet/runtime#100804](https://github.com/dotnet/runtime/issues/100804) | DOTNET_GCHeapHardLimitPercent being ignored without warnings |
+| [dotnet/runtime#100594](https://github.com/dotnet/runtime/issues/100594) | GC sometimes reports survival rates above 100% |
+| [dotnet/runtime#100567](https://github.com/dotnet/runtime/issues/100567) | Test failure: GC/Features/SustainedLowLatency/scenario/scenario.sh |
+| [dotnet/runtime#100521](https://github.com/dotnet/runtime/issues/100521) | Running multiple .net core containers on a single node |
+| [dotnet/runtime#100382](https://github.com/dotnet/runtime/issues/100382) | Test failure: GC/LargeMemory/Regressions/largearraytest/largearraytest.sh |
+| [dotnet/runtime#100217](https://github.com/dotnet/runtime/issues/100217) | Test failure: baseservices/RuntimeConfiguration/TestConfigTester/TestConfigTester.dll |
+| [dotnet/runtime#100149](https://github.com/dotnet/runtime/issues/100149) | Failure in GC\API\NoGCRegion\Callback_Svr\Callback_Svr.cmd |
+| [dotnet/runtime#100035](https://github.com/dotnet/runtime/issues/100035) | Assert failure(PID 13812 [0x000035f4], Thread: 14128 [0x3730]): promoted_bytes (heap_number) == promoted |
+| [dotnet/runtime#99804](https://github.com/dotnet/runtime/issues/99804) | High memory usages on "AMD EPYC 7R13 Processor" |
 | [dotnet/runtime#99304](https://github.com/dotnet/runtime/issues/99304) | Possible memory leak in .Net 8.0.2 |
 | [dotnet/runtime#99164](https://github.com/dotnet/runtime/issues/99164) | [API Proposal]: Add Garbage collector metrics |
 | [dotnet/runtime#97600](https://github.com/dotnet/runtime/issues/97600) | NoGCRegion decommits memory in an inconsistent way |
@@ -51,9 +63,9 @@ Issues in query: 143
 | [dotnet/runtime#86183](https://github.com/dotnet/runtime/issues/86183) | May  9 21:11:41 server883 kernel: [218937.760135] .NET Server GC[1427719]: segfault at 8 ip 00007f7440ae835c sp 00007f74395bfdf0 error 6 |
 | [dotnet/runtime#85556](https://github.com/dotnet/runtime/issues/85556) | crash with 0x8007000E error on .NET 7.0 |
 | [dotnet/runtime#85483](https://github.com/dotnet/runtime/issues/85483) | GC Performance OS and Hardware Comparison Differences: Windows Intel vs. Ubuntu Intel and Windows Intel vs. Ubuntu ARM |
-| [dotnet/runtime#84393](https://github.com/dotnet/runtime/issues/84393) | [6.0, 7.0] Assert failed in coreclr linux arm: GCHeapUtilities::GetGCHeap()->IsInFrozenSegment(obj) |
-| [dotnet/runtime#84035](https://github.com/dotnet/runtime/issues/84035) | Process memory and the memory snapshot are not equal |
-| [dotnet/runtime#83964](https://github.com/dotnet/runtime/issues/83964) | [GC] GetLogicalProcessorCacheSizeFromOS should fallback per cache level |
+| [dotnet/runtime#84393](https://github.com/dotnet/runtime/issues/84393) | **\<OUT OF SLA\>** [6.0, 7.0] Assert failed in coreclr linux arm: GCHeapUtilities::GetGCHeap()->IsInFrozenSegment(obj) |
+| [dotnet/runtime#84035](https://github.com/dotnet/runtime/issues/84035) | **\<OUT OF SLA\>** Process memory and the memory snapshot are not equal |
+| [dotnet/runtime#83964](https://github.com/dotnet/runtime/issues/83964) | **\<OUT OF SLA\>** [GC] GetLogicalProcessorCacheSizeFromOS should fallback per cache level |
 | [dotnet/runtime#81425](https://github.com/dotnet/runtime/issues/81425) | **\<OUT OF SLA\>** Memory Leak in Complex Software with Net 7 |
 | [dotnet/runtime#81383](https://github.com/dotnet/runtime/issues/81383) | **\<OUT OF SLA\>** [6.0] GC test failures: Handle collector count overflows or underflows |
 | [dotnet/runtime#81056](https://github.com/dotnet/runtime/issues/81056) | **\<OUT OF SLA\>** In .NET 7 large number of concurrent requests will memory leak |
@@ -134,7 +146,6 @@ Issues in query: 143
 | [dotnet/runtime#10480](https://github.com/dotnet/runtime/issues/10480) | **\<OUT OF SLA\>** GC Heap Compaction should clear the source data |
 | [dotnet/runtime#9022](https://github.com/dotnet/runtime/issues/9022) | **\<OUT OF SLA\>** Improve Density of GC heap by String Interning  (de-duping)  on Gen2 GC  |
 | [dotnet/runtime#8718](https://github.com/dotnet/runtime/issues/8718) | **\<OUT OF SLA\>** Reduce CoreCLR memory footprint |
-| [dotnet/runtime#8666](https://github.com/dotnet/runtime/issues/8666) | **\<OUT OF SLA\>** NoGC region improvements |
 | [dotnet/runtime#12255](https://github.com/dotnet/runtime/issues/12255) | **\<OUT OF SLA\>** ConditionalWeakTable causes a memory leak if one of their values references the table |
 | [dotnet/runtime#8061](https://github.com/dotnet/runtime/issues/8061) | **\<OUT OF SLA\>** [Local GC] Local GC Feature Meta-Issue |
 | [dotnet/runtime#7780](https://github.com/dotnet/runtime/issues/7780) | **\<OUT OF SLA\>** Null (allocate-only) GC proposal |
