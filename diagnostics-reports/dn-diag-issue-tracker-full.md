@@ -1,13 +1,14 @@
-# .NET Diagnostics Report Full Report - 04/15/2024 06:15:52
+# .NET Diagnostics Report Full Report - 04/22/2024 06:14:12
 
-Total issues: 89
+Total issues: 94
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 30
+Issues in query: 31
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4625](https://github.com/dotnet/diagnostics/issues/4625) | mscordacwks files/symbols missing from symsrv |
 | [dotnet/diagnostics#4597](https://github.com/dotnet/diagnostics/issues/4597) | Clarify whether dotnet-counters can monitor .NET Framework app |
 | [dotnet/diagnostics#4590](https://github.com/dotnet/diagnostics/issues/4590) | dotnet-sos for .NET 9 |
 | [dotnet/diagnostics#4564](https://github.com/dotnet/diagnostics/issues/4564) | dotnet-counters does not report values from multiple Metrics Meters with distinct tags |
@@ -74,11 +75,14 @@ Issues in query: 8
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 23
+Issues in query: 26
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#100871](https://github.com/dotnet/runtime/issues/100871) | Support specifying rundown keyword in EventPipe |
+| [dotnet/runtime#101310](https://github.com/dotnet/runtime/issues/101310) | coreclr + vsdbg failure to get stack trace from remote Kubernetes pod |
+| [dotnet/runtime#101257](https://github.com/dotnet/runtime/issues/101257) | [cdac-build-tool] Take baseline as a command line argument |
+| [dotnet/runtime#101216](https://github.com/dotnet/runtime/issues/101216) | Threads 99% of the Blocked causing slowdown   |
+| [dotnet/runtime#101035](https://github.com/dotnet/runtime/issues/101035) | Using Visual Studio for Managed Code |
 | [dotnet/runtime#100826](https://github.com/dotnet/runtime/issues/100826) | Hot reload fails to flow generic constraints to the inherited class |
 | [dotnet/runtime#100098](https://github.com/dotnet/runtime/issues/100098) | Assertion on rsthread.cpp:5902 taAmbient != NULL |
 | [dotnet/runtime#99487](https://github.com/dotnet/runtime/issues/99487) | CLR_GCHEAPCOLLECT_KEYWORD triggers a GC twice |
@@ -129,10 +133,11 @@ Issues in query: 18
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
 
-Issues in query: 5
+Issues in query: 6
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#101253](https://github.com/dotnet/runtime/issues/101253) | [wasi] Enable debugger support using wasi preview/2 apis |
 | [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
 | [dotnet/runtime#94114](https://github.com/dotnet/runtime/issues/94114) | EventPipe Doesn't Work On OSX With Sandbox Enabled |
 | [dotnet/runtime#93551](https://github.com/dotnet/runtime/issues/93551) | [wasm] run browser-bench sample with https connection |
