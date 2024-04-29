@@ -1,14 +1,15 @@
-# .NET Diagnostics Report Full Report - 04/22/2024 06:14:12
+# .NET Diagnostics Report Full Report - 04/29/2024 06:17:35
 
-Total issues: 94
+Total issues: 83
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 31
+Issues in query: 34
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#4625](https://github.com/dotnet/diagnostics/issues/4625) | mscordacwks files/symbols missing from symsrv |
+| [dotnet/diagnostics#4637](https://github.com/dotnet/diagnostics/issues/4637) | `clrstack -f` shows no managed names with lldb in .NET 9 |
+| [dotnet/diagnostics#4632](https://github.com/dotnet/diagnostics/issues/4632) | dotnet-dump :  "Can not load or initialize libmscordaccore.so" |
 | [dotnet/diagnostics#4597](https://github.com/dotnet/diagnostics/issues/4597) | Clarify whether dotnet-counters can monitor .NET Framework app |
 | [dotnet/diagnostics#4590](https://github.com/dotnet/diagnostics/issues/4590) | dotnet-sos for .NET 9 |
 | [dotnet/diagnostics#4564](https://github.com/dotnet/diagnostics/issues/4564) | dotnet-counters does not report values from multiple Metrics Meters with distinct tags |
@@ -33,12 +34,14 @@ Issues in query: 31
 | [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | Document how to use createdump on native AOT apps |
 | [dotnet/diagnostics#4139](https://github.com/dotnet/diagnostics/issues/4139) | How to debug memory leak that is not clear on dotnet-dump? |
 | [dotnet/diagnostics#4086](https://github.com/dotnet/diagnostics/issues/4086) | LLDB sos commands don't write output to SBCommandReturnObject |
+| [dotnet/diagnostics#4628](https://github.com/dotnet/diagnostics/issues/4628) | Unstripped elf files generate symbol-only index |
 | [dotnet/diagnostics#4002](https://github.com/dotnet/diagnostics/issues/4002) | Update docs: Linux dump analysis in a Windows environment |
 | [dotnet/diagnostics#3974](https://github.com/dotnet/diagnostics/issues/3974) | Q: what does it mean when `verifyheap` reports heap errors? |
 | [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | `dotnet-trace collect` hangs without completing collection on Linux |
 | [dotnet/diagnostics#3882](https://github.com/dotnet/diagnostics/issues/3882) | Add newer Ubuntu images to testing workflows. |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | **\<OUT OF SLA\>** How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#2921](https://github.com/dotnet/diagnostics/issues/2921) | **\<OUT OF SLA\>** SDL signoff requirements - please enable additional C/C++ compiler warnings |
+| [dotnet/diagnostics#4629](https://github.com/dotnet/diagnostics/issues/4629) | **\<OUT OF SLA\>** `dotnet-symbol` always exits with success code |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
@@ -75,15 +78,14 @@ Issues in query: 8
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 26
+Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#101310](https://github.com/dotnet/runtime/issues/101310) | coreclr + vsdbg failure to get stack trace from remote Kubernetes pod |
-| [dotnet/runtime#101257](https://github.com/dotnet/runtime/issues/101257) | [cdac-build-tool] Take baseline as a command line argument |
-| [dotnet/runtime#101216](https://github.com/dotnet/runtime/issues/101216) | Threads 99% of the Blocked causing slowdown   |
 | [dotnet/runtime#101035](https://github.com/dotnet/runtime/issues/101035) | Using Visual Studio for Managed Code |
 | [dotnet/runtime#100826](https://github.com/dotnet/runtime/issues/100826) | Hot reload fails to flow generic constraints to the inherited class |
+| [dotnet/runtime#100114](https://github.com/dotnet/runtime/issues/100114) | profiler\multiple test failed |
 | [dotnet/runtime#100098](https://github.com/dotnet/runtime/issues/100098) | Assertion on rsthread.cpp:5902 taAmbient != NULL |
 | [dotnet/runtime#99487](https://github.com/dotnet/runtime/issues/99487) | CLR_GCHEAPCOLLECT_KEYWORD triggers a GC twice |
 | [dotnet/runtime#98654](https://github.com/dotnet/runtime/issues/98654) | System.IO.IOException: ' Received an unexpected EOF or 0 bytes from the transport stream.' |
@@ -108,36 +110,23 @@ Issues in query: 26
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 18
-
-| **Issue Number** | **Title** |
-| :--------------: | --------- |
-| [dotnet/runtime#99007](https://github.com/dotnet/runtime/issues/99007) | [.NET 8] [android] case where Mono debugger doesn't "break" correctly on unhandled exceptions |
-| [dotnet/runtime#98771](https://github.com/dotnet/runtime/issues/98771) | [browser][MT] Debugger timeout with deputy thread |
-| [dotnet/runtime#98208](https://github.com/dotnet/runtime/issues/98208) | Blazor WASM "Debug Adapter" fail to handle breakpoints when a Web Worker is present |
-| [dotnet/runtime#98086](https://github.com/dotnet/runtime/issues/98086) | [browser][debugger] Firefox EvaluateOnCallFrame2Tests |
-| [dotnet/runtime#97652](https://github.com/dotnet/runtime/issues/97652) | [wasm][mt] Debugger test is using blocking calls in JS interop thread |
-| [dotnet/runtime#97198](https://github.com/dotnet/runtime/issues/97198) | [blazor][debugger] Unable to debug in lazy loaded assemblies with remote authentication failed |
-| [dotnet/runtime#96734](https://github.com/dotnet/runtime/issues/96734) | [browser][debugger] Cannot set breakpoint in partial class defined in separate files |
-| [dotnet/runtime#96137](https://github.com/dotnet/runtime/issues/96137) | Debugging With InteractiveAuto When Changes To Webassembly |
-| [dotnet/runtime#95401](https://github.com/dotnet/runtime/issues/95401) | [browser][nodejs] Start app with debugging for console template  |
-| [dotnet/runtime#95209](https://github.com/dotnet/runtime/issues/95209) | Debugging Blazor application freezes Chrome (and Edge) |
-| [dotnet/runtime#93973](https://github.com/dotnet/runtime/issues/93973) | [debugger][mono][codespaces] Debug Blazor app from Codespaces |
-| [dotnet/runtime#93615](https://github.com/dotnet/runtime/issues/93615) | [Mono] [Debug] VS Code debugger for Mono does not attach  |
-| [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
-| [dotnet/runtime#89909](https://github.com/dotnet/runtime/issues/89909) | [wasm] `DebuggerTests.MiscTests.DebuggerTests.MiscTests.TestDebugUsingMultiThreadedRuntime` failing |
-| [dotnet/runtime#89700](https://github.com/dotnet/runtime/issues/89700) | [wasm][debugger] NRE seen in proxy when loading symbols from symbol server |
-| [dotnet/runtime#89409](https://github.com/dotnet/runtime/issues/89409) | [wasm][debugger] Debugger tests getting randomly aborted on CI |
-| [dotnet/runtime#86496](https://github.com/dotnet/runtime/issues/86496) | [debugger][mono] Multithreading debugger failures |
-| [dotnet/runtime#84086](https://github.com/dotnet/runtime/issues/84086) | **\<OUT OF SLA\>** Blazor WASM project will not debug if index.html file  includes some scripts with crossorigin |
-
-## v1,1-dotnet/runtime|area-Diagnostics-mono
-
 Issues in query: 6
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#101253](https://github.com/dotnet/runtime/issues/101253) | [wasi] Enable debugger support using wasi preview/2 apis |
+| [dotnet/runtime#101554](https://github.com/dotnet/runtime/issues/101554) | Blazor client side web debugging fails to function when run within IIS |
+| [dotnet/runtime#99007](https://github.com/dotnet/runtime/issues/99007) | [.NET 8] [android] case where Mono debugger doesn't "break" correctly on unhandled exceptions |
+| [dotnet/runtime#96137](https://github.com/dotnet/runtime/issues/96137) | Debugging With InteractiveAuto When Changes To Webassembly |
+| [dotnet/runtime#95209](https://github.com/dotnet/runtime/issues/95209) | Debugging Blazor application freezes Chrome (and Edge) |
+| [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
+| [dotnet/runtime#89909](https://github.com/dotnet/runtime/issues/89909) | [wasm] `DebuggerTests.MiscTests.DebuggerTests.MiscTests.TestDebugUsingMultiThreadedRuntime` failing |
+
+## v1,1-dotnet/runtime|area-Diagnostics-mono
+
+Issues in query: 5
+
+| **Issue Number** | **Title** |
+| :--------------: | --------- |
 | [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
 | [dotnet/runtime#94114](https://github.com/dotnet/runtime/issues/94114) | EventPipe Doesn't Work On OSX With Sandbox Enabled |
 | [dotnet/runtime#93551](https://github.com/dotnet/runtime/issues/93551) | [wasm] run browser-bench sample with https connection |
