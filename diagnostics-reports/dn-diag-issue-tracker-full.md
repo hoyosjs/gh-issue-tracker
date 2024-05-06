@@ -1,13 +1,16 @@
-# .NET Diagnostics Report Full Report - 04/29/2024 06:17:35
+# .NET Diagnostics Report Full Report - 05/06/2024 06:15:00
 
-Total issues: 83
+Total issues: 84
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 34
+Issues in query: 35
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4647](https://github.com/dotnet/diagnostics/issues/4647) | dotnet-gcdump seem not reflect the memory usage of my dump |
+| [dotnet/diagnostics#4646](https://github.com/dotnet/diagnostics/issues/4646) | dotnet-counters not showing metric names |
+| [dotnet/diagnostics#4648](https://github.com/dotnet/diagnostics/issues/4648) | Error: Fail to create host ldelegate 80070002 |
 | [dotnet/diagnostics#4637](https://github.com/dotnet/diagnostics/issues/4637) | `clrstack -f` shows no managed names with lldb in .NET 9 |
 | [dotnet/diagnostics#4632](https://github.com/dotnet/diagnostics/issues/4632) | dotnet-dump :  "Can not load or initialize libmscordaccore.so" |
 | [dotnet/diagnostics#4597](https://github.com/dotnet/diagnostics/issues/4597) | Clarify whether dotnet-counters can monitor .NET Framework app |
@@ -34,21 +37,21 @@ Issues in query: 34
 | [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | Document how to use createdump on native AOT apps |
 | [dotnet/diagnostics#4139](https://github.com/dotnet/diagnostics/issues/4139) | How to debug memory leak that is not clear on dotnet-dump? |
 | [dotnet/diagnostics#4086](https://github.com/dotnet/diagnostics/issues/4086) | LLDB sos commands don't write output to SBCommandReturnObject |
-| [dotnet/diagnostics#4628](https://github.com/dotnet/diagnostics/issues/4628) | Unstripped elf files generate symbol-only index |
 | [dotnet/diagnostics#4002](https://github.com/dotnet/diagnostics/issues/4002) | Update docs: Linux dump analysis in a Windows environment |
 | [dotnet/diagnostics#3974](https://github.com/dotnet/diagnostics/issues/3974) | Q: what does it mean when `verifyheap` reports heap errors? |
 | [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | `dotnet-trace collect` hangs without completing collection on Linux |
 | [dotnet/diagnostics#3882](https://github.com/dotnet/diagnostics/issues/3882) | Add newer Ubuntu images to testing workflows. |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | **\<OUT OF SLA\>** How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#2921](https://github.com/dotnet/diagnostics/issues/2921) | **\<OUT OF SLA\>** SDL signoff requirements - please enable additional C/C++ compiler warnings |
-| [dotnet/diagnostics#4629](https://github.com/dotnet/diagnostics/issues/4629) | **\<OUT OF SLA\>** `dotnet-symbol` always exits with success code |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 3
+Issues in query: 5
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#101764](https://github.com/dotnet/runtime/issues/101764) | Malformed EventPipe request can crash the runtime |
+| [dotnet/runtime#101759](https://github.com/dotnet/runtime/issues/101759) | tracing/eventpipe/providervalidation/providervalidation/providervalidation.cmd test failure |
 | [dotnet/runtime#99497](https://github.com/dotnet/runtime/issues/99497) | Assert in CounterGroup.OnEventSourceCommand after trying to run BDN x86 |
 | [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | NativeRuntimeEventSource behaving poorly in conjunction with other providers |
@@ -78,10 +81,11 @@ Issues in query: 8
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 25
+Issues in query: 26
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#101729](https://github.com/dotnet/runtime/issues/101729) | .NET 9: Unhandled exceptions in background threads reported with empty managed frames |
 | [dotnet/runtime#101310](https://github.com/dotnet/runtime/issues/101310) | coreclr + vsdbg failure to get stack trace from remote Kubernetes pod |
 | [dotnet/runtime#101035](https://github.com/dotnet/runtime/issues/101035) | Using Visual Studio for Managed Code |
 | [dotnet/runtime#100826](https://github.com/dotnet/runtime/issues/100826) | Hot reload fails to flow generic constraints to the inherited class |
@@ -100,7 +104,7 @@ Issues in query: 25
 | [dotnet/runtime#89592](https://github.com/dotnet/runtime/issues/89592) | Debugger assert during register mapping |
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
-| [dotnet/runtime#85777](https://github.com/dotnet/runtime/issues/85777) | Segfault in CMiniMdTemplate<CMiniMdRW>::getSignatureOfMemberRef |
+| [dotnet/runtime#85777](https://github.com/dotnet/runtime/issues/85777) | **\<OUT OF SLA\>** Segfault in CMiniMdTemplate<CMiniMdRW>::getSignatureOfMemberRef |
 | [dotnet/runtime#82422](https://github.com/dotnet/runtime/issues/82422) | **\<OUT OF SLA\>** [Linux, amd64] ICorDebugEval::Abort are broken. |
 | [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | **\<OUT OF SLA\>** [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
 | [dotnet/runtime#78991](https://github.com/dotnet/runtime/issues/78991) | **\<OUT OF SLA\>** NullReferenceException when you use the short format of string.format $"{sample}" when debugging .NET 7 on x64 macOS |
@@ -110,16 +114,13 @@ Issues in query: 25
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 6
+Issues in query: 3
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#101554](https://github.com/dotnet/runtime/issues/101554) | Blazor client side web debugging fails to function when run within IIS |
 | [dotnet/runtime#99007](https://github.com/dotnet/runtime/issues/99007) | [.NET 8] [android] case where Mono debugger doesn't "break" correctly on unhandled exceptions |
-| [dotnet/runtime#96137](https://github.com/dotnet/runtime/issues/96137) | Debugging With InteractiveAuto When Changes To Webassembly |
-| [dotnet/runtime#95209](https://github.com/dotnet/runtime/issues/95209) | Debugging Blazor application freezes Chrome (and Edge) |
 | [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
-| [dotnet/runtime#89909](https://github.com/dotnet/runtime/issues/89909) | [wasm] `DebuggerTests.MiscTests.DebuggerTests.MiscTests.TestDebugUsingMultiThreadedRuntime` failing |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
 
