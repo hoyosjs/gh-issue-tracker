@@ -1,10 +1,10 @@
-# .NET Diagnostics Report Full Report - 05/13/2024 06:15:09
+# .NET Diagnostics Report Full Report - 05/20/2024 06:15:28
 
-Total issues: 88
+Total issues: 89
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 37
+Issues in query: 35
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -14,14 +14,12 @@ Issues in query: 37
 | [dotnet/diagnostics#4646](https://github.com/dotnet/diagnostics/issues/4646) | dotnet-counters not showing metric names |
 | [dotnet/diagnostics#4648](https://github.com/dotnet/diagnostics/issues/4648) | Error: Fail to create host ldelegate 80070002 |
 | [dotnet/diagnostics#4637](https://github.com/dotnet/diagnostics/issues/4637) | `clrstack -f` shows no managed names with lldb in .NET 9 |
-| [dotnet/diagnostics#4632](https://github.com/dotnet/diagnostics/issues/4632) | dotnet-dump :  "Can not load or initialize libmscordaccore.so" |
 | [dotnet/diagnostics#4597](https://github.com/dotnet/diagnostics/issues/4597) | Clarify whether dotnet-counters can monitor .NET Framework app |
 | [dotnet/diagnostics#4590](https://github.com/dotnet/diagnostics/issues/4590) | dotnet-sos for .NET 9 |
 | [dotnet/diagnostics#4564](https://github.com/dotnet/diagnostics/issues/4564) | dotnet-counters does not report values from multiple Metrics Meters with distinct tags |
 | [dotnet/diagnostics#4563](https://github.com/dotnet/diagnostics/issues/4563) | Error: No CLR runtime found (dump collected with 8.0.0) |
 | [dotnet/diagnostics#4557](https://github.com/dotnet/diagnostics/issues/4557) | Timeout while executing StartEventPipeSession |
 | [dotnet/diagnostics#4551](https://github.com/dotnet/diagnostics/issues/4551) | libsosplugin.dylib: CoreCLR host crash on macOS Sonoma 14.4 on arm64 |
-| [dotnet/diagnostics#4542](https://github.com/dotnet/diagnostics/issues/4542) | dotnet trace not working for MAUI application using EF Core |
 | [dotnet/diagnostics#4524](https://github.com/dotnet/diagnostics/issues/4524) | dotnet-dsrouter and dotnet-gcdump doc needed when default port is occupied |
 | [dotnet/diagnostics#4522](https://github.com/dotnet/diagnostics/issues/4522) | Unexpected error in .NET Core 3.1 when running "Collect metrics" sample from MS documentation |
 | [dotnet/diagnostics#4491](https://github.com/dotnet/diagnostics/issues/4491) | Better document the difference between `DumpType.Normal` and `DumpType.Triage` |
@@ -42,13 +40,13 @@ Issues in query: 37
 | [dotnet/diagnostics#4002](https://github.com/dotnet/diagnostics/issues/4002) | Update docs: Linux dump analysis in a Windows environment |
 | [dotnet/diagnostics#3974](https://github.com/dotnet/diagnostics/issues/3974) | Q: what does it mean when `verifyheap` reports heap errors? |
 | [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | `dotnet-trace collect` hangs without completing collection on Linux |
-| [dotnet/diagnostics#3882](https://github.com/dotnet/diagnostics/issues/3882) | Add newer Ubuntu images to testing workflows. |
+| [dotnet/diagnostics#3882](https://github.com/dotnet/diagnostics/issues/3882) | **\<OUT OF SLA\>** Add newer Ubuntu images to testing workflows. |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | **\<OUT OF SLA\>** How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#2921](https://github.com/dotnet/diagnostics/issues/2921) | **\<OUT OF SLA\>** SDL signoff requirements - please enable additional C/C++ compiler warnings |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 6
+Issues in query: 7
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -56,6 +54,7 @@ Issues in query: 6
 | [dotnet/runtime#101764](https://github.com/dotnet/runtime/issues/101764) | Malformed EventPipe request can crash the runtime |
 | [dotnet/runtime#101759](https://github.com/dotnet/runtime/issues/101759) | tracing/eventpipe/providervalidation/providervalidation/providervalidation.cmd test failure |
 | [dotnet/runtime#99497](https://github.com/dotnet/runtime/issues/99497) | Assert in CounterGroup.OnEventSourceCommand after trying to run BDN x86 |
+| [dotnet/runtime#93175](https://github.com/dotnet/runtime/issues/93175) | Deadlock in ThreadPool.GetMaxThreads() during app start. |
 | [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
@@ -69,10 +68,12 @@ Issues in query: 1
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 8
+Issues in query: 10
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#102411](https://github.com/dotnet/runtime/issues/102411) | Activity id of nettrace events are always 0   |
+| [dotnet/runtime#102197](https://github.com/dotnet/runtime/issues/102197) | EventSource event with 4 string parameters with null values behaves inconsistent in .NET 8 |
 | [dotnet/runtime#99816](https://github.com/dotnet/runtime/issues/99816) | Higher Memory Usage for the EventSource Class |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
 | [dotnet/runtime#96968](https://github.com/dotnet/runtime/issues/96968) | Test failure BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds_WithEtwListener |
@@ -84,15 +85,14 @@ Issues in query: 8
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 25
+Issues in query: 24
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#102080](https://github.com/dotnet/runtime/issues/102080) | [hot reload] Validate / Implement support for adding `static extern` methods |
+| [dotnet/runtime#102178](https://github.com/dotnet/runtime/issues/102178) | DEBUG_EXCEPTION_CATCH_HANDLER_FOUND events missing for exceptions caught by func-eval |
 | [dotnet/runtime#101957](https://github.com/dotnet/runtime/issues/101957) | DbgEnableMiniDump does not work with PublishSingleFile |
 | [dotnet/runtime#101729](https://github.com/dotnet/runtime/issues/101729) | .NET 9: Unhandled exceptions in background threads reported with empty managed frames |
 | [dotnet/runtime#101310](https://github.com/dotnet/runtime/issues/101310) | coreclr + vsdbg failure to get stack trace from remote Kubernetes pod |
-| [dotnet/runtime#100826](https://github.com/dotnet/runtime/issues/100826) | Hot reload fails to flow generic constraints to the inherited class |
 | [dotnet/runtime#100114](https://github.com/dotnet/runtime/issues/100114) | profiler\multiple test failed |
 | [dotnet/runtime#100098](https://github.com/dotnet/runtime/issues/100098) | Assertion on rsthread.cpp:5902 taAmbient != NULL |
 | [dotnet/runtime#99487](https://github.com/dotnet/runtime/issues/99487) | CLR_GCHEAPCOLLECT_KEYWORD triggers a GC twice |
@@ -116,10 +116,11 @@ Issues in query: 25
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 4
+Issues in query: 5
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#102276](https://github.com/dotnet/runtime/issues/102276) | Blazor Hybird Release Buid error-target andriod |
 | [dotnet/runtime#102012](https://github.com/dotnet/runtime/issues/102012) | Blazor WASM: breakpoints on property setter not hit |
 | [dotnet/runtime#101554](https://github.com/dotnet/runtime/issues/101554) | Blazor client side web debugging fails to function when run within IIS |
 | [dotnet/runtime#99007](https://github.com/dotnet/runtime/issues/99007) | [.NET 8] [android] case where Mono debugger doesn't "break" correctly on unhandled exceptions |
