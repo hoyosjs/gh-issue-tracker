@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 05/27/2024 06:16:32
+# .NET Diagnostics Report Full Report - 06/03/2024 06:16:02
 
-Total issues: 87
+Total issues: 88
 
 ## v1,1-dotnet/diagnostics
 
@@ -8,11 +8,11 @@ Issues in query: 33
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4697](https://github.com/dotnet/diagnostics/issues/4697) | Understanding metrics and memory usage of a .net app (seem mostly consume by cache and fragmentation) |
 | [dotnet/diagnostics#4686](https://github.com/dotnet/diagnostics/issues/4686) | "ERROR: No CLR runtime found." analyzing dump taken from Linux .Net 8.0.5 |
 | [dotnet/diagnostics#4655](https://github.com/dotnet/diagnostics/issues/4655) | [test] Method not found Xunit.Sdk.XunitException..ctor |
 | [dotnet/diagnostics#4654](https://github.com/dotnet/diagnostics/issues/4654) | [SOS][tests] OtherCommands(config: projectk.sdk.prebuilt*) VerifyOutput: no last command output or debugger exited unexpectedly |
 | [dotnet/diagnostics#4646](https://github.com/dotnet/diagnostics/issues/4646) | dotnet-counters not showing metric names |
-| [dotnet/diagnostics#4648](https://github.com/dotnet/diagnostics/issues/4648) | Error: Fail to create host ldelegate 80070002 |
 | [dotnet/diagnostics#4637](https://github.com/dotnet/diagnostics/issues/4637) | `clrstack -f` shows no managed names with lldb in .NET 9 |
 | [dotnet/diagnostics#4590](https://github.com/dotnet/diagnostics/issues/4590) | dotnet-sos for .NET 9 |
 | [dotnet/diagnostics#4564](https://github.com/dotnet/diagnostics/issues/4564) | dotnet-counters does not report values from multiple Metrics Meters with distinct tags |
@@ -38,7 +38,7 @@ Issues in query: 33
 | [dotnet/diagnostics#4086](https://github.com/dotnet/diagnostics/issues/4086) | LLDB sos commands don't write output to SBCommandReturnObject |
 | [dotnet/diagnostics#4002](https://github.com/dotnet/diagnostics/issues/4002) | Update docs: Linux dump analysis in a Windows environment |
 | [dotnet/diagnostics#3974](https://github.com/dotnet/diagnostics/issues/3974) | Q: what does it mean when `verifyheap` reports heap errors? |
-| [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | `dotnet-trace collect` hangs without completing collection on Linux |
+| [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | **\<OUT OF SLA\>** `dotnet-trace collect` hangs without completing collection on Linux |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | **\<OUT OF SLA\>** How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#2921](https://github.com/dotnet/diagnostics/issues/2921) | **\<OUT OF SLA\>** SDL signoff requirements - please enable additional C/C++ compiler warnings |
 
@@ -67,10 +67,11 @@ Issues in query: 1
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 10
+Issues in query: 11
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#102820](https://github.com/dotnet/runtime/issues/102820) | WPA can't decode ETW events from some of the Private.InternalDiagnostics.* event sources |
 | [dotnet/runtime#102197](https://github.com/dotnet/runtime/issues/102197) | EventSource event with 4 string parameters with null values behaves inconsistent in .NET 8 |
 | [dotnet/runtime#99816](https://github.com/dotnet/runtime/issues/99816) | Higher Memory Usage for the EventSource Class |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
@@ -88,7 +89,7 @@ Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#102701](https://github.com/dotnet/runtime/issues/102701) | Problem when including the `corprof.h` file to use the Profiling API |
+| [dotnet/runtime#102767](https://github.com/dotnet/runtime/issues/102767) | Patch skipping crashing in functions marked with [UnmanagedCallersOnly] |
 | [dotnet/runtime#102568](https://github.com/dotnet/runtime/issues/102568) | If a program is terminated by unhandled exception, its OS process remains |
 | [dotnet/runtime#101957](https://github.com/dotnet/runtime/issues/101957) | DbgEnableMiniDump does not work with PublishSingleFile |
 | [dotnet/runtime#101310](https://github.com/dotnet/runtime/issues/101310) | coreclr + vsdbg failure to get stack trace from remote Kubernetes pod |
