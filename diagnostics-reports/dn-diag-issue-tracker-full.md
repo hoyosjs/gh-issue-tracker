@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 06/10/2024 06:17:16
+# .NET Diagnostics Report Full Report - 06/17/2024 06:16:48
 
-Total issues: 86
+Total issues: 85
 
 ## v1,1-dotnet/diagnostics
 
@@ -8,9 +8,10 @@ Issues in query: 30
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4741](https://github.com/dotnet/diagnostics/issues/4741) | Counter generated from System.Diagnostic.Metrics resets to zero. |
+| [dotnet/diagnostics#4727](https://github.com/dotnet/diagnostics/issues/4727) | How to read ObservableGauge via DiagnosticsClient? |
 | [dotnet/diagnostics#4718](https://github.com/dotnet/diagnostics/issues/4718) | [Test] TestLogsUseAppFiltersAndFilterSpecs fails with `Assert.Equal() Failure` |
 | [dotnet/diagnostics#4717](https://github.com/dotnet/diagnostics/issues/4717) | [Test] StartEventPipeSessionWithoutStackwalkTestAsync fails with ServerNotAvailableException |
-| [dotnet/diagnostics#4697](https://github.com/dotnet/diagnostics/issues/4697) | Understanding metrics and memory usage of a .net app (seem mostly consume by cache and fragmentation) |
 | [dotnet/diagnostics#4655](https://github.com/dotnet/diagnostics/issues/4655) | [test] Method not found Xunit.Sdk.XunitException..ctor |
 | [dotnet/diagnostics#4654](https://github.com/dotnet/diagnostics/issues/4654) | [SOS][tests] OtherCommands(config: projectk.sdk.prebuilt*) VerifyOutput: no last command output or debugger exited unexpectedly |
 | [dotnet/diagnostics#4646](https://github.com/dotnet/diagnostics/issues/4646) | dotnet-counters not showing metric names |
@@ -35,7 +36,6 @@ Issues in query: 30
 | [dotnet/diagnostics#4139](https://github.com/dotnet/diagnostics/issues/4139) | How to debug memory leak that is not clear on dotnet-dump? |
 | [dotnet/diagnostics#4086](https://github.com/dotnet/diagnostics/issues/4086) | LLDB sos commands don't write output to SBCommandReturnObject |
 | [dotnet/diagnostics#4002](https://github.com/dotnet/diagnostics/issues/4002) | Update docs: Linux dump analysis in a Windows environment |
-| [dotnet/diagnostics#3974](https://github.com/dotnet/diagnostics/issues/3974) | **\<OUT OF SLA\>** Q: what does it mean when `verifyheap` reports heap errors? |
 | [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | **\<OUT OF SLA\>** `dotnet-trace collect` hangs without completing collection on Linux |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | **\<OUT OF SLA\>** How to debug stack overflow errors on Windows |
 
@@ -56,19 +56,19 @@ Issues in query: 8
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
-Issues in query: 2
+Issues in query: 1
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#103105](https://github.com/dotnet/runtime/issues/103105) | [API Proposal]: DebuggerDisableUserUnhandledAttribute |
 | [dotnet/runtime#91191](https://github.com/dotnet/runtime/issues/91191) | [API Proposal]: An attribute to indicate boxed value type is not expected for certain API |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 10
+Issues in query: 11
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#103480](https://github.com/dotnet/runtime/issues/103480) | Crash when disposing an EventListener during shutdown |
 | [dotnet/runtime#102197](https://github.com/dotnet/runtime/issues/102197) | EventSource event with 4 string parameters with null values behaves inconsistent in .NET 8 |
 | [dotnet/runtime#99816](https://github.com/dotnet/runtime/issues/99816) | Higher Memory Usage for the EventSource Class |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
@@ -82,11 +82,12 @@ Issues in query: 10
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 25
+Issues in query: 26
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#103210](https://github.com/dotnet/runtime/issues/103210) | Profiler's `InitializeCurrentThread` returns `CORPROF_E_UNSUPPORTED_CALL_SEQUENCE` |
+| [dotnet/runtime#103443](https://github.com/dotnet/runtime/issues/103443) | Can't collect the mixed mode call stack due to ambiguity of Profiler API |
+| [dotnet/runtime#103377](https://github.com/dotnet/runtime/issues/103377) | Unable to debug crash dump created on machine using Ubuntu 22.04 feed runtime. |
 | [dotnet/runtime#103000](https://github.com/dotnet/runtime/issues/103000) | Environment variable DOTNET_DbgEnableMiniDump=1 doens't work when unhandled exception occurs in worker thread |
 | [dotnet/runtime#102767](https://github.com/dotnet/runtime/issues/102767) | Patch skipping crashing in functions marked with [UnmanagedCallersOnly] |
 | [dotnet/runtime#102568](https://github.com/dotnet/runtime/issues/102568) | If a program is terminated by unhandled exception, its OS process remains |
@@ -104,7 +105,7 @@ Issues in query: 25
 | [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | Deadlock between debugger and class loading in PGO |
 | [dotnet/runtime#89592](https://github.com/dotnet/runtime/issues/89592) | Debugger assert during register mapping |
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
-| [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
+| [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | **\<OUT OF SLA\>** `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
 | [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | **\<OUT OF SLA\>** [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
 | [dotnet/runtime#78991](https://github.com/dotnet/runtime/issues/78991) | **\<OUT OF SLA\>** NullReferenceException when you use the short format of string.format $"{sample}" when debugging .NET 7 on x64 macOS |
 | [dotnet/runtime#74271](https://github.com/dotnet/runtime/issues/74271) | **\<OUT OF SLA\>** [CET Debugging] User mode APC's on Windows x64 with CET enabled can cause a debug session to crash  |
@@ -125,11 +126,10 @@ Issues in query: 4
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
 
-Issues in query: 5
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#103132](https://github.com/dotnet/runtime/issues/103132) | [mobile][diagnostics] Format native crash output using llvm-symbolizer markup |
 | [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
 | [dotnet/runtime#94114](https://github.com/dotnet/runtime/issues/94114) | EventPipe Doesn't Work On OSX With Sandbox Enabled |
 | [dotnet/runtime#93551](https://github.com/dotnet/runtime/issues/93551) | [wasm] run browser-bench sample with https connection |
@@ -141,10 +141,9 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-Tracing-mono
 
-Issues in query: 2
+Issues in query: 1
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#101847](https://github.com/dotnet/runtime/issues/101847) | Regarding Memory Leak Check in Android Platform with dotnet-gcdump |
 | [dotnet/runtime#89621](https://github.com/dotnet/runtime/issues/89621) | EventPipe shutdown race condition in .net7/.net6 |
 
