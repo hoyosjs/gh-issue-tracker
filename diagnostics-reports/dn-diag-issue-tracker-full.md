@@ -1,15 +1,13 @@
-# .NET Diagnostics Report Full Report - 06/17/2024 06:16:48
+# .NET Diagnostics Report Full Report - 06/24/2024 06:19:13
 
-Total issues: 85
+Total issues: 79
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 30
+Issues in query: 28
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#4741](https://github.com/dotnet/diagnostics/issues/4741) | Counter generated from System.Diagnostic.Metrics resets to zero. |
-| [dotnet/diagnostics#4727](https://github.com/dotnet/diagnostics/issues/4727) | How to read ObservableGauge via DiagnosticsClient? |
 | [dotnet/diagnostics#4718](https://github.com/dotnet/diagnostics/issues/4718) | [Test] TestLogsUseAppFiltersAndFilterSpecs fails with `Assert.Equal() Failure` |
 | [dotnet/diagnostics#4717](https://github.com/dotnet/diagnostics/issues/4717) | [Test] StartEventPipeSessionWithoutStackwalkTestAsync fails with ServerNotAvailableException |
 | [dotnet/diagnostics#4655](https://github.com/dotnet/diagnostics/issues/4655) | [test] Method not found Xunit.Sdk.XunitException..ctor |
@@ -35,17 +33,16 @@ Issues in query: 30
 | [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | Document how to use createdump on native AOT apps |
 | [dotnet/diagnostics#4139](https://github.com/dotnet/diagnostics/issues/4139) | How to debug memory leak that is not clear on dotnet-dump? |
 | [dotnet/diagnostics#4086](https://github.com/dotnet/diagnostics/issues/4086) | LLDB sos commands don't write output to SBCommandReturnObject |
-| [dotnet/diagnostics#4002](https://github.com/dotnet/diagnostics/issues/4002) | Update docs: Linux dump analysis in a Windows environment |
+| [dotnet/diagnostics#4002](https://github.com/dotnet/diagnostics/issues/4002) | **\<OUT OF SLA\>** Update docs: Linux dump analysis in a Windows environment |
 | [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | **\<OUT OF SLA\>** `dotnet-trace collect` hangs without completing collection on Linux |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | **\<OUT OF SLA\>** How to debug stack overflow errors on Windows |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 8
+Issues in query: 7
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#102629](https://github.com/dotnet/runtime/issues/102629) | any limitations on EventCounters on Linux? |
 | [dotnet/runtime#102572](https://github.com/dotnet/runtime/issues/102572) | It is not possible to pass the ID of the garbage collection when the .NET provider is enabled with the GCHeapCollect(0x800000) keyword |
 | [dotnet/runtime#102004](https://github.com/dotnet/runtime/issues/102004) | MemoryAllocatedForJitCode ETW Event missing in trace, but CLRStackWalk still fires |
 | [dotnet/runtime#101764](https://github.com/dotnet/runtime/issues/101764) | Malformed EventPipe request can crash the runtime |
@@ -64,7 +61,7 @@ Issues in query: 1
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 11
+Issues in query: 10
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -77,33 +74,29 @@ Issues in query: 11
 | [dotnet/runtime#94964](https://github.com/dotnet/runtime/issues/94964) | How to debug code that is being compiled in layers? I have the following problem |
 | [dotnet/runtime#93175](https://github.com/dotnet/runtime/issues/93175) | Deadlock in ThreadPool.GetMaxThreads() during app start. |
 | [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
-| [dotnet/runtime#88567](https://github.com/dotnet/runtime/issues/88567) | Port System.Diagnostics documentation for .NET 8.0 APIs |
 | [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 26
+Issues in query: 23
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#103872](https://github.com/dotnet/runtime/issues/103872) | WER handler is broken |
+| [dotnet/runtime#103770](https://github.com/dotnet/runtime/issues/103770) | Crash when debugging with lldb on MacOS |
+| [dotnet/runtime#103718](https://github.com/dotnet/runtime/issues/103718) | Buffer overrun on unhandled exception in nativeaot |
 | [dotnet/runtime#103443](https://github.com/dotnet/runtime/issues/103443) | Can't collect the mixed mode call stack due to ambiguity of Profiler API |
-| [dotnet/runtime#103377](https://github.com/dotnet/runtime/issues/103377) | Unable to debug crash dump created on machine using Ubuntu 22.04 feed runtime. |
 | [dotnet/runtime#103000](https://github.com/dotnet/runtime/issues/103000) | Environment variable DOTNET_DbgEnableMiniDump=1 doens't work when unhandled exception occurs in worker thread |
 | [dotnet/runtime#102767](https://github.com/dotnet/runtime/issues/102767) | Patch skipping crashing in functions marked with [UnmanagedCallersOnly] |
-| [dotnet/runtime#102568](https://github.com/dotnet/runtime/issues/102568) | If a program is terminated by unhandled exception, its OS process remains |
 | [dotnet/runtime#101310](https://github.com/dotnet/runtime/issues/101310) | coreclr + vsdbg failure to get stack trace from remote Kubernetes pod |
-| [dotnet/runtime#100098](https://github.com/dotnet/runtime/issues/100098) | Assertion on rsthread.cpp:5902 taAmbient != NULL |
 | [dotnet/runtime#99487](https://github.com/dotnet/runtime/issues/99487) | CLR_GCHEAPCOLLECT_KEYWORD triggers a GC twice |
 | [dotnet/runtime#98654](https://github.com/dotnet/runtime/issues/98654) | System.IO.IOException: ' Received an unexpected EOF or 0 bytes from the transport stream.' |
 | [dotnet/runtime#98506](https://github.com/dotnet/runtime/issues/98506) | Excessive exceptions generated in StackTraceSymbols when using Portable PDB |
 | [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | ExecutionEngineException on using step into while debugging |
 | [dotnet/runtime#95189](https://github.com/dotnet/runtime/issues/95189) | vsdbg quits when resuming from a breakpoint if stepping over a line that throws an exception  |
-| [dotnet/runtime#95167](https://github.com/dotnet/runtime/issues/95167) | Crash in DoStackSnapshot. |
-| [dotnet/runtime#91631](https://github.com/dotnet/runtime/issues/91631) | No compatiable code running on the thread |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
 | [dotnet/runtime#90359](https://github.com/dotnet/runtime/issues/90359) | [External] Libunwind has suppressed warnings  |
 | [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | Deadlock between debugger and class loading in PGO |
-| [dotnet/runtime#89592](https://github.com/dotnet/runtime/issues/89592) | Debugger assert during register mapping |
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | **\<OUT OF SLA\>** `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
 | [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | **\<OUT OF SLA\>** [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
@@ -115,13 +108,14 @@ Issues in query: 26
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 4
+Issues in query: 5
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#102012](https://github.com/dotnet/runtime/issues/102012) | Blazor WASM: breakpoints on property setter not hit |
 | [dotnet/runtime#101554](https://github.com/dotnet/runtime/issues/101554) | Blazor client side web debugging fails to function when run within IIS |
 | [dotnet/runtime#99007](https://github.com/dotnet/runtime/issues/99007) | [.NET 8] [android] case where Mono debugger doesn't "break" correctly on unhandled exceptions |
+| [dotnet/runtime#91631](https://github.com/dotnet/runtime/issues/91631) | No compatiable code running on the thread |
 | [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
