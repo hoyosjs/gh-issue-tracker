@@ -1,13 +1,17 @@
-# .NET Diagnostics Report Full Report - 06/24/2024 06:19:13
+# .NET Diagnostics Report Full Report - 07/01/2024 06:17:49
 
-Total issues: 79
+Total issues: 83
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 28
+Issues in query: 32
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4757](https://github.com/dotnet/diagnostics/issues/4757) | [test failure] TestCounterMonitorSystemRuntimeMetricsCSV intermittently fails: System.IO.EndOfStreamException : Attempted to read past the end of the stream. |
+| [dotnet/diagnostics#4755](https://github.com/dotnet/diagnostics/issues/4755) | [test failure] SOS.WebApp3 fails on Alpine with VerifyOutput: no last command output or debugger exited unexpectedly: \s*Statistics:\s+ |
+| [dotnet/diagnostics#4753](https://github.com/dotnet/diagnostics/issues/4753) | SOS Warning: Loading symbols for dynamic assemblies is not yet supported |
+| [dotnet/diagnostics#4769](https://github.com/dotnet/diagnostics/issues/4769) | Crash when debugging with lldb on MacOS |
 | [dotnet/diagnostics#4718](https://github.com/dotnet/diagnostics/issues/4718) | [Test] TestLogsUseAppFiltersAndFilterSpecs fails with `Assert.Equal() Failure` |
 | [dotnet/diagnostics#4717](https://github.com/dotnet/diagnostics/issues/4717) | [Test] StartEventPipeSessionWithoutStackwalkTestAsync fails with ServerNotAvailableException |
 | [dotnet/diagnostics#4655](https://github.com/dotnet/diagnostics/issues/4655) | [test] Method not found Xunit.Sdk.XunitException..ctor |
@@ -49,7 +53,7 @@ Issues in query: 7
 | [dotnet/runtime#101759](https://github.com/dotnet/runtime/issues/101759) | tracing/eventpipe/providervalidation/providervalidation/providervalidation.cmd test failure |
 | [dotnet/runtime#99497](https://github.com/dotnet/runtime/issues/99497) | Assert in CounterGroup.OnEventSourceCommand after trying to run BDN x86 |
 | [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
-| [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | NativeRuntimeEventSource behaving poorly in conjunction with other providers |
+| [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | **\<OUT OF SLA\>** NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
@@ -61,7 +65,7 @@ Issues in query: 1
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 10
+Issues in query: 11
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -74,7 +78,8 @@ Issues in query: 10
 | [dotnet/runtime#94964](https://github.com/dotnet/runtime/issues/94964) | How to debug code that is being compiled in layers? I have the following problem |
 | [dotnet/runtime#93175](https://github.com/dotnet/runtime/issues/93175) | Deadlock in ThreadPool.GetMaxThreads() during app start. |
 | [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
-| [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
+| [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | **\<OUT OF SLA\>** Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
+| [dotnet/runtime#80666](https://github.com/dotnet/runtime/issues/80666) | **\<OUT OF SLA\>** tracing/eventpipe/eventsourceerror/eventsourceerror/eventsourceerror failure |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
@@ -82,8 +87,8 @@ Issues in query: 23
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#103955](https://github.com/dotnet/runtime/issues/103955) | Debugger Crashes when using breakpoints with a compiled runtime in debug mode _CrtlsValidHeapPointer(block) |
 | [dotnet/runtime#103872](https://github.com/dotnet/runtime/issues/103872) | WER handler is broken |
-| [dotnet/runtime#103770](https://github.com/dotnet/runtime/issues/103770) | Crash when debugging with lldb on MacOS |
 | [dotnet/runtime#103718](https://github.com/dotnet/runtime/issues/103718) | Buffer overrun on unhandled exception in nativeaot |
 | [dotnet/runtime#103443](https://github.com/dotnet/runtime/issues/103443) | Can't collect the mixed mode call stack due to ambiguity of Profiler API |
 | [dotnet/runtime#103000](https://github.com/dotnet/runtime/issues/103000) | Environment variable DOTNET_DbgEnableMiniDump=1 doens't work when unhandled exception occurs in worker thread |
@@ -108,11 +113,10 @@ Issues in query: 23
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 5
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#102012](https://github.com/dotnet/runtime/issues/102012) | Blazor WASM: breakpoints on property setter not hit |
 | [dotnet/runtime#101554](https://github.com/dotnet/runtime/issues/101554) | Blazor client side web debugging fails to function when run within IIS |
 | [dotnet/runtime#99007](https://github.com/dotnet/runtime/issues/99007) | [.NET 8] [android] case where Mono debugger doesn't "break" correctly on unhandled exceptions |
 | [dotnet/runtime#91631](https://github.com/dotnet/runtime/issues/91631) | No compatiable code running on the thread |
