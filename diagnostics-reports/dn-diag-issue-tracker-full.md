@@ -1,16 +1,15 @@
-# .NET Diagnostics Report Full Report - 07/01/2024 06:17:49
+# .NET Diagnostics Report Full Report - 07/08/2024 06:17:05
 
-Total issues: 83
+Total issues: 88
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 32
+Issues in query: 31
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4771](https://github.com/dotnet/diagnostics/issues/4771) | Write dump failed - HRESULT: 0x00000000 with nothing in service stdout |
 | [dotnet/diagnostics#4757](https://github.com/dotnet/diagnostics/issues/4757) | [test failure] TestCounterMonitorSystemRuntimeMetricsCSV intermittently fails: System.IO.EndOfStreamException : Attempted to read past the end of the stream. |
-| [dotnet/diagnostics#4755](https://github.com/dotnet/diagnostics/issues/4755) | [test failure] SOS.WebApp3 fails on Alpine with VerifyOutput: no last command output or debugger exited unexpectedly: \s*Statistics:\s+ |
-| [dotnet/diagnostics#4753](https://github.com/dotnet/diagnostics/issues/4753) | SOS Warning: Loading symbols for dynamic assemblies is not yet supported |
 | [dotnet/diagnostics#4769](https://github.com/dotnet/diagnostics/issues/4769) | Crash when debugging with lldb on MacOS |
 | [dotnet/diagnostics#4718](https://github.com/dotnet/diagnostics/issues/4718) | [Test] TestLogsUseAppFiltersAndFilterSpecs fails with `Assert.Equal() Failure` |
 | [dotnet/diagnostics#4717](https://github.com/dotnet/diagnostics/issues/4717) | [Test] StartEventPipeSessionWithoutStackwalkTestAsync fails with ServerNotAvailableException |
@@ -83,14 +82,17 @@ Issues in query: 11
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 23
+Issues in query: 26
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#104459](https://github.com/dotnet/runtime/issues/104459) | App crashes with an output "Trace/Breakpoint Trap" on Linux when a P/Invoke callback is called from a native library if the dotnet debugger is attached. |
+| [dotnet/runtime#104425](https://github.com/dotnet/runtime/issues/104425) | [API Proposal]: support thread dump on `kill -3` |
+| [dotnet/runtime#104424](https://github.com/dotnet/runtime/issues/104424) | Dev/Debug mode experience |
+| [dotnet/runtime#104413](https://github.com/dotnet/runtime/issues/104413) | /build/gdb-Dh0pdX/gdb-12.1/gdb/jit.c:1252: internal-error: jit_event_handler: Assertion `jiter->jiter_data != nullptr' failed. |
+| [dotnet/runtime#104256](https://github.com/dotnet/runtime/issues/104256) | Dump file not created when process crashes |
 | [dotnet/runtime#103955](https://github.com/dotnet/runtime/issues/103955) | Debugger Crashes when using breakpoints with a compiled runtime in debug mode _CrtlsValidHeapPointer(block) |
 | [dotnet/runtime#103872](https://github.com/dotnet/runtime/issues/103872) | WER handler is broken |
-| [dotnet/runtime#103718](https://github.com/dotnet/runtime/issues/103718) | Buffer overrun on unhandled exception in nativeaot |
-| [dotnet/runtime#103443](https://github.com/dotnet/runtime/issues/103443) | Can't collect the mixed mode call stack due to ambiguity of Profiler API |
 | [dotnet/runtime#103000](https://github.com/dotnet/runtime/issues/103000) | Environment variable DOTNET_DbgEnableMiniDump=1 doens't work when unhandled exception occurs in worker thread |
 | [dotnet/runtime#102767](https://github.com/dotnet/runtime/issues/102767) | Patch skipping crashing in functions marked with [UnmanagedCallersOnly] |
 | [dotnet/runtime#101310](https://github.com/dotnet/runtime/issues/101310) | coreclr + vsdbg failure to get stack trace from remote Kubernetes pod |
@@ -102,7 +104,7 @@ Issues in query: 23
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
 | [dotnet/runtime#90359](https://github.com/dotnet/runtime/issues/90359) | [External] Libunwind has suppressed warnings  |
 | [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | Deadlock between debugger and class loading in PGO |
-| [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
+| [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | **\<OUT OF SLA\>** DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | **\<OUT OF SLA\>** `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
 | [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | **\<OUT OF SLA\>** [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
 | [dotnet/runtime#78991](https://github.com/dotnet/runtime/issues/78991) | **\<OUT OF SLA\>** NullReferenceException when you use the short format of string.format $"{sample}" when debugging .NET 7 on x64 macOS |
@@ -113,10 +115,13 @@ Issues in query: 23
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 4
+Issues in query: 7
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#104265](https://github.com/dotnet/runtime/issues/104265) | Dotnet Android broken debugging (and runtime?) |
+| [dotnet/runtime#104234](https://github.com/dotnet/runtime/issues/104234) | DEBUGGING IS NOT ENABLED when trying to debug .NET 8 Blazor Web project simulating iOS device on edge |
+| [dotnet/runtime#104231](https://github.com/dotnet/runtime/issues/104231) | Blazor webassembly does not hit breakpoints on <select> bindings |
 | [dotnet/runtime#101554](https://github.com/dotnet/runtime/issues/101554) | Blazor client side web debugging fails to function when run within IIS |
 | [dotnet/runtime#99007](https://github.com/dotnet/runtime/issues/99007) | [.NET 8] [android] case where Mono debugger doesn't "break" correctly on unhandled exceptions |
 | [dotnet/runtime#91631](https://github.com/dotnet/runtime/issues/91631) | No compatiable code running on the thread |
