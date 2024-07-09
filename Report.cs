@@ -22,6 +22,14 @@ internal class ReportCreator
         public const string IssueIdList = "issueIdList";
     }
 
+    private static class ContextKeys
+    {
+        public const string TotalMaxRetryWaitInSec = "TotalMaxRetryWaitInSec";
+        public const string Client = "Client";
+        public const string QueryArgs = "QueryArgs";
+        public const string Logger = "Logger";
+    }
+
     public enum ReportGenerationType
     {
         Comparative,
@@ -34,21 +42,17 @@ internal class ReportCreator
     const long DefaultRetrySecs = 60;
     const long TotalMaxRetryWaitInSec = 60 * 50;
 
-    private QueryStats _totalStats;
-    private readonly AsyncRetryPolicy _ghRetryPolicy;
-    private readonly string _friendlyReportName;
-    private readonly GitHubClient _ghClient;
-    private readonly Dictionary<string, (DateTimeOffset, IList<IssueReportResult>)> _reportResults;
-    private readonly Dictionary<string, (DateTimeOffset, IEnumerable<int>)> _priorResults;
     public readonly ILogger _logger;
+    private readonly string _friendlyReportName;
+    private readonly AsyncRetryPolicy _ghRetryPolicy;
+    private readonly GitHubClient _ghClient;
+    private QueryStats _totalStats = new();
+    private readonly Dictionary<string, (DateTimeOffset, IList<IssueReportResult>)> _reportResults = [];
+    private readonly Dictionary<string, (DateTimeOffset, IEnumerable<int>)> _priorResults = [];
 
     public ReportCreator(string friendlyName, string clientName, string? pat = null, ILogger? logger = null)
     {
-        _totalStats = new QueryStats();
-        _reportResults = new Dictionary<string, (DateTimeOffset, IList<IssueReportResult>)>();
-        _priorResults = new Dictionary<string, (DateTimeOffset, IEnumerable<int>)>();
         _ghClient = new GitHubClient(new ProductHeaderValue(clientName));
-
         _logger = logger ?? NullLogger.Instance;
         _friendlyReportName = friendlyName;
 
@@ -72,7 +76,7 @@ internal class ReportCreator
 
     public async Task InitializePriorResultsFromJson(string priorReportCachePath)
     {
-        using var _ = _logger.BeginScope("Loading cached results.");
+        using IDisposable? _ = _logger.BeginScope("Loading cached results.");
         if (!File.Exists(priorReportCachePath))
         {
             _logger.LogWarning("Unable to find cache file {cachefile}", priorReportCachePath);
@@ -83,8 +87,7 @@ internal class ReportCreator
         JsonDocument jd = await JsonDocument.ParseAsync(cacheFs);
         JsonElement results = jd.RootElement.GetProperty(SerializationConstants.Results);
 
-
-        foreach (var item in results.EnumerateObject())
+        foreach (JsonProperty item in results.EnumerateObject())
         {
             string queryId = item.Name;
 
@@ -103,7 +106,7 @@ internal class ReportCreator
 
     public async Task QueryIssuesAsync(IReadOnlyList<GitHubQuery> queries)
     {
-        using var _ = _logger.BeginScope("Querying.");
+        using IDisposable? _ = _logger.BeginScope("Querying.");
 
         SearchIssuesRequest queryArgs = new()
         {
@@ -149,25 +152,25 @@ internal class ReportCreator
 
         async Task<QueryStats> ProcessIssuesForQueryAsync(string repo, string queryId, SearchIssuesRequest queryArgs)
         {
-            using var _ = _logger.BeginScope("Query {queryId}.", queryId);
+            using IDisposable? _ = _logger.BeginScope("Query {queryId}.", queryId);
             _logger.LogInformation("Processing Query {queryId}.", queryId);
 
             // TODO: Store them split in the model...
-            string[] repoSplit = repo.Split('/');
-            string repoOrg = repoSplit[0];
-            string repoName = repoSplit[1];
+            int separatorIndex = repo.IndexOf('/');
+            string repoOrg = repo.AsSpan(0, separatorIndex).ToString();
+            string repoName = repo.AsSpan(separatorIndex + 1).ToString();
 
             Dictionary<string, object> context = new (){
-                { "TotalMaxRetryWaitInSec", TotalMaxRetryWaitInSec },
-                { "Client", _ghClient },
-                { "QueryArgs", queryArgs },
-                { "Logger", _logger }
+                { ContextKeys.TotalMaxRetryWaitInSec, TotalMaxRetryWaitInSec },
+                { ContextKeys.Client, _ghClient },
+                { ContextKeys.QueryArgs, queryArgs },
+                { ContextKeys.Logger, _logger }
             };
 
             SearchIssuesResult results = await _ghRetryPolicy.ExecuteAsync(
                     static async (ctx) => {
-                        var ghClient = (GitHubClient)ctx["Client"];
-                        var args = (SearchIssuesRequest)ctx["QueryArgs"];
+                        GitHubClient ghClient = (GitHubClient)ctx[ContextKeys.Client];
+                        SearchIssuesRequest args = (SearchIssuesRequest)ctx[ContextKeys.QueryArgs];
                         return await ghClient.Search.SearchIssues(args);
                     },
                     context);
@@ -179,7 +182,7 @@ internal class ReportCreator
 
             DateTimeOffset newestIssueTime = results.TotalCount > 0 ? results.Items[0].CreatedAt : DateTimeOffset.MinValue;
 
-            (DateTimeOffset priorNewestIssueTime, IEnumerable<int> priorIssueIdList) = GetPriorResultFromQueryIdOrDefault(queryId);
+            (DateTimeOffset priorNewestIssueTime, IEnumerable<int> priorIssueIdList) = GetCachedResultsFromQueryIdOrDefault(queryId);
 
             HashSet<int> seenIssues = new();
 
@@ -193,7 +196,7 @@ internal class ReportCreator
             {
                 _logger.LogDebug("Processing page {page}.", queryArgs.Page);
 
-                foreach (var issue in results.Items)
+                foreach (Issue? issue in results.Items)
                 {
                     IssueType type;
 
@@ -232,8 +235,8 @@ internal class ReportCreator
                 queryArgs.Page++;
                 results = await _ghRetryPolicy.ExecuteAsync(
                     static async (ctx) => {
-                        var ghClient = (GitHubClient)ctx["Client"];
-                        var args = (SearchIssuesRequest)ctx["QueryArgs"];
+                        GitHubClient ghClient = (GitHubClient)ctx[ContextKeys.Client];
+                        SearchIssuesRequest args = (SearchIssuesRequest)ctx[ContextKeys.QueryArgs];
                         return await ghClient.Search.SearchIssues(args);
                     }, context);
             }
@@ -251,8 +254,8 @@ internal class ReportCreator
                     _logger.LogInformation("Querying old issue {repo}#{issueId}.", repo, issueId);
                     issue = await _ghRetryPolicy.ExecuteAsync(
                         async (ctx) => {
-                            var ghClient = (GitHubClient)ctx["Client"];
-                            var args = (SearchIssuesRequest)ctx["QueryArgs"];
+                            GitHubClient ghClient = (GitHubClient)ctx[ContextKeys.Client];
+                            SearchIssuesRequest args = (SearchIssuesRequest)ctx[ContextKeys.QueryArgs];
                             return await ghClient.Issue.Get(repoOrg, repoName, issueId);
                         }, context);
                 }
@@ -298,14 +301,14 @@ internal class ReportCreator
             return singleQueryStats;
         }
 
-        (DateTimeOffset newestIssue, IEnumerable<int> issueList) GetPriorResultFromQueryIdOrDefault(string queryId)
+        (DateTimeOffset newestIssue, IEnumerable<int> issueList) GetCachedResultsFromQueryIdOrDefault(string queryId)
         {
             bool results = _priorResults.TryGetValue(queryId, out (DateTimeOffset newestIssue, IEnumerable<int> issueList) result);
 
             if (!results)
             {
                 result.newestIssue = DateTimeOffset.MinValue;
-                result.issueList = Enumerable.Empty<int>();
+                result.issueList = [];
             }
 
             return result;
@@ -315,7 +318,7 @@ internal class ReportCreator
     // TODO: this could easily be better
     public async Task WriteAsync(string reportPath, string reportFilePrefix, int? slaHighlightsTimeInMonths, ReportGenerationType reportType)
     {
-        using var writeScope = _logger.BeginScope("Reports");
+        using IDisposable? writeScope = _logger.BeginScope("Reports");
         _logger.LogInformation("Writing Reports to {reportPath}.", reportPath);
 
         DateTime reportTime = DateTime.UtcNow;
@@ -344,7 +347,7 @@ internal class ReportCreator
                                        string reportFilePrefix,
                                        DateTime reportTime)
         {
-            using var scope = _logger.BeginScope("Comparative Report");
+            using IDisposable? scope = _logger.BeginScope("Comparative Report");
             _logger.BeginScope("Writing comparative Report");
             using StreamWriter txtWriter = File.CreateText(Path.Combine(reportPath, $"{reportFilePrefix}-comp.md"));
 
@@ -388,7 +391,7 @@ internal class ReportCreator
 
         async Task WriteFullReport(string reportPath)
         {
-            using var scope = _logger.BeginScope("Full Report");
+            using IDisposable? scope = _logger.BeginScope("Full Report");
             _logger.BeginScope("Writing Full Report");
 
             using StreamWriter txtWriter = File.CreateText(Path.Combine(reportPath, $"{reportFilePrefix}-full.md"));
@@ -403,7 +406,7 @@ internal class ReportCreator
                 await txtWriter.WriteLineAsync($"## {query}");
                 await txtWriter.WriteLineAsync();
 
-                var curIssues = issueResults
+                List<IssueReportResult> curIssues = issueResults
                                     .Where(x => x.Type is not IssueType.Closed and not IssueType.MovedOut)
                                     .ToList();
 
@@ -432,7 +435,7 @@ internal class ReportCreator
 
         async Task GenerateJsonCacheAsync(string reportPath, string reportFilePrefix, DateTime reportTime)
         {
-            using var scope = _logger.BeginScope("Json cache");
+            using IDisposable? scope = _logger.BeginScope("Json cache");
             _logger.BeginScope("Writing json cache");
             JsonObject results = new();
 
@@ -481,7 +484,7 @@ internal class ReportCreator
 
         async Task UpdateGlobalCSV(string reportPath, string reportFilePrefix, DateTime reportTime)
         {
-            using var scope = _logger.BeginScope("CSV Table");
+            using IDisposable? scope = _logger.BeginScope("CSV Table");
             _logger.BeginScope("Updating CSV");
 
             string csvPath = Path.Combine(reportPath, $"{reportFilePrefix}-totals.csv");
@@ -497,10 +500,10 @@ internal class ReportCreator
 
     private static TimeSpan GetBackoffForPolicy(int retry, Exception ex, Context ctx)
     {
-        long totalSecsLeftForRetry = (long) ctx["TotalMaxRetryWaitInSec"];
-        var logger = (ILogger) ctx["Logger"];
+        long totalSecsLeftForRetry = (long) ctx[ContextKeys.TotalMaxRetryWaitInSec];
+        ILogger logger = (ILogger) ctx[ContextKeys.Logger];
 
-        var apiEx =  (ApiException)ex;
+        ApiException apiEx =  (ApiException)ex;
 
         long retryTimeInSec = -1;
 
@@ -540,14 +543,14 @@ internal class ReportCreator
         }
 
         totalSecsLeftForRetry -= retryTimeInSec;
-        ctx["TotalMaxRetryWaitInSec"] = totalSecsLeftForRetry;
+        ctx[ContextKeys.TotalMaxRetryWaitInSec] = totalSecsLeftForRetry;
 
         return TimeSpan.FromSeconds(retryTimeInSec);
     }
 
     private static Task LogRetry(Exception ex, TimeSpan wait, int retry, Context ctx)
     {
-        var logger = (ILogger) ctx["Logger"];
+        ILogger logger = (ILogger) ctx[ContextKeys.Logger];
         logger.LogWarning("[{retry}] Received rate limitting exception, waiting {wait} secs.", retry, wait.TotalSeconds);
         return Task.CompletedTask;
     }

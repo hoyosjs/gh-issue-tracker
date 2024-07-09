@@ -26,7 +26,7 @@ if (mode == ReportCreator.ReportGenerationType.Invalid)
     return 1;
 }
 
-using var configFs = File.OpenRead(args[1]);
+using FileStream configFs = File.OpenRead(args[1]);
 using JsonDocument jdoc = await JsonDocument.ParseAsync(configFs);
 
 ReportConfig rc = jdoc.RootElement.GetProperty(nameof(ReportConfig)).Deserialize<ReportConfig>();
@@ -43,11 +43,11 @@ if (rc.SecretFilePath is not null)
 
 ghPat ??= Environment.GetEnvironmentVariable("GITHUB_TOKEN");
 
-var loggingConfiguration = new ConfigurationBuilder()
+IConfigurationRoot loggingConfiguration = new ConfigurationBuilder()
                 .AddJsonFile("logging.json", optional: false, reloadOnChange: false)
                 .Build();
 
-using var factory = LoggerFactory.Create(
+using ILoggerFactory factory = LoggerFactory.Create(
     (builder) =>
     {
         builder
