@@ -16,7 +16,7 @@
                 "os-ios",
                 "os-tvos"
             ],
-            "Milestone": "8.0.0",
+            "Milestone": "9.0.0",
             "LabelGroups": [ 
                 [ "area-Tracing-coreclr" ],
                 [ "area-System.Diagnostics" ],
