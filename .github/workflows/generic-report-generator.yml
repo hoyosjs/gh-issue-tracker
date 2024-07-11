@@ -8,7 +8,7 @@ on:
         required: true
         type: string
       shouldUpdateCaches:
-        description: 'Optional. Determines if the run should update the readme and caches.'
+        description: 'Update caches. If checked, the run should update the readme and caches. Otherwise just generate the report.'
         required: false
         default: true
         type: boolean

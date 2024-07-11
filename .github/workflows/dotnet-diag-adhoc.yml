@@ -7,7 +7,7 @@ on:
         description: 'JSON cache date'
         required: false
       shouldUpdateCaches:
-        description: 'Optional. Determines if the run should update the readme and caches.'
+        description: 'Update caches. If checked, the run should update the readme and caches. Otherwise just generate the report.'
         required: true
         default: false
         type: boolean
