@@ -6,10 +6,16 @@ on:
       base_json_date:
         description: 'JSON cache date'
         required: false
+      shouldUpdateCaches:
+        description: 'Optional. Determines if the run should update the readme and caches.'
+        required: true
+        default: false
+        type: boolean
+
 jobs:
   DiagnosticReport:
     uses: ./.github/workflows/generic-report-generator.yml
     with:
       configName: diagnostics
-      reportFolderRelativePath: diagnostics-reports
+      shouldUpdateCaches: ${{ github.event.inputs.shouldUpdateCaches }}
       oldConfigDate: ${{ github.event.inputs.base_json_date }}

@@ -1,8 +1,8 @@
 {
     "ReportConfig": {
-        "ReportFriendlyName": ".NET Diagnostics Report",
-        "ReportFilePrefix": "dn-diag-net8-zbb",
-        "ReportOutputPath": "diagnostics-net8-zbb",
+        "ReportFriendlyName": ".NET 9 - ZBB Diagnostics Report",
+        "ReportFilePrefix": "dn-diag-net9-zbb",
+        "ReportOutputPath": "diagnostics-net9-zbb",
         "SlaHighlightsTimeInMonths": 36
     },
     "QueryConfigs": [
@@ -16,7 +16,7 @@
                 "os-ios",
                 "os-tvos"
             ],
-            "Milestone": "8.0.0",
+            "Milestone": "9.0.0",
             "LabelGroups": [ 
                 [ "area-Tracing-coreclr" ],
                 [ "area-System.Diagnostics" ],

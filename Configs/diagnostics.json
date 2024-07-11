@@ -13,7 +13,8 @@
                 "enhancement",
                 "Epic",
                 "feature-request",
-                "\"User Story\""
+                "\"User Story\"",
+                "tracking-external-issue"
             ],
             "ExcludedMilestone": "future",
             "LabelGroups": [ null ],
@@ -25,7 +26,8 @@
                 "enhancement",
                 "Epic",
                 "feature-request",
-                "linkable-framework"
+                "linkable-framework",
+                "tracking-external-issue"
             ],
             "ExcludedMilestone": "future",
             "LabelGroups": [ 

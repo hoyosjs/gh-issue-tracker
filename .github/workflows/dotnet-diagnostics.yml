@@ -10,4 +10,3 @@ jobs:
     uses: ./.github/workflows/generic-report-generator.yml
     with:
       configName: diagnostics
-      reportFolderRelativePath: diagnostics-reports
