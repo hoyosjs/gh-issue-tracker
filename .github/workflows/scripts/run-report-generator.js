@@ -84,11 +84,12 @@ async function generateReports({ core, exec }) {
 }
 
 async function getConfigurations(core) {
-  Object.keys(process.env).filter(key => key.startsWith('INPUT_')).forEach(key => { core.debug(`${key}=${process.env[key]}`); });
   let loadedConfig = {
-    shouldUpdateCaches: core.getBooleanInput('shouldUpdateCaches', { required: true }),
     cacheFile: ''
   };
+
+  var shouldUpdateCaches = core.getInput('shouldUpdateCaches', { required: true });
+  loadedConfig.shouldUpdateCaches = shouldUpdateCaches === 'true';
 
   // Try to find the specified config file
   try {
