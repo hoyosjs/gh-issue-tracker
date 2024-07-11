@@ -10,8 +10,8 @@ on:
       shouldUpdateCaches:
         description: 'Update caches. If checked, the run should update the readme and caches. Otherwise just generate the report.'
         required: false
-        default: true
-        type: boolean
+        default: 'true'
+        type: string
       oldConfigDate:
         description: 'Optional. Name of the report in reportFolderRelativePath to use as the base cache report. If passed, results are only available as a pipeline artifact.'
         required: false
