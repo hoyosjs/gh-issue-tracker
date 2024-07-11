@@ -154,7 +154,9 @@ function getCacheFilesPaths(config, folderDate) {
   }
 }
 
+// Purely for test when  running locally.
 import core from '@actions/core';
 import exec from '@actions/exec';
+
 const phonyContext = { ...core, info: console.info, error: console.error };
 generateReportsEntrypoint({ core: phonyContext, exec });
