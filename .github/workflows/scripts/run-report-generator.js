@@ -162,7 +162,7 @@ async function updateAndUploadReports({ core, exec, execOptions, configs }) {
       "-c", 'user.name="Report Generator"',
       '-c', 'user.email="19413848+hoyosjs@users.noreply.github.com"',
       'commit',
-      '-m', `Update reports for "${configs.ReportFriendlyName}" on ${new Date().toISOString()}`],
+      '-m', `Update reports for "${configs.reportFriendlyName}" on ${new Date().toISOString()}`],
       execOptions);
 
     await exec.exec('git', ['push'], execOptions);
