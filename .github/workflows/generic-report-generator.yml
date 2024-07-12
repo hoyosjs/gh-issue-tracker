@@ -16,6 +16,10 @@ on:
         description: 'Optional. Name of the report in reportFolderRelativePath to use as the base cache report. If passed, results are only available as a pipeline artifact.'
         required: false
         type: string
+  
+concurrency:
+  group: "reports"
+  cancel-in-progress: false
 
 permissions:
   issues: read
