@@ -1,4 +1,4 @@
-name: Diagnostics .NET 9 ZBB Ad-Hoc
+name: Diagnostics .NET 9 ZBB
 
 on:
   schedule:
