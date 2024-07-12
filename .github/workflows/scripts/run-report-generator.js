@@ -145,7 +145,7 @@ async function updateAndUploadReports({ core, exec, execOptions, configs }) {
   if (configs.shouldUpdateCaches) {
     core.info("Updating checked in caches and reports");
     await updateGlobalCacheFiles(configs, filesGenerated, latestReportDate);
-    // await uploadResultsToCache(exec, configs, filesGenerated);
+    await uploadResultsToCache(exec, configs, filesGenerated);
   } else {
     core.info("Upload reports as artifacts.");
     await uploadResultsAsArtifact(configs, filesGenerated);
