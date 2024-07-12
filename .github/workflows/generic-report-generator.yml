@@ -45,4 +45,5 @@ jobs:
       with:
         script: |
             const { default: generate_report } = await import('${{ github.workspace }}/.github/workflows/scripts/run-report-generator.js')
-            await generate_report({core, exec})
+            const inputs = ${{ toJson(inputs) }}
+            await generate_report({inputs, core, exec})
