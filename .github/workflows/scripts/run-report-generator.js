@@ -114,8 +114,10 @@ async function updateAndUploadReports({ core, exec, execOptions, configs }) {
   const filesGenerated = getLatestGeneratedFiles(configs, folderDate);
 
   if (configs.shouldUpdateCaches) {
+    core.info("Updating checked in caches and reports");
     await uploadResultsToCache(exec, configs, filesGenerated);
   } else {
+    core.info("Updating caches and reports");
     await uploadResultsAsArtifact(configs, filesGenerated);
   }
 
