@@ -2,7 +2,7 @@
     "ReportConfig": {
         "ReportFriendlyName": ".NET Diagnostics Report",
         "ReportFilePrefix": "dn-diag-issue-tracker",
-        "ReportOutputPath": "diagnostics-reports",
+        "ReportOutputPath": "reports/diagnostics-reports",
         "SlaHighlightsTimeInMonths": 12
     },
     "QueryConfigs": [
