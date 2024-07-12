@@ -19,7 +19,7 @@ export default async function generateReportsEntrypoint({ core, exec, inputs }) 
         core.error(data.toString());
       }
     },
-    failOnStdErr: true
+    failOnStdErr: false
   };
 
   try {
