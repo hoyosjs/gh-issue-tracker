@@ -41,9 +41,8 @@ jobs:
       uses: actions/github-script@v7
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # ACTIONS_RUNNER_DEBUG: true
       with:
         script: |
-            const { default: generate_report } = await import('${{ github.workspace }}/.github/workflows/scripts/run-report-generator.js')
-            const inputs = ${{ toJson(inputs) }}
-            await generate_report({inputs, core, exec})
+            const { default: generate_report } = await import('${{ github.workspace }}/.github/workflows/scripts/run-report-generator.js');
+            const inputs = ${{ toJson(inputs) }};
+            await generate_report({ core, exec, inputs });

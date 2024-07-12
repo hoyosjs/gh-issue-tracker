@@ -4,7 +4,11 @@ import path from 'path';
 import * as promises from 'fs/promises';
 import { DefaultArtifactClient } from '@actions/artifact';
 
-export default async function generateReportsEntrypoint({ inputs, core, exec }) {
+export default async function generateReportsEntrypoint({ core, exec, inputs }) {
+  core.info('Starting report generation...');
+
+  core.info(`Inputs: "${ JSON.stringify(inputs) }"`);
+
   const execOptions = {
     listeners: {
       stdout: (data) => {
@@ -19,11 +23,11 @@ export default async function generateReportsEntrypoint({ inputs, core, exec }) 
 
   try {
     core.startGroup('Get Configurations');
-    const configs = await getConfigurations({core, inputs});
+    const configs = await getConfigurations({ core, inputs });
     core.endGroup();
 
     core.startGroup(`Run generate-all-reports for ${configs.configFilePath}`);
-    await generateReports({ core, exec, execOptions, configs});
+    await generateReports({ core, exec, execOptions, configs });
     core.endGroup();
 
     core.startGroup('Update caches and reports');
@@ -38,7 +42,7 @@ export default async function generateReportsEntrypoint({ inputs, core, exec }) 
   }
 }
 
-async function getConfigurations({core, inputs}) {
+async function getConfigurations({ core, inputs }) {
   let loadedConfig = {
     cacheFile: ''
   };
@@ -73,7 +77,7 @@ async function getConfigurations({core, inputs}) {
   try {
     var cache_date = '';
 
-    if ('oldConfigDate' in inputs) {
+    if ('oldConfigDate' in inputs && inputs.oldConfigDate !== '') {
       cache_date = inputs.oldConfigDate;
     } else {
       core.info("No cache date specified. Finding latest cache date.");
@@ -100,12 +104,18 @@ async function getConfigurations({core, inputs}) {
 }
 
 async function generateReports({ exec, execOptions, configs }) {
-  await exec.exec("dotnet", ["run",
+  let args = ["run",
     "--project", "gh-issue-tracker.csproj",
     "-c", "release",
     "--",
-    "generate-all-reports", configs.configFilePath, configs.cacheFile],
-    execOptions);
+    "generate-all-reports",
+    configs.configFilePath ];
+
+  if (configs.cacheFile !== '') {
+    args.push(configs.cacheFile);
+  }
+
+  await exec.exec("dotnet", args, execOptions);
 }
 
 async function updateAndUploadReports({ core, exec, execOptions, configs }) {
@@ -117,7 +127,7 @@ async function updateAndUploadReports({ core, exec, execOptions, configs }) {
     core.info("Updating checked in caches and reports");
     await uploadResultsToCache(exec, configs, filesGenerated);
   } else {
-    core.info("Updating caches and reports");
+    core.info("Upload reports as artifacts.");
     await uploadResultsAsArtifact(configs, filesGenerated);
   }
 
@@ -167,8 +177,7 @@ async function findLatestCacheDate(reportDirectory) {
 }
 
 // Purely for test when  running locally.
-import core from '@actions/core';
-import exec from '@actions/exec';
-
-const phonyContext = { ...core, info: console.info, error: console.error };
-generateReportsEntrypoint({ core: phonyContext, exec });
+// import core from '@actions/core';
+// import exec from '@actions/exec';
+// const phonyContext = { ...core, info: console.info, error: console.error };
+// generateReportsEntrypoint({ core: phonyContext, exec });
