@@ -3,7 +3,10 @@ import { constants } from 'fs';
 import path from 'path';
 import { tmpdir, EOL } from 'os';
 import * as promises from 'fs/promises';
+import * as stream from 'stream/promises';
+
 import { DefaultArtifactClient } from '@actions/artifact';
+import { parse } from 'csv-parse';
 
 export default async function generateReportsEntrypoint({ core, exec, inputs }) {
   core.info('Starting report generation...');
@@ -50,9 +53,10 @@ const WellKnownDirectories = Object.freeze({
 
 const WellKnownSuffixes = Object.freeze({
   Cache: '-cache.json',
+  CsvTotals: '-totals.csv',
   Comparative: '-comp.md',
   Full: '-full.md',
-  CsvTotals: '-totals.csv'
+  Graph: '-graph.svg'
 });
 
 async function getConfigurations({ core, inputs }) {
@@ -141,7 +145,7 @@ async function updateAndUploadReports({ core, exec, execOptions, configs }) {
   if (configs.shouldUpdateCaches) {
     core.info("Updating checked in caches and reports");
     await updateGlobalCacheFiles(configs, filesGenerated, latestReportDate);
-    await uploadResultsToCache(exec, configs, filesGenerated);
+    // await uploadResultsToCache(exec, configs, filesGenerated);
   } else {
     core.info("Upload reports as artifacts.");
     await uploadResultsAsArtifact(configs, filesGenerated);
@@ -186,12 +190,11 @@ async function updateAndUploadReports({ core, exec, execOptions, configs }) {
     core.info(`Full report moved to ${targetFullReport}`);
     filesGenerated.fullReport = targetFullReport;
 
-    const readme = path.resolve(path.join(WellKnownDirectories.Reports, 'README.md'));
-    await updateReadmeTable(configs, readme);
-    filesGenerated.GlobalReadme = readme;
+    await updateReadmeTable(configs, filesGenerated);
   }
 
-  async function updateReadmeTable(configs, readmePath) {
+  async function updateReadmeTable(configs, filesGenerated) {
+    const readmePath = path.resolve(path.join(WellKnownDirectories.Reports, 'README.md'));
     const originalReadme = await promises.open(readmePath, 'r');
 
     const temp = await promises.mkdtemp(path.join(tmpdir(), 'readme-'));
@@ -203,10 +206,21 @@ async function updateAndUploadReports({ core, exec, execOptions, configs }) {
       End: `[marker]: <> (End:${configs.configName})`
     });
 
-    // Start section
+    const { dates, counts } = await getGraphData(filesGenerated.csvTotals);
+
+    // Start section - TODO: this can generate bad markdown  if friendly names have special characters.
+    // Also, we shouldn't have to create the names again.
     const newSection = `${Markers.Start}
 
 ## ${configs.reportFriendlyName}
+
+\`\`\`mermaid
+xychart-beta
+  title "Totals ${configs.reportFriendlyName}"
+  x-axis "Date" [${dates.map(d => `"${d}"`).join(', ')}]
+  y-axis "Total"
+  line [${counts.join(', ')}]
+\`\`\`
 
 - [${configs.reportFriendlyName} Full Report](./${configs.relativeDirectoryName}/${configs.cacheFilesPrefix}${WellKnownSuffixes.Full})
 - [${configs.reportFriendlyName} Latest Comparative Report (${latestReportDate})](./${configs.relativeDirectoryName}/${latestReportDate}/${configs.cacheFilesPrefix}${WellKnownSuffixes.Comparative})
@@ -249,6 +263,25 @@ ${Markers.End}
     await promises.copyFile(tempReadmePath, readmePath);
 
     filesGenerated.GlobalReadme = readmePath;
+  }
+
+  async function getGraphData(csvFilePath) {
+    const graphPath = path.resolve(`${configs.reportDirectory}/${configs.cacheFilesPrefix}${WellKnownSuffixes.Graph}`);
+    const csvStream = (await promises.open(csvFilePath, 'r')).createReadStream();
+
+    const parser = csvStream.pipe(parse({ columns: true }));
+
+    // TODO: We assume dates are monotonically increasing.
+    let data = [];
+    for await (const record of parser) {
+      if (data.length >= 10)
+        data.shift()
+      data.push(record);
+    }
+
+    await stream.finished(csvStream);
+
+    return { dates: data.map(d => d.date_utc), counts: data.map(d => d.current_count) };
   }
 }
 
