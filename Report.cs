@@ -326,7 +326,9 @@ internal class ReportCreator
         bool shouldIncludeSla = slaHighlightsTimeInMonths.HasValue;
         DateTimeOffset slaCapDate = shouldIncludeSla ? reportTime.AddMonths(-1 * slaHighlightsTimeInMonths!.Value) : default;
 
-        string subReportPath = Path.Join("reports", reportPath, fileTimeString);
+        reportPath = Path.Join("reports", reportPath);
+        string subReportPath = Path.Join(reportPath, fileTimeString);
+
         Directory.CreateDirectory(subReportPath);
 
         if (reportType is ReportGenerationType.Comparative or ReportGenerationType.All)

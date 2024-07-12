@@ -1,11 +1,9 @@
 name: Diagnostics .NET 9 ZBB Ad-Hoc
 
 on:
+  schedule:
+  - cron: "0 4 * * 1"
   workflow_dispatch:
-    inputs:
-      base_json_date:
-        description: 'JSON cache date'
-        required: true
 
 jobs:
   DiagnosticReportWeekly:

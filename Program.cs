@@ -80,7 +80,6 @@ List<GitHubQuery> queries = qc.SelectMany(
 
 await report.QueryIssuesAsync(queries);
 
-
 await report.WriteAsync(rc.ReportOutputPath!,
                         rc.ReportFilePrefix!,
                         rc.SlaHighlightsTimeInMonths,

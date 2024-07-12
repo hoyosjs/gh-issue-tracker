@@ -1,13 +1,14 @@
 
 import { constants } from 'fs';
 import path from 'path';
+import { tmpdir, EOL } from 'os';
 import * as promises from 'fs/promises';
 import { DefaultArtifactClient } from '@actions/artifact';
 
 export default async function generateReportsEntrypoint({ core, exec, inputs }) {
   core.info('Starting report generation...');
 
-  core.info(`Inputs: "${ JSON.stringify(inputs) }"`);
+  core.info(`Inputs: "${JSON.stringify(inputs)}"`);
 
   const execOptions = {
     listeners: {
@@ -42,10 +43,17 @@ export default async function generateReportsEntrypoint({ core, exec, inputs }) 
   }
 }
 
-const WellKnownDirectories = {
+const WellKnownDirectories = Object.freeze({
   Configs: 'configs',
   Reports: 'reports'
-};
+});
+
+const WellKnownSuffixes = Object.freeze({
+  Cache: '-cache.json',
+  Comparative: '-comp.md',
+  Full: '-full.md',
+  CsvTotals: '-totals.csv'
+});
 
 async function getConfigurations({ core, inputs }) {
   let loadedConfig = {
@@ -61,12 +69,14 @@ async function getConfigurations({ core, inputs }) {
   }
 
   try {
+    loadedConfig.configName = inputs.configName;
     const configFilePath = path.join(WellKnownDirectories.Configs, `${inputs.configName}.json`)
     loadedConfig.configFilePath = path.resolve(configFilePath);
     const configContents = await promises.readFile(loadedConfig.configFilePath, 'utf8');
     const config = JSON.parse(configContents);
 
     loadedConfig.reportDirectory = path.resolve(path.join(WellKnownDirectories.Reports, config.ReportConfig.ReportOutputPath));
+    loadedConfig.relativeDirectoryName = config.ReportConfig.ReportOutputPath;
     loadedConfig.reportFriendlyName = config.ReportConfig.ReportFriendlyName;
     loadedConfig.cacheFilesPrefix = config.ReportConfig.ReportFilePrefix;
 
@@ -93,7 +103,7 @@ async function getConfigurations({ core, inputs }) {
       core.info("No cache data found.");
       loadedConfig.cacheFile = '';
     } else {
-      const cached_list = path.join(loadedConfig.reportDirectory, cache_date, `${loadedConfig.cacheFilesPrefix}-cache.json`);
+      const cached_list = path.join(loadedConfig.reportDirectory, cache_date, `${loadedConfig.cacheFilesPrefix}${WellKnownSuffixes.Cache}`);
       await promises.access(cached_list, constants.R_OK).catch(() => {
         throw new Error(`Cached result not found at ${cached_list}.`)
       });
@@ -114,7 +124,7 @@ async function generateReports({ exec, execOptions, configs }) {
     "-c", "release",
     "--",
     "generate-all-reports",
-    configs.configFilePath ];
+    configs.configFilePath];
 
   if (configs.cacheFile !== '') {
     args.push(configs.cacheFile);
@@ -125,11 +135,12 @@ async function generateReports({ exec, execOptions, configs }) {
 
 async function updateAndUploadReports({ core, exec, execOptions, configs }) {
 
-  const folderDate = await findLatestCacheDate(configs.reportDirectory);
-  const filesGenerated = getLatestGeneratedFiles(configs, folderDate);
+  const latestReportDate = await findLatestCacheDate(configs.reportDirectory);
+  const filesGenerated = getLatestGeneratedFiles(configs, latestReportDate);
 
   if (configs.shouldUpdateCaches) {
     core.info("Updating checked in caches and reports");
+    await updateGlobalCacheFiles(configs, filesGenerated, latestReportDate);
     await uploadResultsToCache(exec, configs, filesGenerated);
   } else {
     core.info("Upload reports as artifacts.");
@@ -142,11 +153,6 @@ async function updateAndUploadReports({ core, exec, execOptions, configs }) {
   }
 
   async function uploadResultsToCache(exec, configs, filesGenerated) {
-    let targetFullReport = path.resolve(path.join(configs.reportDirectory, `${configs.cacheFilesPrefix}-full.md`));
-    promises.rename(filesGenerated.fullReport, targetFullReport);
-    core.info(`Full report moved to ${targetFullReport}`);
-    filesGenerated.fullReport = targetFullReport;
-
     for (const file of Object.values(filesGenerated)) {
       core.info(`Adding file ${file}`);
       await exec.exec('git', ['add', file]);
@@ -166,11 +172,83 @@ async function updateAndUploadReports({ core, exec, execOptions, configs }) {
     const baseDir = path.resolve(config.reportDirectory);
 
     return {
-      cacheFile: path.join(baseDir, folderDate, `${config.cacheFilesPrefix}-cache.json`),
-      compReport: path.join(baseDir, folderDate, `${config.cacheFilesPrefix}-comp.md`),
-      csvTotals: path.join(baseDir, `${config.cacheFilesPrefix}-totals.csv`),
-      fullReport: path.join(baseDir, folderDate, `${config.cacheFilesPrefix}-full.md`),
+      cacheFile: path.join(baseDir, folderDate, `${config.cacheFilesPrefix}${WellKnownSuffixes.Cache}`),
+      compReport: path.join(baseDir, folderDate, `${config.cacheFilesPrefix}${WellKnownSuffixes.Comparative}`),
+      csvTotals: path.join(baseDir, `${config.cacheFilesPrefix}${WellKnownSuffixes.CsvTotals}`),
+      fullReport: path.join(baseDir, folderDate, `${config.cacheFilesPrefix}${WellKnownSuffixes.Full}`),
     }
+  }
+
+  async function updateGlobalCacheFiles(configs, filesGenerated, latestReportDate) {
+    // Move the global report to the root of the report directory.
+    const targetFullReport = path.resolve(path.join(configs.reportDirectory, `${configs.cacheFilesPrefix}${WellKnownSuffixes.Full}`));
+    await promises.rename(filesGenerated.fullReport, targetFullReport);
+    core.info(`Full report moved to ${targetFullReport}`);
+    filesGenerated.fullReport = targetFullReport;
+
+    const readme = path.resolve(path.join(WellKnownDirectories.Reports, 'README.md'));
+    await updateReadmeTable(configs, readme);
+    filesGenerated.GlobalReadme = readme;
+  }
+
+  async function updateReadmeTable(configs, readmePath) {
+    const originalReadme = await promises.open(readmePath, 'r');
+
+    const temp = await promises.mkdtemp(path.join(tmpdir(), 'readme-'));
+    const tempReadmePath = path.join(temp, 'README.md');
+    const tempReadme = await promises.open(tempReadmePath, 'wx', 0o600);
+
+    const Markers = Object.freeze({
+      Start: `[marker]: <> (Begin:${configs.configName})`,
+      End: `[marker]: <> (End:${configs.configName})`
+    });
+
+    // Start section
+    const newSection = `${Markers.Start}
+
+## ${configs.reportFriendlyName}
+
+- [${configs.reportFriendlyName} Full Report](./${configs.relativeDirectoryName}/${configs.cacheFilesPrefix}${WellKnownSuffixes.Full})
+- [${configs.reportFriendlyName} Latest Comparative Report (${latestReportDate})](./${configs.relativeDirectoryName}/${latestReportDate}/${configs.cacheFilesPrefix}${WellKnownSuffixes.Comparative})
+- [${configs.reportFriendlyName} CSV](./${configs.relativeDirectoryName}/${configs.cacheFilesPrefix}${WellKnownSuffixes.CsvTotals})
+
+${Markers.End}
+`;
+    // End section
+
+    const States = Object.freeze({
+      NotSeen: 0,
+      InSection: 1,
+      SectionSeenAndClosed: 2
+    });
+
+    var state = States.NotSeen;
+    for await (const line of originalReadme.readLines()) {
+      if (line === Markers.Start) {
+        if (state !== States.NotSeen) {
+          throw new Error("Invalid README state");
+        }
+        state = States.InSection;
+        continue;
+      } else if (line === Markers.End) {
+        await tempReadme.write(newSection);
+        state = States.SectionSeenAndClosed;
+        continue;
+      } else if (state === States.InSection) {
+        continue;
+      }
+      await tempReadme.write(line + EOL);
+    }
+
+    if (state === States.NotSeen) {
+      await tempReadme.write(newSection);
+    }
+
+    originalReadme.close();
+    tempReadme.close();
+    await promises.copyFile(tempReadmePath, readmePath);
+
+    filesGenerated.GlobalReadme = readmePath;
   }
 }
 
@@ -185,4 +263,9 @@ async function findLatestCacheDate(reportDirectory) {
 // import core from '@actions/core';
 // import exec from '@actions/exec';
 // const phonyContext = { ...core, info: console.info, error: console.error };
-// generateReportsEntrypoint({ core: phonyContext, exec });
+// const inputs = {
+//   configName: 'diagnostics',
+//   shouldUpdateCaches: 'true',
+//   oldConfigDate: ''
+// };
+// generateReportsEntrypoint({ core: phonyContext, exec, inputs });
