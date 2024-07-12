@@ -42,6 +42,11 @@ export default async function generateReportsEntrypoint({ core, exec, inputs }) 
   }
 }
 
+const WellKnownDirectories = {
+  Configs: 'configs',
+  Reports: 'reports'
+};
+
 async function getConfigurations({ core, inputs }) {
   let loadedConfig = {
     cacheFile: ''
@@ -56,12 +61,12 @@ async function getConfigurations({ core, inputs }) {
   }
 
   try {
-    const configFilePath = path.join('Configs', `${inputs.configName}.json`)
+    const configFilePath = path.join(WellKnownDirectories.Configs, `${inputs.configName}.json`)
     loadedConfig.configFilePath = path.resolve(configFilePath);
     const configContents = await promises.readFile(loadedConfig.configFilePath, 'utf8');
     const config = JSON.parse(configContents);
 
-    loadedConfig.reportDirectory = config.ReportConfig.ReportOutputPath;
+    loadedConfig.reportDirectory = path.resolve(path.join(WellKnownDirectories.Reports, config.ReportConfig.ReportOutputPath));
     loadedConfig.reportFriendlyName = config.ReportConfig.ReportFriendlyName;
     loadedConfig.cacheFilesPrefix = config.ReportConfig.ReportFilePrefix;
 
