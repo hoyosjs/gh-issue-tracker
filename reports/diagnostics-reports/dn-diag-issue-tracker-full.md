@@ -1,13 +1,15 @@
-# .NET Diagnostics Report Full Report - 07/08/2024 06:17:05
+# .NET Diagnostics Report Full Report - 07/15/2024 06:18:28
 
-Total issues: 88
+Total issues: 83
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 31
+Issues in query: 32
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4782](https://github.com/dotnet/diagnostics/issues/4782) | [Test] Microsoft.Diagnostics.Monitoring.EventPipe.UnitTests.EventCounterTriggerWithEventPipePipelineTest fails intermittently  |
+| [dotnet/diagnostics#4779](https://github.com/dotnet/diagnostics/issues/4779) |  dotnet-dump analyze does not work on M3 macOS |
 | [dotnet/diagnostics#4771](https://github.com/dotnet/diagnostics/issues/4771) | Write dump failed - HRESULT: 0x00000000 with nothing in service stdout |
 | [dotnet/diagnostics#4757](https://github.com/dotnet/diagnostics/issues/4757) | [test failure] TestCounterMonitorSystemRuntimeMetricsCSV intermittently fails: System.IO.EndOfStreamException : Attempted to read past the end of the stream. |
 | [dotnet/diagnostics#4769](https://github.com/dotnet/diagnostics/issues/4769) | Crash when debugging with lldb on MacOS |
@@ -19,7 +21,6 @@ Issues in query: 31
 | [dotnet/diagnostics#4564](https://github.com/dotnet/diagnostics/issues/4564) | dotnet-counters does not report values from multiple Metrics Meters with distinct tags |
 | [dotnet/diagnostics#4563](https://github.com/dotnet/diagnostics/issues/4563) | Error: No CLR runtime found (dump collected with 8.0.0) |
 | [dotnet/diagnostics#4557](https://github.com/dotnet/diagnostics/issues/4557) | Timeout while executing StartEventPipeSession |
-| [dotnet/diagnostics#4551](https://github.com/dotnet/diagnostics/issues/4551) | libsosplugin.dylib: CoreCLR host crash on macOS Sonoma 14.4 on arm64 |
 | [dotnet/diagnostics#4524](https://github.com/dotnet/diagnostics/issues/4524) | dotnet-dsrouter and dotnet-gcdump doc needed when default port is occupied |
 | [dotnet/diagnostics#4522](https://github.com/dotnet/diagnostics/issues/4522) | Unexpected error in .NET Core 3.1 when running "Collect metrics" sample from MS documentation |
 | [dotnet/diagnostics#4491](https://github.com/dotnet/diagnostics/issues/4491) | Better document the difference between `DumpType.Normal` and `DumpType.Triage` |
@@ -29,7 +30,6 @@ Issues in query: 31
 | [dotnet/diagnostics#4415](https://github.com/dotnet/diagnostics/issues/4415) | dotnet-counters long value rendered format |
 | [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | dotnet-dump not working when process run as user |
 | [dotnet/diagnostics#4314](https://github.com/dotnet/diagnostics/issues/4314) | !clrstack reports incorrect method names when <> is encountered |
-| [dotnet/diagnostics#4506](https://github.com/dotnet/diagnostics/issues/4506) | dotnet trace convert causes a crash on s390x |
 | [dotnet/diagnostics#4259](https://github.com/dotnet/diagnostics/issues/4259) | libsosplugin cannot be loaded into lldb (macos arm64) |
 | [dotnet/diagnostics#4191](https://github.com/dotnet/diagnostics/issues/4191) | Fix Microsoft.Diagnostics.NETCore.Client.PerMapTests.GenerateAllTest and GeneratePerfMapTest for 8.0 |
 | [dotnet/diagnostics#4171](https://github.com/dotnet/diagnostics/issues/4171) | Please document CorGCReferenceType::CorHandleWeakWinRT |
@@ -39,6 +39,7 @@ Issues in query: 31
 | [dotnet/diagnostics#4002](https://github.com/dotnet/diagnostics/issues/4002) | **\<OUT OF SLA\>** Update docs: Linux dump analysis in a Windows environment |
 | [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | **\<OUT OF SLA\>** `dotnet-trace collect` hangs without completing collection on Linux |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | **\<OUT OF SLA\>** How to debug stack overflow errors on Windows |
+| [dotnet/diagnostics#2541](https://github.com/dotnet/diagnostics/issues/2541) | **\<OUT OF SLA\>** TestLogsAllCategoriesDefaultLevelFallback fails frequently |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
@@ -46,10 +47,10 @@ Issues in query: 7
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#104670](https://github.com/dotnet/runtime/issues/104670) | BinderTracingTest.ResolutionFlow times out |
 | [dotnet/runtime#102572](https://github.com/dotnet/runtime/issues/102572) | It is not possible to pass the ID of the garbage collection when the .NET provider is enabled with the GCHeapCollect(0x800000) keyword |
 | [dotnet/runtime#102004](https://github.com/dotnet/runtime/issues/102004) | MemoryAllocatedForJitCode ETW Event missing in trace, but CLRStackWalk still fires |
 | [dotnet/runtime#101764](https://github.com/dotnet/runtime/issues/101764) | Malformed EventPipe request can crash the runtime |
-| [dotnet/runtime#101759](https://github.com/dotnet/runtime/issues/101759) | tracing/eventpipe/providervalidation/providervalidation/providervalidation.cmd test failure |
 | [dotnet/runtime#99497](https://github.com/dotnet/runtime/issues/99497) | Assert in CounterGroup.OnEventSourceCommand after trying to run BDN x86 |
 | [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | **\<OUT OF SLA\>** NativeRuntimeEventSource behaving poorly in conjunction with other providers |
@@ -64,7 +65,7 @@ Issues in query: 1
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 11
+Issues in query: 10
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -76,20 +77,16 @@ Issues in query: 11
 | [dotnet/runtime#96219](https://github.com/dotnet/runtime/issues/96219) | Potential Deadlock When Disposing EventListeners Concurrently |
 | [dotnet/runtime#94964](https://github.com/dotnet/runtime/issues/94964) | How to debug code that is being compiled in layers? I have the following problem |
 | [dotnet/runtime#93175](https://github.com/dotnet/runtime/issues/93175) | Deadlock in ThreadPool.GetMaxThreads() during app start. |
-| [dotnet/runtime#91304](https://github.com/dotnet/runtime/issues/91304) | Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | **\<OUT OF SLA\>** Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#80666](https://github.com/dotnet/runtime/issues/80666) | **\<OUT OF SLA\>** tracing/eventpipe/eventsourceerror/eventsourceerror/eventsourceerror failure |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 26
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#104459](https://github.com/dotnet/runtime/issues/104459) | App crashes with an output "Trace/Breakpoint Trap" on Linux when a P/Invoke callback is called from a native library if the dotnet debugger is attached. |
-| [dotnet/runtime#104425](https://github.com/dotnet/runtime/issues/104425) | [API Proposal]: support thread dump on `kill -3` |
-| [dotnet/runtime#104424](https://github.com/dotnet/runtime/issues/104424) | Dev/Debug mode experience |
-| [dotnet/runtime#104413](https://github.com/dotnet/runtime/issues/104413) | /build/gdb-Dh0pdX/gdb-12.1/gdb/jit.c:1252: internal-error: jit_event_handler: Assertion `jiter->jiter_data != nullptr' failed. |
 | [dotnet/runtime#104256](https://github.com/dotnet/runtime/issues/104256) | Dump file not created when process crashes |
 | [dotnet/runtime#103955](https://github.com/dotnet/runtime/issues/103955) | Debugger Crashes when using breakpoints with a compiled runtime in debug mode _CrtlsValidHeapPointer(block) |
 | [dotnet/runtime#103872](https://github.com/dotnet/runtime/issues/103872) | WER handler is broken |
@@ -107,7 +104,6 @@ Issues in query: 26
 | [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | **\<OUT OF SLA\>** DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
 | [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | **\<OUT OF SLA\>** `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
 | [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | **\<OUT OF SLA\>** [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
-| [dotnet/runtime#78991](https://github.com/dotnet/runtime/issues/78991) | **\<OUT OF SLA\>** NullReferenceException when you use the short format of string.format $"{sample}" when debugging .NET 7 on x64 macOS |
 | [dotnet/runtime#74271](https://github.com/dotnet/runtime/issues/74271) | **\<OUT OF SLA\>** [CET Debugging] User mode APC's on Windows x64 with CET enabled can cause a debug session to crash  |
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | **\<OUT OF SLA\>** dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | **\<OUT OF SLA\>** Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
@@ -115,11 +111,10 @@ Issues in query: 26
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 7
+Issues in query: 6
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#104265](https://github.com/dotnet/runtime/issues/104265) | Dotnet Android broken debugging (and runtime?) |
 | [dotnet/runtime#104234](https://github.com/dotnet/runtime/issues/104234) | DEBUGGING IS NOT ENABLED when trying to debug .NET 8 Blazor Web project simulating iOS device on edge |
 | [dotnet/runtime#104231](https://github.com/dotnet/runtime/issues/104231) | Blazor webassembly does not hit breakpoints on <select> bindings |
 | [dotnet/runtime#101554](https://github.com/dotnet/runtime/issues/101554) | Blazor client side web debugging fails to function when run within IIS |
