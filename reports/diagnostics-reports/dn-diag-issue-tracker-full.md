@@ -1,13 +1,14 @@
-# .NET Diagnostics Report Full Report - 07/15/2024 06:18:28
+# .NET Diagnostics Report Full Report - 07/22/2024 06:18:43
 
-Total issues: 83
+Total issues: 81
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 32
+Issues in query: 31
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4795](https://github.com/dotnet/diagnostics/issues/4795) | Update GCInfo deserializer once https://github.com/dotnet/runtime/pull/104336 merges |
 | [dotnet/diagnostics#4782](https://github.com/dotnet/diagnostics/issues/4782) | [Test] Microsoft.Diagnostics.Monitoring.EventPipe.UnitTests.EventCounterTriggerWithEventPipePipelineTest fails intermittently  |
 | [dotnet/diagnostics#4779](https://github.com/dotnet/diagnostics/issues/4779) |  dotnet-dump analyze does not work on M3 macOS |
 | [dotnet/diagnostics#4771](https://github.com/dotnet/diagnostics/issues/4771) | Write dump failed - HRESULT: 0x00000000 with nothing in service stdout |
@@ -35,9 +36,7 @@ Issues in query: 32
 | [dotnet/diagnostics#4171](https://github.com/dotnet/diagnostics/issues/4171) | Please document CorGCReferenceType::CorHandleWeakWinRT |
 | [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | Document how to use createdump on native AOT apps |
 | [dotnet/diagnostics#4139](https://github.com/dotnet/diagnostics/issues/4139) | How to debug memory leak that is not clear on dotnet-dump? |
-| [dotnet/diagnostics#4086](https://github.com/dotnet/diagnostics/issues/4086) | LLDB sos commands don't write output to SBCommandReturnObject |
-| [dotnet/diagnostics#4002](https://github.com/dotnet/diagnostics/issues/4002) | **\<OUT OF SLA\>** Update docs: Linux dump analysis in a Windows environment |
-| [dotnet/diagnostics#3935](https://github.com/dotnet/diagnostics/issues/3935) | **\<OUT OF SLA\>** `dotnet-trace collect` hangs without completing collection on Linux |
+| [dotnet/diagnostics#4086](https://github.com/dotnet/diagnostics/issues/4086) | **\<OUT OF SLA\>** LLDB sos commands don't write output to SBCommandReturnObject |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | **\<OUT OF SLA\>** How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#2541](https://github.com/dotnet/diagnostics/issues/2541) | **\<OUT OF SLA\>** TestLogsAllCategoriesDefaultLevelFallback fails frequently |
 
@@ -69,23 +68,28 @@ Issues in query: 10
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#105213](https://github.com/dotnet/runtime/issues/105213) | Test failure: GC\\API\\WeakReference\\multipleWRs_1\\multipleWRs_1.cmd |
+| [dotnet/runtime#104881](https://github.com/dotnet/runtime/issues/104881) | [Apple] Microsoft-Diagnostics-DiagnosticSource EventSource not terminated properly |
 | [dotnet/runtime#103480](https://github.com/dotnet/runtime/issues/103480) | Crash when disposing an EventListener during shutdown |
 | [dotnet/runtime#102197](https://github.com/dotnet/runtime/issues/102197) | EventSource event with 4 string parameters with null values behaves inconsistent in .NET 8 |
-| [dotnet/runtime#99816](https://github.com/dotnet/runtime/issues/99816) | Higher Memory Usage for the EventSource Class |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
 | [dotnet/runtime#96968](https://github.com/dotnet/runtime/issues/96968) | Test failure BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds_WithEtwListener |
 | [dotnet/runtime#96219](https://github.com/dotnet/runtime/issues/96219) | Potential Deadlock When Disposing EventListeners Concurrently |
 | [dotnet/runtime#94964](https://github.com/dotnet/runtime/issues/94964) | How to debug code that is being compiled in layers? I have the following problem |
 | [dotnet/runtime#93175](https://github.com/dotnet/runtime/issues/93175) | Deadlock in ThreadPool.GetMaxThreads() during app start. |
-| [dotnet/runtime#88027](https://github.com/dotnet/runtime/issues/88027) | **\<OUT OF SLA\>** Test failure BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover |
 | [dotnet/runtime#80666](https://github.com/dotnet/runtime/issues/80666) | **\<OUT OF SLA\>** tracing/eventpipe/eventsourceerror/eventsourceerror/eventsourceerror failure |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 22
+Issues in query: 23
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#105225](https://github.com/dotnet/runtime/issues/105225) | Test failure: profiler\\assembly\\ALCTest\\ALCTest.cmd |
+| [dotnet/runtime#105222](https://github.com/dotnet/runtime/issues/105222) | Test failure: Loader/classloader/TypeInitialization/Inlining/GenMethInlined/GenMethInlined.cmd |
+| [dotnet/runtime#105132](https://github.com/dotnet/runtime/issues/105132) | Unmanaged memory growth with DiagnosticsClient |
+| [dotnet/runtime#105116](https://github.com/dotnet/runtime/issues/105116) | x86 Interop Call stack incorrect when stopped in native exception filter |
+| [dotnet/runtime#104967](https://github.com/dotnet/runtime/issues/104967) | using dotnet6.0 on win7 crash |
 | [dotnet/runtime#104459](https://github.com/dotnet/runtime/issues/104459) | App crashes with an output "Trace/Breakpoint Trap" on Linux when a P/Invoke callback is called from a native library if the dotnet debugger is attached. |
 | [dotnet/runtime#104256](https://github.com/dotnet/runtime/issues/104256) | Dump file not created when process crashes |
 | [dotnet/runtime#103955](https://github.com/dotnet/runtime/issues/103955) | Debugger Crashes when using breakpoints with a compiled runtime in debug mode _CrtlsValidHeapPointer(block) |
@@ -99,11 +103,7 @@ Issues in query: 22
 | [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | ExecutionEngineException on using step into while debugging |
 | [dotnet/runtime#95189](https://github.com/dotnet/runtime/issues/95189) | vsdbg quits when resuming from a breakpoint if stepping over a line that throws an exception  |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
-| [dotnet/runtime#90359](https://github.com/dotnet/runtime/issues/90359) | [External] Libunwind has suppressed warnings  |
-| [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | Deadlock between debugger and class loading in PGO |
-| [dotnet/runtime#88463](https://github.com/dotnet/runtime/issues/88463) | **\<OUT OF SLA\>** DoStackSnapshot behaves differently on Windows x86 and x64 WRT stack unwinding |
-| [dotnet/runtime#87418](https://github.com/dotnet/runtime/issues/87418) | **\<OUT OF SLA\>** `RequestReJITWithInliners` doesn't always trigger a rejit without `COR_PRF_MONITOR_JIT_COMPILATION` enabled |
-| [dotnet/runtime#79852](https://github.com/dotnet/runtime/issues/79852) | **\<OUT OF SLA\>** [macOS] cannot debug / stop at breakpoints when app sandbox is enabled |
+| [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | Avalonia calling into the runtime after shut down |
 | [dotnet/runtime#74271](https://github.com/dotnet/runtime/issues/74271) | **\<OUT OF SLA\>** [CET Debugging] User mode APC's on Windows x64 with CET enabled can cause a debug session to crash  |
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | **\<OUT OF SLA\>** dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | **\<OUT OF SLA\>** Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
@@ -124,12 +124,11 @@ Issues in query: 6
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
 
-Issues in query: 4
+Issues in query: 3
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
-| [dotnet/runtime#94114](https://github.com/dotnet/runtime/issues/94114) | EventPipe Doesn't Work On OSX With Sandbox Enabled |
 | [dotnet/runtime#93551](https://github.com/dotnet/runtime/issues/93551) | [wasm] run browser-bench sample with https connection |
 | [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
 
@@ -139,9 +138,5 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-Tracing-mono
 
-Issues in query: 1
-
-| **Issue Number** | **Title** |
-| :--------------: | --------- |
-| [dotnet/runtime#89621](https://github.com/dotnet/runtime/issues/89621) | EventPipe shutdown race condition in .net7/.net6 |
+Issues in query: 0
 
