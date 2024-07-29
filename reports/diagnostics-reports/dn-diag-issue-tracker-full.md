@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 07/22/2024 06:18:43
+# .NET Diagnostics Report Full Report - 07/29/2024 06:17:27
 
-Total issues: 81
+Total issues: 74
 
 ## v1,1-dotnet/diagnostics
 
@@ -8,13 +8,14 @@ Issues in query: 31
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4814](https://github.com/dotnet/diagnostics/issues/4814) | DumpStackObjects doesn't seem to work if the thread is on the alternate signal stack |
+| [dotnet/diagnostics#4806](https://github.com/dotnet/diagnostics/issues/4806) | Docs/test updates/migration guidance for new runtime metrics in dotnet-counters |
+| [dotnet/diagnostics#4803](https://github.com/dotnet/diagnostics/issues/4803) | dotnet dump analyze threadpool fails to obtain threadpool data  |
 | [dotnet/diagnostics#4795](https://github.com/dotnet/diagnostics/issues/4795) | Update GCInfo deserializer once https://github.com/dotnet/runtime/pull/104336 merges |
 | [dotnet/diagnostics#4782](https://github.com/dotnet/diagnostics/issues/4782) | [Test] Microsoft.Diagnostics.Monitoring.EventPipe.UnitTests.EventCounterTriggerWithEventPipePipelineTest fails intermittently  |
 | [dotnet/diagnostics#4779](https://github.com/dotnet/diagnostics/issues/4779) |  dotnet-dump analyze does not work on M3 macOS |
-| [dotnet/diagnostics#4771](https://github.com/dotnet/diagnostics/issues/4771) | Write dump failed - HRESULT: 0x00000000 with nothing in service stdout |
 | [dotnet/diagnostics#4757](https://github.com/dotnet/diagnostics/issues/4757) | [test failure] TestCounterMonitorSystemRuntimeMetricsCSV intermittently fails: System.IO.EndOfStreamException : Attempted to read past the end of the stream. |
 | [dotnet/diagnostics#4769](https://github.com/dotnet/diagnostics/issues/4769) | Crash when debugging with lldb on MacOS |
-| [dotnet/diagnostics#4718](https://github.com/dotnet/diagnostics/issues/4718) | [Test] TestLogsUseAppFiltersAndFilterSpecs fails with `Assert.Equal() Failure` |
 | [dotnet/diagnostics#4717](https://github.com/dotnet/diagnostics/issues/4717) | [Test] StartEventPipeSessionWithoutStackwalkTestAsync fails with ServerNotAvailableException |
 | [dotnet/diagnostics#4655](https://github.com/dotnet/diagnostics/issues/4655) | [test] Method not found Xunit.Sdk.XunitException..ctor |
 | [dotnet/diagnostics#4654](https://github.com/dotnet/diagnostics/issues/4654) | [SOS][tests] OtherCommands(config: projectk.sdk.prebuilt*) VerifyOutput: no last command output or debugger exited unexpectedly |
@@ -36,21 +37,18 @@ Issues in query: 31
 | [dotnet/diagnostics#4171](https://github.com/dotnet/diagnostics/issues/4171) | Please document CorGCReferenceType::CorHandleWeakWinRT |
 | [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | Document how to use createdump on native AOT apps |
 | [dotnet/diagnostics#4139](https://github.com/dotnet/diagnostics/issues/4139) | How to debug memory leak that is not clear on dotnet-dump? |
-| [dotnet/diagnostics#4086](https://github.com/dotnet/diagnostics/issues/4086) | **\<OUT OF SLA\>** LLDB sos commands don't write output to SBCommandReturnObject |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | **\<OUT OF SLA\>** How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#2541](https://github.com/dotnet/diagnostics/issues/2541) | **\<OUT OF SLA\>** TestLogsAllCategoriesDefaultLevelFallback fails frequently |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 7
+Issues in query: 5
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#104670](https://github.com/dotnet/runtime/issues/104670) | BinderTracingTest.ResolutionFlow times out |
 | [dotnet/runtime#102572](https://github.com/dotnet/runtime/issues/102572) | It is not possible to pass the ID of the garbage collection when the .NET provider is enabled with the GCHeapCollect(0x800000) keyword |
 | [dotnet/runtime#102004](https://github.com/dotnet/runtime/issues/102004) | MemoryAllocatedForJitCode ETW Event missing in trace, but CLRStackWalk still fires |
-| [dotnet/runtime#101764](https://github.com/dotnet/runtime/issues/101764) | Malformed EventPipe request can crash the runtime |
-| [dotnet/runtime#99497](https://github.com/dotnet/runtime/issues/99497) | Assert in CounterGroup.OnEventSourceCommand after trying to run BDN x86 |
 | [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
 | [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | **\<OUT OF SLA\>** NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
@@ -64,18 +62,16 @@ Issues in query: 1
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 10
+Issues in query: 8
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#105213](https://github.com/dotnet/runtime/issues/105213) | Test failure: GC\\API\\WeakReference\\multipleWRs_1\\multipleWRs_1.cmd |
 | [dotnet/runtime#104881](https://github.com/dotnet/runtime/issues/104881) | [Apple] Microsoft-Diagnostics-DiagnosticSource EventSource not terminated properly |
 | [dotnet/runtime#103480](https://github.com/dotnet/runtime/issues/103480) | Crash when disposing an EventListener during shutdown |
 | [dotnet/runtime#102197](https://github.com/dotnet/runtime/issues/102197) | EventSource event with 4 string parameters with null values behaves inconsistent in .NET 8 |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
 | [dotnet/runtime#96968](https://github.com/dotnet/runtime/issues/96968) | Test failure BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds_WithEtwListener |
 | [dotnet/runtime#96219](https://github.com/dotnet/runtime/issues/96219) | Potential Deadlock When Disposing EventListeners Concurrently |
-| [dotnet/runtime#94964](https://github.com/dotnet/runtime/issues/94964) | How to debug code that is being compiled in layers? I have the following problem |
 | [dotnet/runtime#93175](https://github.com/dotnet/runtime/issues/93175) | Deadlock in ThreadPool.GetMaxThreads() during app start. |
 | [dotnet/runtime#80666](https://github.com/dotnet/runtime/issues/80666) | **\<OUT OF SLA\>** tracing/eventpipe/eventsourceerror/eventsourceerror/eventsourceerror failure |
 
@@ -85,10 +81,11 @@ Issues in query: 23
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#105225](https://github.com/dotnet/runtime/issues/105225) | Test failure: profiler\\assembly\\ALCTest\\ALCTest.cmd |
-| [dotnet/runtime#105222](https://github.com/dotnet/runtime/issues/105222) | Test failure: Loader/classloader/TypeInitialization/Inlining/GenMethInlined/GenMethInlined.cmd |
+| [dotnet/runtime#105603](https://github.com/dotnet/runtime/issues/105603) | The `ICorProfilerInfo::GetModuleMetaData` function returns `CORPROF_E_UNSUPPORTED_CALL_SEQUENCE`, while another approach with `IMetaDataDispenserEx` works |
+| [dotnet/runtime#105594](https://github.com/dotnet/runtime/issues/105594) | Hot Reload with a specific code structure throws `System.BadImageFormatException: An attempt was made to load a program with an incorrect format.` |
+| [dotnet/runtime#105463](https://github.com/dotnet/runtime/issues/105463) | App is experiencing a freeze, probably due to GC suspending threads |
+| [dotnet/runtime#105374](https://github.com/dotnet/runtime/issues/105374) | Debugger hits SIGSEGV in ShimStackWalk::StackWalkInfo::GetCurrentInternalFrame when .NET app throws exception |
 | [dotnet/runtime#105132](https://github.com/dotnet/runtime/issues/105132) | Unmanaged memory growth with DiagnosticsClient |
-| [dotnet/runtime#105116](https://github.com/dotnet/runtime/issues/105116) | x86 Interop Call stack incorrect when stopped in native exception filter |
 | [dotnet/runtime#104967](https://github.com/dotnet/runtime/issues/104967) | using dotnet6.0 on win7 crash |
 | [dotnet/runtime#104459](https://github.com/dotnet/runtime/issues/104459) | App crashes with an output "Trace/Breakpoint Trap" on Linux when a P/Invoke callback is called from a native library if the dotnet debugger is attached. |
 | [dotnet/runtime#104256](https://github.com/dotnet/runtime/issues/104256) | Dump file not created when process crashes |
@@ -99,7 +96,6 @@ Issues in query: 23
 | [dotnet/runtime#101310](https://github.com/dotnet/runtime/issues/101310) | coreclr + vsdbg failure to get stack trace from remote Kubernetes pod |
 | [dotnet/runtime#99487](https://github.com/dotnet/runtime/issues/99487) | CLR_GCHEAPCOLLECT_KEYWORD triggers a GC twice |
 | [dotnet/runtime#98654](https://github.com/dotnet/runtime/issues/98654) | System.IO.IOException: ' Received an unexpected EOF or 0 bytes from the transport stream.' |
-| [dotnet/runtime#98506](https://github.com/dotnet/runtime/issues/98506) | Excessive exceptions generated in StackTraceSymbols when using Portable PDB |
 | [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | ExecutionEngineException on using step into while debugging |
 | [dotnet/runtime#95189](https://github.com/dotnet/runtime/issues/95189) | vsdbg quits when resuming from a breakpoint if stepping over a line that throws an exception  |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
@@ -111,15 +107,12 @@ Issues in query: 23
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 6
+Issues in query: 3
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#104234](https://github.com/dotnet/runtime/issues/104234) | DEBUGGING IS NOT ENABLED when trying to debug .NET 8 Blazor Web project simulating iOS device on edge |
-| [dotnet/runtime#104231](https://github.com/dotnet/runtime/issues/104231) | Blazor webassembly does not hit breakpoints on <select> bindings |
 | [dotnet/runtime#101554](https://github.com/dotnet/runtime/issues/101554) | Blazor client side web debugging fails to function when run within IIS |
-| [dotnet/runtime#99007](https://github.com/dotnet/runtime/issues/99007) | [.NET 8] [android] case where Mono debugger doesn't "break" correctly on unhandled exceptions |
-| [dotnet/runtime#91631](https://github.com/dotnet/runtime/issues/91631) | No compatiable code running on the thread |
 | [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
