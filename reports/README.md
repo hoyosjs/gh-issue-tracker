@@ -24,13 +24,13 @@ xychart-beta
 ```mermaid
 xychart-beta
   title "Totals .NET 9 - ZBB Diagnostics Report"
-  x-axis "Date" ["07-15-24", "07-22-24", "07-23-24", "07-23-24", "07-29-24"]
+  x-axis "Date" ["07-15-24", "07-22-24", "07-23-24", "07-23-24", "07-29-24", "08-05-24"]
   y-axis "Total"
-  line [84, 65, 25, 19, 16]
+  line [84, 65, 25, 19, 16, 14]
 ```
 
 - [.NET 9 - ZBB Diagnostics Report Full Report](./diagnostics-net9-zbb/dn-diag-net9-zbb-full.md)
-- [.NET 9 - ZBB Diagnostics Report Latest Comparative Report (2024-07-29-04-16)](./diagnostics-net9-zbb/2024-07-29-04-16/dn-diag-net9-zbb-comp.md)
+- [.NET 9 - ZBB Diagnostics Report Latest Comparative Report (2024-08-05-04-16)](./diagnostics-net9-zbb/2024-08-05-04-16/dn-diag-net9-zbb-comp.md)
 - [.NET 9 - ZBB Diagnostics Report CSV](./diagnostics-net9-zbb/dn-diag-net9-zbb-totals.csv)
 
 [marker]: <> (End:diagnostics-runtime-zbb9)
