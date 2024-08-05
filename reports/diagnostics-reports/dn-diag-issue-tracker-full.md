@@ -1,13 +1,14 @@
-# .NET Diagnostics Report Full Report - 07/29/2024 06:17:27
+# .NET Diagnostics Report Full Report - 08/05/2024 06:17:39
 
-Total issues: 74
+Total issues: 77
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 31
+Issues in query: 33
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4826](https://github.com/dotnet/diagnostics/issues/4826) | dotnet stack hangup on trying to get the stackframes of a stuck process |
 | [dotnet/diagnostics#4814](https://github.com/dotnet/diagnostics/issues/4814) | DumpStackObjects doesn't seem to work if the thread is on the alternate signal stack |
 | [dotnet/diagnostics#4806](https://github.com/dotnet/diagnostics/issues/4806) | Docs/test updates/migration guidance for new runtime metrics in dotnet-counters |
 | [dotnet/diagnostics#4803](https://github.com/dotnet/diagnostics/issues/4803) | dotnet dump analyze threadpool fails to obtain threadpool data  |
@@ -37,6 +38,7 @@ Issues in query: 31
 | [dotnet/diagnostics#4171](https://github.com/dotnet/diagnostics/issues/4171) | Please document CorGCReferenceType::CorHandleWeakWinRT |
 | [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | Document how to use createdump on native AOT apps |
 | [dotnet/diagnostics#4139](https://github.com/dotnet/diagnostics/issues/4139) | How to debug memory leak that is not clear on dotnet-dump? |
+| [dotnet/diagnostics#4825](https://github.com/dotnet/diagnostics/issues/4825) | **\<OUT OF SLA\>** NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | **\<OUT OF SLA\>** How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#2541](https://github.com/dotnet/diagnostics/issues/2541) | **\<OUT OF SLA\>** TestLogsAllCategoriesDefaultLevelFallback fails frequently |
 
@@ -46,29 +48,29 @@ Issues in query: 5
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#105682](https://github.com/dotnet/runtime/issues/105682) | Deadlock in System.Diagnostics.Tracing.FrameworkEventSource on application startup |
 | [dotnet/runtime#104670](https://github.com/dotnet/runtime/issues/104670) | BinderTracingTest.ResolutionFlow times out |
 | [dotnet/runtime#102572](https://github.com/dotnet/runtime/issues/102572) | It is not possible to pass the ID of the garbage collection when the .NET provider is enabled with the GCHeapCollect(0x800000) keyword |
 | [dotnet/runtime#102004](https://github.com/dotnet/runtime/issues/102004) | MemoryAllocatedForJitCode ETW Event missing in trace, but CLRStackWalk still fires |
 | [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
-| [dotnet/runtime#88011](https://github.com/dotnet/runtime/issues/88011) | **\<OUT OF SLA\>** NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
-Issues in query: 1
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#105808](https://github.com/dotnet/runtime/issues/105808) | [Help] [RISC-V] GC crash on System.Diagnostics.Tests.DiagnosticSourceTest.AllSubscriberStress |
 | [dotnet/runtime#91191](https://github.com/dotnet/runtime/issues/91191) | [API Proposal]: An attribute to indicate boxed value type is not expected for certain API |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 8
+Issues in query: 7
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#104881](https://github.com/dotnet/runtime/issues/104881) | [Apple] Microsoft-Diagnostics-DiagnosticSource EventSource not terminated properly |
 | [dotnet/runtime#103480](https://github.com/dotnet/runtime/issues/103480) | Crash when disposing an EventListener during shutdown |
-| [dotnet/runtime#102197](https://github.com/dotnet/runtime/issues/102197) | EventSource event with 4 string parameters with null values behaves inconsistent in .NET 8 |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
 | [dotnet/runtime#96968](https://github.com/dotnet/runtime/issues/96968) | Test failure BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds_WithEtwListener |
 | [dotnet/runtime#96219](https://github.com/dotnet/runtime/issues/96219) | Potential Deadlock When Disposing EventListeners Concurrently |
@@ -77,13 +79,13 @@ Issues in query: 8
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 23
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#105603](https://github.com/dotnet/runtime/issues/105603) | The `ICorProfilerInfo::GetModuleMetaData` function returns `CORPROF_E_UNSUPPORTED_CALL_SEQUENCE`, while another approach with `IMetaDataDispenserEx` works |
-| [dotnet/runtime#105594](https://github.com/dotnet/runtime/issues/105594) | Hot Reload with a specific code structure throws `System.BadImageFormatException: An attempt was made to load a program with an incorrect format.` |
-| [dotnet/runtime#105463](https://github.com/dotnet/runtime/issues/105463) | App is experiencing a freeze, probably due to GC suspending threads |
+| [dotnet/runtime#105917](https://github.com/dotnet/runtime/issues/105917) | Segmentation Fault while debugging |
+| [dotnet/runtime#105712](https://github.com/dotnet/runtime/issues/105712) | Identification of JIT generated functions by their address |
+| [dotnet/runtime#105690](https://github.com/dotnet/runtime/issues/105690) | Quality of native perf profiling on x64 |
 | [dotnet/runtime#105374](https://github.com/dotnet/runtime/issues/105374) | Debugger hits SIGSEGV in ShimStackWalk::StackWalkInfo::GetCurrentInternalFrame when .NET app throws exception |
 | [dotnet/runtime#105132](https://github.com/dotnet/runtime/issues/105132) | Unmanaged memory growth with DiagnosticsClient |
 | [dotnet/runtime#104967](https://github.com/dotnet/runtime/issues/104967) | using dotnet6.0 on win7 crash |
@@ -97,7 +99,6 @@ Issues in query: 23
 | [dotnet/runtime#99487](https://github.com/dotnet/runtime/issues/99487) | CLR_GCHEAPCOLLECT_KEYWORD triggers a GC twice |
 | [dotnet/runtime#98654](https://github.com/dotnet/runtime/issues/98654) | System.IO.IOException: ' Received an unexpected EOF or 0 bytes from the transport stream.' |
 | [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | ExecutionEngineException on using step into while debugging |
-| [dotnet/runtime#95189](https://github.com/dotnet/runtime/issues/95189) | vsdbg quits when resuming from a breakpoint if stepping over a line that throws an exception  |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
 | [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | Avalonia calling into the runtime after shut down |
 | [dotnet/runtime#74271](https://github.com/dotnet/runtime/issues/74271) | **\<OUT OF SLA\>** [CET Debugging] User mode APC's on Windows x64 with CET enabled can cause a debug session to crash  |
@@ -117,13 +118,15 @@ Issues in query: 3
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
 
-Issues in query: 3
+Issues in query: 5
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#105664](https://github.com/dotnet/runtime/issues/105664) | .NET exception call stack not present when running as WASM |
 | [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
 | [dotnet/runtime#93551](https://github.com/dotnet/runtime/issues/93551) | [wasm] run browser-bench sample with https connection |
 | [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
+| [dotnet/runtime#91049](https://github.com/dotnet/runtime/issues/91049) | Blazor - WebAssembly `build_id` section |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics-mono
 
