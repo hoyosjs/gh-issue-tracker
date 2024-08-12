@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 08/05/2024 06:17:39
+# .NET Diagnostics Report Full Report - 08/12/2024 06:17:21
 
-Total issues: 77
+Total issues: 76
 
 ## v1,1-dotnet/diagnostics
 
@@ -36,8 +36,8 @@ Issues in query: 33
 | [dotnet/diagnostics#4259](https://github.com/dotnet/diagnostics/issues/4259) | libsosplugin cannot be loaded into lldb (macos arm64) |
 | [dotnet/diagnostics#4191](https://github.com/dotnet/diagnostics/issues/4191) | Fix Microsoft.Diagnostics.NETCore.Client.PerMapTests.GenerateAllTest and GeneratePerfMapTest for 8.0 |
 | [dotnet/diagnostics#4171](https://github.com/dotnet/diagnostics/issues/4171) | Please document CorGCReferenceType::CorHandleWeakWinRT |
-| [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | Document how to use createdump on native AOT apps |
-| [dotnet/diagnostics#4139](https://github.com/dotnet/diagnostics/issues/4139) | How to debug memory leak that is not clear on dotnet-dump? |
+| [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | **\<OUT OF SLA\>** Document how to use createdump on native AOT apps |
+| [dotnet/diagnostics#4139](https://github.com/dotnet/diagnostics/issues/4139) | **\<OUT OF SLA\>** How to debug memory leak that is not clear on dotnet-dump? |
 | [dotnet/diagnostics#4825](https://github.com/dotnet/diagnostics/issues/4825) | **\<OUT OF SLA\>** NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | **\<OUT OF SLA\>** How to debug stack overflow errors on Windows |
 | [dotnet/diagnostics#2541](https://github.com/dotnet/diagnostics/issues/2541) | **\<OUT OF SLA\>** TestLogsAllCategoriesDefaultLevelFallback fails frequently |
@@ -65,17 +65,16 @@ Issues in query: 2
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 7
+Issues in query: 6
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#106087](https://github.com/dotnet/runtime/issues/106087) | [Tracing] EventProvider Disposal hangs within a callback |
 | [dotnet/runtime#104881](https://github.com/dotnet/runtime/issues/104881) | [Apple] Microsoft-Diagnostics-DiagnosticSource EventSource not terminated properly |
-| [dotnet/runtime#103480](https://github.com/dotnet/runtime/issues/103480) | Crash when disposing an EventListener during shutdown |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
 | [dotnet/runtime#96968](https://github.com/dotnet/runtime/issues/96968) | Test failure BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds_WithEtwListener |
 | [dotnet/runtime#96219](https://github.com/dotnet/runtime/issues/96219) | Potential Deadlock When Disposing EventListeners Concurrently |
 | [dotnet/runtime#93175](https://github.com/dotnet/runtime/issues/93175) | Deadlock in ThreadPool.GetMaxThreads() during app start. |
-| [dotnet/runtime#80666](https://github.com/dotnet/runtime/issues/80666) | **\<OUT OF SLA\>** tracing/eventpipe/eventsourceerror/eventsourceerror/eventsourceerror failure |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
@@ -83,24 +82,24 @@ Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#105917](https://github.com/dotnet/runtime/issues/105917) | Segmentation Fault while debugging |
+| [dotnet/runtime#106243](https://github.com/dotnet/runtime/issues/106243) | Test failure: profiler/transitions/transitions/transitions.sh |
+| [dotnet/runtime#106241](https://github.com/dotnet/runtime/issues/106241) | Test failure: profiler\\assembly\\ALCTest\\ALCTest.cmd |
+| [dotnet/runtime#106194](https://github.com/dotnet/runtime/issues/106194) | PosixSignalRegistration.Create hangs debugger on MacOS (Rider & VSCode) |
+| [dotnet/runtime#106148](https://github.com/dotnet/runtime/issues/106148) | [DAC][ReJIT] ReJitManager::IsReJITEnabled checked DOTNET_ProfAPI_RejitOnAttach in the wrong environment |
+| [dotnet/runtime#106113](https://github.com/dotnet/runtime/issues/106113) | Test failure: tracing/eventpipe/eventsourceerror/eventsourceerror/eventsourceerror.cmd |
+| [dotnet/runtime#106104](https://github.com/dotnet/runtime/issues/106104) | Process silently exits after patching self-contained app with Debug bits when specific breakpoints are set |
 | [dotnet/runtime#105712](https://github.com/dotnet/runtime/issues/105712) | Identification of JIT generated functions by their address |
 | [dotnet/runtime#105690](https://github.com/dotnet/runtime/issues/105690) | Quality of native perf profiling on x64 |
-| [dotnet/runtime#105374](https://github.com/dotnet/runtime/issues/105374) | Debugger hits SIGSEGV in ShimStackWalk::StackWalkInfo::GetCurrentInternalFrame when .NET app throws exception |
 | [dotnet/runtime#105132](https://github.com/dotnet/runtime/issues/105132) | Unmanaged memory growth with DiagnosticsClient |
 | [dotnet/runtime#104967](https://github.com/dotnet/runtime/issues/104967) | using dotnet6.0 on win7 crash |
 | [dotnet/runtime#104459](https://github.com/dotnet/runtime/issues/104459) | App crashes with an output "Trace/Breakpoint Trap" on Linux when a P/Invoke callback is called from a native library if the dotnet debugger is attached. |
-| [dotnet/runtime#104256](https://github.com/dotnet/runtime/issues/104256) | Dump file not created when process crashes |
 | [dotnet/runtime#103955](https://github.com/dotnet/runtime/issues/103955) | Debugger Crashes when using breakpoints with a compiled runtime in debug mode _CrtlsValidHeapPointer(block) |
-| [dotnet/runtime#103872](https://github.com/dotnet/runtime/issues/103872) | WER handler is broken |
-| [dotnet/runtime#103000](https://github.com/dotnet/runtime/issues/103000) | Environment variable DOTNET_DbgEnableMiniDump=1 doens't work when unhandled exception occurs in worker thread |
 | [dotnet/runtime#102767](https://github.com/dotnet/runtime/issues/102767) | Patch skipping crashing in functions marked with [UnmanagedCallersOnly] |
 | [dotnet/runtime#101310](https://github.com/dotnet/runtime/issues/101310) | coreclr + vsdbg failure to get stack trace from remote Kubernetes pod |
 | [dotnet/runtime#99487](https://github.com/dotnet/runtime/issues/99487) | CLR_GCHEAPCOLLECT_KEYWORD triggers a GC twice |
-| [dotnet/runtime#98654](https://github.com/dotnet/runtime/issues/98654) | System.IO.IOException: ' Received an unexpected EOF or 0 bytes from the transport stream.' |
 | [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | ExecutionEngineException on using step into while debugging |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | Lock contention in StackTrace/Exception.ToString() |
-| [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | Avalonia calling into the runtime after shut down |
+| [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | **\<OUT OF SLA\>** Avalonia calling into the runtime after shut down |
 | [dotnet/runtime#74271](https://github.com/dotnet/runtime/issues/74271) | **\<OUT OF SLA\>** [CET Debugging] User mode APC's on Windows x64 with CET enabled can cause a debug session to crash  |
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | **\<OUT OF SLA\>** dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | **\<OUT OF SLA\>** Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
@@ -108,20 +107,20 @@ Issues in query: 22
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 3
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#104234](https://github.com/dotnet/runtime/issues/104234) | DEBUGGING IS NOT ENABLED when trying to debug .NET 8 Blazor Web project simulating iOS device on edge |
 | [dotnet/runtime#101554](https://github.com/dotnet/runtime/issues/101554) | Blazor client side web debugging fails to function when run within IIS |
 | [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
 
-Issues in query: 5
+Issues in query: 6
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#106064](https://github.com/dotnet/runtime/issues/106064) | [mono][ios] Mono prevents crash logs from being generated in case `SIGSEGV` is raised from native code |
 | [dotnet/runtime#105664](https://github.com/dotnet/runtime/issues/105664) | .NET exception call stack not present when running as WASM |
 | [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
 | [dotnet/runtime#93551](https://github.com/dotnet/runtime/issues/93551) | [wasm] run browser-bench sample with https connection |
