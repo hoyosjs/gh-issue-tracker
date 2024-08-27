@@ -1,16 +1,14 @@
-# .NET Diagnostics Report Full Report - 08/19/2024 06:18:31
+# .NET Diagnostics Report Full Report - 08/27/2024 21:10:17
 
-Total issues: 79
+Total issues: 78
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 36
+Issues in query: 34
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#4856](https://github.com/dotnet/diagnostics/issues/4856) | GCDump requires client-side symbol lookup for native AOT |
 | [dotnet/diagnostics#4850](https://github.com/dotnet/diagnostics/issues/4850) | DumpIL SOS command does not properly handle DynamicMethods in .NET Core |
-| [dotnet/diagnostics#4847](https://github.com/dotnet/diagnostics/issues/4847) | Latest NET 9 runtime causes EventCounterPipelineUnitTests.TestCounterEventPipeline test to fail |
 | [dotnet/diagnostics#4843](https://github.com/dotnet/diagnostics/issues/4843) | CreateCounter can create corruptable counter |
 | [dotnet/diagnostics#4826](https://github.com/dotnet/diagnostics/issues/4826) | dotnet stack hangup on trying to get the stackframes of a stuck process |
 | [dotnet/diagnostics#4814](https://github.com/dotnet/diagnostics/issues/4814) | DumpStackObjects doesn't seem to work if the thread is on the alternate signal stack |
@@ -38,8 +36,8 @@ Issues in query: 36
 | [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | dotnet-dump not working when process run as user |
 | [dotnet/diagnostics#4314](https://github.com/dotnet/diagnostics/issues/4314) | !clrstack reports incorrect method names when <> is encountered |
 | [dotnet/diagnostics#4259](https://github.com/dotnet/diagnostics/issues/4259) | libsosplugin cannot be loaded into lldb (macos arm64) |
-| [dotnet/diagnostics#4191](https://github.com/dotnet/diagnostics/issues/4191) | Fix Microsoft.Diagnostics.NETCore.Client.PerMapTests.GenerateAllTest and GeneratePerfMapTest for 8.0 |
-| [dotnet/diagnostics#4171](https://github.com/dotnet/diagnostics/issues/4171) | Please document CorGCReferenceType::CorHandleWeakWinRT |
+| [dotnet/diagnostics#4191](https://github.com/dotnet/diagnostics/issues/4191) | **\<OUT OF SLA\>** Fix Microsoft.Diagnostics.NETCore.Client.PerMapTests.GenerateAllTest and GeneratePerfMapTest for 8.0 |
+| [dotnet/diagnostics#4171](https://github.com/dotnet/diagnostics/issues/4171) | **\<OUT OF SLA\>** Please document CorGCReferenceType::CorHandleWeakWinRT |
 | [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | **\<OUT OF SLA\>** Document how to use createdump on native AOT apps |
 | [dotnet/diagnostics#4825](https://github.com/dotnet/diagnostics/issues/4825) | **\<OUT OF SLA\>** NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | **\<OUT OF SLA\>** How to debug stack overflow errors on Windows |
@@ -59,10 +57,11 @@ Issues in query: 5
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
-Issues in query: 2
+Issues in query: 3
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#105980](https://github.com/dotnet/runtime/issues/105980) | Port System.Diagnostics docs for .NET 9 APIs |
 | [dotnet/runtime#105808](https://github.com/dotnet/runtime/issues/105808) | [Help] [RISC-V] GC crash on System.Diagnostics.Tests.DiagnosticSourceTest.AllSubscriberStress |
 | [dotnet/runtime#91191](https://github.com/dotnet/runtime/issues/91191) | [API Proposal]: An attribute to indicate boxed value type is not expected for certain API |
 
@@ -73,7 +72,7 @@ Issues in query: 6
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#106087](https://github.com/dotnet/runtime/issues/106087) | [Tracing] EventProvider Disposal hangs within a callback |
-| [dotnet/runtime#106462](https://github.com/dotnet/runtime/issues/106462) | [mono][Perf] `Microsoft.Extensions.Logging.EventSourceLogger.NestedScopes_TwoMessages` regressions on 3/5/2024 8:17:11 PM |
+| [dotnet/runtime#104322](https://github.com/dotnet/runtime/issues/104322) | `ThreadPoolWorkQueue..ctor` randomly will never return |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
 | [dotnet/runtime#96968](https://github.com/dotnet/runtime/issues/96968) | Test failure BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds_WithEtwListener |
 | [dotnet/runtime#96219](https://github.com/dotnet/runtime/issues/96219) | Potential Deadlock When Disposing EventListeners Concurrently |
@@ -81,11 +80,12 @@ Issues in query: 6
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 21
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#106543](https://github.com/dotnet/runtime/issues/106543) | ICorProfilerCallback GC related behavior changed in CoreCLR 8.0? |
+| [dotnet/runtime#106946](https://github.com/dotnet/runtime/issues/106946) | Test failure: profiler\\elt\\slowpatheltleave\\slowpatheltleave.cmd |
+| [dotnet/runtime#106890](https://github.com/dotnet/runtime/issues/106890) | Timeout in runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.cmd |
 | [dotnet/runtime#106243](https://github.com/dotnet/runtime/issues/106243) | Test failure: profiler/transitions/transitions/transitions.sh |
 | [dotnet/runtime#106241](https://github.com/dotnet/runtime/issues/106241) | Test failure: profiler\\assembly\\ALCTest\\ALCTest.cmd |
 | [dotnet/runtime#106194](https://github.com/dotnet/runtime/issues/106194) | PosixSignalRegistration.Create hangs debugger on MacOS (Rider & VSCode) |
@@ -109,14 +109,13 @@ Issues in query: 21
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 4
+Issues in query: 3
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#106470](https://github.com/dotnet/runtime/issues/106470) | Problem with hitting breakpoints while using Firefox or Firefox Developer Edition in InteractiveWebAssembly render mode, but no issues when using Microsoft Edge or Google Chrome. |
 | [dotnet/runtime#106376](https://github.com/dotnet/runtime/issues/106376) | 'chrome-DebuggerTests.ExceptionTests' timing out |
 | [dotnet/runtime#101554](https://github.com/dotnet/runtime/issues/101554) | Blazor client side web debugging fails to function when run within IIS |
-| [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
+| [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | **\<OUT OF SLA\>** Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
 
@@ -127,8 +126,8 @@ Issues in query: 5
 | [dotnet/runtime#106064](https://github.com/dotnet/runtime/issues/106064) | [mono][ios] Mono prevents crash logs from being generated in case `SIGSEGV` is raised from native code |
 | [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
 | [dotnet/runtime#93551](https://github.com/dotnet/runtime/issues/93551) | [wasm] run browser-bench sample with https connection |
-| [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
-| [dotnet/runtime#91049](https://github.com/dotnet/runtime/issues/91049) | Blazor - WebAssembly `build_id` section |
+| [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | **\<OUT OF SLA\>** Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
+| [dotnet/runtime#91049](https://github.com/dotnet/runtime/issues/91049) | **\<OUT OF SLA\>** Blazor - WebAssembly `build_id` section |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics-mono
 
