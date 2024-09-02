@@ -1,13 +1,14 @@
-# .NET Diagnostics Report Full Report - 08/27/2024 21:10:17
+# .NET Diagnostics Report Full Report - 09/02/2024 06:18:41
 
-Total issues: 78
+Total issues: 81
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 34
+Issues in query: 35
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#4898](https://github.com/dotnet/diagnostics/issues/4898) | Running dotnet-dump on a service running under a non-root user results in error. |
 | [dotnet/diagnostics#4850](https://github.com/dotnet/diagnostics/issues/4850) | DumpIL SOS command does not properly handle DynamicMethods in .NET Core |
 | [dotnet/diagnostics#4843](https://github.com/dotnet/diagnostics/issues/4843) | CreateCounter can create corruptable counter |
 | [dotnet/diagnostics#4826](https://github.com/dotnet/diagnostics/issues/4826) | dotnet stack hangup on trying to get the stackframes of a stuck process |
@@ -63,14 +64,15 @@ Issues in query: 3
 | :--------------: | --------- |
 | [dotnet/runtime#105980](https://github.com/dotnet/runtime/issues/105980) | Port System.Diagnostics docs for .NET 9 APIs |
 | [dotnet/runtime#105808](https://github.com/dotnet/runtime/issues/105808) | [Help] [RISC-V] GC crash on System.Diagnostics.Tests.DiagnosticSourceTest.AllSubscriberStress |
-| [dotnet/runtime#91191](https://github.com/dotnet/runtime/issues/91191) | [API Proposal]: An attribute to indicate boxed value type is not expected for certain API |
+| [dotnet/runtime#91191](https://github.com/dotnet/runtime/issues/91191) | **\<OUT OF SLA\>** [API Proposal]: An attribute to indicate boxed value type is not expected for certain API |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 6
+Issues in query: 7
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#106890](https://github.com/dotnet/runtime/issues/106890) | Timeout in runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.cmd |
 | [dotnet/runtime#106087](https://github.com/dotnet/runtime/issues/106087) | [Tracing] EventProvider Disposal hangs within a callback |
 | [dotnet/runtime#104322](https://github.com/dotnet/runtime/issues/104322) | `ThreadPoolWorkQueue..ctor` randomly will never return |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
@@ -80,12 +82,13 @@ Issues in query: 6
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 22
+Issues in query: 23
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#107217](https://github.com/dotnet/runtime/issues/107217) | Managed debuggers not recognizing that managed code has been loaded when running tests via VS Test Explorer on main |
+| [dotnet/runtime#107139](https://github.com/dotnet/runtime/issues/107139) | [profiler] It doesn't seem to be possible to get information about generic arguments of the defining class of a function from JIT compilation callbacks |
 | [dotnet/runtime#106946](https://github.com/dotnet/runtime/issues/106946) | Test failure: profiler\\elt\\slowpatheltleave\\slowpatheltleave.cmd |
-| [dotnet/runtime#106890](https://github.com/dotnet/runtime/issues/106890) | Timeout in runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.cmd |
 | [dotnet/runtime#106243](https://github.com/dotnet/runtime/issues/106243) | Test failure: profiler/transitions/transitions/transitions.sh |
 | [dotnet/runtime#106241](https://github.com/dotnet/runtime/issues/106241) | Test failure: profiler\\assembly\\ALCTest\\ALCTest.cmd |
 | [dotnet/runtime#106194](https://github.com/dotnet/runtime/issues/106194) | PosixSignalRegistration.Create hangs debugger on MacOS (Rider & VSCode) |
