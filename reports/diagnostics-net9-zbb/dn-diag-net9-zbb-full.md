@@ -1,6 +1,6 @@
-# .NET 9 - ZBB Diagnostics Report Full Report - 08/19/2024 04:15:23
+# .NET 9 - ZBB Diagnostics Report Full Report - 09/02/2024 04:16:50
 
-Total issues: 0
+Total issues: 1
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
@@ -8,7 +8,11 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
-Issues in query: 0
+Issues in query: 1
+
+| **Issue Number** | **Title** |
+| :--------------: | --------- |
+| [dotnet/runtime#105980](https://github.com/dotnet/runtime/issues/105980) | Port System.Diagnostics docs for .NET 9 APIs |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Metric
 
