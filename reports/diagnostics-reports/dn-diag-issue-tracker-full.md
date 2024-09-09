@@ -1,19 +1,18 @@
-# .NET Diagnostics Report Full Report - 09/02/2024 06:18:41
+# .NET Diagnostics Report Full Report - 09/09/2024 06:19:13
 
-Total issues: 81
+Total issues: 82
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 35
+Issues in query: 34
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#4898](https://github.com/dotnet/diagnostics/issues/4898) | Running dotnet-dump on a service running under a non-root user results in error. |
+| [dotnet/diagnostics#4908](https://github.com/dotnet/diagnostics/issues/4908) | `dotnet-trace collect --format SpeedScope` creates a new file with `.json` extension instead of using the filename provided |
 | [dotnet/diagnostics#4850](https://github.com/dotnet/diagnostics/issues/4850) | DumpIL SOS command does not properly handle DynamicMethods in .NET Core |
 | [dotnet/diagnostics#4843](https://github.com/dotnet/diagnostics/issues/4843) | CreateCounter can create corruptable counter |
 | [dotnet/diagnostics#4826](https://github.com/dotnet/diagnostics/issues/4826) | dotnet stack hangup on trying to get the stackframes of a stuck process |
 | [dotnet/diagnostics#4814](https://github.com/dotnet/diagnostics/issues/4814) | DumpStackObjects doesn't seem to work if the thread is on the alternate signal stack |
-| [dotnet/diagnostics#4806](https://github.com/dotnet/diagnostics/issues/4806) | Docs/test updates/migration guidance for new runtime metrics in dotnet-counters |
 | [dotnet/diagnostics#4803](https://github.com/dotnet/diagnostics/issues/4803) | dotnet dump analyze threadpool fails to obtain threadpool data  |
 | [dotnet/diagnostics#4795](https://github.com/dotnet/diagnostics/issues/4795) | Update GCInfo deserializer once https://github.com/dotnet/runtime/pull/104336 merges |
 | [dotnet/diagnostics#4782](https://github.com/dotnet/diagnostics/issues/4782) | [Test] Microsoft.Diagnostics.Monitoring.EventPipe.UnitTests.EventCounterTriggerWithEventPipePipelineTest fails intermittently  |
@@ -54,7 +53,7 @@ Issues in query: 5
 | [dotnet/runtime#104670](https://github.com/dotnet/runtime/issues/104670) | BinderTracingTest.ResolutionFlow times out |
 | [dotnet/runtime#102572](https://github.com/dotnet/runtime/issues/102572) | It is not possible to pass the ID of the garbage collection when the .NET provider is enabled with the GCHeapCollect(0x800000) keyword |
 | [dotnet/runtime#102004](https://github.com/dotnet/runtime/issues/102004) | MemoryAllocatedForJitCode ETW Event missing in trace, but CLRStackWalk still fires |
-| [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
+| [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | **\<OUT OF SLA\>** CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
@@ -68,13 +67,14 @@ Issues in query: 3
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 7
+Issues in query: 8
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#106890](https://github.com/dotnet/runtime/issues/106890) | Timeout in runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.cmd |
 | [dotnet/runtime#106087](https://github.com/dotnet/runtime/issues/106087) | [Tracing] EventProvider Disposal hangs within a callback |
 | [dotnet/runtime#104322](https://github.com/dotnet/runtime/issues/104322) | `ThreadPoolWorkQueue..ctor` randomly will never return |
+| [dotnet/runtime#99816](https://github.com/dotnet/runtime/issues/99816) | Higher Memory Usage for the EventSource Class |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
 | [dotnet/runtime#96968](https://github.com/dotnet/runtime/issues/96968) | Test failure BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds_WithEtwListener |
 | [dotnet/runtime#96219](https://github.com/dotnet/runtime/issues/96219) | Potential Deadlock When Disposing EventListeners Concurrently |
@@ -82,10 +82,13 @@ Issues in query: 7
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 23
+Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#107444](https://github.com/dotnet/runtime/issues/107444) | WriteXorExecute double mapping causes .NET apps to AV when native debuggers set breakpoints |
+| [dotnet/runtime#107344](https://github.com/dotnet/runtime/issues/107344) | Issues with memory dumps and Single File App |
+| [dotnet/runtime#107263](https://github.com/dotnet/runtime/issues/107263) | After upgrading to .NET 9, simple C# statement triggers fatal error in Visual Studio 2022 when Control-C is used to exit |
 | [dotnet/runtime#107217](https://github.com/dotnet/runtime/issues/107217) | Managed debuggers not recognizing that managed code has been loaded when running tests via VS Test Explorer on main |
 | [dotnet/runtime#107139](https://github.com/dotnet/runtime/issues/107139) | [profiler] It doesn't seem to be possible to get information about generic arguments of the defining class of a function from JIT compilation callbacks |
 | [dotnet/runtime#106946](https://github.com/dotnet/runtime/issues/106946) | Test failure: profiler\\elt\\slowpatheltleave\\slowpatheltleave.cmd |
@@ -105,31 +108,28 @@ Issues in query: 23
 | [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | ExecutionEngineException on using step into while debugging |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | **\<OUT OF SLA\>** Lock contention in StackTrace/Exception.ToString() |
 | [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | **\<OUT OF SLA\>** Avalonia calling into the runtime after shut down |
-| [dotnet/runtime#74271](https://github.com/dotnet/runtime/issues/74271) | **\<OUT OF SLA\>** [CET Debugging] User mode APC's on Windows x64 with CET enabled can cause a debug session to crash  |
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | **\<OUT OF SLA\>** dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#70755](https://github.com/dotnet/runtime/issues/70755) | **\<OUT OF SLA\>** Crash in coreclr.dll!Debugger::SendException while processing stack overflow in x64 Windows |
 | [dotnet/runtime#68018](https://github.com/dotnet/runtime/issues/68018) | **\<OUT OF SLA\>** Application crash while stepping into if 'justMyCode' is disabled |
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 3
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#106376](https://github.com/dotnet/runtime/issues/106376) | 'chrome-DebuggerTests.ExceptionTests' timing out |
 | [dotnet/runtime#101554](https://github.com/dotnet/runtime/issues/101554) | Blazor client side web debugging fails to function when run within IIS |
-| [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | **\<OUT OF SLA\>** Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
 
-Issues in query: 5
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#106064](https://github.com/dotnet/runtime/issues/106064) | [mono][ios] Mono prevents crash logs from being generated in case `SIGSEGV` is raised from native code |
 | [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
 | [dotnet/runtime#93551](https://github.com/dotnet/runtime/issues/93551) | [wasm] run browser-bench sample with https connection |
-| [dotnet/runtime#91197](https://github.com/dotnet/runtime/issues/91197) | **\<OUT OF SLA\>** Blazor Standalone WASM - Debugging Breaks after OIDC Authentication |
 | [dotnet/runtime#91049](https://github.com/dotnet/runtime/issues/91049) | **\<OUT OF SLA\>** Blazor - WebAssembly `build_id` section |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics-mono
@@ -138,5 +138,9 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-Tracing-mono
 
-Issues in query: 0
+Issues in query: 1
+
+| **Issue Number** | **Title** |
+| :--------------: | --------- |
+| [dotnet/runtime#107315](https://github.com/dotnet/runtime/issues/107315) | [Mono] NetTrace Collected mismatches expected CLR Instance name |
 
