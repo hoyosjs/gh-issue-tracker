@@ -1,19 +1,17 @@
-# .NET Diagnostics Report Full Report - 09/09/2024 06:19:13
+# .NET Diagnostics Report Full Report - 09/16/2024 06:18:48
 
-Total issues: 82
+Total issues: 75
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 34
+Issues in query: 32
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#4908](https://github.com/dotnet/diagnostics/issues/4908) | `dotnet-trace collect --format SpeedScope` creates a new file with `.json` extension instead of using the filename provided |
-| [dotnet/diagnostics#4850](https://github.com/dotnet/diagnostics/issues/4850) | DumpIL SOS command does not properly handle DynamicMethods in .NET Core |
+| [dotnet/diagnostics#4935](https://github.com/dotnet/diagnostics/issues/4935) | dotnet-monitor unexpected gc heap generation output |
 | [dotnet/diagnostics#4843](https://github.com/dotnet/diagnostics/issues/4843) | CreateCounter can create corruptable counter |
 | [dotnet/diagnostics#4826](https://github.com/dotnet/diagnostics/issues/4826) | dotnet stack hangup on trying to get the stackframes of a stuck process |
 | [dotnet/diagnostics#4814](https://github.com/dotnet/diagnostics/issues/4814) | DumpStackObjects doesn't seem to work if the thread is on the alternate signal stack |
-| [dotnet/diagnostics#4803](https://github.com/dotnet/diagnostics/issues/4803) | dotnet dump analyze threadpool fails to obtain threadpool data  |
 | [dotnet/diagnostics#4795](https://github.com/dotnet/diagnostics/issues/4795) | Update GCInfo deserializer once https://github.com/dotnet/runtime/pull/104336 merges |
 | [dotnet/diagnostics#4782](https://github.com/dotnet/diagnostics/issues/4782) | [Test] Microsoft.Diagnostics.Monitoring.EventPipe.UnitTests.EventCounterTriggerWithEventPipePipelineTest fails intermittently  |
 | [dotnet/diagnostics#4779](https://github.com/dotnet/diagnostics/issues/4779) |  dotnet-dump analyze does not work on M3 macOS |
@@ -45,7 +43,7 @@ Issues in query: 34
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 5
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -53,7 +51,6 @@ Issues in query: 5
 | [dotnet/runtime#104670](https://github.com/dotnet/runtime/issues/104670) | BinderTracingTest.ResolutionFlow times out |
 | [dotnet/runtime#102572](https://github.com/dotnet/runtime/issues/102572) | It is not possible to pass the ID of the garbage collection when the .NET provider is enabled with the GCHeapCollect(0x800000) keyword |
 | [dotnet/runtime#102004](https://github.com/dotnet/runtime/issues/102004) | MemoryAllocatedForJitCode ETW Event missing in trace, but CLRStackWalk still fires |
-| [dotnet/runtime#91687](https://github.com/dotnet/runtime/issues/91687) | **\<OUT OF SLA\>** CoreCLR clretwallmain.h contains DotNETRuntimeMonoProfiler events |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
@@ -67,14 +64,13 @@ Issues in query: 3
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 8
+Issues in query: 7
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#106890](https://github.com/dotnet/runtime/issues/106890) | Timeout in runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.cmd |
 | [dotnet/runtime#106087](https://github.com/dotnet/runtime/issues/106087) | [Tracing] EventProvider Disposal hangs within a callback |
 | [dotnet/runtime#104322](https://github.com/dotnet/runtime/issues/104322) | `ThreadPoolWorkQueue..ctor` randomly will never return |
-| [dotnet/runtime#99816](https://github.com/dotnet/runtime/issues/99816) | Higher Memory Usage for the EventSource Class |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
 | [dotnet/runtime#96968](https://github.com/dotnet/runtime/issues/96968) | Test failure BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds_WithEtwListener |
 | [dotnet/runtime#96219](https://github.com/dotnet/runtime/issues/96219) | Potential Deadlock When Disposing EventListeners Concurrently |
@@ -82,14 +78,12 @@ Issues in query: 8
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 25
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#107444](https://github.com/dotnet/runtime/issues/107444) | WriteXorExecute double mapping causes .NET apps to AV when native debuggers set breakpoints |
 | [dotnet/runtime#107344](https://github.com/dotnet/runtime/issues/107344) | Issues with memory dumps and Single File App |
-| [dotnet/runtime#107263](https://github.com/dotnet/runtime/issues/107263) | After upgrading to .NET 9, simple C# statement triggers fatal error in Visual Studio 2022 when Control-C is used to exit |
-| [dotnet/runtime#107217](https://github.com/dotnet/runtime/issues/107217) | Managed debuggers not recognizing that managed code has been loaded when running tests via VS Test Explorer on main |
 | [dotnet/runtime#107139](https://github.com/dotnet/runtime/issues/107139) | [profiler] It doesn't seem to be possible to get information about generic arguments of the defining class of a function from JIT compilation callbacks |
 | [dotnet/runtime#106946](https://github.com/dotnet/runtime/issues/106946) | Test failure: profiler\\elt\\slowpatheltleave\\slowpatheltleave.cmd |
 | [dotnet/runtime#106243](https://github.com/dotnet/runtime/issues/106243) | Test failure: profiler/transitions/transitions/transitions.sh |
@@ -101,7 +95,6 @@ Issues in query: 25
 | [dotnet/runtime#105690](https://github.com/dotnet/runtime/issues/105690) | Quality of native perf profiling on x64 |
 | [dotnet/runtime#105132](https://github.com/dotnet/runtime/issues/105132) | Unmanaged memory growth with DiagnosticsClient |
 | [dotnet/runtime#104459](https://github.com/dotnet/runtime/issues/104459) | App crashes with an output "Trace/Breakpoint Trap" on Linux when a P/Invoke callback is called from a native library if the dotnet debugger is attached. |
-| [dotnet/runtime#103955](https://github.com/dotnet/runtime/issues/103955) | Debugger Crashes when using breakpoints with a compiled runtime in debug mode _CrtlsValidHeapPointer(block) |
 | [dotnet/runtime#102767](https://github.com/dotnet/runtime/issues/102767) | Patch skipping crashing in functions marked with [UnmanagedCallersOnly] |
 | [dotnet/runtime#101310](https://github.com/dotnet/runtime/issues/101310) | coreclr + vsdbg failure to get stack trace from remote Kubernetes pod |
 | [dotnet/runtime#99487](https://github.com/dotnet/runtime/issues/99487) | CLR_GCHEAPCOLLECT_KEYWORD triggers a GC twice |
