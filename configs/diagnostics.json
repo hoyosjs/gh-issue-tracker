@@ -27,7 +27,8 @@
                 "Epic",
                 "feature-request",
                 "linkable-framework",
-                "tracking-external-issue"
+                "tracking-external-issue",
+                "api-suggestion"
             ],
             "ExcludedMilestone": "future",
             "LabelGroups": [ 
