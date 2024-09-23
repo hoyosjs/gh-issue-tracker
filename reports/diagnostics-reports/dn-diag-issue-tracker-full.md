@@ -1,15 +1,13 @@
-# .NET Diagnostics Report Full Report - 09/16/2024 06:18:48
+# .NET Diagnostics Report Full Report - 09/23/2024 06:18:52
 
-Total issues: 75
+Total issues: 74
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 32
+Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#4935](https://github.com/dotnet/diagnostics/issues/4935) | dotnet-monitor unexpected gc heap generation output |
-| [dotnet/diagnostics#4843](https://github.com/dotnet/diagnostics/issues/4843) | CreateCounter can create corruptable counter |
 | [dotnet/diagnostics#4826](https://github.com/dotnet/diagnostics/issues/4826) | dotnet stack hangup on trying to get the stackframes of a stuck process |
 | [dotnet/diagnostics#4814](https://github.com/dotnet/diagnostics/issues/4814) | DumpStackObjects doesn't seem to work if the thread is on the alternate signal stack |
 | [dotnet/diagnostics#4795](https://github.com/dotnet/diagnostics/issues/4795) | Update GCInfo deserializer once https://github.com/dotnet/runtime/pull/104336 merges |
@@ -22,24 +20,19 @@ Issues in query: 32
 | [dotnet/diagnostics#4654](https://github.com/dotnet/diagnostics/issues/4654) | [SOS][tests] OtherCommands(config: projectk.sdk.prebuilt*) VerifyOutput: no last command output or debugger exited unexpectedly |
 | [dotnet/diagnostics#4646](https://github.com/dotnet/diagnostics/issues/4646) | dotnet-counters not showing metric names |
 | [dotnet/diagnostics#4564](https://github.com/dotnet/diagnostics/issues/4564) | dotnet-counters does not report values from multiple Metrics Meters with distinct tags |
-| [dotnet/diagnostics#4563](https://github.com/dotnet/diagnostics/issues/4563) | Error: No CLR runtime found (dump collected with 8.0.0) |
 | [dotnet/diagnostics#4557](https://github.com/dotnet/diagnostics/issues/4557) | Timeout while executing StartEventPipeSession |
 | [dotnet/diagnostics#4524](https://github.com/dotnet/diagnostics/issues/4524) | dotnet-dsrouter and dotnet-gcdump doc needed when default port is occupied |
 | [dotnet/diagnostics#4522](https://github.com/dotnet/diagnostics/issues/4522) | Unexpected error in .NET Core 3.1 when running "Collect metrics" sample from MS documentation |
 | [dotnet/diagnostics#4491](https://github.com/dotnet/diagnostics/issues/4491) | Better document the difference between `DumpType.Normal` and `DumpType.Triage` |
 | [dotnet/diagnostics#4484](https://github.com/dotnet/diagnostics/issues/4484) | CLRMD floods logs with `EnumerateStackRoots found an entry with Object == 0, addr:73664ff040 srcType:0` while enumerating root paths for core dump created under linux |
 | [dotnet/diagnostics#4446](https://github.com/dotnet/diagnostics/issues/4446) | Crashing attempting to call `dumplog` |
-| [dotnet/diagnostics#4430](https://github.com/dotnet/diagnostics/issues/4430) | Can't analyze dump of arm64ec process |
 | [dotnet/diagnostics#4415](https://github.com/dotnet/diagnostics/issues/4415) | dotnet-counters long value rendered format |
 | [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | dotnet-dump not working when process run as user |
 | [dotnet/diagnostics#4314](https://github.com/dotnet/diagnostics/issues/4314) | !clrstack reports incorrect method names when <> is encountered |
-| [dotnet/diagnostics#4259](https://github.com/dotnet/diagnostics/issues/4259) | libsosplugin cannot be loaded into lldb (macos arm64) |
-| [dotnet/diagnostics#4191](https://github.com/dotnet/diagnostics/issues/4191) | **\<OUT OF SLA\>** Fix Microsoft.Diagnostics.NETCore.Client.PerMapTests.GenerateAllTest and GeneratePerfMapTest for 8.0 |
-| [dotnet/diagnostics#4171](https://github.com/dotnet/diagnostics/issues/4171) | **\<OUT OF SLA\>** Please document CorGCReferenceType::CorHandleWeakWinRT |
+| [dotnet/diagnostics#4259](https://github.com/dotnet/diagnostics/issues/4259) | **\<OUT OF SLA\>** libsosplugin cannot be loaded into lldb (macos arm64) |
 | [dotnet/diagnostics#4150](https://github.com/dotnet/diagnostics/issues/4150) | **\<OUT OF SLA\>** Document how to use createdump on native AOT apps |
 | [dotnet/diagnostics#4825](https://github.com/dotnet/diagnostics/issues/4825) | **\<OUT OF SLA\>** NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 | [dotnet/diagnostics#3506](https://github.com/dotnet/diagnostics/issues/3506) | **\<OUT OF SLA\>** How to debug stack overflow errors on Windows |
-| [dotnet/diagnostics#2541](https://github.com/dotnet/diagnostics/issues/2541) | **\<OUT OF SLA\>** TestLogsAllCategoriesDefaultLevelFallback fails frequently |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
@@ -58,16 +51,17 @@ Issues in query: 3
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#107970](https://github.com/dotnet/runtime/issues/107970) | Potential memory leak in ep_file_write_event error path |
 | [dotnet/runtime#105980](https://github.com/dotnet/runtime/issues/105980) | Port System.Diagnostics docs for .NET 9 APIs |
 | [dotnet/runtime#105808](https://github.com/dotnet/runtime/issues/105808) | [Help] [RISC-V] GC crash on System.Diagnostics.Tests.DiagnosticSourceTest.AllSubscriberStress |
-| [dotnet/runtime#91191](https://github.com/dotnet/runtime/issues/91191) | **\<OUT OF SLA\>** [API Proposal]: An attribute to indicate boxed value type is not expected for certain API |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 7
+Issues in query: 8
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#107919](https://github.com/dotnet/runtime/issues/107919) | .NET event counters from System.Runtime are not reported in some circumstances in .NET 9 RC 1 |
 | [dotnet/runtime#106890](https://github.com/dotnet/runtime/issues/106890) | Timeout in runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.cmd |
 | [dotnet/runtime#106087](https://github.com/dotnet/runtime/issues/106087) | [Tracing] EventProvider Disposal hangs within a callback |
 | [dotnet/runtime#104322](https://github.com/dotnet/runtime/issues/104322) | `ThreadPoolWorkQueue..ctor` randomly will never return |
@@ -78,13 +72,14 @@ Issues in query: 7
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 22
+Issues in query: 23
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#108023](https://github.com/dotnet/runtime/issues/108023) | createdump fails on RHEL 8/arm64 with "stack smashing detected" |
+| [dotnet/runtime#107936](https://github.com/dotnet/runtime/issues/107936) | Local build of runtime failing when running CDac tool |
 | [dotnet/runtime#107444](https://github.com/dotnet/runtime/issues/107444) | WriteXorExecute double mapping causes .NET apps to AV when native debuggers set breakpoints |
 | [dotnet/runtime#107344](https://github.com/dotnet/runtime/issues/107344) | Issues with memory dumps and Single File App |
-| [dotnet/runtime#107139](https://github.com/dotnet/runtime/issues/107139) | [profiler] It doesn't seem to be possible to get information about generic arguments of the defining class of a function from JIT compilation callbacks |
 | [dotnet/runtime#106946](https://github.com/dotnet/runtime/issues/106946) | Test failure: profiler\\elt\\slowpatheltleave\\slowpatheltleave.cmd |
 | [dotnet/runtime#106243](https://github.com/dotnet/runtime/issues/106243) | Test failure: profiler/transitions/transitions/transitions.sh |
 | [dotnet/runtime#106241](https://github.com/dotnet/runtime/issues/106241) | Test failure: profiler\\assembly\\ALCTest\\ALCTest.cmd |
@@ -107,19 +102,23 @@ Issues in query: 22
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 2
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#108078](https://github.com/dotnet/runtime/issues/108078) | `chrome-DebuggerTests` timing out |
+| [dotnet/runtime#108072](https://github.com/dotnet/runtime/issues/108072) | [wasm] DebuggerTests.Inspector.OpenSessionAsync |
 | [dotnet/runtime#106376](https://github.com/dotnet/runtime/issues/106376) | 'chrome-DebuggerTests.ExceptionTests' timing out |
 | [dotnet/runtime#101554](https://github.com/dotnet/runtime/issues/101554) | Blazor client side web debugging fails to function when run within IIS |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
 
-Issues in query: 4
+Issues in query: 6
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#108078](https://github.com/dotnet/runtime/issues/108078) | `chrome-DebuggerTests` timing out |
+| [dotnet/runtime#108071](https://github.com/dotnet/runtime/issues/108071) | [wasm] DebuggerTests.WasmHostProvider.LaunchHostAsync |
 | [dotnet/runtime#106064](https://github.com/dotnet/runtime/issues/106064) | [mono][ios] Mono prevents crash logs from being generated in case `SIGSEGV` is raised from native code |
 | [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
 | [dotnet/runtime#93551](https://github.com/dotnet/runtime/issues/93551) | [wasm] run browser-bench sample with https connection |
