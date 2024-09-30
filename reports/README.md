@@ -7,13 +7,13 @@
 ```mermaid
 xychart-beta
   title "Totals .NET Diagnostics Report"
-  x-axis "Date" ["07-22-24", "07-29-24", "08-05-24", "08-12-24", "08-19-24", "08-27-24", "09-02-24", "09-09-24", "09-16-24", "09-23-24"]
+  x-axis "Date" ["07-29-24", "08-05-24", "08-12-24", "08-19-24", "08-27-24", "09-02-24", "09-09-24", "09-16-24", "09-23-24", "09-30-24"]
   y-axis "Total"
-  line [81, 74, 77, 76, 79, 78, 81, 82, 75, 74]
+  line [74, 77, 76, 79, 78, 81, 82, 75, 74, 64]
 ```
 
 - [.NET Diagnostics Report Full Report](./diagnostics-reports/dn-diag-issue-tracker-full.md)
-- [.NET Diagnostics Report Latest Comparative Report (2024-09-23-06-18)](./diagnostics-reports/2024-09-23-06-18/dn-diag-issue-tracker-comp.md)
+- [.NET Diagnostics Report Latest Comparative Report (2024-09-30-06-19)](./diagnostics-reports/2024-09-30-06-19/dn-diag-issue-tracker-comp.md)
 - [.NET Diagnostics Report CSV](./diagnostics-reports/dn-diag-issue-tracker-totals.csv)
 
 [marker]: <> (End:diagnostics)
