@@ -1,10 +1,10 @@
-# .NET Diagnostics Report Full Report - 09/30/2024 06:19:24
+# .NET Diagnostics Report Full Report - 10/07/2024 06:19:05
 
-Total issues: 64
+Total issues: 61
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 21
+Issues in query: 19
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -24,10 +24,8 @@ Issues in query: 21
 | [dotnet/diagnostics#4522](https://github.com/dotnet/diagnostics/issues/4522) | Unexpected error in .NET Core 3.1 when running "Collect metrics" sample from MS documentation |
 | [dotnet/diagnostics#4491](https://github.com/dotnet/diagnostics/issues/4491) | Better document the difference between `DumpType.Normal` and `DumpType.Triage` |
 | [dotnet/diagnostics#4484](https://github.com/dotnet/diagnostics/issues/4484) | CLRMD floods logs with `EnumerateStackRoots found an entry with Object == 0, addr:73664ff040 srcType:0` while enumerating root paths for core dump created under linux |
-| [dotnet/diagnostics#4415](https://github.com/dotnet/diagnostics/issues/4415) | dotnet-counters long value rendered format |
 | [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | dotnet-dump not working when process run as user |
 | [dotnet/diagnostics#4314](https://github.com/dotnet/diagnostics/issues/4314) | !clrstack reports incorrect method names when <> is encountered |
-| [dotnet/diagnostics#4259](https://github.com/dotnet/diagnostics/issues/4259) | **\<OUT OF SLA\>** libsosplugin cannot be loaded into lldb (macos arm64) |
 | [dotnet/diagnostics#4825](https://github.com/dotnet/diagnostics/issues/4825) | **\<OUT OF SLA\>** NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
@@ -62,23 +60,22 @@ Issues in query: 5
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 22
+Issues in query: 21
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#108553](https://github.com/dotnet/runtime/issues/108553) | [cdac] .NET10: Implement DAC APIs used by CLRMA |
+| [dotnet/runtime#108541](https://github.com/dotnet/runtime/issues/108541) | Cannot step over Debugger.Break() in m3 lldb |
+| [dotnet/runtime#108450](https://github.com/dotnet/runtime/issues/108450) | [cdac] Implement GetPEFileBase |
 | [dotnet/runtime#108273](https://github.com/dotnet/runtime/issues/108273) | [Profiler] Duplicate `GarbageCollectionFinished` notification |
-| [dotnet/runtime#108230](https://github.com/dotnet/runtime/issues/108230) | [Profiler] Ability to avoid `ICorProfilerCallback::ObjectsAllocatedByClass` callback when `COR_PRF_MONITOR_GC` is set. |
-| [dotnet/runtime#108189](https://github.com/dotnet/runtime/issues/108189) | Static readonly list not being enumerated in second foreach |
 | [dotnet/runtime#107344](https://github.com/dotnet/runtime/issues/107344) | Issues with memory dumps and Single File App |
 | [dotnet/runtime#106946](https://github.com/dotnet/runtime/issues/106946) | Test failure: profiler\\elt\\slowpatheltleave\\slowpatheltleave.cmd |
 | [dotnet/runtime#106243](https://github.com/dotnet/runtime/issues/106243) | Test failure: profiler/transitions/transitions/transitions.sh |
 | [dotnet/runtime#106241](https://github.com/dotnet/runtime/issues/106241) | Test failure: profiler\\assembly\\ALCTest\\ALCTest.cmd |
-| [dotnet/runtime#106194](https://github.com/dotnet/runtime/issues/106194) | PosixSignalRegistration.Create hangs debugger on MacOS (Rider & VSCode) |
 | [dotnet/runtime#106148](https://github.com/dotnet/runtime/issues/106148) | [DAC][ReJIT] ReJitManager::IsReJITEnabled checked DOTNET_ProfAPI_RejitOnAttach in the wrong environment |
 | [dotnet/runtime#106104](https://github.com/dotnet/runtime/issues/106104) | Process silently exits after patching self-contained app with Debug bits when specific breakpoints are set |
 | [dotnet/runtime#105712](https://github.com/dotnet/runtime/issues/105712) | Identification of JIT generated functions by their address |
 | [dotnet/runtime#105690](https://github.com/dotnet/runtime/issues/105690) | Quality of native perf profiling on x64 |
-| [dotnet/runtime#105132](https://github.com/dotnet/runtime/issues/105132) | Unmanaged memory growth with DiagnosticsClient |
 | [dotnet/runtime#104459](https://github.com/dotnet/runtime/issues/104459) | App crashes with an output "Trace/Breakpoint Trap" on Linux when a P/Invoke callback is called from a native library if the dotnet debugger is attached. |
 | [dotnet/runtime#102767](https://github.com/dotnet/runtime/issues/102767) | Patch skipping crashing in functions marked with [UnmanagedCallersOnly] |
 | [dotnet/runtime#101310](https://github.com/dotnet/runtime/issues/101310) | coreclr + vsdbg failure to get stack trace from remote Kubernetes pod |
