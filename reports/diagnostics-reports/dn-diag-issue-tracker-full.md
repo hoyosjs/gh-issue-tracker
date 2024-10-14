@@ -1,10 +1,10 @@
-# .NET Diagnostics Report Full Report - 10/07/2024 06:19:05
+# .NET Diagnostics Report Full Report - 10/14/2024 06:19:37
 
-Total issues: 61
+Total issues: 54
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 19
+Issues in query: 16
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -18,14 +18,11 @@ Issues in query: 19
 | [dotnet/diagnostics#4717](https://github.com/dotnet/diagnostics/issues/4717) | [Test] StartEventPipeSessionWithoutStackwalkTestAsync fails with ServerNotAvailableException |
 | [dotnet/diagnostics#4655](https://github.com/dotnet/diagnostics/issues/4655) | [test] Method not found Xunit.Sdk.XunitException..ctor |
 | [dotnet/diagnostics#4654](https://github.com/dotnet/diagnostics/issues/4654) | [SOS][tests] OtherCommands(config: projectk.sdk.prebuilt*) VerifyOutput: no last command output or debugger exited unexpectedly |
-| [dotnet/diagnostics#4646](https://github.com/dotnet/diagnostics/issues/4646) | dotnet-counters not showing metric names |
 | [dotnet/diagnostics#4557](https://github.com/dotnet/diagnostics/issues/4557) | Timeout while executing StartEventPipeSession |
 | [dotnet/diagnostics#4524](https://github.com/dotnet/diagnostics/issues/4524) | dotnet-dsrouter and dotnet-gcdump doc needed when default port is occupied |
-| [dotnet/diagnostics#4522](https://github.com/dotnet/diagnostics/issues/4522) | Unexpected error in .NET Core 3.1 when running "Collect metrics" sample from MS documentation |
-| [dotnet/diagnostics#4491](https://github.com/dotnet/diagnostics/issues/4491) | Better document the difference between `DumpType.Normal` and `DumpType.Triage` |
 | [dotnet/diagnostics#4484](https://github.com/dotnet/diagnostics/issues/4484) | CLRMD floods logs with `EnumerateStackRoots found an entry with Object == 0, addr:73664ff040 srcType:0` while enumerating root paths for core dump created under linux |
 | [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | dotnet-dump not working when process run as user |
-| [dotnet/diagnostics#4314](https://github.com/dotnet/diagnostics/issues/4314) | !clrstack reports incorrect method names when <> is encountered |
+| [dotnet/diagnostics#4314](https://github.com/dotnet/diagnostics/issues/4314) | **\<OUT OF SLA\>** !clrstack reports incorrect method names when <> is encountered |
 | [dotnet/diagnostics#4825](https://github.com/dotnet/diagnostics/issues/4825) | **\<OUT OF SLA\>** NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
@@ -40,11 +37,7 @@ Issues in query: 3
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
-Issues in query: 1
-
-| **Issue Number** | **Title** |
-| :--------------: | --------- |
-| [dotnet/runtime#105808](https://github.com/dotnet/runtime/issues/105808) | [Help] [RISC-V] GC crash on System.Diagnostics.Tests.DiagnosticSourceTest.AllSubscriberStress |
+Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
@@ -60,13 +53,11 @@ Issues in query: 5
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 21
+Issues in query: 19
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#108553](https://github.com/dotnet/runtime/issues/108553) | [cdac] .NET10: Implement DAC APIs used by CLRMA |
-| [dotnet/runtime#108541](https://github.com/dotnet/runtime/issues/108541) | Cannot step over Debugger.Break() in m3 lldb |
-| [dotnet/runtime#108450](https://github.com/dotnet/runtime/issues/108450) | [cdac] Implement GetPEFileBase |
+| [dotnet/runtime#108829](https://github.com/dotnet/runtime/issues/108829) | Test failure: profiler/transitions/transitions/transitions.cmd |
 | [dotnet/runtime#108273](https://github.com/dotnet/runtime/issues/108273) | [Profiler] Duplicate `GarbageCollectionFinished` notification |
 | [dotnet/runtime#107344](https://github.com/dotnet/runtime/issues/107344) | Issues with memory dumps and Single File App |
 | [dotnet/runtime#106946](https://github.com/dotnet/runtime/issues/106946) | Test failure: profiler\\elt\\slowpatheltleave\\slowpatheltleave.cmd |
@@ -74,7 +65,6 @@ Issues in query: 21
 | [dotnet/runtime#106241](https://github.com/dotnet/runtime/issues/106241) | Test failure: profiler\\assembly\\ALCTest\\ALCTest.cmd |
 | [dotnet/runtime#106148](https://github.com/dotnet/runtime/issues/106148) | [DAC][ReJIT] ReJitManager::IsReJITEnabled checked DOTNET_ProfAPI_RejitOnAttach in the wrong environment |
 | [dotnet/runtime#106104](https://github.com/dotnet/runtime/issues/106104) | Process silently exits after patching self-contained app with Debug bits when specific breakpoints are set |
-| [dotnet/runtime#105712](https://github.com/dotnet/runtime/issues/105712) | Identification of JIT generated functions by their address |
 | [dotnet/runtime#105690](https://github.com/dotnet/runtime/issues/105690) | Quality of native perf profiling on x64 |
 | [dotnet/runtime#104459](https://github.com/dotnet/runtime/issues/104459) | App crashes with an output "Trace/Breakpoint Trap" on Linux when a P/Invoke callback is called from a native library if the dotnet debugger is attached. |
 | [dotnet/runtime#102767](https://github.com/dotnet/runtime/issues/102767) | Patch skipping crashing in functions marked with [UnmanagedCallersOnly] |
@@ -83,6 +73,7 @@ Issues in query: 21
 | [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | ExecutionEngineException on using step into while debugging |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | **\<OUT OF SLA\>** Lock contention in StackTrace/Exception.ToString() |
 | [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | **\<OUT OF SLA\>** Avalonia calling into the runtime after shut down |
+| [dotnet/runtime#87574](https://github.com/dotnet/runtime/issues/87574) | **\<OUT OF SLA\>** [EnC] CoreCLR assertion in System.Reflection.Metadata.ApplyUpdateTest.TestGenericAddStaticField |
 | [dotnet/runtime#71472](https://github.com/dotnet/runtime/issues/71472) | **\<OUT OF SLA\>** dotnet-dump makes process to double its used memory and fails |
 | [dotnet/runtime#68018](https://github.com/dotnet/runtime/issues/68018) | **\<OUT OF SLA\>** Application crash while stepping into if 'justMyCode' is disabled |
 
@@ -99,7 +90,7 @@ Issues in query: 4
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
 
-Issues in query: 7
+Issues in query: 6
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -109,7 +100,6 @@ Issues in query: 7
 | [dotnet/runtime#106064](https://github.com/dotnet/runtime/issues/106064) | [mono][ios] Mono prevents crash logs from being generated in case `SIGSEGV` is raised from native code |
 | [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
 | [dotnet/runtime#93551](https://github.com/dotnet/runtime/issues/93551) | [wasm] run browser-bench sample with https connection |
-| [dotnet/runtime#91049](https://github.com/dotnet/runtime/issues/91049) | **\<OUT OF SLA\>** Blazor - WebAssembly `build_id` section |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics-mono
 
