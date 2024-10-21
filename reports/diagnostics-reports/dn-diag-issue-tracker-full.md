@@ -1,14 +1,13 @@
-# .NET Diagnostics Report Full Report - 10/14/2024 06:19:37
+# .NET Diagnostics Report Full Report - 10/21/2024 06:19:41
 
-Total issues: 54
+Total issues: 56
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 16
+Issues in query: 15
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#4826](https://github.com/dotnet/diagnostics/issues/4826) | dotnet stack hangup on trying to get the stackframes of a stuck process |
 | [dotnet/diagnostics#4814](https://github.com/dotnet/diagnostics/issues/4814) | DumpStackObjects doesn't seem to work if the thread is on the alternate signal stack |
 | [dotnet/diagnostics#4795](https://github.com/dotnet/diagnostics/issues/4795) | Update GCInfo deserializer once https://github.com/dotnet/runtime/pull/104336 merges |
 | [dotnet/diagnostics#4782](https://github.com/dotnet/diagnostics/issues/4782) | [Test] Microsoft.Diagnostics.Monitoring.EventPipe.UnitTests.EventCounterTriggerWithEventPipePipelineTest fails intermittently  |
@@ -41,10 +40,11 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 5
+Issues in query: 6
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#108919](https://github.com/dotnet/runtime/issues/108919) | Type initializer for CDSCollectionETWBCLProvider threw exception - NullReferenceException in InvokeStub_EventSourceAttribute.set_Guid |
 | [dotnet/runtime#106890](https://github.com/dotnet/runtime/issues/106890) | Timeout in runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.cmd |
 | [dotnet/runtime#106087](https://github.com/dotnet/runtime/issues/106087) | [Tracing] EventProvider Disposal hangs within a callback |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
@@ -53,11 +53,12 @@ Issues in query: 5
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 19
+Issues in query: 20
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#108829](https://github.com/dotnet/runtime/issues/108829) | Test failure: profiler/transitions/transitions/transitions.cmd |
+| [dotnet/runtime#108912](https://github.com/dotnet/runtime/issues/108912) | Runtime System.Private.CoreLib patches pdbs |
+| [dotnet/runtime#108893](https://github.com/dotnet/runtime/issues/108893) | [Perf] Windows/x64: 2 Regressions on 10/9/2024 1:12:38 AM |
 | [dotnet/runtime#108273](https://github.com/dotnet/runtime/issues/108273) | [Profiler] Duplicate `GarbageCollectionFinished` notification |
 | [dotnet/runtime#107344](https://github.com/dotnet/runtime/issues/107344) | Issues with memory dumps and Single File App |
 | [dotnet/runtime#106946](https://github.com/dotnet/runtime/issues/106946) | Test failure: profiler\\elt\\slowpatheltleave\\slowpatheltleave.cmd |
@@ -79,10 +80,11 @@ Issues in query: 19
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 4
+Issues in query: 5
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#109025](https://github.com/dotnet/runtime/issues/109025) | [debugger] Inspector exceptions in debugger tests |
 | [dotnet/runtime#108078](https://github.com/dotnet/runtime/issues/108078) | `chrome-DebuggerTests` timing out |
 | [dotnet/runtime#108072](https://github.com/dotnet/runtime/issues/108072) | [wasm] DebuggerTests.Inspector.OpenSessionAsync |
 | [dotnet/runtime#106376](https://github.com/dotnet/runtime/issues/106376) | 'chrome-DebuggerTests.ExceptionTests' timing out |
@@ -99,7 +101,7 @@ Issues in query: 6
 | [dotnet/runtime#108071](https://github.com/dotnet/runtime/issues/108071) | [wasm] DebuggerTests.WasmHostProvider.LaunchHostAsync |
 | [dotnet/runtime#106064](https://github.com/dotnet/runtime/issues/106064) | [mono][ios] Mono prevents crash logs from being generated in case `SIGSEGV` is raised from native code |
 | [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
-| [dotnet/runtime#93551](https://github.com/dotnet/runtime/issues/93551) | [wasm] run browser-bench sample with https connection |
+| [dotnet/runtime#93551](https://github.com/dotnet/runtime/issues/93551) | **\<OUT OF SLA\>** [wasm] run browser-bench sample with https connection |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics-mono
 
