@@ -28,7 +28,18 @@
                 "feature-request",
                 "linkable-framework",
                 "tracking-external-issue",
-                "api-suggestion"
+                "api-suggestion",
+                "os-android", 
+                "os-maccatalyst", 
+                "os-ios", 
+                "os-tizen", 
+                "os-tvos", 
+                "os-wasi", 
+                "os-browser",
+                "arch-loongarch64",
+                "arch-riscv",
+                "arch-s390x",
+                "arch-wasm"
             ],
             "ExcludedMilestone": "future",
             "LabelGroups": [ 
@@ -39,7 +50,8 @@
                 [ "area-Debugger-mono" ],
                 [ "area-Diagnostics-mono" ],
                 [ "area-System.Diagnostics-mono" ],
-                [ "area-Tracing-mono" ]
+                [ "area-Tracing-mono" ],
+                [ "area-enc-mono" ]
             ],
             "Version": 1
         }
