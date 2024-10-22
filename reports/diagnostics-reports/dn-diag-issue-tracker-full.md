@@ -1,6 +1,6 @@
-# .NET Diagnostics Report Full Report - 10/21/2024 06:19:41
+# .NET Diagnostics Report Full Report - 10/22/2024 21:38:55
 
-Total issues: 56
+Total issues: 58
 
 ## v1,1-dotnet/diagnostics
 
@@ -36,14 +36,19 @@ Issues in query: 3
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
 
-Issues in query: 0
-
-## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
-
-Issues in query: 6
+Issues in query: 1
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#109078](https://github.com/dotnet/runtime/issues/109078) | Missing activity due to invalid nibble encoding in ActivityTracker.AddIdToGuid for some 12 bits values in EventPipe ActivityID generation |
+
+## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
+
+Issues in query: 7
+
+| **Issue Number** | **Title** |
+| :--------------: | --------- |
+| [dotnet/runtime#109101](https://github.com/dotnet/runtime/issues/109101) | Event Tracing for TransactionScope does not work. |
 | [dotnet/runtime#108919](https://github.com/dotnet/runtime/issues/108919) | Type initializer for CDSCollectionETWBCLProvider threw exception - NullReferenceException in InvokeStub_EventSourceAttribute.set_Guid |
 | [dotnet/runtime#106890](https://github.com/dotnet/runtime/issues/106890) | Timeout in runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.cmd |
 | [dotnet/runtime#106087](https://github.com/dotnet/runtime/issues/106087) | [Tracing] EventProvider Disposal hangs within a callback |
@@ -53,10 +58,12 @@ Issues in query: 6
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 20
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#109103](https://github.com/dotnet/runtime/issues/109103) | Running console application that creates and joins with short-lived threads leaks handles when debugger is attached |
+| [dotnet/runtime#109075](https://github.com/dotnet/runtime/issues/109075) | Diagnostics client fails to create dump when path has spaces |
 | [dotnet/runtime#108912](https://github.com/dotnet/runtime/issues/108912) | Runtime System.Private.CoreLib patches pdbs |
 | [dotnet/runtime#108893](https://github.com/dotnet/runtime/issues/108893) | [Perf] Windows/x64: 2 Regressions on 10/9/2024 1:12:38 AM |
 | [dotnet/runtime#108273](https://github.com/dotnet/runtime/issues/108273) | [Profiler] Duplicate `GarbageCollectionFinished` notification |
@@ -80,28 +87,24 @@ Issues in query: 20
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 5
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#109025](https://github.com/dotnet/runtime/issues/109025) | [debugger] Inspector exceptions in debugger tests |
+| [dotnet/runtime#109067](https://github.com/dotnet/runtime/issues/109067) | Issues with the new .NET 9+ Mono Debugger |
 | [dotnet/runtime#108078](https://github.com/dotnet/runtime/issues/108078) | `chrome-DebuggerTests` timing out |
 | [dotnet/runtime#108072](https://github.com/dotnet/runtime/issues/108072) | [wasm] DebuggerTests.Inspector.OpenSessionAsync |
-| [dotnet/runtime#106376](https://github.com/dotnet/runtime/issues/106376) | 'chrome-DebuggerTests.ExceptionTests' timing out |
 | [dotnet/runtime#101554](https://github.com/dotnet/runtime/issues/101554) | Blazor client side web debugging fails to function when run within IIS |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
 
-Issues in query: 6
+Issues in query: 3
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#108211](https://github.com/dotnet/runtime/issues/108211) | Cross-VM Exception Unwinding |
 | [dotnet/runtime#108078](https://github.com/dotnet/runtime/issues/108078) | `chrome-DebuggerTests` timing out |
 | [dotnet/runtime#108071](https://github.com/dotnet/runtime/issues/108071) | [wasm] DebuggerTests.WasmHostProvider.LaunchHostAsync |
-| [dotnet/runtime#106064](https://github.com/dotnet/runtime/issues/106064) | [mono][ios] Mono prevents crash logs from being generated in case `SIGSEGV` is raised from native code |
-| [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
-| [dotnet/runtime#93551](https://github.com/dotnet/runtime/issues/93551) | **\<OUT OF SLA\>** [wasm] run browser-bench sample with https connection |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics-mono
 
@@ -114,4 +117,13 @@ Issues in query: 1
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#107315](https://github.com/dotnet/runtime/issues/107315) | [Mono] NetTrace Collected mismatches expected CLR Instance name |
+
+## v1,1-dotnet/runtime|area-enc-mono
+
+Issues in query: 2
+
+| **Issue Number** | **Title** |
+| :--------------: | --------- |
+| [dotnet/runtime#108097](https://github.com/dotnet/runtime/issues/108097) | EnC: Mono throws when member accessibility is changed |
+| [dotnet/runtime#66513](https://github.com/dotnet/runtime/issues/66513) | **\<OUT OF SLA\>** [hot reload] Update test infrastructure to consume metadata update handler type ids |
 
