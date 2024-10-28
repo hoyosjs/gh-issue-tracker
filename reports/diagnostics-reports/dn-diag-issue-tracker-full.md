@@ -1,13 +1,15 @@
-# .NET Diagnostics Report Full Report - 10/21/2024 06:19:41
+# .NET Diagnostics Report Full Report - 10/28/2024 06:19:51
 
-Total issues: 56
+Total issues: 57
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 15
+Issues in query: 17
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#5023](https://github.com/dotnet/diagnostics/issues/5023) | Help unmanaged memory |
+| [dotnet/diagnostics#5020](https://github.com/dotnet/diagnostics/issues/5020) | Diagnostics client fails to create dump when path has spaces |
 | [dotnet/diagnostics#4814](https://github.com/dotnet/diagnostics/issues/4814) | DumpStackObjects doesn't seem to work if the thread is on the alternate signal stack |
 | [dotnet/diagnostics#4795](https://github.com/dotnet/diagnostics/issues/4795) | Update GCInfo deserializer once https://github.com/dotnet/runtime/pull/104336 merges |
 | [dotnet/diagnostics#4782](https://github.com/dotnet/diagnostics/issues/4782) | [Test] Microsoft.Diagnostics.Monitoring.EventPipe.UnitTests.EventCounterTriggerWithEventPipePipelineTest fails intermittently  |
@@ -53,10 +55,11 @@ Issues in query: 6
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 20
+Issues in query: 21
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#109103](https://github.com/dotnet/runtime/issues/109103) | Running console application that creates and joins with short-lived threads leaks handles when debugger is attached |
 | [dotnet/runtime#108912](https://github.com/dotnet/runtime/issues/108912) | Runtime System.Private.CoreLib patches pdbs |
 | [dotnet/runtime#108893](https://github.com/dotnet/runtime/issues/108893) | [Perf] Windows/x64: 2 Regressions on 10/9/2024 1:12:38 AM |
 | [dotnet/runtime#108273](https://github.com/dotnet/runtime/issues/108273) | [Profiler] Duplicate `GarbageCollectionFinished` notification |
@@ -80,28 +83,24 @@ Issues in query: 20
 
 ## v1,1-dotnet/runtime|area-Debugger-mono
 
-Issues in query: 5
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#109025](https://github.com/dotnet/runtime/issues/109025) | [debugger] Inspector exceptions in debugger tests |
+| [dotnet/runtime#109067](https://github.com/dotnet/runtime/issues/109067) | Issues with the new .NET 9+ Mono Debugger |
 | [dotnet/runtime#108078](https://github.com/dotnet/runtime/issues/108078) | `chrome-DebuggerTests` timing out |
 | [dotnet/runtime#108072](https://github.com/dotnet/runtime/issues/108072) | [wasm] DebuggerTests.Inspector.OpenSessionAsync |
-| [dotnet/runtime#106376](https://github.com/dotnet/runtime/issues/106376) | 'chrome-DebuggerTests.ExceptionTests' timing out |
 | [dotnet/runtime#101554](https://github.com/dotnet/runtime/issues/101554) | Blazor client side web debugging fails to function when run within IIS |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-mono
 
-Issues in query: 6
+Issues in query: 3
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#108211](https://github.com/dotnet/runtime/issues/108211) | Cross-VM Exception Unwinding |
 | [dotnet/runtime#108078](https://github.com/dotnet/runtime/issues/108078) | `chrome-DebuggerTests` timing out |
 | [dotnet/runtime#108071](https://github.com/dotnet/runtime/issues/108071) | [wasm] DebuggerTests.WasmHostProvider.LaunchHostAsync |
-| [dotnet/runtime#106064](https://github.com/dotnet/runtime/issues/106064) | [mono][ios] Mono prevents crash logs from being generated in case `SIGSEGV` is raised from native code |
-| [dotnet/runtime#97209](https://github.com/dotnet/runtime/issues/97209) | [Android] Application crashes when an exception is thrown after running a System.Diagnostics.Process |
-| [dotnet/runtime#93551](https://github.com/dotnet/runtime/issues/93551) | **\<OUT OF SLA\>** [wasm] run browser-bench sample with https connection |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics-mono
 
@@ -114,4 +113,13 @@ Issues in query: 1
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#107315](https://github.com/dotnet/runtime/issues/107315) | [Mono] NetTrace Collected mismatches expected CLR Instance name |
+
+## v1,1-dotnet/runtime|area-enc-mono
+
+Issues in query: 2
+
+| **Issue Number** | **Title** |
+| :--------------: | --------- |
+| [dotnet/runtime#108097](https://github.com/dotnet/runtime/issues/108097) | EnC: Mono throws when member accessibility is changed |
+| [dotnet/runtime#66513](https://github.com/dotnet/runtime/issues/66513) | **\<OUT OF SLA\>** [hot reload] Update test infrastructure to consume metadata update handler type ids |
 
