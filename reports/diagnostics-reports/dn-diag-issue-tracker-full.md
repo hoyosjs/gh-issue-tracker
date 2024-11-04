@@ -1,13 +1,14 @@
-# .NET Diagnostics Report Full Report - 10/28/2024 06:19:51
+# .NET Diagnostics Report Full Report - 11/04/2024 06:20:17
 
-Total issues: 57
+Total issues: 59
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 17
+Issues in query: 18
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#5034](https://github.com/dotnet/diagnostics/issues/5034) | [dnceng-bot] Branch `diagnostics/release/stable` can't be merged to Azdo internal branch |
 | [dotnet/diagnostics#5023](https://github.com/dotnet/diagnostics/issues/5023) | Help unmanaged memory |
 | [dotnet/diagnostics#5020](https://github.com/dotnet/diagnostics/issues/5020) | Diagnostics client fails to create dump when path has spaces |
 | [dotnet/diagnostics#4814](https://github.com/dotnet/diagnostics/issues/4814) | DumpStackObjects doesn't seem to work if the thread is on the alternate signal stack |
@@ -22,7 +23,7 @@ Issues in query: 17
 | [dotnet/diagnostics#4557](https://github.com/dotnet/diagnostics/issues/4557) | Timeout while executing StartEventPipeSession |
 | [dotnet/diagnostics#4524](https://github.com/dotnet/diagnostics/issues/4524) | dotnet-dsrouter and dotnet-gcdump doc needed when default port is occupied |
 | [dotnet/diagnostics#4484](https://github.com/dotnet/diagnostics/issues/4484) | CLRMD floods logs with `EnumerateStackRoots found an entry with Object == 0, addr:73664ff040 srcType:0` while enumerating root paths for core dump created under linux |
-| [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | dotnet-dump not working when process run as user |
+| [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | **\<OUT OF SLA\>** dotnet-dump not working when process run as user |
 | [dotnet/diagnostics#4314](https://github.com/dotnet/diagnostics/issues/4314) | **\<OUT OF SLA\>** !clrstack reports incorrect method names when <> is encountered |
 | [dotnet/diagnostics#4825](https://github.com/dotnet/diagnostics/issues/4825) | **\<OUT OF SLA\>** NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
@@ -42,11 +43,10 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 6
+Issues in query: 5
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#108919](https://github.com/dotnet/runtime/issues/108919) | Type initializer for CDSCollectionETWBCLProvider threw exception - NullReferenceException in InvokeStub_EventSourceAttribute.set_Guid |
 | [dotnet/runtime#106890](https://github.com/dotnet/runtime/issues/106890) | Timeout in runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.cmd |
 | [dotnet/runtime#106087](https://github.com/dotnet/runtime/issues/106087) | [Tracing] EventProvider Disposal hangs within a callback |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
@@ -55,10 +55,13 @@ Issues in query: 6
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 21
+Issues in query: 24
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#109426](https://github.com/dotnet/runtime/issues/109426) | [cdac] Finish unimplemented parts of GetMethodDescData |
+| [dotnet/runtime#109425](https://github.com/dotnet/runtime/issues/109425) | [cdac] document TypeValidation and MethodValidation |
+| [dotnet/runtime#109296](https://github.com/dotnet/runtime/issues/109296) | Mysterious `NullReferenceException` when initializing a `List<int>` |
 | [dotnet/runtime#109103](https://github.com/dotnet/runtime/issues/109103) | Running console application that creates and joins with short-lived threads leaks handles when debugger is attached |
 | [dotnet/runtime#108912](https://github.com/dotnet/runtime/issues/108912) | Runtime System.Private.CoreLib patches pdbs |
 | [dotnet/runtime#108893](https://github.com/dotnet/runtime/issues/108893) | [Perf] Windows/x64: 2 Regressions on 10/9/2024 1:12:38 AM |
@@ -116,10 +119,9 @@ Issues in query: 1
 
 ## v1,1-dotnet/runtime|area-enc-mono
 
-Issues in query: 2
+Issues in query: 1
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#108097](https://github.com/dotnet/runtime/issues/108097) | EnC: Mono throws when member accessibility is changed |
-| [dotnet/runtime#66513](https://github.com/dotnet/runtime/issues/66513) | **\<OUT OF SLA\>** [hot reload] Update test infrastructure to consume metadata update handler type ids |
 
