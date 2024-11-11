@@ -1,15 +1,14 @@
-# .NET Diagnostics Report Full Report - 11/04/2024 06:20:17
+# .NET Diagnostics Report Full Report - 11/11/2024 06:18:45
 
-Total issues: 59
+Total issues: 55
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 18
+Issues in query: 16
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#5034](https://github.com/dotnet/diagnostics/issues/5034) | [dnceng-bot] Branch `diagnostics/release/stable` can't be merged to Azdo internal branch |
-| [dotnet/diagnostics#5023](https://github.com/dotnet/diagnostics/issues/5023) | Help unmanaged memory |
+| [dotnet/diagnostics#5045](https://github.com/dotnet/diagnostics/issues/5045) | `dotnet-dump collect` -> EndOfStreamException; Process-being-dumped: "[createdump] Target process is alive" |
 | [dotnet/diagnostics#5020](https://github.com/dotnet/diagnostics/issues/5020) | Diagnostics client fails to create dump when path has spaces |
 | [dotnet/diagnostics#4814](https://github.com/dotnet/diagnostics/issues/4814) | DumpStackObjects doesn't seem to work if the thread is on the alternate signal stack |
 | [dotnet/diagnostics#4795](https://github.com/dotnet/diagnostics/issues/4795) | Update GCInfo deserializer once https://github.com/dotnet/runtime/pull/104336 merges |
@@ -25,7 +24,6 @@ Issues in query: 18
 | [dotnet/diagnostics#4484](https://github.com/dotnet/diagnostics/issues/4484) | CLRMD floods logs with `EnumerateStackRoots found an entry with Object == 0, addr:73664ff040 srcType:0` while enumerating root paths for core dump created under linux |
 | [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | **\<OUT OF SLA\>** dotnet-dump not working when process run as user |
 | [dotnet/diagnostics#4314](https://github.com/dotnet/diagnostics/issues/4314) | **\<OUT OF SLA\>** !clrstack reports incorrect method names when <> is encountered |
-| [dotnet/diagnostics#4825](https://github.com/dotnet/diagnostics/issues/4825) | **\<OUT OF SLA\>** NativeRuntimeEventSource behaving poorly in conjunction with other providers |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
@@ -55,12 +53,10 @@ Issues in query: 5
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 24
+Issues in query: 22
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#109426](https://github.com/dotnet/runtime/issues/109426) | [cdac] Finish unimplemented parts of GetMethodDescData |
-| [dotnet/runtime#109425](https://github.com/dotnet/runtime/issues/109425) | [cdac] document TypeValidation and MethodValidation |
 | [dotnet/runtime#109296](https://github.com/dotnet/runtime/issues/109296) | Mysterious `NullReferenceException` when initializing a `List<int>` |
 | [dotnet/runtime#109103](https://github.com/dotnet/runtime/issues/109103) | Running console application that creates and joins with short-lived threads leaks handles when debugger is attached |
 | [dotnet/runtime#108912](https://github.com/dotnet/runtime/issues/108912) | Runtime System.Private.CoreLib patches pdbs |
