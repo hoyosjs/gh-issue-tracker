@@ -1,14 +1,13 @@
-# .NET Diagnostics Report Full Report - 11/11/2024 06:18:45
+# .NET Diagnostics Report Full Report - 11/18/2024 06:19:57
 
-Total issues: 55
+Total issues: 58
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 16
+Issues in query: 15
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/diagnostics#5045](https://github.com/dotnet/diagnostics/issues/5045) | `dotnet-dump collect` -> EndOfStreamException; Process-being-dumped: "[createdump] Target process is alive" |
 | [dotnet/diagnostics#5020](https://github.com/dotnet/diagnostics/issues/5020) | Diagnostics client fails to create dump when path has spaces |
 | [dotnet/diagnostics#4814](https://github.com/dotnet/diagnostics/issues/4814) | DumpStackObjects doesn't seem to work if the thread is on the alternate signal stack |
 | [dotnet/diagnostics#4795](https://github.com/dotnet/diagnostics/issues/4795) | Update GCInfo deserializer once https://github.com/dotnet/runtime/pull/104336 merges |
@@ -27,12 +26,11 @@ Issues in query: 16
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
-Issues in query: 3
+Issues in query: 2
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
 | [dotnet/runtime#104670](https://github.com/dotnet/runtime/issues/104670) | BinderTracingTest.ResolutionFlow times out |
-| [dotnet/runtime#102572](https://github.com/dotnet/runtime/issues/102572) | It is not possible to pass the ID of the garbage collection when the .NET provider is enabled with the GCHeapCollect(0x800000) keyword |
 | [dotnet/runtime#102004](https://github.com/dotnet/runtime/issues/102004) | MemoryAllocatedForJitCode ETW Event missing in trace, but CLRStackWalk still fires |
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics
@@ -41,10 +39,11 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 5
+Issues in query: 6
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#109712](https://github.com/dotnet/runtime/issues/109712) | Diagnostics eventcommand argument error when run generic host on netframework |
 | [dotnet/runtime#106890](https://github.com/dotnet/runtime/issues/106890) | Timeout in runtimeeventsource/nativeruntimeeventsource/nativeruntimeeventsource.cmd |
 | [dotnet/runtime#106087](https://github.com/dotnet/runtime/issues/106087) | [Tracing] EventProvider Disposal hangs within a callback |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
@@ -53,17 +52,22 @@ Issues in query: 5
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 22
+Issues in query: 27
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#109885](https://github.com/dotnet/runtime/issues/109885) | Step Over sometimes executes a lot more than one statement |
+| [dotnet/runtime#109877](https://github.com/dotnet/runtime/issues/109877) | [DAC] ISOSDacInterface:GetMethodDescData reads from nullptr |
+| [dotnet/runtime#109828](https://github.com/dotnet/runtime/issues/109828) | randomizedallocationsampling tests are failing on nativeaot |
+| [dotnet/runtime#109812](https://github.com/dotnet/runtime/issues/109812) | `foreach` will jump to other code in `dotnet9` |
+| [dotnet/runtime#109785](https://github.com/dotnet/runtime/issues/109785) | Step becomes a "go" in .NET 9 |
+| [dotnet/runtime#109779](https://github.com/dotnet/runtime/issues/109779) | App hangs after taking crashdump in official .NET 9 x64 glibc docker images |
 | [dotnet/runtime#109296](https://github.com/dotnet/runtime/issues/109296) | Mysterious `NullReferenceException` when initializing a `List<int>` |
 | [dotnet/runtime#109103](https://github.com/dotnet/runtime/issues/109103) | Running console application that creates and joins with short-lived threads leaks handles when debugger is attached |
 | [dotnet/runtime#108912](https://github.com/dotnet/runtime/issues/108912) | Runtime System.Private.CoreLib patches pdbs |
 | [dotnet/runtime#108893](https://github.com/dotnet/runtime/issues/108893) | [Perf] Windows/x64: 2 Regressions on 10/9/2024 1:12:38 AM |
 | [dotnet/runtime#108273](https://github.com/dotnet/runtime/issues/108273) | [Profiler] Duplicate `GarbageCollectionFinished` notification |
 | [dotnet/runtime#107344](https://github.com/dotnet/runtime/issues/107344) | Issues with memory dumps and Single File App |
-| [dotnet/runtime#106946](https://github.com/dotnet/runtime/issues/106946) | Test failure: profiler\\elt\\slowpatheltleave\\slowpatheltleave.cmd |
 | [dotnet/runtime#106243](https://github.com/dotnet/runtime/issues/106243) | Test failure: profiler/transitions/transitions/transitions.sh |
 | [dotnet/runtime#106241](https://github.com/dotnet/runtime/issues/106241) | Test failure: profiler\\assembly\\ALCTest\\ALCTest.cmd |
 | [dotnet/runtime#106148](https://github.com/dotnet/runtime/issues/106148) | [DAC][ReJIT] ReJitManager::IsReJITEnabled checked DOTNET_ProfAPI_RejitOnAttach in the wrong environment |
@@ -107,11 +111,7 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-Tracing-mono
 
-Issues in query: 1
-
-| **Issue Number** | **Title** |
-| :--------------: | --------- |
-| [dotnet/runtime#107315](https://github.com/dotnet/runtime/issues/107315) | [Mono] NetTrace Collected mismatches expected CLR Instance name |
+Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-enc-mono
 
