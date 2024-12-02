@@ -1,13 +1,15 @@
-# .NET Diagnostics Report Full Report - 11/25/2024 06:20:25
+# .NET Diagnostics Report Full Report - 12/02/2024 06:20:48
 
-Total issues: 58
+Total issues: 61
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 16
+Issues in query: 19
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#5064](https://github.com/dotnet/diagnostics/issues/5064) | Migrate off of Debian 11 |
+| [dotnet/diagnostics#5061](https://github.com/dotnet/diagnostics/issues/5061) | Unhandled exception. System.IO.EndOfStreamException: Unable to read beyond the end of the stream. |
 | [dotnet/diagnostics#5054](https://github.com/dotnet/diagnostics/issues/5054) | Dotnet-dump gcroot <reference> Segmentation fault (arm64) |
 | [dotnet/diagnostics#5020](https://github.com/dotnet/diagnostics/issues/5020) | Diagnostics client fails to create dump when path has spaces |
 | [dotnet/diagnostics#4814](https://github.com/dotnet/diagnostics/issues/4814) | DumpStackObjects doesn't seem to work if the thread is on the alternate signal stack |
@@ -24,6 +26,7 @@ Issues in query: 16
 | [dotnet/diagnostics#4484](https://github.com/dotnet/diagnostics/issues/4484) | CLRMD floods logs with `EnumerateStackRoots found an entry with Object == 0, addr:73664ff040 srcType:0` while enumerating root paths for core dump created under linux |
 | [dotnet/diagnostics#4375](https://github.com/dotnet/diagnostics/issues/4375) | **\<OUT OF SLA\>** dotnet-dump not working when process run as user |
 | [dotnet/diagnostics#4314](https://github.com/dotnet/diagnostics/issues/4314) | **\<OUT OF SLA\>** !clrstack reports incorrect method names when <> is encountered |
+| [dotnet/diagnostics#3631](https://github.com/dotnet/diagnostics/issues/3631) | **\<OUT OF SLA\>** Public API for creating DiagnosticsClient from IPC endpoint |
 
 ## v1,1-dotnet/runtime|area-Tracing-coreclr
 
@@ -43,11 +46,11 @@ Issues in query: 5
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/runtime#110249](https://github.com/dotnet/runtime/issues/110249) | System.TypeInitializationException in ActivityListener when accessing ActivitySource from a static field |
 | [dotnet/runtime#109712](https://github.com/dotnet/runtime/issues/109712) | Diagnostics eventcommand argument error when run generic host on netframework |
 | [dotnet/runtime#106087](https://github.com/dotnet/runtime/issues/106087) | [Tracing] EventProvider Disposal hangs within a callback |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
 | [dotnet/runtime#96968](https://github.com/dotnet/runtime/issues/96968) | Test failure BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds_WithEtwListener |
-| [dotnet/runtime#96219](https://github.com/dotnet/runtime/issues/96219) | Potential Deadlock When Disposing EventListeners Concurrently |
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
@@ -75,7 +78,7 @@ Issues in query: 26
 | [dotnet/runtime#104459](https://github.com/dotnet/runtime/issues/104459) | App crashes with an output "Trace/Breakpoint Trap" on Linux when a P/Invoke callback is called from a native library if the dotnet debugger is attached. |
 | [dotnet/runtime#102767](https://github.com/dotnet/runtime/issues/102767) | Patch skipping crashing in functions marked with [UnmanagedCallersOnly] |
 | [dotnet/runtime#101310](https://github.com/dotnet/runtime/issues/101310) | coreclr + vsdbg failure to get stack trace from remote Kubernetes pod |
-| [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | ExecutionEngineException on using step into while debugging |
+| [dotnet/runtime#95417](https://github.com/dotnet/runtime/issues/95417) | **\<OUT OF SLA\>** ExecutionEngineException on using step into while debugging |
 | [dotnet/runtime#90563](https://github.com/dotnet/runtime/issues/90563) | **\<OUT OF SLA\>** Lock contention in StackTrace/Exception.ToString() |
 | [dotnet/runtime#90079](https://github.com/dotnet/runtime/issues/90079) | **\<OUT OF SLA\>** Avalonia calling into the runtime after shut down |
 | [dotnet/runtime#87574](https://github.com/dotnet/runtime/issues/87574) | **\<OUT OF SLA\>** [EnC] CoreCLR assertion in System.Reflection.Metadata.ApplyUpdateTest.TestGenericAddStaticField |
