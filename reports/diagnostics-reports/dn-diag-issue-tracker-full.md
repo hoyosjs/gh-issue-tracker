@@ -1,13 +1,15 @@
-# .NET Diagnostics Report Full Report - 12/02/2024 06:20:48
+# .NET Diagnostics Report Full Report - 12/09/2024 06:21:37
 
-Total issues: 61
+Total issues: 60
 
 ## v1,1-dotnet/diagnostics
 
-Issues in query: 19
+Issues in query: 20
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
+| [dotnet/diagnostics#5091](https://github.com/dotnet/diagnostics/issues/5091) | maddress does not work in the new SOS since the release v8.0.547301 |
+| [dotnet/diagnostics#5089](https://github.com/dotnet/diagnostics/issues/5089) | ElfFileKeyGenerator does not accept OS Specific ET_LOOS .. ET_HIOS as valid |
 | [dotnet/diagnostics#5064](https://github.com/dotnet/diagnostics/issues/5064) | Migrate off of Debian 11 |
 | [dotnet/diagnostics#5061](https://github.com/dotnet/diagnostics/issues/5061) | Unhandled exception. System.IO.EndOfStreamException: Unable to read beyond the end of the stream. |
 | [dotnet/diagnostics#5054](https://github.com/dotnet/diagnostics/issues/5054) | Dotnet-dump gcroot <reference> Segmentation fault (arm64) |
@@ -15,7 +17,6 @@ Issues in query: 19
 | [dotnet/diagnostics#4814](https://github.com/dotnet/diagnostics/issues/4814) | DumpStackObjects doesn't seem to work if the thread is on the alternate signal stack |
 | [dotnet/diagnostics#4795](https://github.com/dotnet/diagnostics/issues/4795) | Update GCInfo deserializer once https://github.com/dotnet/runtime/pull/104336 merges |
 | [dotnet/diagnostics#4782](https://github.com/dotnet/diagnostics/issues/4782) | [Test] Microsoft.Diagnostics.Monitoring.EventPipe.UnitTests.EventCounterTriggerWithEventPipePipelineTest fails intermittently  |
-| [dotnet/diagnostics#4779](https://github.com/dotnet/diagnostics/issues/4779) |  dotnet-dump analyze does not work on M3 macOS |
 | [dotnet/diagnostics#4757](https://github.com/dotnet/diagnostics/issues/4757) | [test failure] TestCounterMonitorSystemRuntimeMetricsCSV intermittently fails: System.IO.EndOfStreamException : Attempted to read past the end of the stream. |
 | [dotnet/diagnostics#4769](https://github.com/dotnet/diagnostics/issues/4769) | Crash when debugging with lldb on MacOS |
 | [dotnet/diagnostics#4717](https://github.com/dotnet/diagnostics/issues/4717) | [Test] StartEventPipeSessionWithoutStackwalkTestAsync fails with ServerNotAvailableException |
@@ -42,11 +43,10 @@ Issues in query: 0
 
 ## v1,1-dotnet/runtime|area-System.Diagnostics.Tracing
 
-Issues in query: 5
+Issues in query: 4
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
-| [dotnet/runtime#110249](https://github.com/dotnet/runtime/issues/110249) | System.TypeInitializationException in ActivityListener when accessing ActivitySource from a static field |
 | [dotnet/runtime#109712](https://github.com/dotnet/runtime/issues/109712) | Diagnostics eventcommand argument error when run generic host on netframework |
 | [dotnet/runtime#106087](https://github.com/dotnet/runtime/issues/106087) | [Tracing] EventProvider Disposal hangs within a callback |
 | [dotnet/runtime#99274](https://github.com/dotnet/runtime/issues/99274) | EventAttribute Message not showing in ETW events |
@@ -54,7 +54,7 @@ Issues in query: 5
 
 ## v1,1-dotnet/runtime|area-Diagnostics-coreclr
 
-Issues in query: 26
+Issues in query: 25
 
 | **Issue Number** | **Title** |
 | :--------------: | --------- |
@@ -64,7 +64,6 @@ Issues in query: 26
 | [dotnet/runtime#109877](https://github.com/dotnet/runtime/issues/109877) | [DAC] ISOSDacInterface:GetMethodDescData reads from nullptr |
 | [dotnet/runtime#109812](https://github.com/dotnet/runtime/issues/109812) | `foreach` will jump to other code in `dotnet9` |
 | [dotnet/runtime#109785](https://github.com/dotnet/runtime/issues/109785) | Step becomes a "go" in .NET 9 |
-| [dotnet/runtime#109779](https://github.com/dotnet/runtime/issues/109779) | App hangs after taking crashdump in official .NET 9 x64 glibc docker images |
 | [dotnet/runtime#109296](https://github.com/dotnet/runtime/issues/109296) | Mysterious `NullReferenceException` when initializing a `List<int>` |
 | [dotnet/runtime#109103](https://github.com/dotnet/runtime/issues/109103) | Running console application that creates and joins with short-lived threads leaks handles when debugger is attached |
 | [dotnet/runtime#108912](https://github.com/dotnet/runtime/issues/108912) | Runtime System.Private.CoreLib patches pdbs |
